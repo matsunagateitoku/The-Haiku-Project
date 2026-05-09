@@ -191,6 +191,17 @@ SAIJIKI_INDEX_CSS = """
 .kigo-entry-count { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; color: #aaa; margin-top: 0.2rem; }
 """
 
+INDEX_CSS = """
+.index-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
+.index-title { font-size: 42px; font-weight: 300; color: #1a1a1a; margin-bottom: 0.5rem; }
+.index-subtitle { font-family: "Noto Serif JP", serif; font-size: 18px; color: #888; margin-bottom: 3rem; }
+.index-nav { display: flex; flex-direction: column; gap: 1px; background: #ccc8c0; border: 1px solid #ccc8c0; border-radius: 8px; overflow: hidden; margin-bottom: 3rem; }
+.index-nav-item { background: #ede8df; padding: 1.25rem 1.5rem; text-decoration: none; display: flex; justify-content: space-between; align-items: center; color: inherit; }
+.index-nav-item:hover { background: #e6e0d6; }
+.index-nav-label { font-size: 20px; font-weight: 300; color: #1a1a1a; }
+.index-nav-sub { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-top: 0.25rem; }
+.index-nav-arrow { font-size: 18px; color: #ccc; }
+"""
 
 SEASON_ORDER = ["Spring", "Summer", "Autumn", "Winter", "New Year"]
 
@@ -282,7 +293,6 @@ def load_bio(bios_dir, poet_slug):
 
 
 def find_photo(photos_dir, poet_slug):
-    """Return filename if a photo exists for this poet, else None."""
     for ext in ("jpg", "jpeg", "png", "webp"):
         fname = f"{poet_slug}.{ext}"
         if os.path.exists(os.path.join(photos_dir, fname)):
@@ -301,14 +311,12 @@ def photo_block_html(photo_fname, poet_name, path_prefix=""):
 
 
 def select_poems(poems, n=4):
-    """Pick up to n poems with seasonal variety."""
     by_season = {}
     for p in poems:
         s = p.get("season") or ""
         by_season.setdefault(s, []).append(p)
     selected = []
     seasons = [s for s in SEASON_ORDER if s in by_season]
-    # also include unclassified
     for s in by_season:
         if s not in seasons:
             seasons.append(s)
@@ -328,7 +336,7 @@ def select_poems(poems, n=4):
 # Page builders
 # ---------------------------------------------------------------------------
 
-def build_poem_page(row, poem_filename, poet_slug):
+def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_season=""):
     poem_jp   = val(row.get("Poem") or row.get("Text", ""))
     romaji_raw= val(row.get("Romaji", ""))
     trans_raw = val(row.get("My translation", ""))
@@ -346,8 +354,16 @@ def build_poem_page(row, poem_filename, poet_slug):
 
     commentary_block = build_section("Commentary", maegaki)
     notes_block      = build_section("Notes", notes, cls="translation-notes")
-    poet_link = (f'<a class="poet-link" href="../poets/{poet_slug}.html">← {poet}</a>'
-                 if poet_slug and poet else "")
+
+    poet_link = ""
+    if poet_slug and poet:
+        poet_link = f'<a class="ext-link" href="../poets/{poet_slug}.html">← {poet}</a>'
+
+    saijiki_link = ""
+    if saijiki_slug and saijiki_season:
+        season_dir = saijiki_season.lower()
+        saijiki_link = (f'<a class="ext-link" href="../saijiki/{season_dir}/{saijiki_slug}.html">'
+                        f'Season word: {saijiki_slug} →</a>')
 
     body = f"""<div class="haiku-page">
 
@@ -393,7 +409,7 @@ def build_poem_page(row, poem_filename, poet_slug):
     </div>
   </div>
 
-  <div class="ext-links">{poet_link}</div>
+  <div class="ext-links">{poet_link}{saijiki_link}</div>
 
 </div>"""
 
@@ -530,7 +546,6 @@ def build_poet_poems_page(poet_slug, data):
     return html_page(f"All poems — {poet_name}", POEM_LIST_CSS, body)
 
 
-
 # ---------------------------------------------------------------------------
 # Saijiki page builders
 # ---------------------------------------------------------------------------
@@ -543,34 +558,19 @@ def load_essay(essays_dir, kigo_slug):
         return f.read().strip()
 
 
-def translation_lines_html(raw, cls="saijiki-poem-translation"):
-    lines = [l.strip() for l in raw.replace("\\n", "\n").splitlines() if l.strip()]
-    spans = "\n".join(f'        <span>{l}</span>' for l in lines)
-    return f'''    <div class="{cls}">
-{spans}
-    </div>'''
-
-
 def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
-    """
-    meta: dict with kigo_en, kigo_jp, kigo_romaji, season, category
-    exemplars: list of poem dicts sorted by Saijiki_Order
-    all_poem_count: total poems tagged to this kigo
-    """
     kigo_en     = meta.get("kigo_en", kigo_slug)
     kigo_jp     = meta.get("kigo_jp", "")
     kigo_romaji = meta.get("kigo_romaji", "")
     season      = meta.get("season", "")
     category    = meta.get("category", "")
 
-    # Tags
     tags = ""
     if season:
         tags += f'<span class="kigo-tag">{season}</span>'
     if category:
         tags += f'  <span class="kigo-tag">{category}</span>'
 
-    # Essay
     essay_html = ""
     if essay_text:
         paras = [p.strip() for p in essay_text.split("\n\n") if p.strip()]
@@ -583,7 +583,6 @@ def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
   </div>
 '''
 
-    # Exemplar poems
     poems_html = ""
     for p in exemplars:
         trans_lines = "\n".join(
@@ -643,7 +642,6 @@ def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
 
 
 def build_saijiki_poems_list(kigo_slug, meta, all_poems):
-    """All poems tagged to this kigo, flat list."""
     kigo_en = meta.get("kigo_en", kigo_slug)
     kigo_jp = meta.get("kigo_jp", "")
     season  = meta.get("season", "")
@@ -679,7 +677,6 @@ def build_saijiki_poems_list(kigo_slug, meta, all_poems):
 
 
 def build_saijiki_index(saijiki_data):
-    """Master index of all kigo entries grouped by season."""
     by_season = {}
     for slug, meta in saijiki_data.items():
         s = meta.get("season", "Unclassified")
@@ -723,6 +720,48 @@ def build_saijiki_index(saijiki_data):
 </div>'''
 
     return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body)
+
+
+def build_index(poem_count, poet_count, saijiki_count):
+    """Master site index linking to poems, poets, and saijiki."""
+    body = f'''<div class="index-page">
+
+  <div class="page-label">
+    歳時記
+    <div class="page-label-line"></div>
+  </div>
+
+  <div class="index-title">The Haiku Project</div>
+  <div class="index-subtitle">歳時記 · Saijiki</div>
+
+  <nav class="index-nav">
+    <a class="index-nav-item" href="saijiki-index.html">
+      <div>
+        <div class="index-nav-label">Season Words</div>
+        <div class="index-nav-sub">{saijiki_count} kigo entries</div>
+      </div>
+      <span class="index-nav-arrow">→</span>
+    </a>
+    <a class="index-nav-item" href="poets/">
+      <div>
+        <div class="index-nav-label">Poets</div>
+        <div class="index-nav-sub">{poet_count} haijin</div>
+      </div>
+      <span class="index-nav-arrow">→</span>
+    </a>
+    <a class="index-nav-item" href="poems/">
+      <div>
+        <div class="index-nav-label">Poems</div>
+        <div class="index-nav-sub">{poem_count} haiku</div>
+      </div>
+      <span class="index-nav-arrow">→</span>
+    </a>
+  </nav>
+
+</div>'''
+
+    return html_page("The Haiku Project · 歳時記", INDEX_CSS, body)
+
 
 # ---------------------------------------------------------------------------
 # Main
@@ -773,6 +812,7 @@ def main():
         dates      = val(row.get("Dates", ""))
         season     = val(row.get("Season", ""))
         kigo_raw   = val(row.get("Kigo", ""))
+        saijiki_entry = val(row.get("Saijiki_Entry", ""))
 
         if not poem_jp and not romaji_raw:
             continue
@@ -789,8 +829,10 @@ def main():
 
         poet_slug = slugify(poet) if poet else "unknown"
 
-        # Write poem page
-        html = build_poem_page(row, poem_filename, poet_slug)
+        # Write poem page — pass saijiki_entry and season for link generation
+        html = build_poem_page(row, poem_filename, poet_slug,
+                               saijiki_slug=saijiki_entry,
+                               saijiki_season=season)
         with open(os.path.join(poems_dir, poem_filename), "w", encoding="utf-8") as f:
             f.write(html)
         poem_count += 1
@@ -842,7 +884,7 @@ def main():
             if not slug:
                 continue
             saijiki_meta[slug] = {
-                "kigo_en":     val(row.get("Kigo_Slug", slug)).replace("-", " ").title(),
+                "kigo_en":     val(row.get("Kigo_EN", slug.replace("-", " ").title())),
                 "kigo_jp":     val(row.get("Kigo_JP", "")),
                 "kigo_romaji": val(row.get("Kigo_Romaji", "")),
                 "season":      val(row.get("Season", "")),
@@ -869,7 +911,6 @@ def main():
         season     = val(row.get("Season", ""))
         kigo_raw   = val(row.get("Kigo", ""))
 
-        # Build poem filename to link back — must match Pass 1 slug logic
         base = slugify(romaji_raw if romaji_raw else poem_jp)
         poem_filename = f"{sheet.lower()}-{base}.html"
 
@@ -929,10 +970,17 @@ def main():
     else:
         print(f"  Saijiki: no entries found (add Saijiki_Entry column to spreadsheet)")
 
+    # Write master index
+    index_html = build_index(poem_count, poet_count, saijiki_count)
+    with open(os.path.join(args.out, "index.html"), "w", encoding="utf-8") as f:
+        f.write(index_html)
+    print(f"  Index: index.html written")
+
     print(f"\nDone — site written to: {args.out}")
     print(f"\n  poems/          {poem_count} poem pages")
     print(f"  poets/          {poet_count * 2} poet pages")
     print(f"  saijiki/        {saijiki_count * 2} saijiki pages + index")
+    print(f"  index.html      master index")
     print(f"\nSource folders (next to this script):")
     print(f"  bios/           poet biographies  ({{slug}}.txt)")
     print(f"  essays/         saijiki essays    ({{kigo-slug}}.txt)")
