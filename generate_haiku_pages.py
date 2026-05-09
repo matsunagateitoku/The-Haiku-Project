@@ -778,7 +778,7 @@ def main():
             continue
 
         # Unique poem slug
-        base = slugify(romaji_raw[:40] if romaji_raw else poem_jp)
+        base = slugify(romaji_raw if romaji_raw else poem_jp)
         if base in slugs_used:
             slugs_used[base] += 1
             slug = f"{base}-{slugs_used[base]}"
@@ -814,9 +814,6 @@ def main():
             "filename":    poem_filename,
         })
 
-    # Also accumulate saijiki data per row
-    # (done in pass 1 loop — saijiki_poems collected alongside poet data)
-
     print(f"  Poems: {poem_count} pages written")
 
     # Pass 2 — poet bio pages and poem-list pages
@@ -837,7 +834,6 @@ def main():
     print(f"  Poets: {poet_count} bio pages + {poet_count} poem-list pages")
 
     # Pass 3 — saijiki pages
-    # Load Saijiki metadata sheet if present
     saijiki_meta = {}
     try:
         df_s = pd.read_excel(args.xlsx, sheet_name="Saijiki")
@@ -853,10 +849,8 @@ def main():
                 "category":    val(row.get("Category", "")),
             }
     except Exception:
-        pass  # Sheet doesn't exist yet — metadata comes from poems only
+        pass
 
-    # Build saijiki entries from tagged poems
-    # saijiki_poems[kigo_slug] = list of poem dicts with order
     saijiki_poems = {}
     for sheet, row in all_rows:
         entry_slug = val(row.get("Saijiki_Entry", ""))
@@ -867,19 +861,18 @@ def main():
         except (ValueError, TypeError):
             order = 999
 
-        poem_jp   = val(row.get("Poem") or row.get("Text", ""))
-        romaji_raw= val(row.get("Romaji", ""))
-        trans_raw = val(row.get("My translation", ""))
-        poet      = val(row.get("Poet", ""))
-        poet_jp   = val(row.get("俳人", ""))
-        season    = val(row.get("Season", ""))
-        kigo_raw  = val(row.get("Kigo", ""))
+        poem_jp    = val(row.get("Poem") or row.get("Text", ""))
+        romaji_raw = val(row.get("Romaji", ""))
+        trans_raw  = val(row.get("My translation", ""))
+        poet       = val(row.get("Poet", ""))
+        poet_jp    = val(row.get("俳人", ""))
+        season     = val(row.get("Season", ""))
+        kigo_raw   = val(row.get("Kigo", ""))
 
-        # Build poem filename to link back
-        base = slugify(romaji_raw[:40] if romaji_raw else poem_jp)
+        # Build poem filename to link back — must match Pass 1 slug logic
+        base = slugify(romaji_raw if romaji_raw else poem_jp)
         poem_filename = f"{sheet.lower()}-{base}.html"
 
-        # Auto-populate meta from poem data if not in Saijiki sheet
         if entry_slug not in saijiki_meta:
             kigo_short, kigo_en_auto, kigo_jp_auto = kigo_parts(kigo_raw)
             saijiki_meta[entry_slug] = {
@@ -900,7 +893,6 @@ def main():
             "filename":    poem_filename,
         })
 
-    # Write saijiki pages
     saijiki_count = 0
     for kigo_slug, poems in saijiki_poems.items():
         meta = saijiki_meta.get(kigo_slug, {})
@@ -909,33 +901,26 @@ def main():
         season_dir = os.path.join(args.out, "saijiki", season)
         os.makedirs(season_dir, exist_ok=True)
 
-        # Sort all poems by order
         poems_sorted = sorted(poems, key=lambda p: p["order"])
-
-        # Exemplars = poems with explicit order (order < 900)
         exemplars = [p for p in poems_sorted if p["order"] < 900]
         if not exemplars:
             exemplars = poems_sorted[:4]
 
         essay_text = load_essay(args.essays, kigo_slug)
 
-        # Entry page
         entry_html = build_saijiki_entry(
             kigo_slug, meta, essay_text, exemplars, len(poems_sorted)
         )
         with open(os.path.join(season_dir, f"{kigo_slug}.html"), "w", encoding="utf-8") as f:
             f.write(entry_html)
 
-        # All-poems list page
         list_html = build_saijiki_poems_list(kigo_slug, meta, poems_sorted)
         with open(os.path.join(season_dir, f"{kigo_slug}-poems.html"), "w", encoding="utf-8") as f:
             f.write(list_html)
 
-        # Store poem count for index
         saijiki_meta[kigo_slug]["poem_count"] = len(poems_sorted)
         saijiki_count += 1
 
-    # Saijiki index page
     if saijiki_count:
         index_html = build_saijiki_index(saijiki_meta)
         with open(os.path.join(args.out, "saijiki-index.html"), "w", encoding="utf-8") as f:
