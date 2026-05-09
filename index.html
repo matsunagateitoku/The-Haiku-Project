@@ -1,3 +1,156 @@
+
+Haiku
+/
+You said: Yes — you're at about 95% of this session.
+Yes — you're at about 95% of this session. Start a new chat now before you hit the limit mid-conversation.
+When you open the new chat, paste this to get back up to speed quickly:
+I'm building a static haiku website generated from AI_Haiku.xlsx. The project lives in a GitHub repo called haiku-site with this structure:
+
+haiku-site/
+  generate_haiku_pages.py   ← Python site generator
+  AI_Haiku.xlsx             ← master spreadsheet (Edo + Modern sheets)
+  bios/                     ← poet bios as {slug}.txt
+  essays/                   ← saijiki essays as {kigo-slug}.txt
+  photos/                   ← poet photos as {slug}.jpg
+  site/                     ← generated output (gitignored)
+The generator produces: poem pages, poet bio pages, poet full-poem-list pages, saijiki entry pages, saijiki all-poems pages, and a saijiki index. I'm working in GitHub Codespaces. Next steps: write a CLAUDE.md file for the project, finish setting up the Codespace, and install Claude Code.
+That's enough context to pick up without re-explaining anything.
+
+Show more
+May 8
+Claude responded: Understood — saving that handoff note.
+Understood — saving that handoff note. Good luck in the new session!
+
+You said: make an index.
+make an index.hmtl page
+
+May 8
+Claude responded: Let me read the spreadsheet to understand what data we're working with.
+
+Viewed 3 files
+Viewed 3 files
+Let me read the spreadsheet to understand what data we're working with.
+
+
+Ran 2 commands
+Ran 2 commands
+Good — now I have a clear picture. 357 Edo + 641 Modern poems, organized by season and kigo. Let me build a polished index page.
+
+
+Ran 3 commands
+Ran 3 commands
+Now I have everything I need to build a beautiful index page.
+
+
+Created a file, read a file
+Created a file, read a file
+The page has:
+
+Split hero — dark left panel with title, stats (998 poems / 127 poets / 4 seasons), and animated fade-in; right panel cycles through four featured poems with Japanese text, romaji, translation, and kigo tags every 6 seconds
+Seasons grid — four cards (Spring/Summer/Autumn/Winter) with kanji watermarks, sample poem lines, and colored underline hover
+Two-column dark section explaining the Edo vs. Modern collections
+Saijiki table — 18 kigo entries with Japanese, romanization, and season-colored dots; "View All" links to the full index
+Poets cloud — all major names with Japanese; dashed chip for "All 127 poets"
+Footer with Japanese title and nav links
+All links are stub hrefs matching the URL structure you described (poet-{slug}.html, kigo-{slug}.html, season-{season}.html, etc.). The typography uses Cormorant Garamond + IM Fell English + Noto Serif JP — no Inter or system fonts.
+
+
+Index
+Code · HTML 
+You said: Fetching the repository
+Fetching the repository
+Determining the checkout info
+/usr/bin/git sparse-checkout disable
+/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Checking out the ref
+Setting up auth for fetching submodules
+Fetching submodules
+/usr/bin/git submodule sync --recursive
+/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+Error: fatal: No url found for submodule path 'bios' in .gitmodules
+Error: The process '/usr/bin/git' failed with exit code 128
+
+May 8
+Claude responded: That error means Git thinks bios/ is a submodule — likely because you accidentally did git add on a nested .
+That error means Git thinks bios/ is a submodule — likely because you accidentally did git add on a nested .git directory inside bios/. Fix:
+
+bash
+# Remove bios from git's index (doesn't delete the files)
+git rm --cached bios
+
+# Also check the other content dirs just in case
+git rm --cached essays photos 2>/dev/null
+
+# Confirm .gitmodules is clean (should be empty or not exist)
+cat .gitmodules
+
+# Re-add the directories as normal tracked folders
+git add bios/ essays/ photos/
+git commit -m "fix: remove spurious submodule, re-add as regular directories"
+git push
+If bios/ contained its own .git folder (which is what causes this), also run:
+
+bash
+rm -rf bios/.git essays/.git photos/.git
+before the git add step.
+
+You said: the index page needs to link to the poem pages
+the index page needs to link to the poem pages
+
+May 8
+Claude responded: What's the URL structure for poem pages?
+What's the URL structure for poem pages? Something like poem-{id}.html, or based on poet slug, or kigo slug?
+
+You said: edo-ajiwai-wa.
+edo-ajiwai-wa...   then .html
+
+May 8
+Claude responded: So the slug is derived from the romaji of the poem itself — first few words?
+So the slug is derived from the romaji of the poem itself — first few words? Can you share an example of the full slug format, e.g. what the page for the first Edo poem would be called?
+
+You said: whole poem romaji
+whole poem romaji
+
+May 8
+Claude responded: Got it.
+Got it. Let me generate the slugs from the full romaji and wire up the kigo items and season cards to actual poem pages — but first, the index page links are on the season cards and kigo entries, which point to aggregate pages (season-spring.html, kigo-ume.html), not individual poems.
+
+Do you want me to:
+
+Keep the aggregate page links as-is (season/kigo index pages you'll generate later), or
+Also add poem links somewhere on the index — e.g. the featured poems in the hero cycling through with a "Read poem" link to edo-{romaji-slug}.html or modern-{romaji-slug}.html?
+You said: yes
+yes
+
+May 8
+Claude responded: Good.
+
+Generate example slugs
+Generate example slugs
+Good. Now I'll update the hero featured poems with proper slugs and "Read poem →" links.
+
+
+Viewed a file, edited a file
+Viewed a file, edited a file
+Now update each featured poem block with the correct slug link:
+
+
+Edited 3 files, ran 3 commands, viewed 2 files
+Edited 3 files, ran 3 commands, viewed 2 files
+Each of the four featured poems in the hero now has a "Read poem →" link pointing to the correct modern-{full-romaji-slug}.html URL. The links are styled as understated small-caps text with a hover underline — unobtrusive but functional.
+
+
+Index
+Code · HTML 
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +160,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-
+ 
 <style>
   :root {
     --ink:     #1a1410;
@@ -19,11 +172,11 @@
     --fog:     #d6ccba;
     --muted:   #8a7d68;
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background-color: var(--cream);
     color: var(--ink);
@@ -32,7 +185,7 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
-
+ 
   /* ── GRAIN TEXTURE ── */
   body::before {
     content: '';
@@ -42,7 +195,7 @@
     z-index: 1000;
     opacity: 0.6;
   }
-
+ 
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
@@ -51,7 +204,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .hero-left {
     background-color: var(--ink);
     display: flex;
@@ -60,7 +213,7 @@
     padding: 80px 60px 80px 80px;
     position: relative;
   }
-
+ 
   .hero-left::after {
     content: '';
     position: absolute;
@@ -70,7 +223,7 @@
     background: linear-gradient(to right, transparent, var(--cream));
     z-index: 2;
   }
-
+ 
   .hero-right {
     display: flex;
     flex-direction: column;
@@ -78,7 +231,7 @@
     padding: 80px 80px 80px 100px;
     position: relative;
   }
-
+ 
   /* vertical brushstroke accent */
   .hero-right::before {
     content: '';
@@ -90,7 +243,7 @@
     background: linear-gradient(to bottom, transparent, var(--gold), transparent);
     opacity: 0.5;
   }
-
+ 
   .site-title {
     font-family: 'IM Fell English', Georgia, serif;
     font-size: clamp(2.8rem, 5vw, 4.5rem);
@@ -100,7 +253,7 @@
     letter-spacing: 0.02em;
     margin-bottom: 0.3em;
   }
-
+ 
   .site-title-jp {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(1.4rem, 2.5vw, 2rem);
@@ -109,7 +262,7 @@
     letter-spacing: 0.3em;
     margin-bottom: 2em;
   }
-
+ 
   .hero-desc {
     color: var(--muted);
     font-size: 1rem;
@@ -117,19 +270,19 @@
     line-height: 1.8;
     max-width: 340px;
   }
-
+ 
   .hero-stats {
     display: flex;
     gap: 40px;
     margin-top: 3em;
   }
-
+ 
   .stat {
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-
+ 
   .stat-number {
     font-size: 2.2rem;
     font-weight: 300;
@@ -137,20 +290,20 @@
     line-height: 1;
     letter-spacing: -0.02em;
   }
-
+ 
   .stat-label {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--muted);
   }
-
+ 
   /* Featured poem on right side */
   .featured-poem {
     opacity: 0;
     animation: fadeUp 1.2s ease 0.4s forwards;
   }
-
+ 
   .featured-label {
     font-size: 0.68rem;
     text-transform: uppercase;
@@ -158,7 +311,7 @@
     color: var(--muted);
     margin-bottom: 1.5em;
   }
-
+ 
   .poem-jp {
     font-family: 'Noto Serif JP', serif;
     font-size: 1.6rem;
@@ -168,7 +321,7 @@
     margin-bottom: 0.8em;
     writing-mode: horizontal-tb;
   }
-
+ 
   .poem-romaji {
     font-style: italic;
     color: var(--muted);
@@ -176,7 +329,7 @@
     margin-bottom: 1.4em;
     letter-spacing: 0.04em;
   }
-
+ 
   .poem-translation {
     font-size: 1.35rem;
     font-weight: 300;
@@ -186,14 +339,14 @@
     padding-left: 1.2em;
     margin-bottom: 1.2em;
   }
-
+ 
   .poem-attribution {
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--muted);
   }
-
+ 
   .poem-kigo-tag {
     display: inline-block;
     margin-top: 0.8em;
@@ -205,7 +358,25 @@
     padding: 2px 8px;
     opacity: 0.7;
   }
-
+ 
+  .poem-read-link {
+    display: inline-block;
+    margin-top: 1.4em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--sepia);
+    text-decoration: none;
+    border-bottom: 1px solid var(--fog);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+ 
+  .poem-read-link:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+ 
   /* ── SECTION DIVIDER ── */
   .rule {
     width: 100%;
@@ -213,42 +384,42 @@
     background: linear-gradient(to right, transparent, var(--fog) 20%, var(--fog) 80%, transparent);
     margin: 0;
   }
-
+ 
   /* ── SEASONS SECTION ── */
   .seasons-section {
     padding: 100px 80px;
     max-width: 1400px;
     margin: 0 auto;
   }
-
+ 
   .section-header {
     display: flex;
     align-items: baseline;
     gap: 1.5em;
     margin-bottom: 3em;
   }
-
+ 
   .section-title {
     font-family: 'IM Fell English', serif;
     font-size: 2.2rem;
     font-weight: 400;
     color: var(--ink);
   }
-
+ 
   .section-subtitle {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.22em;
     color: var(--muted);
   }
-
+ 
   .seasons-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
     background: var(--fog);
   }
-
+ 
   .season-card {
     background: var(--cream);
     padding: 48px 36px;
@@ -260,11 +431,11 @@
     color: inherit;
     display: block;
   }
-
+ 
   .season-card:hover {
     background: var(--parchment);
   }
-
+ 
   .season-card::before {
     content: '';
     position: absolute;
@@ -274,14 +445,14 @@
     transform-origin: left;
     transition: transform 0.4s ease;
   }
-
+ 
   .season-card:hover::before { transform: scaleX(1); }
-
+ 
   .season-card.spring::before  { background: #7fa87a; }
   .season-card.summer::before  { background: var(--rust); }
   .season-card.autumn::before  { background: #b07840; }
   .season-card.winter::before  { background: #708090; }
-
+ 
   .season-kanji {
     font-family: 'Noto Serif JP', serif;
     font-size: 3.5rem;
@@ -292,18 +463,18 @@
     position: absolute;
     top: 20px; right: 24px;
   }
-
+ 
   .season-card.spring  .season-kanji { color: #4a8c45; }
   .season-card.summer  .season-kanji { color: var(--rust); }
   .season-card.autumn  .season-kanji { color: #8b5a2b; }
   .season-card.winter  .season-kanji { color: #506070; }
-
+ 
   .season-name {
     font-family: 'IM Fell English', serif;
     font-size: 1.6rem;
     margin-bottom: 0.15em;
   }
-
+ 
   .season-romaji {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -311,7 +482,7 @@
     color: var(--muted);
     margin-bottom: 1.8em;
   }
-
+ 
   .season-sample {
     font-size: 0.9rem;
     font-style: italic;
@@ -319,14 +490,14 @@
     color: var(--sepia);
     margin-bottom: 1.4em;
   }
-
+ 
   .season-count {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--muted);
   }
-
+ 
   /* ── TWO-COLUMN MIDDLE SECTION ── */
   .about-section {
     background: var(--ink);
@@ -337,7 +508,7 @@
     gap: 100px;
     align-items: start;
   }
-
+ 
   .about-heading {
     font-family: 'IM Fell English', serif;
     font-size: 1.9rem;
@@ -345,32 +516,32 @@
     margin-bottom: 1.2em;
     color: var(--gold);
   }
-
+ 
   .about-text {
     font-size: 1rem;
     line-height: 1.85;
     color: #b8aa94;
     font-weight: 300;
   }
-
+ 
   .about-text + .about-text {
     margin-top: 1em;
   }
-
+ 
   /* ── SAIJIKI SECTION ── */
   .saijiki-section {
     padding: 100px 80px;
     max-width: 1400px;
     margin: 0 auto;
   }
-
+ 
   .kigo-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     border: 1px solid var(--fog);
   }
-
+ 
   .kigo-item {
     padding: 20px 28px;
     border-bottom: 1px solid var(--fog);
@@ -384,18 +555,18 @@
     transition: background 0.2s;
     cursor: pointer;
   }
-
+ 
   .kigo-item:hover {
     background: var(--parchment);
   }
-
+ 
   .kigo-jp { 
     font-family: 'Noto Serif JP', serif; 
     font-size: 1rem;
     color: var(--sepia); 
     margin-right: 10px;
   }
-
+ 
   .kigo-rom {
     font-style: italic;
     color: var(--muted);
@@ -405,21 +576,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
+ 
   .kigo-season-dot {
     width: 7px; height: 7px;
     border-radius: 50%;
     flex-shrink: 0;
     margin-left: 12px;
   }
-
+ 
   .dot-spring { background: #7fa87a; }
   .dot-summer { background: #c05a40; }
   .dot-autumn { background: #b07840; }
   .dot-winter { background: #708090; }
   .dot-newyear { background: var(--gold); }
   .dot-other { background: var(--muted); }
-
+ 
   .show-more-btn {
     display: block;
     width: 100%;
@@ -436,24 +607,24 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
+ 
   .show-more-btn:hover {
     background: var(--parchment);
     color: var(--ink);
   }
-
+ 
   /* ── POETS SECTION ── */
   .poets-section {
     background: var(--parchment);
     padding: 100px 80px;
   }
-
+ 
   .poets-section .section-header {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
   }
-
+ 
   .poets-flow {
     max-width: 1400px;
     margin: 0 auto;
@@ -461,7 +632,7 @@
     flex-wrap: wrap;
     gap: 12px;
   }
-
+ 
   .poet-chip {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.92rem;
@@ -476,19 +647,19 @@
     align-items: center;
     gap: 8px;
   }
-
+ 
   .poet-chip:hover {
     background: var(--ink);
     color: var(--cream);
     border-color: var(--ink);
   }
-
+ 
   .poet-chip-jp {
     font-family: 'Noto Serif JP', serif;
     font-size: 0.8rem;
     opacity: 0.6;
   }
-
+ 
   /* ── FOOTER ── */
   footer {
     background: var(--ink);
@@ -501,7 +672,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-
+ 
   footer .footer-title {
     font-family: 'Noto Serif JP', serif;
     font-size: 1rem;
@@ -509,26 +680,26 @@
     letter-spacing: 0.3em;
     text-transform: none;
   }
-
+ 
   .footer-links {
     display: flex;
     gap: 2em;
   }
-
+ 
   .footer-links a {
     color: var(--muted);
     text-decoration: none;
     transition: color 0.2s;
   }
-
+ 
   .footer-links a:hover { color: var(--gold); }
-
+ 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
+ 
   .hero-left > * {
     opacity: 0;
     animation: fadeUp 0.9s ease forwards;
@@ -537,7 +708,7 @@
   .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
   .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
   .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
-
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; }
@@ -552,16 +723,16 @@
     .poets-section { padding: 60px 40px; }
     footer { flex-direction: column; gap: 2em; text-align: center; padding: 40px; }
   }
-
+ 
   @media (max-width: 600px) {
     .seasons-grid { grid-template-columns: 1fr; }
     .kigo-list { grid-template-columns: 1fr; }
     .hero-stats { flex-wrap: wrap; gap: 24px; }
   }
-
+ 
   /* Poem cycling animation */
   .featured-poem { position: relative; }
-
+ 
   .poem-cycle {
     display: none;
   }
@@ -572,7 +743,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-left">
@@ -596,10 +767,10 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="hero-right">
     <div id="featured-poem" class="featured-poem">
-
+ 
       <div class="poem-cycle active" id="poem-0">
         <div class="featured-label">Featured Poem · Autumn</div>
         <div class="poem-jp">糸瓜咲いて痰のつまりし仏かな</div>
@@ -611,8 +782,9 @@
         </div>
         <div class="poem-attribution">Masaoka Shiki · 1902</div>
         <div class="poem-kigo-tag">hechima · sponge gourd</div>
+        <a href="modern-hechima-saite-tan-no-tsumarishi-hotoke-kana.html" class="poem-read-link">Read poem →</a>
       </div>
-
+ 
       <div class="poem-cycle" id="poem-1">
         <div class="featured-label">Featured Poem · Winter</div>
         <div class="poem-jp">木の陰やわが影動く冬の月</div>
@@ -624,8 +796,9 @@
         </div>
         <div class="poem-attribution">Masaoka Shiki</div>
         <div class="poem-kigo-tag">fuyu no tsuki · winter moon</div>
+        <a href="modern-ki-no-kage-ya-waga-kage-ugoku-fuyu-no-tsuki.html" class="poem-read-link">Read poem →</a>
       </div>
-
+ 
       <div class="poem-cycle" id="poem-2">
         <div class="featured-label">Featured Poem · Summer</div>
         <div class="poem-jp">時鳥恋に寝ぬ夜の若かりし</div>
@@ -637,8 +810,9 @@
         </div>
         <div class="poem-attribution">Hozumi Eiki · 1823–1904</div>
         <div class="poem-kigo-tag">hototogisu · little cuckoo</div>
+        <a href="modern-hototogisu-koi-ni-nenu-yo-no-wakakarishi.html" class="poem-read-link">Read poem &rarr;</a>
       </div>
-
+ 
       <div class="poem-cycle" id="poem-3">
         <div class="featured-label">Featured Poem · Spring</div>
         <div class="poem-jp">砂浜にきらたの光る春日中</div>
@@ -650,14 +824,15 @@
         </div>
         <div class="poem-attribution">Masaoka Shiki</div>
         <div class="poem-kigo-tag">haru-bi · spring day</div>
+        <a href="modern-sunahama-ni-kirata-no-hikaru-haru-hinaka.html" class="poem-read-link">Read poem &rarr;</a>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <div class="rule"></div>
-
+ 
 <!-- ── SEASONS ── -->
 <section class="seasons-section">
   <div class="section-header">
@@ -665,7 +840,7 @@
     <span class="section-subtitle">季節 · kisetsu</span>
   </div>
   <div class="seasons-grid">
-
+ 
     <a href="season-spring.html" class="season-card spring">
       <div class="season-kanji">春</div>
       <div class="season-name">Spring</div>
@@ -675,7 +850,7 @@
       </div>
       <div class="season-count">281 poems</div>
     </a>
-
+ 
     <a href="season-summer.html" class="season-card summer">
       <div class="season-kanji">夏</div>
       <div class="season-name">Summer</div>
@@ -685,7 +860,7 @@
       </div>
       <div class="season-count">224 poems</div>
     </a>
-
+ 
     <a href="season-autumn.html" class="season-card autumn">
       <div class="season-kanji">秋</div>
       <div class="season-name">Autumn</div>
@@ -695,7 +870,7 @@
       </div>
       <div class="season-count">206 poems</div>
     </a>
-
+ 
     <a href="season-winter.html" class="season-card winter">
       <div class="season-kanji">冬</div>
       <div class="season-name">Winter</div>
@@ -705,12 +880,12 @@
       </div>
       <div class="season-count">157 poems</div>
     </a>
-
+ 
   </div>
 </section>
-
+ 
 <div class="rule"></div>
-
+ 
 <!-- ── ABOUT / EDO vs MODERN ── -->
 <section class="about-section">
   <div>
@@ -732,18 +907,18 @@
     </p>
   </div>
 </section>
-
+ 
 <div class="rule"></div>
-
+ 
 <!-- ── SAIJIKI / KIGO ── -->
 <section class="saijiki-section">
   <div class="section-header">
     <h2 class="section-title">Saijiki</h2>
     <span class="section-subtitle">歳時記 · seasonal almanac</span>
   </div>
-
+ 
   <div class="kigo-list" id="kigo-list">
-
+ 
     <a href="kigo-ume.html" class="kigo-item">
       <span><span class="kigo-jp">梅</span><span class="kigo-rom">ume · plum blossoms</span></span>
       <span class="kigo-season-dot dot-spring"></span>
@@ -816,12 +991,12 @@
       <span><span class="kigo-jp">菫</span><span class="kigo-rom">sumire · violets</span></span>
       <span class="kigo-season-dot dot-spring"></span>
     </a>
-
+ 
   </div>
   <button class="show-more-btn" onclick="window.location.href='saijiki-index.html'">
     View All Saijiki Entries →
   </button>
-
+ 
   <!-- Legend -->
   <div style="display:flex; gap:1.8em; margin-top:2em; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--muted);">
     <span><span class="kigo-season-dot dot-spring" style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:#7fa87a;"></span>Spring</span>
@@ -831,9 +1006,9 @@
     <span><span style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:var(--gold);"></span>New Year</span>
   </div>
 </section>
-
+ 
 <div class="rule"></div>
-
+ 
 <!-- ── POETS ── -->
 <section class="poets-section">
   <div class="section-header">
@@ -855,7 +1030,7 @@
     <a href="poets.html" class="poet-chip" style="border-style:dashed; color:var(--muted);">All 127 poets →</a>
   </div>
 </section>
-
+ 
 <!-- ── FOOTER ── -->
 <footer>
   <div>
@@ -869,18 +1044,20 @@
     <a href="sources.html">Sources</a>
   </div>
 </footer>
-
+ 
 <script>
   // Cycle through featured poems
   let current = 0;
   const poems = document.querySelectorAll('.poem-cycle');
-
+ 
   setInterval(() => {
     poems[current].classList.remove('active');
     current = (current + 1) % poems.length;
     poems[current].classList.add('active');
   }, 6000);
 </script>
-
+ 
 </body>
 </html>
+ 
+
