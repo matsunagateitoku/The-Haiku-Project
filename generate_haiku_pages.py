@@ -1,958 +1,908 @@
-#!/usr/bin/env python3
-"""
-generate_haiku_pages.py
-
-Generates a complete static site from AI_Haiku.xlsx:
-  poems/         one HTML page per poem
-  poets/         one bio page per poet + one full poems-list page per poet
-  photos/        place poet photos here as {poet-slug}.jpg
-  index.html     master index (future)
-
-Usage:
-    python generate_haiku_pages.py
-    python generate_haiku_pages.py --xlsx path/to/AI_Haiku.xlsx --out path/to/site
-
-Poet bios:  place plain-text files in a bios/ folder next to this script,
-            named {poet-slug}.txt  e.g.  bios/masaoka-shiki.txt
-            Separate paragraphs with a blank line.
-
-Poet photos: place image files in a photos/ folder next to this script,
-             named {poet-slug}.jpg  e.g.  photos/masaoka-shiki.jpg
-             Supported: .jpg .jpeg .png .webp
-"""
-
-import argparse
-import math
-import os
-import re
-import shutil
-import unicodedata
-import pandas as pd
-
-# ---------------------------------------------------------------------------
-# Shared assets
-# ---------------------------------------------------------------------------
-
-FONTS = (
-    '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-    '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400'
-    '&family=IM+Fell+English:ital@0;1'
-    '&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600'
-    '&display=swap" rel="stylesheet">'
-)
-
-BASE_CSS = """
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { background: #ede8df; width: 100%; min-height: 100vh; }
-.page-bg { background: #ede8df; min-height: 100vh; width: 100%; padding: 3rem 1.5rem; }
-a { color: inherit; }
-.section-divider { display: flex; align-items: center; gap: 1rem; margin: 2.5rem 0 1.25rem; }
-.section-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; white-space: nowrap; }
-.section-rule { flex: 1; height: 1px; background: #999; }
-.ext-links { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #ccc8c0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.ext-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
-.ext-link:hover { color: #444; }
-"""
-
-POEM_CSS = """
-.haiku-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
-.season-banner { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
-.season-pill { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #666; border: 1px solid #999; padding: 4px 12px; border-radius: 6px; text-decoration: none; }
-.season-line { flex: 1; height: 1px; background: #999; }
-.season-word-jp { font-family: "Noto Serif JP", serif; font-size: 13px; color: #666; }
-.poem-block { margin: 0 0 3.5rem; }
-.poem-japanese { font-family: "Noto Serif JP", serif; font-size: 22px; font-weight: 300; letter-spacing: 0.12em; line-height: 2; margin: 0 0 0.5rem; color: #1a1a1a; }
-.poem-romaji { font-size: 15px; font-style: italic; color: #666; letter-spacing: 0.05em; line-height: 1.6; font-family: "IM Fell English", Georgia, serif; }
-.poem-translation { font-size: 30px; font-weight: 600; line-height: 1.5; color: #1a1a1a; margin: 1.5rem 0; }
-.poem-translation span { display: block; padding-left: 96px; }
-.prose-section { font-size: 17px; line-height: 1.75; color: #1a1a1a; margin-bottom: 2rem; font-weight: 300; }
-.prose-section p { margin: 0 0 1rem; }
-.prose-section p:last-child { margin-bottom: 0; }
-.translation-notes { font-size: 17px; line-height: 1.75; color: #1a1a1a; margin-bottom: 2rem; font-weight: 300; }
-.translation-notes p { margin: 0 0 1rem; }
-.translation-notes p:last-child { margin-bottom: 0; }
-.metadata-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border: 1px solid #999; border-radius: 8px; overflow: hidden; }
-.meta-cell { padding: 12px 16px; border-right: 1px solid #999; border-bottom: 1px solid #999; background: #e6e0d6; }
-.meta-cell:nth-child(3n) { border-right: none; }
-.meta-cell:nth-child(n+4) { border-bottom: none; }
-.meta-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 5px; }
-.meta-value { font-size: 15px; color: #1a1a1a; font-weight: 400; line-height: 1.3; }
-.meta-value-jp { font-family: "Noto Serif JP", serif; font-size: 14px; color: #666; display: block; margin-top: 2px; }
-.poet-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
-.poet-link:hover { color: #1a1a1a; }
-"""
-
-POET_CSS = """
-.poet-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
-.page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-.page-label-line { flex: 1; height: 1px; background: #999; }
-.poet-intro { display: flex; gap: 1.75rem; align-items: flex-start; margin-bottom: 3rem; }
-.poet-intro-left { flex: 1; min-width: 0; }
-.poet-name-en { font-size: 36px; font-weight: 300; line-height: 1.2; color: #1a1a1a; margin-bottom: 0.4rem; }
-.poet-name-row { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
-.poet-name-jp { font-family: "Noto Serif JP", serif; font-size: 18px; font-weight: 300; color: #666; }
-.poet-dates { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 12px; color: #999; letter-spacing: 0.05em; }
-.poet-meta-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-.poet-tag { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; border: 1px solid #999; padding: 3px 10px; border-radius: 4px; }
-.bio-text { font-size: 16px; line-height: 1.75; color: #1a1a1a; font-weight: 300; }
-.bio-text p { margin: 0 0 1rem; }
-.bio-text p:last-child { margin-bottom: 0; }
-.poet-photo { flex-shrink: 0; width: 140px; }
-.poet-photo img { width: 140px; display: block; border: 1px solid #ccc8c0; filter: grayscale(25%); }
-.photo-caption { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 9px; letter-spacing: 0.05em; color: #aaa; margin-top: 6px; text-align: center; line-height: 1.4; }
-.poem-entry { padding: 1.25rem 0; border-bottom: 1px solid #ccc8c0; text-decoration: none; display: block; color: inherit; }
-.poem-entry:first-child { border-top: 1px solid #ccc8c0; }
-.poem-entry:hover .poem-entry-jp { color: #1a1a1a; }
-.poem-entry-jp { font-family: "Noto Serif JP", serif; font-size: 16px; font-weight: 300; letter-spacing: 0.1em; color: #444; margin-bottom: 0.3rem; }
-.poem-entry-romaji { font-family: "IM Fell English", Georgia, serif; font-size: 13px; font-style: italic; color: #888; margin-bottom: 0.4rem; }
-.poem-entry-translation { font-size: 15px; font-weight: 300; color: #555; line-height: 1.4; }
-.poem-entry-season { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-top: 0.5rem; }
-.see-all { display: inline-block; margin-top: 1.75rem; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 2px; }
-.see-all:hover { color: #1a1a1a; }
-"""
-
-POEM_LIST_CSS = """
-.poet-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
-.page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-.page-label-line { flex: 1; height: 1px; background: #999; }
-.list-header { margin-bottom: 2.5rem; }
-.list-header-name { font-size: 28px; font-weight: 300; color: #1a1a1a; margin-bottom: 0.25rem; }
-.list-header-sub { font-family: "Noto Serif JP", serif; font-size: 16px; color: #888; }
-.season-group { margin-bottom: 2rem; }
-.season-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #ccc8c0; }
-.poem-entry { padding: 1rem 0; border-bottom: 1px solid #e8e3d8; text-decoration: none; display: block; color: inherit; }
-.poem-entry:hover .poem-entry-jp { color: #1a1a1a; }
-.poem-entry-jp { font-family: "Noto Serif JP", serif; font-size: 15px; font-weight: 300; letter-spacing: 0.1em; color: #444; margin-bottom: 0.25rem; }
-.poem-entry-romaji { font-family: "IM Fell English", Georgia, serif; font-size: 13px; font-style: italic; color: #888; margin-bottom: 0.25rem; }
-.poem-entry-translation { font-size: 14px; font-weight: 300; color: #666; line-height: 1.4; }
-.back-link { display: inline-block; margin-top: 2rem; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 2px; }
-.back-link:hover { color: #1a1a1a; }
-"""
-
-
-SAIJIKI_CSS = """
-.saijiki-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
-.page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-.page-label-line { flex: 1; height: 1px; background: #999; }
-.kigo-header { margin-bottom: 3rem; }
-.kigo-name-en { font-size: 38px; font-weight: 300; line-height: 1.2; color: #1a1a1a; margin-bottom: 0.4rem; }
-.kigo-name-row { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
-.kigo-name-jp { font-family: "Noto Serif JP", serif; font-size: 20px; font-weight: 300; color: #666; }
-.kigo-romaji { font-family: "IM Fell English", Georgia, serif; font-size: 16px; font-style: italic; color: #888; }
-.kigo-meta-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.kigo-tag { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; border: 1px solid #999; padding: 3px 10px; border-radius: 4px; }
-.essay-text { font-size: 17px; line-height: 1.85; color: #1a1a1a; font-weight: 300; }
-.essay-text p { margin: 0 0 1.25rem; }
-.essay-text p:last-child { margin-bottom: 0; }
-.saijiki-poem { padding: 1.5rem 0; border-bottom: 1px solid #ccc8c0; }
-.saijiki-poem:first-child { border-top: 1px solid #ccc8c0; }
-.saijiki-poem-jp { font-family: "Noto Serif JP", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.12em; line-height: 2; margin-bottom: 0.3rem; color: #1a1a1a; }
-.saijiki-poem-romaji { font-family: "IM Fell English", Georgia, serif; font-size: 14px; font-style: italic; color: #888; margin-bottom: 0.75rem; }
-.saijiki-poem-translation { font-size: 22px; font-weight: 600; line-height: 1.5; color: #1a1a1a; margin-bottom: 0.75rem; }
-.saijiki-poem-translation span { display: block; padding-left: 60px; }
-.saijiki-poem-poet { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; }
-.saijiki-poem-poet-jp { font-family: "Noto Serif JP", serif; font-size: 13px; text-transform: none; letter-spacing: 0.05em; color: #aaa; }
-.saijiki-poem-link { font-size: 10px; color: #aaa; text-decoration: none; border-bottom: 1px solid #ccc; padding-bottom: 1px; }
-.saijiki-poem-link:hover { color: #666; }
-.see-all { display: inline-block; margin-top: 1.75rem; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 2px; }
-.see-all:hover { color: #1a1a1a; }
-"""
-
-SAIJIKI_LIST_CSS = """
-.saijiki-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
-.page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-.page-label-line { flex: 1; height: 1px; background: #999; }
-.list-header { margin-bottom: 2.5rem; }
-.list-header-name { font-size: 28px; font-weight: 300; color: #1a1a1a; margin-bottom: 0.25rem; }
-.list-header-sub { font-family: "Noto Serif JP", serif; font-size: 16px; color: #888; }
-.poem-entry { padding: 1rem 0; border-bottom: 1px solid #e8e3d8; text-decoration: none; display: block; color: inherit; }
-.poem-entry:first-child { border-top: 1px solid #ccc8c0; }
-.poem-entry:hover .poem-entry-jp { color: #1a1a1a; }
-.poem-entry-jp { font-family: "Noto Serif JP", serif; font-size: 15px; font-weight: 300; letter-spacing: 0.1em; color: #444; margin-bottom: 0.25rem; }
-.poem-entry-romaji { font-family: "IM Fell English", Georgia, serif; font-size: 13px; font-style: italic; color: #888; margin-bottom: 0.25rem; }
-.poem-entry-translation { font-size: 14px; font-weight: 300; color: #666; line-height: 1.4; }
-.poem-entry-poet { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #aaa; margin-top: 0.4rem; }
-.back-link { display: inline-block; margin-top: 2rem; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 2px; }
-.back-link:hover { color: #1a1a1a; }
-"""
-
-SAIJIKI_INDEX_CSS = """
-.saijiki-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
-.page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
-.page-label-line { flex: 1; height: 1px; background: #999; }
-.index-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 3rem; }
-.season-group { margin-bottom: 3rem; }
-.season-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #999; }
-.kigo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #ccc8c0; border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; }
-.kigo-entry { background: #ede8df; padding: 0.75rem 1rem; text-decoration: none; display: block; color: inherit; }
-.kigo-entry:hover { background: #e6e0d6; }
-.kigo-entry-en { font-size: 16px; font-weight: 300; color: #1a1a1a; margin-bottom: 0.2rem; }
-.kigo-entry-jp { font-family: "Noto Serif JP", serif; font-size: 13px; color: #888; }
-.kigo-entry-count { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; color: #aaa; margin-top: 0.2rem; }
-"""
-
-
-SEASON_ORDER = ["Spring", "Summer", "Autumn", "Winter", "New Year"]
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def val(v):
-    if v is None or (isinstance(v, float) and math.isnan(v)):
-        return ""
-    return str(v).strip()
-
-
-def slugify(text, max_len=60):
-    text = unicodedata.normalize("NFKD", text)
-    text = text.encode("ascii", "ignore").decode("ascii")
-    text = re.sub(r"[^\w\s-]", "", text).strip().lower()
-    text = re.sub(r"[\s_-]+", "-", text)
-    return text[:max_len].rstrip("-") or "unknown"
-
-
-def romaji_inline(raw):
-    parts = [p.strip() for p in raw.replace("\\n", "\n").splitlines() if p.strip()]
-    return " / ".join(parts)
-
-
-def translation_inline(raw):
-    lines = [l.strip() for l in raw.replace("\\n", "\n").splitlines() if l.strip()]
-    return " / ".join(lines)
-
-
-def translation_html(raw):
-    lines = [l.strip() for l in raw.replace("\\n", "\n").splitlines() if l.strip()]
-    return "\n".join(f'      <span>{l}</span>' for l in lines)
-
-
-def kigo_parts(kigo_raw):
-    raw = val(kigo_raw)
-    if not raw:
-        return "—", "—", ""
-    parts = raw.split(",", 1)
-    en = parts[0].strip() if parts else raw
-    en_clean = re.sub(r"[^\x00-\x7F【】]+", "", en).strip()
-    en_clean = re.sub(r"【[^】]*】", "", en_clean).strip()
-    short = re.sub(r".*】\s*", "", en).strip() or en_clean
-    jp_match = re.search(r"([\u4e00-\u9fff\u3040-\u30ff]+\s*【[^】]+】)", raw)
-    jp = jp_match.group(1) if jp_match else ""
-    return short or raw, en_clean or raw, jp
-
-
-def build_section(label, text, cls="prose-section"):
-    if not text:
-        return ""
-    paras = "\n".join(f"    <p>{p.strip()}</p>" for p in text.split("\n") if p.strip())
-    return f"""  <div class="section-divider">
-    <span class="section-label">{label}</span>
-    <div class="section-rule"></div>
-  </div>
-  <div class="{cls}">
-{paras}
-  </div>
-"""
-
-
-def html_page(title, css, body):
-    return f"""<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title}</title>
-{FONTS}
-<style>{BASE_CSS}{css}</style>
+<title>An Anthology of Haiku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:     #1a1410;
+    --sepia:   #5c4a30;
+    --rust:    #8b3a2a;
+    --gold:    #c9a84c;
+    --cream:   #f7f2e8;
+    --parchment: #ede5d0;
+    --fog:     #d6ccba;
+    --muted:   #8a7d68;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background-color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 0; bottom: 0;
+    width: 80px;
+    background: linear-gradient(to right, transparent, var(--cream));
+    z-index: 2;
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 80px 80px 100px;
+    position: relative;
+  }
+
+  /* vertical brushstroke accent */
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.5;
+  }
+
+  .site-title {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.3em;
+  }
+
+  .site-title-jp {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: var(--fog);
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    margin-bottom: 2em;
+  }
+
+  .hero-desc {
+    color: var(--muted);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.8;
+    max-width: 340px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 3em;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  /* Featured poem on right side */
+  .featured-poem {
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.4s forwards;
+  }
+
+  .featured-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    margin-bottom: 1.5em;
+  }
+
+  .poem-jp {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--sepia);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.8em;
+    writing-mode: horizontal-tb;
+  }
+
+  .poem-romaji {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.4em;
+    letter-spacing: 0.04em;
+  }
+
+  .poem-translation {
+    font-size: 1.35rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink);
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+  .poem-attribution {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+
+  .poem-kigo-tag {
+    display: inline-block;
+    margin-top: 0.8em;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--rust);
+    border: 1px solid var(--rust);
+    padding: 2px 8px;
+    opacity: 0.7;
+  }
+
+  .poem-read-link {
+    display: inline-block;
+    margin-top: 1.4em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--sepia);
+    text-decoration: none;
+    border-bottom: 1px solid var(--fog);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .poem-read-link:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--fog) 20%, var(--fog) 80%, transparent);
+    margin: 0;
+  }
+
+  /* ── SEASONS SECTION ── */
+  .seasons-section {
+    padding: 100px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5em;
+    margin-bottom: 3em;
+  }
+
+  .section-title {
+    font-family: 'IM Fell English', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .section-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+  }
+
+  .seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--fog);
+  }
+
+  .season-card {
+    background: var(--cream);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .season-card:hover {
+    background: var(--parchment);
+  }
+
+  .season-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .season-card:hover::before { transform: scaleX(1); }
+
+  .season-card.spring::before  { background: #7fa87a; }
+  .season-card.summer::before  { background: var(--rust); }
+  .season-card.autumn::before  { background: #b07840; }
+  .season-card.winter::before  { background: #708090; }
+
+  .season-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0.3em;
+    opacity: 0.12;
+    position: absolute;
+    top: 20px; right: 24px;
+  }
+
+  .season-card.spring  .season-kanji { color: #4a8c45; }
+  .season-card.summer  .season-kanji { color: var(--rust); }
+  .season-card.autumn  .season-kanji { color: #8b5a2b; }
+  .season-card.winter  .season-kanji { color: #506070; }
+
+  .season-name {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.15em;
+  }
+
+  .season-romaji {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    margin-bottom: 1.8em;
+  }
+
+  .season-sample {
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--sepia);
+    margin-bottom: 1.4em;
+  }
+
+  .season-count {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+
+  /* ── TWO-COLUMN MIDDLE SECTION ── */
+  .about-section {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .about-heading {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 1.2em;
+    color: var(--gold);
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #b8aa94;
+    font-weight: 300;
+  }
+
+  .about-text + .about-text {
+    margin-top: 1em;
+  }
+
+  /* ── SAIJIKI SECTION ── */
+  .saijiki-section {
+    padding: 100px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .kigo-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--fog);
+  }
+
+  .kigo-item {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--fog);
+    border-right: 1px solid var(--fog);
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .kigo-item:hover {
+    background: var(--parchment);
+  }
+
+  .kigo-jp { 
+    font-family: 'Noto Serif JP', serif; 
+    font-size: 1rem;
+    color: var(--sepia); 
+    margin-right: 10px;
+  }
+
+  .kigo-rom {
+    font-style: italic;
+    color: var(--muted);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .kigo-season-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+
+  .dot-spring { background: #7fa87a; }
+  .dot-summer { background: #c05a40; }
+  .dot-autumn { background: #b07840; }
+  .dot-winter { background: #708090; }
+  .dot-newyear { background: var(--gold); }
+  .dot-other { background: var(--muted); }
+
+  .show-more-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background: none;
+    border: 1px solid var(--fog);
+    border-top: none;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .show-more-btn:hover {
+    background: var(--parchment);
+    color: var(--ink);
+  }
+
+  /* ── POETS SECTION ── */
+  .poets-section {
+    background: var(--parchment);
+    padding: 100px 80px;
+  }
+
+  .poets-section .section-header {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .poets-flow {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .poet-chip {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92rem;
+    padding: 6px 16px;
+    border: 1px solid var(--fog);
+    background: var(--cream);
+    color: var(--sepia);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .poet-chip:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  .poet-chip-jp {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--muted);
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  footer .footer-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    color: var(--fog);
+    letter-spacing: 0.3em;
+    text-transform: none;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2em;
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 60px 40px; min-height: 60vh; }
+    .hero-left::after { display: none; }
+    .hero-right { padding: 60px 40px; }
+    .hero-right::before { display: none; }
+    .seasons-grid { grid-template-columns: 1fr 1fr; }
+    .about-section { grid-template-columns: 1fr; gap: 48px; padding: 60px 40px; }
+    .kigo-list { grid-template-columns: 1fr 1fr; }
+    .seasons-section, .saijiki-section { padding: 60px 40px; }
+    .poets-section { padding: 60px 40px; }
+    footer { flex-direction: column; gap: 2em; text-align: center; padding: 40px; }
+  }
+
+  @media (max-width: 600px) {
+    .seasons-grid { grid-template-columns: 1fr; }
+    .kigo-list { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+  }
+
+  /* Poem cycling animation */
+  .featured-poem { position: relative; }
+
+  .poem-cycle {
+    display: none;
+  }
+  .poem-cycle.active {
+    display: block;
+    animation: fadeUp 0.8s ease forwards;
+  }
+</style>
 </head>
 <body>
-<div class="page-bg">
-{body}
-</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="site-title">An Anthology<br>of Haiku</div>
+    <div class="site-title-jp">俳句選集</div>
+    <div class="hero-desc">
+      A personal anthology of classical and modern Japanese haiku, gathered across the seasons — with translations, saijiki entries, and notes on the poets.
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">998</span>
+        <span class="stat-label">Poems</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">127</span>
+        <span class="stat-label">Poets</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Seasons</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div id="featured-poem" class="featured-poem">
+
+      <div class="poem-cycle active" id="poem-0">
+        <div class="featured-label">Featured Poem · Autumn</div>
+        <div class="poem-jp">糸瓜咲いて痰のつまりし仏かな</div>
+        <div class="poem-romaji">hechima saite / tan no tsumarishi / hotoke kana</div>
+        <div class="poem-translation">
+          The sponge-gourd has flowered!<br>
+          Look at the Buddha<br>
+          Choked with phlegm.
+        </div>
+        <div class="poem-attribution">Masaoka Shiki · 1902</div>
+        <div class="poem-kigo-tag">hechima · sponge gourd</div>
+        <a href="site/poems/modern-hechima-saite-tan-no-tsumarishi-hotoke-k.html" class="poem-read-link">Read poem →</a>
+      </div>
+
+      <div class="poem-cycle" id="poem-1">
+        <div class="featured-label">Featured Poem · Winter</div>
+        <div class="poem-jp">木の陰やわが影動く冬の月</div>
+        <div class="poem-romaji">ki no kage ya / waga kage ugoku / fuyu no tsuki</div>
+        <div class="poem-translation">
+          Shadows of the trees:<br>
+          my shadow wavers with them<br>
+          in the winter moonlight.
+        </div>
+        <div class="poem-attribution">Masaoka Shiki</div>
+        <div class="poem-kigo-tag">fuyu no tsuki · winter moon</div>
+        <a href="site/poems/modern-ki-no-kage-ya-waga-kage-ugoku-fuyu-no-ts.html" class="poem-read-link">Read poem →</a>
+      </div>
+
+      <div class="poem-cycle" id="poem-2">
+        <div class="featured-label">Featured Poem · Summer</div>
+        <div class="poem-jp">時鳥恋に寝ぬ夜の若かりし</div>
+        <div class="poem-romaji">hototogisu / koi ni nenu yo no / wakakarishi</div>
+        <div class="poem-translation">
+          The nightingales—<br>
+          When I was young it was love<br>
+          That kept me awake.
+        </div>
+        <div class="poem-attribution">Hozumi Eiki · 1823–1904</div>
+        <div class="poem-kigo-tag">hototogisu · little cuckoo</div>
+        <a href="site/poems/modern-hototogisu-koi-ni-nenu-yo-no-wakakarishi.html" class="poem-read-link">Read poem &rarr;</a>
+      </div>
+
+      <div class="poem-cycle" id="poem-3">
+        <div class="featured-label">Featured Poem · Spring</div>
+        <div class="poem-jp">砂浜にきらたの光る春日中</div>
+        <div class="poem-romaji">sunahama ni / kirata no hikaru / haru hinaka</div>
+        <div class="poem-translation">
+          On a sandy beach<br>
+          glassy chips sparkle<br>
+          in the spring sunshine.
+        </div>
+        <div class="poem-attribution">Masaoka Shiki</div>
+        <div class="poem-kigo-tag">haru-bi · spring day</div>
+        <a href="site/poems/modern-sunahama-ni-kirata-no-hikaru-haru-hinaka.html" class="poem-read-link">Read poem &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ── SEASONS ── -->
+<section class="seasons-section">
+  <div class="section-header">
+    <h2 class="section-title">By Season</h2>
+    <span class="section-subtitle">季節 · kisetsu</span>
+  </div>
+  <div class="seasons-grid">
+
+    <a href="season-spring.html" class="season-card spring">
+      <div class="season-kanji">春</div>
+      <div class="season-name">Spring</div>
+      <div class="season-romaji">Haru · 春</div>
+      <div class="season-sample">
+        "Spring rain<br>washing, combing<br>the willow hair."
+      </div>
+      <div class="season-count">281 poems</div>
+    </a>
+
+    <a href="season-summer.html" class="season-card summer">
+      <div class="season-kanji">夏</div>
+      <div class="season-name">Summer</div>
+      <div class="season-romaji">Natsu · 夏</div>
+      <div class="season-sample">
+        "The nightingales—<br>When I was young it was love<br>That kept me awake."
+      </div>
+      <div class="season-count">224 poems</div>
+    </a>
+
+    <a href="season-autumn.html" class="season-card autumn">
+      <div class="season-kanji">秋</div>
+      <div class="season-name">Autumn</div>
+      <div class="season-romaji">Aki · 秋</div>
+      <div class="season-sample">
+        "The sponge-gourd has flowered!<br>Look at the Buddha<br>Choked with phlegm."
+      </div>
+      <div class="season-count">206 poems</div>
+    </a>
+
+    <a href="season-winter.html" class="season-card winter">
+      <div class="season-kanji">冬</div>
+      <div class="season-name">Winter</div>
+      <div class="season-romaji">Fuyu · 冬</div>
+      <div class="season-sample">
+        "Shadows of the trees:<br>my shadow wavers with them<br>in the winter moonlight."
+      </div>
+      <div class="season-count">157 poems</div>
+    </a>
+
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ── ABOUT / EDO vs MODERN ── -->
+<section class="about-section">
+  <div>
+    <h2 class="about-heading">Edo Period</h2>
+    <p class="about-text">
+      The 357 poems in the Edo collection span roughly the seventeenth and eighteenth centuries — the age of Bashō, Buson, Taigi, and their contemporaries. These are the poems that established haiku's formal vocabulary: the season word as pivot, the cut that opens space between images, the asymmetry of the five-seven-five syllable count pressed against the asymmetry of the world.
+    </p>
+    <p class="about-text">
+      Many poems are drawn from manuscripts and anthologies of the period: the <em>Monkey's Raincoat</em>, the <em>Mushroom Collection</em>, the <em>Continuing Monkey's Raincoat</em>.
+    </p>
+  </div>
+  <div>
+    <h2 class="about-heading">Modern Period</h2>
+    <p class="about-text">
+      The 641 modern poems begin with Masaoka Shiki's reform of the form in the 1890s — the introduction of <em>shasei</em>, sketching from life — and continue through the twentieth century with Kyoshi, Hekigodō, Santōka, Shūson, and others who each remade haiku in their own terms.
+    </p>
+    <p class="about-text">
+      The modern collection is richer in documented biography and literary context. Deathbed poems, battlefield poems, poems of exile and return: the century offers haiku of unusual historical density.
+    </p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ── SAIJIKI / KIGO ── -->
+<section class="saijiki-section">
+  <div class="section-header">
+    <h2 class="section-title">Saijiki</h2>
+    <span class="section-subtitle">歳時記 · seasonal almanac</span>
+  </div>
+
+  <div class="kigo-list" id="kigo-list">
+
+    <a href="kigo-ume.html" class="kigo-item">
+      <span><span class="kigo-jp">梅</span><span class="kigo-rom">ume · plum blossoms</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+    <a href="kigo-yanagi.html" class="kigo-item">
+      <span><span class="kigo-jp">柳</span><span class="kigo-rom">yanagi · weeping willow</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+    <a href="kigo-harusame.html" class="kigo-item">
+      <span><span class="kigo-jp">春雨</span><span class="kigo-rom">harusame · spring rain</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+    <a href="kigo-kawazu.html" class="kigo-item">
+      <span><span class="kigo-jp">蛙</span><span class="kigo-rom">kawazu · frog</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+    <a href="kigo-hana.html" class="kigo-item">
+      <span><span class="kigo-jp">花</span><span class="kigo-rom">hana · cherry blossoms</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+    <a href="kigo-rakka.html" class="kigo-item">
+      <span><span class="kigo-jp">落花</span><span class="kigo-rom">rakka · falling blossoms</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+    <a href="kigo-hototogisu.html" class="kigo-item">
+      <span><span class="kigo-jp">時鳥</span><span class="kigo-rom">hototogisu · little cuckoo</span></span>
+      <span class="kigo-season-dot dot-summer"></span>
+    </a>
+    <a href="kigo-uchiwa.html" class="kigo-item">
+      <span><span class="kigo-jp">団扇</span><span class="kigo-rom">uchiwa · round fan</span></span>
+      <span class="kigo-season-dot dot-summer"></span>
+    </a>
+    <a href="kigo-natsu-no-yo.html" class="kigo-item">
+      <span><span class="kigo-jp">夏の夜</span><span class="kigo-rom">natsu no yo · summer night</span></span>
+      <span class="kigo-season-dot dot-summer"></span>
+    </a>
+    <a href="kigo-botan.html" class="kigo-item">
+      <span><span class="kigo-jp">牡丹</span><span class="kigo-rom">botan · tree peony</span></span>
+      <span class="kigo-season-dot dot-summer"></span>
+    </a>
+    <a href="kigo-amanogawa.html" class="kigo-item">
+      <span><span class="kigo-jp">天の川</span><span class="kigo-rom">ama-no-gawa · Milky Way</span></span>
+      <span class="kigo-season-dot dot-autumn"></span>
+    </a>
+    <a href="kigo-hechima.html" class="kigo-item">
+      <span><span class="kigo-jp">糸瓜</span><span class="kigo-rom">hechima · sponge gourd</span></span>
+      <span class="kigo-season-dot dot-autumn"></span>
+    </a>
+    <a href="kigo-yuki.html" class="kigo-item">
+      <span><span class="kigo-jp">雪</span><span class="kigo-rom">yuki · snow</span></span>
+      <span class="kigo-season-dot dot-winter"></span>
+    </a>
+    <a href="kigo-fuyu-no-tsuki.html" class="kigo-item">
+      <span><span class="kigo-jp">冬の月</span><span class="kigo-rom">fuyu no tsuki · winter moon</span></span>
+      <span class="kigo-season-dot dot-winter"></span>
+    </a>
+    <a href="kigo-kannazuki.html" class="kigo-item">
+      <span><span class="kigo-jp">神無月</span><span class="kigo-rom">kannazuki · Godless Month</span></span>
+      <span class="kigo-season-dot dot-winter"></span>
+    </a>
+    <a href="kigo-gancho.html" class="kigo-item">
+      <span><span class="kigo-jp">元朝</span><span class="kigo-rom">ganchō · New Year's morning</span></span>
+      <span class="kigo-season-dot dot-newyear"></span>
+    </a>
+    <a href="kigo-yukihotoke.html" class="kigo-item">
+      <span><span class="kigo-jp">雪仏</span><span class="kigo-rom">yuki botoke · snow Buddha</span></span>
+      <span class="kigo-season-dot dot-winter"></span>
+    </a>
+    <a href="kigo-sumire.html" class="kigo-item">
+      <span><span class="kigo-jp">菫</span><span class="kigo-rom">sumire · violets</span></span>
+      <span class="kigo-season-dot dot-spring"></span>
+    </a>
+
+  </div>
+  <button class="show-more-btn" onclick="window.location.href='saijiki-index.html'">
+    View All Saijiki Entries →
+  </button>
+
+  <!-- Legend -->
+  <div style="display:flex; gap:1.8em; margin-top:2em; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--muted);">
+    <span><span class="kigo-season-dot dot-spring" style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:#7fa87a;"></span>Spring</span>
+    <span><span class="kigo-season-dot dot-summer" style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:#c05a40;"></span>Summer</span>
+    <span><span class="kigo-season-dot dot-autumn" style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:#b07840;"></span>Autumn</span>
+    <span><span class="kigo-season-dot dot-winter" style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:#708090;"></span>Winter</span>
+    <span><span style="display:inline-block;vertical-align:middle;margin-right:5px;width:7px;height:7px;border-radius:50%;background:var(--gold);"></span>New Year</span>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ── POETS ── -->
+<section class="poets-section">
+  <div class="section-header">
+    <h2 class="section-title">Poets</h2>
+    <span class="section-subtitle">俳人 · haijin</span>
+  </div>
+  <div class="poets-flow">
+    <a href="poet-basho.html" class="poet-chip"><span class="poet-chip-jp">松尾芭蕉</span> Matsuo Bashō</a>
+    <a href="poet-buson.html" class="poet-chip"><span class="poet-chip-jp">与謝蕪村</span> Yosa Buson</a>
+    <a href="poet-issa.html" class="poet-chip"><span class="poet-chip-jp">小林一茶</span> Kobayashi Issa</a>
+    <a href="poet-shiki.html" class="poet-chip"><span class="poet-chip-jp">正岡子規</span> Masaoka Shiki</a>
+    <a href="poet-kyoshi.html" class="poet-chip"><span class="poet-chip-jp">高浜虚子</span> Takahama Kyoshi</a>
+    <a href="poet-hekigodo.html" class="poet-chip"><span class="poet-chip-jp">河東碧梧桐</span> Kawahigashi Hekigodō</a>
+    <a href="poet-santoka.html" class="poet-chip"><span class="poet-chip-jp">種田山頭火</span> Taneda Santōka</a>
+    <a href="poet-shuson.html" class="poet-chip"><span class="poet-chip-jp">加藤楸邨</span> Katō Shūson</a>
+    <a href="poet-boncho.html" class="poet-chip"><span class="poet-chip-jp">野沢凡兆</span> Nozawa Bonchō</a>
+    <a href="poet-chiyo-ni.html" class="poet-chip"><span class="poet-chip-jp">加賀千代女</span> Kaga no Chiyo</a>
+    <a href="poet-anonymous.html" class="poet-chip"><span class="poet-chip-jp">詠み人知らず</span> Anonymous</a>
+    <a href="poets.html" class="poet-chip" style="border-style:dashed; color:var(--muted);">All 127 poets →</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <div class="footer-title">俳句選集</div>
+    <div style="margin-top:6px;">An Anthology of Haiku</div>
+  </div>
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="saijiki-index.html">Saijiki</a>
+    <a href="poets.html">Poets</a>
+    <a href="sources.html">Sources</a>
+  </div>
+</footer>
+
+<script>
+  // Cycle through featured poems
+  let current = 0;
+  const poems = document.querySelectorAll('.poem-cycle');
+
+  setInterval(() => {
+    poems[current].classList.remove('active');
+    current = (current + 1) % poems.length;
+    poems[current].classList.add('active');
+  }, 6000);
+</script>
+
 </body>
-</html>"""
-
-
-def load_bio(bios_dir, poet_slug):
-    path = os.path.join(bios_dir, f"{poet_slug}.txt")
-    if not os.path.exists(path):
-        return ""
-    with open(path, encoding="utf-8") as f:
-        return f.read().strip()
-
-
-def find_photo(photos_dir, poet_slug):
-    """Return filename if a photo exists for this poet, else None."""
-    for ext in ("jpg", "jpeg", "png", "webp"):
-        fname = f"{poet_slug}.{ext}"
-        if os.path.exists(os.path.join(photos_dir, fname)):
-            return fname
-    return None
-
-
-def photo_block_html(photo_fname, poet_name, path_prefix=""):
-    if not photo_fname:
-        return ""
-    src = f"{path_prefix}photos/{photo_fname}"
-    return f"""    <div class="poet-photo">
-      <img src="{src}" alt="{poet_name}">
-      <div class="photo-caption">{poet_name}</div>
-    </div>"""
-
-
-def select_poems(poems, n=4):
-    """Pick up to n poems with seasonal variety."""
-    by_season = {}
-    for p in poems:
-        s = p.get("season") or ""
-        by_season.setdefault(s, []).append(p)
-    selected = []
-    seasons = [s for s in SEASON_ORDER if s in by_season]
-    # also include unclassified
-    for s in by_season:
-        if s not in seasons:
-            seasons.append(s)
-    pools = {s: list(v) for s, v in by_season.items()}
-    while len(selected) < n:
-        added = False
-        for s in seasons:
-            if pools.get(s) and len(selected) < n:
-                selected.append(pools[s].pop(0))
-                added = True
-        if not added:
-            break
-    return selected
-
-
-# ---------------------------------------------------------------------------
-# Page builders
-# ---------------------------------------------------------------------------
-
-def build_poem_page(row, poem_filename, poet_slug):
-    poem_jp   = val(row.get("Poem") or row.get("Text", ""))
-    romaji_raw= val(row.get("Romaji", ""))
-    trans_raw = val(row.get("My translation", ""))
-    poet      = val(row.get("Poet", ""))
-    poet_jp   = val(row.get("俳人", ""))
-    season    = val(row.get("Season", ""))
-    kigo_raw  = val(row.get("Kigo", ""))
-    src       = val(row.get("Original source ", "")) or val(row.get("Modern Source", "")) or "—"
-    notes     = val(row.get("Notes", ""))
-    maegaki   = val(row.get("Maegaki", ""))
-
-    kigo_short, kigo_en, kigo_jp = kigo_parts(kigo_raw)
-    romaji = romaji_inline(romaji_raw)
-    trans  = translation_html(trans_raw)
-
-    commentary_block = build_section("Commentary", maegaki)
-    notes_block      = build_section("Notes", notes, cls="translation-notes")
-    poet_link = (f'<a class="poet-link" href="../poets/{poet_slug}.html">← {poet}</a>'
-                 if poet_slug and poet else "")
-
-    body = f"""<div class="haiku-page">
-
-  <div class="season-banner">
-    <span class="season-pill">{season or "—"}</span>
-    <div class="season-line"></div>
-    <span class="season-word-jp">{kigo_short}</span>
-  </div>
-
-  <div class="poem-block">
-    <div class="poem-japanese">{poem_jp}</div>
-    <div class="poem-romaji">{romaji}</div>
-    <div class="poem-translation">
-{trans}
-    </div>
-  </div>
-
-{commentary_block}{notes_block}
-  <div class="metadata-grid">
-    <div class="meta-cell">
-      <div class="meta-label">Season Word</div>
-      <div class="meta-value">{kigo_en}<span class="meta-value-jp">{kigo_jp}</span></div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-label">Season</div>
-      <div class="meta-value">{season or "—"}</div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-label">Cutting word</div>
-      <div class="meta-value">—</div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-label">Poet</div>
-      <div class="meta-value">{poet or "—"}<span class="meta-value-jp">{poet_jp}</span></div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-label">Date of composition</div>
-      <div class="meta-value">—</div>
-    </div>
-    <div class="meta-cell">
-      <div class="meta-label">Source</div>
-      <div class="meta-value">{src}</div>
-    </div>
-  </div>
-
-  <div class="ext-links">{poet_link}</div>
-
-</div>"""
-
-    title = f"{poem_jp[:20]} — {poet}" if poem_jp else poet
-    return html_page(title, POEM_CSS, body)
-
-
-def build_poet_bio_page(poet_slug, data, bio_text, photos_dir):
-    poet_name = data["name"]
-    poet_jp   = data["jp"]
-    dates     = data["dates"]
-    period    = data["period"]
-    poems     = data["poems"]
-
-    photo_fname = find_photo(photos_dir, poet_slug)
-    photo_html  = photo_block_html(photo_fname, poet_name, path_prefix="../")
-
-    tags_html = f'<span class="poet-tag">{period}</span>' if period else ""
-
-    if bio_text:
-        paras = [p.strip() for p in bio_text.split("\n\n") if p.strip()]
-        bio_inner = "\n".join(f"        <p>{p}</p>" for p in paras)
-    else:
-        bio_inner = "        <p><em>No biography on file yet.</em></p>"
-
-    selected = select_poems(poems, n=4)
-    selected_html = ""
-    for p in selected:
-        selected_html += f"""    <a class="poem-entry" href="../poems/{p['filename']}">
-      <div class="poem-entry-jp">{p['jp']}</div>
-      <div class="poem-entry-romaji">{p['romaji']}</div>
-      <div class="poem-entry-translation">{p['translation']}</div>
-      <div class="poem-entry-season">{p['season']} · {p['kigo_short']}</div>
-    </a>
-"""
-
-    total = len(poems)
-    see_all = (f'  <a class="see-all" href="{poet_slug}-poems.html">'
-               f'All {total} poems by {poet_name} →</a>') if total > 4 else ""
-
-    wiki_slug = poet_name.replace(" ", "_")
-    wiki_link = f'<a class="ext-link" href="https://en.wikipedia.org/wiki/{wiki_slug}">Wikipedia ↗</a>'
-
-    body = f"""<div class="poet-page">
-
-  <div class="page-label">
-    Poet
-    <div class="page-label-line"></div>
-  </div>
-
-  <div class="poet-intro">
-    <div class="poet-intro-left">
-      <div class="poet-name-en">{poet_name}</div>
-      <div class="poet-name-row">
-        <span class="poet-name-jp">{poet_jp}</span>
-        <span class="poet-dates">{dates}</span>
-      </div>
-      <div class="poet-meta-row">
-        {tags_html}
-      </div>
-      <div class="bio-text">
-{bio_inner}
-      </div>
-    </div>
-    {photo_html}
-  </div>
-
-  <div class="section-divider">
-    <span class="section-label">Selected poems</span>
-    <div class="section-rule"></div>
-  </div>
-
-{selected_html}
-{see_all}
-
-  <div class="ext-links">
-    {wiki_link}
-  </div>
-
-</div>"""
-
-    return html_page(poet_name, POET_CSS, body)
-
-
-def build_poet_poems_page(poet_slug, data):
-    poet_name = data["name"]
-    poet_jp   = data["jp"]
-    poems     = data["poems"]
-
-    by_season = {}
-    for p in poems:
-        s = p.get("season") or "Unclassified"
-        by_season.setdefault(s, []).append(p)
-
-    groups_html = ""
-    ordered_seasons = [s for s in SEASON_ORDER if s in by_season]
-    for s in by_season:
-        if s not in ordered_seasons:
-            ordered_seasons.append(s)
-
-    for season in ordered_seasons:
-        group = by_season.get(season, [])
-        entries = ""
-        for p in group:
-            entries += f"""      <a class="poem-entry" href="../poems/{p['filename']}">
-        <div class="poem-entry-jp">{p['jp']}</div>
-        <div class="poem-entry-romaji">{p['romaji']}</div>
-        <div class="poem-entry-translation">{p['translation']}</div>
-      </a>
-"""
-        groups_html += f"""  <div class="season-group">
-    <div class="season-heading">{season}</div>
-{entries}  </div>
-"""
-
-    total = len(poems)
-    body = f"""<div class="poet-page">
-
-  <div class="page-label">
-    Poet · All poems
-    <div class="page-label-line"></div>
-  </div>
-
-  <div class="list-header">
-    <div class="list-header-name">{poet_name}</div>
-    <div class="list-header-sub">{poet_jp} &ensp;·&ensp; {total} poems</div>
-  </div>
-
-{groups_html}
-  <a class="back-link" href="{poet_slug}.html">← Back to {poet_name}</a>
-
-</div>"""
-
-    return html_page(f"All poems — {poet_name}", POEM_LIST_CSS, body)
-
-
-
-# ---------------------------------------------------------------------------
-# Saijiki page builders
-# ---------------------------------------------------------------------------
-
-def load_essay(essays_dir, kigo_slug):
-    path = os.path.join(essays_dir, f"{kigo_slug}.txt")
-    if not os.path.exists(path):
-        return ""
-    with open(path, encoding="utf-8") as f:
-        return f.read().strip()
-
-
-def translation_lines_html(raw, cls="saijiki-poem-translation"):
-    lines = [l.strip() for l in raw.replace("\\n", "\n").splitlines() if l.strip()]
-    spans = "\n".join(f'        <span>{l}</span>' for l in lines)
-    return f'''    <div class="{cls}">
-{spans}
-    </div>'''
-
-
-def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
-    """
-    meta: dict with kigo_en, kigo_jp, kigo_romaji, season, category
-    exemplars: list of poem dicts sorted by Saijiki_Order
-    all_poem_count: total poems tagged to this kigo
-    """
-    kigo_en     = meta.get("kigo_en", kigo_slug)
-    kigo_jp     = meta.get("kigo_jp", "")
-    kigo_romaji = meta.get("kigo_romaji", "")
-    season      = meta.get("season", "")
-    category    = meta.get("category", "")
-
-    # Tags
-    tags = ""
-    if season:
-        tags += f'<span class="kigo-tag">{season}</span>'
-    if category:
-        tags += f'  <span class="kigo-tag">{category}</span>'
-
-    # Essay
-    essay_html = ""
-    if essay_text:
-        paras = [p.strip() for p in essay_text.split("\n\n") if p.strip()]
-        essay_html = f'''  <div class="section-divider">
-    <span class="section-label">Essay</span>
-    <div class="section-rule"></div>
-  </div>
-  <div class="essay-text">
-{chr(10).join(f"    <p>{p}</p>" for p in paras)}
-  </div>
-'''
-
-    # Exemplar poems
-    poems_html = ""
-    for p in exemplars:
-        trans_lines = "\n".join(
-            f'        <span>{l.strip()}</span>'
-            for l in p["translation"].replace("\\n", "\n").splitlines()
-            if l.strip()
-        )
-        poet_jp_span = f'<span class="saijiki-poem-poet-jp">{p["poet_jp"]}</span>' if p.get("poet_jp") else ""
-        poem_link = f'<a class="saijiki-poem-link" href="../../poems/{p["filename"]}">Full poem →</a>' if p.get("filename") else ""
-        poems_html += f'''    <div class="saijiki-poem">
-      <div class="saijiki-poem-jp">{p["jp"]}</div>
-      <div class="saijiki-poem-romaji">{p["romaji"]}</div>
-      <div class="saijiki-poem-translation">
-{trans_lines}
-      </div>
-      <div class="saijiki-poem-poet">
-        <span>{p["poet"]} {poet_jp_span}</span>
-        {poem_link}
-      </div>
-    </div>
-'''
-
-    see_all = ""
-    if all_poem_count > len(exemplars):
-        see_all = f'  <a class="see-all" href="{kigo_slug}-poems.html">All {all_poem_count} poems with this season word →</a>'
-
-    body = f'''<div class="saijiki-page">
-
-  <div class="page-label">
-    Saijiki · {season}
-    <div class="page-label-line"></div>
-  </div>
-
-  <div class="kigo-header">
-    <div class="kigo-name-en">{kigo_en}</div>
-    <div class="kigo-name-row">
-      <span class="kigo-name-jp">{kigo_jp}</span>
-      <span class="kigo-romaji">{kigo_romaji}</span>
-    </div>
-    <div class="kigo-meta-row">
-      {tags}
-    </div>
-  </div>
-
-{essay_html}
-  <div class="section-divider">
-    <span class="section-label">Exemplar poems</span>
-    <div class="section-rule"></div>
-  </div>
-
-{poems_html}
-{see_all}
-
-</div>'''
-
-    return html_page(f"{kigo_en} — Saijiki", SAIJIKI_CSS, body)
-
-
-def build_saijiki_poems_list(kigo_slug, meta, all_poems):
-    """All poems tagged to this kigo, flat list."""
-    kigo_en = meta.get("kigo_en", kigo_slug)
-    kigo_jp = meta.get("kigo_jp", "")
-    season  = meta.get("season", "")
-
-    entries = ""
-    for p in all_poems:
-        entries += f'''    <a class="poem-entry" href="../../poems/{p["filename"]}">
-      <div class="poem-entry-jp">{p["jp"]}</div>
-      <div class="poem-entry-romaji">{p["romaji"]}</div>
-      <div class="poem-entry-translation">{p["translation"]}</div>
-      <div class="poem-entry-poet">{p["poet"]}</div>
-    </a>
-'''
-
-    body = f'''<div class="saijiki-page">
-
-  <div class="page-label">
-    Saijiki · {season}
-    <div class="page-label-line"></div>
-  </div>
-
-  <div class="list-header">
-    <div class="list-header-name">{kigo_en}</div>
-    <div class="list-header-sub">{kigo_jp} &ensp;·&ensp; {len(all_poems)} poems</div>
-  </div>
-
-{entries}
-  <a class="back-link" href="{kigo_slug}.html">← Back to {kigo_en}</a>
-
-</div>'''
-
-    return html_page(f"All poems — {kigo_en}", SAIJIKI_LIST_CSS, body)
-
-
-def build_saijiki_index(saijiki_data):
-    """Master index of all kigo entries grouped by season."""
-    by_season = {}
-    for slug, meta in saijiki_data.items():
-        s = meta.get("season", "Unclassified")
-        by_season.setdefault(s, []).append((slug, meta))
-
-    groups_html = ""
-    ordered = [s for s in SEASON_ORDER if s in by_season]
-    for s in by_season:
-        if s not in ordered:
-            ordered.append(s)
-
-    for season in ordered:
-        entries = by_season.get(season, [])
-        entries.sort(key=lambda x: x[1].get("kigo_en", ""))
-        grid = ""
-        for slug, meta in entries:
-            count = meta.get("poem_count", 0)
-            grid += f'''      <a class="kigo-entry" href="saijiki/{season.lower()}/{slug}.html">
-        <div class="kigo-entry-en">{meta.get("kigo_en", slug)}</div>
-        <div class="kigo-entry-jp">{meta.get("kigo_jp", "")}</div>
-        <div class="kigo-entry-count">{count} poem{"s" if count != 1 else ""}</div>
-      </a>
-'''
-        groups_html += f'''  <div class="season-group">
-    <div class="season-heading">{season}</div>
-    <div class="kigo-grid">
-{grid}    </div>
-  </div>
-'''
-
-    body = f'''<div class="saijiki-page">
-
-  <div class="page-label">
-    Saijiki
-    <div class="page-label-line"></div>
-  </div>
-
-  <div class="index-title">Season Word Index</div>
-
-{groups_html}
-</div>'''
-
-    return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body)
-
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--xlsx",   default="/mnt/project/AI_Haiku.xlsx")
-    parser.add_argument("--out",    default="/mnt/user-data/outputs/haiku_site")
-    parser.add_argument("--bios",   default="/home/claude/bios")
-    parser.add_argument("--photos", default="/home/claude/photos")
-    parser.add_argument("--essays", default="/home/claude/essays")
-    parser.add_argument("--sheets", nargs="+", default=["Edo", "Modern"])
-    args = parser.parse_args()
-
-    poems_dir  = os.path.join(args.out, "poems")
-    poets_dir  = os.path.join(args.out, "poets")
-    photos_out = os.path.join(args.out, "photos")
-    for d in (poems_dir, poets_dir, photos_out):
-        os.makedirs(d, exist_ok=True)
-
-    # Copy photos into site output
-    if os.path.isdir(args.photos):
-        for f in os.listdir(args.photos):
-            shutil.copy2(os.path.join(args.photos, f), os.path.join(photos_out, f))
-
-    # Read all rows
-    all_rows = []
-    for sheet in args.sheets:
-        try:
-            df = pd.read_excel(args.xlsx, sheet_name=sheet)
-            for _, row in df.iterrows():
-                all_rows.append((sheet, row.to_dict()))
-        except Exception as e:
-            print(f"  Skipping sheet '{sheet}': {e}")
-
-    # Pass 1 — write poem pages, accumulate per-poet data
-    slugs_used  = {}
-    poets_data  = {}
-    poem_count  = 0
-
-    for sheet, row in all_rows:
-        poem_jp    = val(row.get("Poem") or row.get("Text", ""))
-        romaji_raw = val(row.get("Romaji", ""))
-        trans_raw  = val(row.get("My translation", ""))
-        poet       = val(row.get("Poet", ""))
-        poet_jp    = val(row.get("俳人", ""))
-        dates      = val(row.get("Dates", ""))
-        season     = val(row.get("Season", ""))
-        kigo_raw   = val(row.get("Kigo", ""))
-
-        if not poem_jp and not romaji_raw:
-            continue
-
-        # Unique poem slug
-        base = slugify(romaji_raw[:40] if romaji_raw else poem_jp)
-        if base in slugs_used:
-            slugs_used[base] += 1
-            slug = f"{base}-{slugs_used[base]}"
-        else:
-            slugs_used[base] = 0
-            slug = base
-        poem_filename = f"{sheet.lower()}-{slug}.html"
-
-        poet_slug = slugify(poet) if poet else "unknown"
-
-        # Write poem page
-        html = build_poem_page(row, poem_filename, poet_slug)
-        with open(os.path.join(poems_dir, poem_filename), "w", encoding="utf-8") as f:
-            f.write(html)
-        poem_count += 1
-
-        # Accumulate poet
-        kigo_short, _, _ = kigo_parts(kigo_raw)
-        if poet_slug not in poets_data:
-            poets_data[poet_slug] = {
-                "name":   poet or "Unknown",
-                "jp":     poet_jp,
-                "dates":  dates,
-                "period": sheet,
-                "poems":  [],
-            }
-        poets_data[poet_slug]["poems"].append({
-            "jp":          poem_jp,
-            "romaji":      romaji_inline(romaji_raw),
-            "translation": translation_inline(trans_raw),
-            "season":      season,
-            "kigo_short":  kigo_short,
-            "filename":    poem_filename,
-        })
-
-    # Also accumulate saijiki data per row
-    # (done in pass 1 loop — saijiki_poems collected alongside poet data)
-
-    print(f"  Poems: {poem_count} pages written")
-
-    # Pass 2 — poet bio pages and poem-list pages
-    poet_count = 0
-    for poet_slug, data in poets_data.items():
-        bio_text = load_bio(args.bios, poet_slug)
-
-        bio_html = build_poet_bio_page(poet_slug, data, bio_text, args.photos)
-        with open(os.path.join(poets_dir, f"{poet_slug}.html"), "w", encoding="utf-8") as f:
-            f.write(bio_html)
-
-        list_html = build_poet_poems_page(poet_slug, data)
-        with open(os.path.join(poets_dir, f"{poet_slug}-poems.html"), "w", encoding="utf-8") as f:
-            f.write(list_html)
-
-        poet_count += 1
-
-    print(f"  Poets: {poet_count} bio pages + {poet_count} poem-list pages")
-
-    # Pass 3 — saijiki pages
-    # Load Saijiki metadata sheet if present
-    saijiki_meta = {}
-    try:
-        df_s = pd.read_excel(args.xlsx, sheet_name="Saijiki")
-        for _, row in df_s.iterrows():
-            slug = val(row.get("Kigo_Slug", ""))
-            if not slug:
-                continue
-            saijiki_meta[slug] = {
-                "kigo_en":     val(row.get("Kigo_Slug", slug)).replace("-", " ").title(),
-                "kigo_jp":     val(row.get("Kigo_JP", "")),
-                "kigo_romaji": val(row.get("Kigo_Romaji", "")),
-                "season":      val(row.get("Season", "")),
-                "category":    val(row.get("Category", "")),
-            }
-    except Exception:
-        pass  # Sheet doesn't exist yet — metadata comes from poems only
-
-    # Build saijiki entries from tagged poems
-    # saijiki_poems[kigo_slug] = list of poem dicts with order
-    saijiki_poems = {}
-    for sheet, row in all_rows:
-        entry_slug = val(row.get("Saijiki_Entry", ""))
-        if not entry_slug:
-            continue
-        try:
-            order = int(float(row.get("Saijiki_Order", 999) or 999))
-        except (ValueError, TypeError):
-            order = 999
-
-        poem_jp   = val(row.get("Poem") or row.get("Text", ""))
-        romaji_raw= val(row.get("Romaji", ""))
-        trans_raw = val(row.get("My translation", ""))
-        poet      = val(row.get("Poet", ""))
-        poet_jp   = val(row.get("俳人", ""))
-        season    = val(row.get("Season", ""))
-        kigo_raw  = val(row.get("Kigo", ""))
-
-        # Build poem filename to link back
-        base = slugify(romaji_raw[:40] if romaji_raw else poem_jp)
-        poem_filename = f"{sheet.lower()}-{base}.html"
-
-        # Auto-populate meta from poem data if not in Saijiki sheet
-        if entry_slug not in saijiki_meta:
-            kigo_short, kigo_en_auto, kigo_jp_auto = kigo_parts(kigo_raw)
-            saijiki_meta[entry_slug] = {
-                "kigo_en":     kigo_short or entry_slug.replace("-", " ").title(),
-                "kigo_jp":     kigo_jp_auto,
-                "kigo_romaji": entry_slug,
-                "season":      season,
-                "category":    "",
-            }
-
-        saijiki_poems.setdefault(entry_slug, []).append({
-            "order":       order,
-            "jp":          poem_jp,
-            "romaji":      romaji_inline(romaji_raw),
-            "translation": trans_raw,
-            "poet":        poet,
-            "poet_jp":     poet_jp,
-            "filename":    poem_filename,
-        })
-
-    # Write saijiki pages
-    saijiki_count = 0
-    for kigo_slug, poems in saijiki_poems.items():
-        meta = saijiki_meta.get(kigo_slug, {})
-        season = meta.get("season", "unknown").lower()
-
-        season_dir = os.path.join(args.out, "saijiki", season)
-        os.makedirs(season_dir, exist_ok=True)
-
-        # Sort all poems by order
-        poems_sorted = sorted(poems, key=lambda p: p["order"])
-
-        # Exemplars = poems with explicit order (order < 900)
-        exemplars = [p for p in poems_sorted if p["order"] < 900]
-        if not exemplars:
-            exemplars = poems_sorted[:4]
-
-        essay_text = load_essay(args.essays, kigo_slug)
-
-        # Entry page
-        entry_html = build_saijiki_entry(
-            kigo_slug, meta, essay_text, exemplars, len(poems_sorted)
-        )
-        with open(os.path.join(season_dir, f"{kigo_slug}.html"), "w", encoding="utf-8") as f:
-            f.write(entry_html)
-
-        # All-poems list page
-        list_html = build_saijiki_poems_list(kigo_slug, meta, poems_sorted)
-        with open(os.path.join(season_dir, f"{kigo_slug}-poems.html"), "w", encoding="utf-8") as f:
-            f.write(list_html)
-
-        # Store poem count for index
-        saijiki_meta[kigo_slug]["poem_count"] = len(poems_sorted)
-        saijiki_count += 1
-
-    # Saijiki index page
-    if saijiki_count:
-        index_html = build_saijiki_index(saijiki_meta)
-        with open(os.path.join(args.out, "saijiki-index.html"), "w", encoding="utf-8") as f:
-            f.write(index_html)
-        print(f"  Saijiki: {saijiki_count} entries ({saijiki_count * 2} pages) + index")
-    else:
-        print(f"  Saijiki: no entries found (add Saijiki_Entry column to spreadsheet)")
-
-    print(f"\nDone — site written to: {args.out}")
-    print(f"\n  poems/          {poem_count} poem pages")
-    print(f"  poets/          {poet_count * 2} poet pages")
-    print(f"  saijiki/        {saijiki_count * 2} saijiki pages + index")
-    print(f"\nSource folders (next to this script):")
-    print(f"  bios/           poet biographies  ({{slug}}.txt)")
-    print(f"  essays/         saijiki essays    ({{kigo-slug}}.txt)")
-    print(f"  photos/         poet photos       ({{slug}}.jpg)")
-
-
-if __name__ == "__main__":
-    main()
+</html>
