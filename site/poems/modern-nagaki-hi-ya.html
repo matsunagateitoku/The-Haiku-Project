@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masaoka Shiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #ede8df; width: 100%; min-height: 100vh; }
+.page-bg { background: #ede8df; min-height: 100vh; width: 100%; padding: 3rem 1.5rem; }
+a { color: inherit; }
+.section-divider { display: flex; align-items: center; gap: 1rem; margin: 2.5rem 0 1.25rem; }
+.section-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; white-space: nowrap; }
+.section-rule { flex: 1; height: 1px; background: #999; }
+.ext-links { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #ccc8c0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.ext-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
+.ext-link:hover { color: #444; }
+
+.haiku-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
+.season-banner { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+.season-pill { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #666; border: 1px solid #999; padding: 4px 12px; border-radius: 6px; text-decoration: none; }
+.season-line { flex: 1; height: 1px; background: #999; }
+.season-word-jp { font-family: "Noto Serif JP", serif; font-size: 13px; color: #666; }
+.poem-block { margin: 0 0 3.5rem; }
+.poem-japanese { font-family: "Noto Serif JP", serif; font-size: 22px; font-weight: 300; letter-spacing: 0.12em; line-height: 2; margin: 0 0 0.5rem; color: #1a1a1a; }
+.poem-romaji { font-size: 15px; font-style: italic; color: #666; letter-spacing: 0.05em; line-height: 1.6; font-family: "IM Fell English", Georgia, serif; }
+.poem-translation { font-size: 30px; font-weight: 600; line-height: 1.5; color: #1a1a1a; margin: 1.5rem 0; }
+.poem-translation span { display: block; padding-left: 96px; }
+.prose-section { font-size: 17px; line-height: 1.75; color: #1a1a1a; margin-bottom: 2rem; font-weight: 300; }
+.prose-section p { margin: 0 0 1rem; }
+.prose-section p:last-child { margin-bottom: 0; }
+.translation-notes { font-size: 17px; line-height: 1.75; color: #1a1a1a; margin-bottom: 2rem; font-weight: 300; }
+.translation-notes p { margin: 0 0 1rem; }
+.translation-notes p:last-child { margin-bottom: 0; }
+.metadata-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border: 1px solid #999; border-radius: 8px; overflow: hidden; }
+.meta-cell { padding: 12px 16px; border-right: 1px solid #999; border-bottom: 1px solid #999; background: #e6e0d6; }
+.meta-cell:nth-child(3n) { border-right: none; }
+.meta-cell:nth-child(n+4) { border-bottom: none; }
+.meta-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 5px; }
+.meta-value { font-size: 15px; color: #1a1a1a; font-weight: 400; line-height: 1.3; }
+.meta-value-jp { font-family: "Noto Serif JP", serif; font-size: 14px; color: #666; display: block; margin-top: 2px; }
+.poet-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
+.poet-link:hover { color: #1a1a1a; }
+</style>
+</head>
+<body>
+<div class="page-bg">
+<div class="haiku-page">
+
+  <div class="season-banner">
+    <span class="season-pill">—</span>
+    <div class="season-line"></div>
+    <span class="season-word-jp">—</span>
+  </div>
+
+  <div class="poem-block">
+    <div class="poem-japanese"></div>
+    <div class="poem-romaji">nagaki hi ya / roba wo oiyuku / muchi no kage</div>
+    <div class="poem-translation">
+      <span>The long days—</span>
+      <span>the shadow of a lash</span>
+      <span>Chases a donkey.</span>
+    </div>
+  </div>
+
+
+  <div class="metadata-grid">
+    <div class="meta-cell">
+      <div class="meta-label">Season Word</div>
+      <div class="meta-value">—<span class="meta-value-jp"></span></div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Season</div>
+      <div class="meta-value">—</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Cutting word</div>
+      <div class="meta-value">—</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Poet</div>
+      <div class="meta-value">Masaoka Shiki<span class="meta-value-jp">正岡子規</span></div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Date of composition</div>
+      <div class="meta-value">—</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-label">Source</div>
+      <div class="meta-value">Keene Dawn</div>
+    </div>
+  </div>
+
+  <div class="ext-links"><a class="poet-link" href="../poets/masaoka-shiki.html">← Masaoka Shiki</a></div>
+
+</div>
+</div>
+</body>
+</html>
