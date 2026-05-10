@@ -738,6 +738,25 @@ def build_saijiki_index(saijiki_data):
     return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body)
 
 
+def update_home_poems(home_path, poems_by_season):
+    import json
+    if not os.path.exists(home_path):
+        return
+    with open(home_path, encoding="utf-8") as f:
+        content = f.read()
+    data_json = json.dumps(poems_by_season, ensure_ascii=False)
+    start_tag = '<script id="haiku-poems-data" type="application/json">'
+    end_tag = "</script>"
+    i = content.find(start_tag)
+    if i == -1:
+        return
+    i += len(start_tag)
+    j = content.find(end_tag, i)
+    content = content[:i] + data_json + content[j:]
+    with open(home_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
 def update_home_stats(home_path, poem_count, poet_count, season_counts):
     if not os.path.exists(home_path):
         return
@@ -889,10 +908,11 @@ def main():
             print(f"  Skipping sheet '{sheet}': {e}")
 
     # Pass 1 — write poem pages, accumulate per-poet data
-    slugs_used    = {}
-    poets_data    = {}
-    poem_count    = 0
-    season_counts = {}
+    slugs_used      = {}
+    poets_data      = {}
+    poem_count      = 0
+    season_counts   = {}
+    home_poems      = {}   # season → list of poem dicts for home page cycling
 
     for sheet, row in all_rows:
         poem_jp    = val(row.get("Poem") or row.get("Text", ""))
@@ -930,6 +950,16 @@ def main():
         if season:
             key = season.strip().title()
             season_counts[key] = season_counts.get(key, 0) + 1
+            if key in ("Spring", "Summer", "Autumn", "Winter") and poem_jp and trans_raw and poet:
+                kigo_short_h, _, _ = kigo_parts(kigo_raw)
+                home_poems.setdefault(key, []).append({
+                    "jp":          poem_jp,
+                    "romaji":      romaji_inline(romaji_raw),
+                    "translation": trans_raw,
+                    "poet":        poet,
+                    "kigo":        kigo_short_h,
+                    "url":         f"site/poems/{poem_filename}",
+                })
 
         # Accumulate poet
         kigo_short, _, _ = kigo_parts(kigo_raw)
@@ -1076,7 +1106,8 @@ def main():
 
     home_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
     update_home_stats(home_path, poem_count, poet_count, season_counts)
-    print(f"  Home:  index.html stats updated")
+    update_home_poems(home_path, home_poems)
+    print(f"  Home:  index.html stats + poems updated")
 
     print(f"\nDone — site written to: {args.out}")
     print(f"\n  poems/          {poem_count} poem pages")
