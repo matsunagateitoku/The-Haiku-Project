@@ -872,7 +872,10 @@
   }
 
   if (pool.length > 0) {
-    current = Math.floor(Math.random() * pool.length);
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
     renderPoem(pool[current]);
     setInterval(() => {
       current = (current + 1) % pool.length;
