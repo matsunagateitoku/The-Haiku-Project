@@ -692,6 +692,37 @@ def build_saijiki_poems_list(kigo_slug, meta, all_poems):
     return html_page(f"All poems — {kigo_en}", SAIJIKI_LIST_CSS, body)
 
 
+def build_saijiki_season_index(season, entries):
+    entries_sorted = sorted(entries, key=lambda x: x[1].get("kigo_en", ""))
+    grid = ""
+    for slug, meta in entries_sorted:
+        count = meta.get("poem_count", 0)
+        grid += f'''      <a class="kigo-entry" href="{slug}.html">
+        <div class="kigo-entry-en">{meta.get("kigo_en", slug.replace("-", " ").title())}</div>
+        <div class="kigo-entry-jp">{meta.get("kigo_jp", "")}</div>
+        <div class="kigo-entry-count">{count} poem{"s" if count != 1 else ""}</div>
+      </a>
+'''
+    body = f'''<div class="saijiki-page">
+
+  <div class="page-label">
+    Saijiki · {season}
+    <div class="page-label-line"></div>
+  </div>
+
+  <div class="index-title">{season} Season Words</div>
+
+  <div class="kigo-grid">
+{grid}  </div>
+
+  <div class="ext-links">
+    <a class="ext-link" href="../../saijiki-index.html">← All season words</a>
+  </div>
+
+</div>'''
+    return html_page(f"{season} — Saijiki", SAIJIKI_INDEX_CSS, body)
+
+
 def build_saijiki_index(saijiki_data):
     by_season = {}
     for slug, meta in saijiki_data.items():
@@ -1094,6 +1125,19 @@ def main():
         index_html = build_saijiki_index(saijiki_meta)
         with open(os.path.join(args.out, "saijiki-index.html"), "w", encoding="utf-8") as f:
             f.write(index_html)
+
+        by_season = {}
+        for slug, meta in saijiki_meta.items():
+            s = meta.get("season", "")
+            if s:
+                by_season.setdefault(s, []).append((slug, meta))
+        for season, entries in by_season.items():
+            season_dir = os.path.join(args.out, "saijiki", season.lower())
+            os.makedirs(season_dir, exist_ok=True)
+            season_index_html = build_saijiki_season_index(season, entries)
+            with open(os.path.join(season_dir, "index.html"), "w", encoding="utf-8") as f:
+                f.write(season_index_html)
+
         print(f"  Saijiki: {saijiki_count} entries ({saijiki_count * 2} pages) + index")
     else:
         print(f"  Saijiki: no entries found (add Saijiki_Entry column to spreadsheet)")
