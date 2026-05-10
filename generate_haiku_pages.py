@@ -203,6 +203,22 @@ INDEX_CSS = """
 .index-nav-arrow { font-size: 18px; color: #ccc; }
 """
 
+POETS_INDEX_CSS = """
+.poets-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
+.page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
+.page-label-line { flex: 1; height: 1px; background: #999; }
+.poets-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 3rem; }
+.alpha-group { margin-bottom: 2.5rem; }
+.alpha-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #999; }
+.poet-list { display: flex; flex-direction: column; gap: 1px; background: #ccc8c0; border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; }
+.poet-list-item { background: #ede8df; padding: 0.85rem 1rem; text-decoration: none; display: flex; justify-content: space-between; align-items: baseline; color: inherit; }
+.poet-list-item:hover { background: #e6e0d6; }
+.poet-list-name { font-size: 17px; font-weight: 300; color: #1a1a1a; }
+.poet-list-right { display: flex; gap: 1rem; align-items: baseline; }
+.poet-list-jp { font-family: "Noto Serif JP", serif; font-size: 13px; color: #888; }
+.poet-list-dates { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; color: #aaa; }
+"""
+
 SEASON_ORDER = ["Spring", "Summer", "Autumn", "Winter", "New Year"]
 
 # ---------------------------------------------------------------------------
@@ -722,6 +738,49 @@ def build_saijiki_index(saijiki_data):
     return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body)
 
 
+def build_poets_index(poets_data):
+    sorted_poets = sorted(poets_data.items(), key=lambda x: x[1]["name"].split()[-1])
+
+    by_letter = {}
+    for slug, data in sorted_poets:
+        letter = data["name"].split()[-1][0].upper()
+        by_letter.setdefault(letter, []).append((slug, data))
+
+    groups_html = ""
+    for letter in sorted(by_letter):
+        entries = ""
+        for slug, data in by_letter[letter]:
+            poem_count = len(data["poems"])
+            entries += f'    <a class="poet-list-item" href="{slug}.html">\n'
+            entries += f'      <span class="poet-list-name">{data["name"]}</span>\n'
+            entries += f'      <div class="poet-list-right">\n'
+            if data["jp"]:
+                entries += f'        <span class="poet-list-jp">{data["jp"]}</span>\n'
+            if data["dates"]:
+                entries += f'        <span class="poet-list-dates">{data["dates"]}</span>\n'
+            entries += f'      </div>\n'
+            entries += f'    </a>\n'
+        groups_html += f'  <div class="alpha-group">\n'
+        groups_html += f'    <div class="alpha-heading">{letter}</div>\n'
+        groups_html += f'    <div class="poet-list">\n{entries}    </div>\n'
+        groups_html += f'  </div>\n'
+
+    total = len(poets_data)
+    body = f'''<div class="poets-page">
+
+  <div class="page-label">
+    Poets
+    <div class="page-label-line"></div>
+  </div>
+
+  <div class="poets-title">All {total} Poets</div>
+
+{groups_html}
+</div>'''
+
+    return html_page("Poets — The Haiku Project", POETS_INDEX_CSS, body)
+
+
 def build_index(poem_count, poet_count, saijiki_count):
     """Master site index linking to poems, poets, and saijiki."""
     body = f'''<div class="index-page">
@@ -874,6 +933,10 @@ def main():
         poet_count += 1
 
     print(f"  Poets: {poet_count} bio pages + {poet_count} poem-list pages")
+
+    poets_index_html = build_poets_index(poets_data)
+    with open(os.path.join(poets_dir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(poets_index_html)
 
     # Pass 3 — saijiki pages
     saijiki_meta = {}
