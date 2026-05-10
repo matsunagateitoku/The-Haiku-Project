@@ -207,7 +207,12 @@ POETS_INDEX_CSS = """
 .poets-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
 .page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
 .page-label-line { flex: 1; height: 1px; background: #999; }
-.poets-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 3rem; }
+.poets-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 1.5rem; }
+.sort-controls { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.sort-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; margin-right: 0.25rem; }
+.sort-btn { background: none; border: 1px solid transparent; border-radius: 4px; cursor: pointer; padding: 3px 10px; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; }
+.sort-btn:hover { color: #1a1a1a; border-color: #ccc8c0; }
+.sort-btn.active { color: #1a1a1a; border-color: #999; }
 .alpha-group { margin-bottom: 2.5rem; }
 .alpha-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #999; }
 .poet-list { display: flex; flex-direction: column; gap: 1px; background: #ccc8c0; border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; }
@@ -829,33 +834,20 @@ def update_home_stats(home_path, poem_count, poet_count, season_counts):
 
 
 def build_poets_index(poets_data):
-    sorted_poets = sorted(poets_data.items(), key=lambda x: x[1]["name"].split()[-1])
+    import json
 
-    by_letter = {}
-    for slug, data in sorted_poets:
-        letter = data["name"].split()[-1][0].upper()
-        by_letter.setdefault(letter, []).append((slug, data))
+    poet_records = []
+    for slug, data in sorted(poets_data.items(), key=lambda x: x[1]["name"].split()[-1]):
+        poet_records.append({
+            "href":  f"{slug}.html",
+            "name":  data["name"],
+            "jp":    data["jp"],
+            "dates": data["dates"],
+        })
 
-    groups_html = ""
-    for letter in sorted(by_letter):
-        entries = ""
-        for slug, data in by_letter[letter]:
-            poem_count = len(data["poems"])
-            entries += f'    <a class="poet-list-item" href="{slug}.html">\n'
-            entries += f'      <span class="poet-list-name">{data["name"]}</span>\n'
-            entries += f'      <div class="poet-list-right">\n'
-            if data["jp"]:
-                entries += f'        <span class="poet-list-jp">{data["jp"]}</span>\n'
-            if data["dates"]:
-                entries += f'        <span class="poet-list-dates">{data["dates"]}</span>\n'
-            entries += f'      </div>\n'
-            entries += f'    </a>\n'
-        groups_html += f'  <div class="alpha-group">\n'
-        groups_html += f'    <div class="alpha-heading">{letter}</div>\n'
-        groups_html += f'    <div class="poet-list">\n{entries}    </div>\n'
-        groups_html += f'  </div>\n'
-
+    poets_json = json.dumps(poet_records, ensure_ascii=False, separators=(',', ':'))
     total = len(poets_data)
+
     body = f'''<div class="poets-page">
 
   <div class="page-label">
@@ -865,8 +857,77 @@ def build_poets_index(poets_data):
 
   <div class="poets-title">All {total} Poets</div>
 
-{groups_html}
-</div>'''
+  <div class="sort-controls">
+    <span class="sort-label">Sort</span>
+    <button class="sort-btn active" data-sort="given">Given name</button>
+    <button class="sort-btn" data-sort="family">Family name</button>
+    <button class="sort-btn" data-sort="date">Date</button>
+  </div>
+
+  <div id="poets-list"></div>
+
+</div>
+<script>
+(function(){{
+  var POETS={poets_json};
+  function birthYear(d){{
+    if(!d)return 9999;
+    var m=d.match(/\\d{{3,4}}/);
+    return m?parseInt(m[0]):9999;
+  }}
+  function givenKey(p){{return p.name.split(/\\s+/).pop().toLowerCase();}}
+  function familyKey(p){{return p.name.split(/\\s+/)[0].toLowerCase();}}
+  function givenGroup(p){{return p.name.split(/\\s+/).pop()[0].toUpperCase();}}
+  function familyGroup(p){{return p.name.split(/\\s+/)[0][0].toUpperCase();}}
+  function dateGroup(y){{
+    if(y===9999)return'Dates unknown';
+    if(y<1600)return'Before 1600';
+    if(y<1700)return'1600s';
+    if(y<1800)return'1700s';
+    if(y<1868)return'Early 1800s';
+    if(y<1900)return'1868–1899';
+    if(y<1945)return'1900–1944';
+    return'1945 and after';
+  }}
+  function render(sort){{
+    var sorted=[].concat(POETS).sort(function(a,b){{
+      var ka,kb;
+      if(sort==='given'){{ka=givenKey(a);kb=givenKey(b);}}
+      else if(sort==='family'){{ka=familyKey(a);kb=familyKey(b);}}
+      else{{ka=birthYear(a.dates);kb=birthYear(b.dates);}}
+      return ka<kb?-1:ka>kb?1:0;
+    }});
+    var groups={{}},order=[];
+    sorted.forEach(function(p){{
+      var g;
+      if(sort==='given')g=givenGroup(p);
+      else if(sort==='family')g=familyGroup(p);
+      else g=dateGroup(birthYear(p.dates));
+      if(!groups[g]){{groups[g]=[];order.push(g);}}
+      groups[g].push(p);
+    }});
+    var html='';
+    order.forEach(function(g){{
+      html+='<div class="alpha-group"><div class="alpha-heading">'+g+'</div><div class="poet-list">';
+      groups[g].forEach(function(p){{
+        html+='<a class="poet-list-item" href="'+p.href+'"><span class="poet-list-name">'+p.name+'</span><div class="poet-list-right">';
+        if(p.jp)html+='<span class="poet-list-jp">'+p.jp+'</span>';
+        if(p.dates)html+='<span class="poet-list-dates">'+p.dates+'</span>';
+        html+='</div></a>';
+      }});
+      html+='</div></div>';
+    }});
+    document.getElementById('poets-list').innerHTML=html;
+    document.querySelectorAll('.sort-btn').forEach(function(btn){{
+      btn.classList.toggle('active',btn.dataset.sort===sort);
+    }});
+  }}
+  document.querySelectorAll('.sort-btn').forEach(function(btn){{
+    btn.addEventListener('click',function(){{render(btn.dataset.sort);}});
+  }});
+  render('given');
+}})();
+</script>'''
 
     return html_page("Poets — The Haiku Project", POETS_INDEX_CSS, body, home_href="../../index.html")
 
