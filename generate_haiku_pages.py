@@ -219,6 +219,13 @@ POETS_INDEX_CSS = """
 .poet-list-dates { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; color: #aaa; }
 """
 
+NAV_CSS = """
+.site-nav { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9rem 0 1.5rem; display: flex; align-items: center; gap: 1.5rem; }
+.site-nav-home { color: #888; text-decoration: none; border-bottom: 1px solid #ccc8c0; padding-bottom: 1px; }
+.site-nav-home:hover { color: #1a1a1a; }
+.site-nav-rule { flex: 1; height: 1px; background: #ccc8c0; }
+"""
+
 SEASON_ORDER = ["Spring", "Summer", "Autumn", "Winter", "New Year"]
 
 # ---------------------------------------------------------------------------
@@ -282,7 +289,8 @@ def build_section(label, text, cls="prose-section"):
 """
 
 
-def html_page(title, css, body):
+def html_page(title, css, body, home_href="../../index.html"):
+    nav = f'''<nav class="site-nav"><a class="site-nav-home" href="{home_href}">The Haiku Project</a><div class="site-nav-rule"></div></nav>'''
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -290,10 +298,11 @@ def html_page(title, css, body):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 {FONTS}
-<style>{BASE_CSS}{css}</style>
+<style>{BASE_CSS}{NAV_CSS}{css}</style>
 </head>
 <body>
 <div class="page-bg">
+{nav}
 {body}
 </div>
 </body>
@@ -430,7 +439,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 </div>"""
 
     title = f"{poem_jp[:20]} — {poet}" if poem_jp else poet
-    return html_page(title, POEM_CSS, body)
+    return html_page(title, POEM_CSS, body, home_href="../../index.html")
 
 
 def build_poet_bio_page(poet_slug, data, bio_text, photos_dir):
@@ -507,7 +516,7 @@ def build_poet_bio_page(poet_slug, data, bio_text, photos_dir):
 
 </div>"""
 
-    return html_page(poet_name, POET_CSS, body)
+    return html_page(poet_name, POET_CSS, body, home_href="../../index.html")
 
 
 def build_poet_poems_page(poet_slug, data):
@@ -559,7 +568,7 @@ def build_poet_poems_page(poet_slug, data):
 
 </div>"""
 
-    return html_page(f"All poems — {poet_name}", POEM_LIST_CSS, body)
+    return html_page(f"All poems — {poet_name}", POEM_LIST_CSS, body, home_href="../../index.html")
 
 
 # ---------------------------------------------------------------------------
@@ -654,7 +663,7 @@ def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
 
 </div>'''
 
-    return html_page(f"{kigo_en} — Saijiki", SAIJIKI_CSS, body)
+    return html_page(f"{kigo_en} — Saijiki", SAIJIKI_CSS, body, home_href="../../../index.html")
 
 
 def build_saijiki_poems_list(kigo_slug, meta, all_poems):
@@ -689,7 +698,7 @@ def build_saijiki_poems_list(kigo_slug, meta, all_poems):
 
 </div>'''
 
-    return html_page(f"All poems — {kigo_en}", SAIJIKI_LIST_CSS, body)
+    return html_page(f"All poems — {kigo_en}", SAIJIKI_LIST_CSS, body, home_href="../../../index.html")
 
 
 def build_saijiki_season_index(season, entries):
@@ -720,7 +729,7 @@ def build_saijiki_season_index(season, entries):
   </div>
 
 </div>'''
-    return html_page(f"{season} — Saijiki", SAIJIKI_INDEX_CSS, body)
+    return html_page(f"{season} — Saijiki", SAIJIKI_INDEX_CSS, body, home_href="../../../index.html")
 
 
 def build_saijiki_index(saijiki_data):
@@ -766,7 +775,7 @@ def build_saijiki_index(saijiki_data):
 {groups_html}
 </div>'''
 
-    return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body)
+    return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body, home_href="../index.html")
 
 
 def update_home_poems(home_path, poems_by_season):
@@ -859,7 +868,7 @@ def build_poets_index(poets_data):
 {groups_html}
 </div>'''
 
-    return html_page("Poets — The Haiku Project", POETS_INDEX_CSS, body)
+    return html_page("Poets — The Haiku Project", POETS_INDEX_CSS, body, home_href="../../index.html")
 
 
 def build_index(poem_count, poet_count, saijiki_count):
@@ -900,7 +909,7 @@ def build_index(poem_count, poet_count, saijiki_count):
 
 </div>'''
 
-    return html_page("The Haiku Project · 歳時記", INDEX_CSS, body)
+    return html_page("The Haiku Project · 歳時記", INDEX_CSS, body, home_href="../index.html")
 
 
 # ---------------------------------------------------------------------------
