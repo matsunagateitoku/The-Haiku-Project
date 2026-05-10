@@ -314,6 +314,48 @@ def html_page(title, css, body, home_href="../../index.html"):
 </html>"""
 
 
+def load_canonical_poets(poets_path):
+    """Load canonical poet list and aliases from poets_canonical.xlsx.
+    Returns (canonical_poets dict slug→data, aliases dict alias→canonical_slug).
+    """
+    canonical_poets = {}
+    aliases = {}
+    if not poets_path or not os.path.exists(poets_path):
+        return canonical_poets, aliases
+    try:
+        xl = pd.ExcelFile(poets_path)
+        for _, r in xl.parse('Poets').iterrows():
+            slug = val(r.get('Slug', ''))
+            if not slug:
+                continue
+            canonical_poets[slug] = {
+                'name':   val(r.get('Display_Name', '')),
+                'jp':     val(r.get('Kanji', '')),
+                'dates':  val(r.get('Dates', '')),
+                'school': val(r.get('School', '')),
+                'period': val(r.get('Period', '')),
+            }
+        for _, r in xl.parse('Aliases').iterrows():
+            a = val(r.get('Alias_Slug', ''))
+            c = val(r.get('Canonical_Slug', ''))
+            if a and c:
+                aliases[a] = c
+    except Exception as e:
+        print(f"  Warning: could not load canonical poets: {e}")
+    return canonical_poets, aliases
+
+
+def resolve_poet_slug(raw_slug, aliases, canonical_poets):
+    """Resolve a poet slug to its canonical form via the aliases table."""
+    if raw_slug in canonical_poets:
+        return raw_slug
+    if raw_slug in aliases:
+        target = aliases[raw_slug]
+        if target in canonical_poets:
+            return target
+    return raw_slug
+
+
 def load_bio(bios_dir, poet_slug):
     path = os.path.join(bios_dir, f"{poet_slug}.txt")
     if not os.path.exists(path):
@@ -452,12 +494,16 @@ def build_poet_bio_page(poet_slug, data, bio_text, photos_dir):
     poet_jp   = data["jp"]
     dates     = data["dates"]
     period    = data["period"]
+    school    = data.get("school", "")
     poems     = data["poems"]
 
     photo_fname = find_photo(photos_dir, poet_slug)
     photo_html  = photo_block_html(photo_fname, poet_name, path_prefix="../")
 
-    tags_html = f'<span class="poet-tag">{period}</span>' if period else ""
+    # Strip leading "N. " prefix from school strings like "4. Shōmon"
+    school_label = re.sub(r'^\d+\.\s*', '', school).strip()
+    tag_text  = school_label or period
+    tags_html = f'<span class="poet-tag">{tag_text}</span>' if tag_text else ""
 
     if bio_text:
         paras = [p.strip() for p in bio_text.split("\n\n") if p.strip()]
@@ -984,6 +1030,7 @@ def main():
     parser.add_argument("--bios",   default="/home/claude/bios")
     parser.add_argument("--photos", default="/home/claude/photos")
     parser.add_argument("--essays", default="/home/claude/essays")
+    parser.add_argument("--poets",  default="")
     parser.add_argument("--sheets", nargs="+", default=["Edo", "Modern"])
     args = parser.parse_args()
 
@@ -997,6 +1044,13 @@ def main():
     if os.path.isdir(args.photos):
         for f in os.listdir(args.photos):
             shutil.copy2(os.path.join(args.photos, f), os.path.join(photos_out, f))
+
+    # Load canonical poets registry
+    canonical_poets, poet_aliases = load_canonical_poets(args.poets)
+    if canonical_poets:
+        print(f"  Canonical poets: {len(canonical_poets)} entries, {len(poet_aliases)} aliases")
+    else:
+        print("  No canonical poets file — using spreadsheet data directly")
 
     # Read all rows
     all_rows = []
@@ -1039,7 +1093,8 @@ def main():
             slug = base
         poem_filename = f"{sheet.lower()}-{slug}.html"
 
-        poet_slug = slugify(poet) if poet else "unknown"
+        raw_slug  = slugify(poet) if poet else "unknown"
+        poet_slug = resolve_poet_slug(raw_slug, poet_aliases, canonical_poets)
 
         # Write poem page — pass saijiki_entry and season for link generation
         html = build_poem_page(row, poem_filename, poet_slug,
@@ -1062,14 +1117,16 @@ def main():
                     "url":         f"site/poems/{poem_filename}",
                 })
 
-        # Accumulate poet
+        # Accumulate poet — prefer canonical registry data over spreadsheet data
         kigo_short, _, _ = kigo_parts(kigo_raw)
         if poet_slug not in poets_data:
+            canon = canonical_poets.get(poet_slug, {})
             poets_data[poet_slug] = {
-                "name":   poet or "Unknown",
-                "jp":     poet_jp,
-                "dates":  dates,
-                "period": sheet,
+                "name":   canon.get("name") or poet or "Unknown",
+                "jp":     canon.get("jp")   or poet_jp,
+                "dates":  canon.get("dates") or dates,
+                "period": canon.get("period") or sheet,
+                "school": canon.get("school", ""),
                 "poems":  [],
             }
         poets_data[poet_slug]["poems"].append({
