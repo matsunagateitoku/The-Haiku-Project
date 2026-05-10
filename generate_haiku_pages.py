@@ -738,6 +738,37 @@ def build_saijiki_index(saijiki_data):
     return html_page("Saijiki — Season Word Index", SAIJIKI_INDEX_CSS, body)
 
 
+def update_home_stats(home_path, poem_count, poet_count, season_counts):
+    if not os.path.exists(home_path):
+        return
+    with open(home_path, encoding="utf-8") as f:
+        content = f.read()
+
+    content = re.sub(
+        r'(?<=class="stat-number">)\d+(?=</span>\s*<span class="stat-label">Poems)',
+        str(poem_count), content
+    )
+    content = re.sub(
+        r'(?<=class="stat-number">)\d+(?=</span>\s*<span class="stat-label">Poets)',
+        str(poet_count), content
+    )
+    known = {"Spring": 0, "Summer": 0, "Autumn": 0, "Winter": 0}
+    for raw, count in season_counts.items():
+        for k in known:
+            if raw.lower() == k.lower():
+                known[k] += count
+    for season_name, count in known.items():
+        content = re.sub(
+            rf'(class="season-card {season_name.lower()}"[^>]*>.*?class="season-count">)\d+ poems',
+            rf'\g<1>{count} poems',
+            content, flags=re.DOTALL
+        )
+    content = re.sub(r'All \d+ poets', f'All {poet_count} poets', content)
+
+    with open(home_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
 def build_poets_index(poets_data):
     sorted_poets = sorted(poets_data.items(), key=lambda x: x[1]["name"].split()[-1])
 
@@ -858,9 +889,10 @@ def main():
             print(f"  Skipping sheet '{sheet}': {e}")
 
     # Pass 1 — write poem pages, accumulate per-poet data
-    slugs_used  = {}
-    poets_data  = {}
-    poem_count  = 0
+    slugs_used    = {}
+    poets_data    = {}
+    poem_count    = 0
+    season_counts = {}
 
     for sheet, row in all_rows:
         poem_jp    = val(row.get("Poem") or row.get("Text", ""))
@@ -895,6 +927,9 @@ def main():
         with open(os.path.join(poems_dir, poem_filename), "w", encoding="utf-8") as f:
             f.write(html)
         poem_count += 1
+        if season:
+            key = season.strip().title()
+            season_counts[key] = season_counts.get(key, 0) + 1
 
         # Accumulate poet
         kigo_short, _, _ = kigo_parts(kigo_raw)
@@ -1038,6 +1073,10 @@ def main():
     with open(os.path.join(args.out, "index.html"), "w", encoding="utf-8") as f:
         f.write(index_html)
     print(f"  Index: index.html written")
+
+    home_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
+    update_home_stats(home_path, poem_count, poet_count, season_counts)
+    print(f"  Home:  index.html stats updated")
 
     print(f"\nDone — site written to: {args.out}")
     print(f"\n  poems/          {poem_count} poem pages")
