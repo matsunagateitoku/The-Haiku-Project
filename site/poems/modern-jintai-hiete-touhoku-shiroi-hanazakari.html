@@ -49,10 +49,13 @@ a { color: inherit; }
 .poet-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
 .poet-link:hover { color: #1a1a1a; }
 .translation-attribution { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-top: 0.75rem; }
-.other-translation { margin: 2rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid #ccc8c0; }
-.other-translation-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
-.other-translation-text { font-size: 22px; font-weight: 400; line-height: 1.5; color: #666; }
-.other-translation-text span { display: block; padding-left: 96px; }
+.info-box { border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; margin: 1.75rem 0; }
+.info-box-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; padding: 7px 14px; background: #e6e0d6; border-bottom: 1px solid #ccc8c0; }
+.info-box-body { padding: 1rem 1.25rem; font-size: 16px; line-height: 1.75; color: #1a1a1a; font-weight: 300; }
+.info-box-body p { margin: 0 0 0.75rem; }
+.info-box-body p:last-child { margin-bottom: 0; }
+.info-box-translation { padding: 1rem 1.25rem; font-size: 22px; font-weight: 400; line-height: 1.5; color: #1a1a1a; }
+.info-box-translation span { display: block; padding-left: 60px; }
 </style>
 </head>
 <body>
@@ -77,12 +80,12 @@ a { color: inherit; }
 
   </div>
 
-  <div class="other-translation">
-    <div class="other-translation-label">Other translation — Other translation</div>
-    <div class="other-translation-text">
-      <span>my body feels the chill</span>
-      <span>Tohoku covered in white　Dhugal J.Lindsay</span>
-      <span>masses of flowers</span>
+  <div class="info-box">
+    <div class="info-box-label">Other translation — Other translation</div>
+    <div class="info-box-translation">
+        <span>my body feels the chill</span>
+        <span>Tohoku covered in white　Dhugal J.Lindsay</span>
+        <span>masses of flowers</span>
     </div>
   </div>
   <div class="section-divider">

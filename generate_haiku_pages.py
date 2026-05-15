@@ -81,10 +81,13 @@ POEM_CSS = """
 .poet-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
 .poet-link:hover { color: #1a1a1a; }
 .translation-attribution { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-top: 0.75rem; }
-.other-translation { margin: 2rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid #ccc8c0; }
-.other-translation-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
-.other-translation-text { font-size: 22px; font-weight: 400; line-height: 1.5; color: #666; }
-.other-translation-text span { display: block; padding-left: 96px; }
+.info-box { border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; margin: 1.75rem 0; }
+.info-box-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; padding: 7px 14px; background: #e6e0d6; border-bottom: 1px solid #ccc8c0; }
+.info-box-body { padding: 1rem 1.25rem; font-size: 16px; line-height: 1.75; color: #1a1a1a; font-weight: 300; }
+.info-box-body p { margin: 0 0 0.75rem; }
+.info-box-body p:last-child { margin-bottom: 0; }
+.info-box-translation { padding: 1rem 1.25rem; font-size: 22px; font-weight: 400; line-height: 1.5; color: #1a1a1a; }
+.info-box-translation span { display: block; padding-left: 60px; }
 """
 
 POET_CSS = """
@@ -285,6 +288,20 @@ def get_alt_translations(row):
     return results
 
 
+JAPANESE_SOURCE_COLS = [
+    "NKBZ", "俳句大観", "名歌名句辞典", "俳句の歴史",
+    "現代俳句", "自選自解", "蝸牛", "古典俳句",
+]
+
+
+def get_japanese_source(row):
+    for col in JAPANESE_SOURCE_COLS:
+        v = val(row.get(col, ""))
+        if v:
+            return col, v
+    return "", ""
+
+
 def kigo_parts(kigo_raw):
     raw = val(kigo_raw)
     if not raw:
@@ -461,24 +478,27 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
     if main_translator:
         attribution_html = f'    <div class="translation-attribution">tr. {main_translator}</div>'
 
-    other_trans_html = ""
-    if other_pair:
-        other_col, other_text = other_pair
-        other_lines = "\n".join(
-            f'      <span>{l.strip()}</span>'
-            for l in other_text.replace("\\n", "\n").splitlines()
-            if l.strip()
-        )
-        other_trans_html = f"""  <div class="other-translation">
-    <div class="other-translation-label">Other translation — {other_col}</div>
-    <div class="other-translation-text">
-{other_lines}
-    </div>
-  </div>
-"""
+    source_col, source_text = get_japanese_source(row)
 
-    commentary_block = build_section("Commentary", maegaki)
-    notes_block      = build_section("Notes", notes, cls="translation-notes")
+    def info_box(label, content, translation=False):
+        if not content:
+            return ""
+        if translation:
+            lines = "\n".join(
+                f'        <span>{l.strip()}</span>'
+                for l in content.replace("\\n", "\n").splitlines()
+                if l.strip()
+            )
+            inner = f'    <div class="info-box-translation">\n{lines}\n    </div>'
+        else:
+            paras = "\n".join(f'      <p>{p.strip()}</p>' for p in content.split("\n") if p.strip())
+            inner = f'    <div class="info-box-body">\n{paras}\n    </div>'
+        return f'  <div class="info-box">\n    <div class="info-box-label">{label}</div>\n{inner}\n  </div>\n'
+
+    preface_box     = info_box("Preface", maegaki)
+    other_trans_box = info_box(f"Other translation — {other_pair[0]}", other_pair[1], translation=True) if other_pair else ""
+    source_box      = info_box(f"Source — {source_col}", source_text) if source_col else ""
+    notes_block     = build_section("Notes", notes, cls="translation-notes")
 
     poet_link = ""
     if poet_slug and poet:
@@ -507,7 +527,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 {attribution_html}
   </div>
 
-{other_trans_html}{commentary_block}{notes_block}
+{preface_box}{other_trans_box}{source_box}{notes_block}
   <div class="metadata-grid">
     <div class="meta-cell">
       <div class="meta-label">Season Word</div>
