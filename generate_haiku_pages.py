@@ -401,6 +401,14 @@ def load_bio(bios_dir, poet_slug):
         return f.read().strip()
 
 
+def load_appreciation(appreciations_dir, poem_slug):
+    path = os.path.join(appreciations_dir, f"{poem_slug}.txt")
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as f:
+        return f.read().strip()
+
+
 def find_photo(photos_dir, poet_slug):
     for ext in ("jpg", "jpeg", "png", "webp"):
         fname = f"{poet_slug}.{ext}"
@@ -445,7 +453,7 @@ def select_poems(poems, n=4):
 # Page builders
 # ---------------------------------------------------------------------------
 
-def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_season=""):
+def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_season="", appreciation=""):
     poem_jp   = val(row.get("Poem") or row.get("Text", ""))
     romaji_raw= val(row.get("Romaji", ""))
     poet      = val(row.get("Poet", ""))
@@ -498,7 +506,8 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
     preface_box     = info_box("Preface", maegaki)
     other_trans_box = info_box(f"Other translation — {other_pair[0]}", other_pair[1], translation=True) if other_pair else ""
-    notes_block     = build_section("Notes", notes, cls="translation-notes")
+    notes_block          = build_section("Notes", notes, cls="translation-notes")
+    appreciation_box     = info_box("Appreciation", appreciation)
 
     poet_link = ""
     if poet_slug and poet:
@@ -528,7 +537,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 {attribution_html}
   </div>
 
-{other_trans_box}{notes_block}
+{other_trans_box}{notes_block}{appreciation_box}
   <div class="metadata-grid">
     <div class="meta-cell">
       <div class="meta-label">Season Word</div>
@@ -1113,7 +1122,8 @@ def main():
     parser.add_argument("--out",    default="/mnt/user-data/outputs/haiku_site")
     parser.add_argument("--bios",   default="/home/claude/bios")
     parser.add_argument("--photos", default="/home/claude/photos")
-    parser.add_argument("--essays", default="/home/claude/essays")
+    parser.add_argument("--essays",        default="/home/claude/essays")
+    parser.add_argument("--appreciations", default="appreciations")
     parser.add_argument("--poets",  default="")
     parser.add_argument("--sheets", nargs="+", default=["Edo", "Modern"])
     args = parser.parse_args()
@@ -1182,9 +1192,12 @@ def main():
         poet_slug = resolve_poet_slug(raw_slug, poet_aliases, canonical_poets)
 
         # Write poem page — pass saijiki_entry and season for link generation
+        poem_slug    = poem_filename[:-5]  # strip .html
+        appreciation = load_appreciation(args.appreciations, poem_slug)
         html = build_poem_page(row, poem_filename, poet_slug,
                                saijiki_slug=saijiki_entry,
-                               saijiki_season=season)
+                               saijiki_season=season,
+                               appreciation=appreciation)
         with open(os.path.join(poems_dir, poem_filename), "w", encoding="utf-8") as f:
             f.write(html)
         poem_count += 1
