@@ -497,7 +497,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
     preface_box     = info_box("Preface", maegaki)
     other_trans_box = info_box(f"Other translation — {other_pair[0]}", other_pair[1], translation=True) if other_pair else ""
-    source_box      = info_box(f"Source — {source_col}", source_text) if source_col else ""
+    source_box      = info_box("Modern Source", source_text) if source_col else ""
     notes_block     = build_section("Notes", notes, cls="translation-notes")
 
     poet_link = ""
@@ -512,6 +512,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
     body = f"""<div class="haiku-page">
 
+{preface_box}
   <div class="season-banner">
     <span class="season-pill">{season or "—"}</span>
     <div class="season-line"></div>
@@ -527,7 +528,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 {attribution_html}
   </div>
 
-{preface_box}{other_trans_box}{source_box}{notes_block}
+{other_trans_box}{notes_block}
   <div class="metadata-grid">
     <div class="meta-cell">
       <div class="meta-label">Season Word</div>
@@ -550,11 +551,12 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
       <div class="meta-value">—</div>
     </div>
     <div class="meta-cell">
-      <div class="meta-label">Source</div>
+      <div class="meta-label">Original Source</div>
       <div class="meta-value">{src}</div>
     </div>
   </div>
 
+{source_box}
   <div class="ext-links">{poet_link}{saijiki_link}</div>
 
 </div>"""
