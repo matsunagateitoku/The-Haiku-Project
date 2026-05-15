@@ -80,6 +80,11 @@ POEM_CSS = """
 .meta-value-jp { font-family: "Noto Serif JP", serif; font-size: 14px; color: #666; display: block; margin-top: 2px; }
 .poet-link { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; }
 .poet-link:hover { color: #1a1a1a; }
+.translation-attribution { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-top: 0.75rem; }
+.other-translation { margin: 2rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid #ccc8c0; }
+.other-translation-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 0.75rem; }
+.other-translation-text { font-size: 22px; font-weight: 400; line-height: 1.5; color: #666; }
+.other-translation-text span { display: block; padding-left: 96px; }
 """
 
 POET_CSS = """
@@ -233,6 +238,11 @@ NAV_CSS = """
 
 SEASON_ORDER = ["Spring", "Summer", "Autumn", "Winter", "New Year"]
 
+ALT_TRANSLATION_COLS = [
+    "Ueda Haiku", "Keene World", "Keene Dawn", "Blyth Haiku", "Blyth History",
+    "Fay Aoyagi", "English Saijiki", "21 Century", "Other translation",
+]
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -264,6 +274,15 @@ def translation_inline(raw):
 def translation_html(raw):
     lines = [l.strip() for l in raw.replace("\\n", "\n").splitlines() if l.strip()]
     return "\n".join(f'      <span>{l}</span>' for l in lines)
+
+
+def get_alt_translations(row):
+    results = []
+    for col in ALT_TRANSLATION_COLS:
+        v = val(row.get(col, ""))
+        if v:
+            results.append((col, v))
+    return results
 
 
 def kigo_parts(kigo_raw):
@@ -411,7 +430,6 @@ def select_poems(poems, n=4):
 def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_season=""):
     poem_jp   = val(row.get("Poem") or row.get("Text", ""))
     romaji_raw= val(row.get("Romaji", ""))
-    trans_raw = val(row.get("My translation", ""))
     poet      = val(row.get("Poet", ""))
     poet_jp   = val(row.get("俳人", ""))
     season    = val(row.get("Season", ""))
@@ -420,9 +438,44 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
     notes     = val(row.get("Notes", ""))
     maegaki   = val(row.get("Maegaki", ""))
 
+    my_trans  = val(row.get("My translation", ""))
+    alt_trans = get_alt_translations(row)
+
+    if my_trans:
+        trans_raw       = my_trans
+        main_translator = ""
+        other_pair      = alt_trans[0] if alt_trans else None
+    elif alt_trans:
+        main_translator, trans_raw = alt_trans[0]
+        other_pair      = alt_trans[1] if len(alt_trans) > 1 else None
+    else:
+        trans_raw       = ""
+        main_translator = ""
+        other_pair      = None
+
     kigo_short, kigo_en, kigo_jp = kigo_parts(kigo_raw)
     romaji = romaji_inline(romaji_raw)
     trans  = translation_html(trans_raw)
+
+    attribution_html = ""
+    if main_translator:
+        attribution_html = f'    <div class="translation-attribution">tr. {main_translator}</div>'
+
+    other_trans_html = ""
+    if other_pair:
+        other_col, other_text = other_pair
+        other_lines = "\n".join(
+            f'      <span>{l.strip()}</span>'
+            for l in other_text.replace("\\n", "\n").splitlines()
+            if l.strip()
+        )
+        other_trans_html = f"""  <div class="other-translation">
+    <div class="other-translation-label">Other translation — {other_col}</div>
+    <div class="other-translation-text">
+{other_lines}
+    </div>
+  </div>
+"""
 
     commentary_block = build_section("Commentary", maegaki)
     notes_block      = build_section("Notes", notes, cls="translation-notes")
@@ -451,9 +504,10 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
     <div class="poem-translation">
 {trans}
     </div>
+{attribution_html}
   </div>
 
-{commentary_block}{notes_block}
+{other_trans_html}{commentary_block}{notes_block}
   <div class="metadata-grid">
     <div class="meta-cell">
       <div class="meta-label">Season Word</div>
