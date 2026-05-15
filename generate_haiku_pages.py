@@ -507,7 +507,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
     preface_box     = info_box("Preface", maegaki)
     other_trans_box = info_box(f"Other translation — {other_pair[0]}", other_pair[1], translation=True) if other_pair else ""
     notes_block          = build_section("Notes", notes, cls="translation-notes")
-    appreciation_box     = info_box("Appreciation", appreciation)
+    appreciation_block   = build_section("Appreciation", appreciation, cls="translation-notes")
 
     poet_link = ""
     if poet_slug and poet:
@@ -537,7 +537,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 {attribution_html}
   </div>
 
-{other_trans_box}{notes_block}{appreciation_box}
+{other_trans_box}{notes_block}{appreciation_block}
   <div class="metadata-grid">
     <div class="meta-cell">
       <div class="meta-label">Season Word</div>
