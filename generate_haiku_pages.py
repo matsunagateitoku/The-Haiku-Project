@@ -922,7 +922,7 @@ def update_home_poems(home_path, poems_by_season):
         f.write(content)
 
 
-def update_home_stats(home_path, poem_count, poet_count, season_counts):
+def update_home_stats(home_path, poem_count, poet_count, season_counts, kigo_count=0):
     if not os.path.exists(home_path):
         return
     with open(home_path, encoding="utf-8") as f:
@@ -936,6 +936,11 @@ def update_home_stats(home_path, poem_count, poet_count, season_counts):
         r'(?<=class="stat-number">)\d+(?=</span>\s*<span class="stat-label">Poets)',
         str(poet_count), content
     )
+    if kigo_count:
+        content = re.sub(
+            r'(?<=class="stat-number">)\d+(?=</span>\s*<span class="stat-label">Season Words)',
+            str(kigo_count), content
+        )
     known = {"Spring": 0, "Summer": 0, "Autumn": 0, "Winter": 0}
     for raw, count in season_counts.items():
         for k in known:
@@ -1141,6 +1146,7 @@ def main():
     poets_data      = {}
     poem_count      = 0
     season_counts   = {}
+    kigo_seen       = set()
     home_poems      = {}   # season → list of poem dicts for home page cycling
 
     for sheet, row in all_rows:
@@ -1177,6 +1183,8 @@ def main():
         with open(os.path.join(poems_dir, poem_filename), "w", encoding="utf-8") as f:
             f.write(html)
         poem_count += 1
+        if kigo_raw:
+            kigo_seen.add(kigo_raw)
         if season:
             key = season.strip().title()
             season_counts[key] = season_counts.get(key, 0) + 1
@@ -1350,7 +1358,7 @@ def main():
     print(f"  Index: index.html written")
 
     home_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
-    update_home_stats(home_path, poem_count, poet_count, season_counts)
+    update_home_stats(home_path, poem_count, poet_count, season_counts, kigo_count=len(kigo_seen))
     update_home_poems(home_path, home_poems)
     print(f"  Home:  index.html stats + poems updated")
 
