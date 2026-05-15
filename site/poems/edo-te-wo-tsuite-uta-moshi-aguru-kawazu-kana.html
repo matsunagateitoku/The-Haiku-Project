@@ -41,8 +41,9 @@ a { color: inherit; }
 .translation-notes p:last-child { margin-bottom: 0; }
 .metadata-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border: 1px solid #999; border-radius: 8px; overflow: hidden; }
 .meta-cell { padding: 12px 16px; border-right: 1px solid #999; border-bottom: 1px solid #999; background: #e6e0d6; }
-.meta-cell:nth-child(3n) { border-right: none; }
-.meta-cell:nth-child(n+4) { border-bottom: none; }
+.meta-cell.span2 { grid-column: span 2; }
+.meta-cell.no-right { border-right: none; }
+.meta-cell.no-bottom { border-bottom: none; }
 .meta-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 5px; }
 .meta-value { font-size: 15px; color: #1a1a1a; font-weight: 400; line-height: 1.3; }
 .meta-value-jp { font-family: "Noto Serif JP", serif; font-size: 14px; color: #666; display: block; margin-top: 2px; }
@@ -98,7 +99,7 @@ a { color: inherit; }
       <div class="meta-label">Season</div>
       <div class="meta-value">Spring</div>
     </div>
-    <div class="meta-cell">
+    <div class="meta-cell no-right">
       <div class="meta-label">Cutting word</div>
       <div class="meta-value">—</div>
     </div>
@@ -106,16 +107,19 @@ a { color: inherit; }
       <div class="meta-label">Poet</div>
       <div class="meta-value">Yamazaki Sōkan<span class="meta-value-jp">山崎宗鑑</span></div>
     </div>
-    <div class="meta-cell">
+    <div class="meta-cell span2 no-right">
       <div class="meta-label">Date of composition</div>
       <div class="meta-value">—</div>
     </div>
-    <div class="meta-cell">
+    <div class="meta-cell no-bottom">
       <div class="meta-label">Original Source</div>
       <div class="meta-value">Arano (曠野)</div>
     </div>
+    <div class="meta-cell span2 no-right no-bottom">
+      <div class="meta-label">Modern Source</div>
+      <div class="meta-value">—</div>
+    </div>
   </div>
-
 
   <div class="ext-links"><a class="ext-link" href="../poets/yamazaki-sokan.html">← Yamazaki Sōkan</a></div>
 

@@ -73,8 +73,9 @@ POEM_CSS = """
 .translation-notes p:last-child { margin-bottom: 0; }
 .metadata-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border: 1px solid #999; border-radius: 8px; overflow: hidden; }
 .meta-cell { padding: 12px 16px; border-right: 1px solid #999; border-bottom: 1px solid #999; background: #e6e0d6; }
-.meta-cell:nth-child(3n) { border-right: none; }
-.meta-cell:nth-child(n+4) { border-bottom: none; }
+.meta-cell.span2 { grid-column: span 2; }
+.meta-cell.no-right { border-right: none; }
+.meta-cell.no-bottom { border-bottom: none; }
 .meta-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 5px; }
 .meta-value { font-size: 15px; color: #1a1a1a; font-weight: 400; line-height: 1.3; }
 .meta-value-jp { font-family: "Noto Serif JP", serif; font-size: 14px; color: #666; display: block; margin-top: 2px; }
@@ -497,7 +498,6 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
     preface_box     = info_box("Preface", maegaki)
     other_trans_box = info_box(f"Other translation — {other_pair[0]}", other_pair[1], translation=True) if other_pair else ""
-    source_box      = info_box("Modern Source", source_text) if source_col else ""
     notes_block     = build_section("Notes", notes, cls="translation-notes")
 
     poet_link = ""
@@ -538,7 +538,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
       <div class="meta-label">Season</div>
       <div class="meta-value">{season or "—"}</div>
     </div>
-    <div class="meta-cell">
+    <div class="meta-cell no-right">
       <div class="meta-label">Cutting word</div>
       <div class="meta-value">—</div>
     </div>
@@ -546,17 +546,20 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
       <div class="meta-label">Poet</div>
       <div class="meta-value">{poet or "—"}<span class="meta-value-jp">{poet_jp}</span></div>
     </div>
-    <div class="meta-cell">
+    <div class="meta-cell span2 no-right">
       <div class="meta-label">Date of composition</div>
       <div class="meta-value">—</div>
     </div>
-    <div class="meta-cell">
+    <div class="meta-cell no-bottom">
       <div class="meta-label">Original Source</div>
       <div class="meta-value">{src}</div>
     </div>
+    <div class="meta-cell span2 no-right no-bottom">
+      <div class="meta-label">Modern Source</div>
+      <div class="meta-value">{source_text.replace(chr(10), "<br>") if source_text else "—"}</div>
+    </div>
   </div>
 
-{source_box}
   <div class="ext-links">{poet_link}{saijiki_link}</div>
 
 </div>"""
