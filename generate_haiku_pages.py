@@ -333,12 +333,14 @@ def build_section(label, text, cls="prose-section"):
 
 def html_page(title, css, body, home_href="../../index.html"):
     nav = f'''<nav class="site-nav"><a class="site-nav-home" href="{home_href}">The Haiku Project</a><div class="site-nav-rule"></div></nav>'''
+    favicon_href = home_href.replace("index.html", "favicon.svg")
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
+<link rel="icon" type="image/svg+xml" href="{favicon_href}">
 {FONTS}
 <style>{BASE_CSS}{NAV_CSS}{css}</style>
 </head>
