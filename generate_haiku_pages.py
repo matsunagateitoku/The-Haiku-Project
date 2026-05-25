@@ -1240,6 +1240,22 @@ def main():
 
     print(f"  Poems: {poem_count} pages written")
 
+    # Add canonical poets who have a bio file but no haiku in the spreadsheet
+    for poet_slug, canon in canonical_poets.items():
+        if poet_slug in poets_data:
+            continue
+        bio_text = load_bio(args.bios, poet_slug)
+        if not bio_text:
+            continue
+        poets_data[poet_slug] = {
+            "name":   canon.get("name", ""),
+            "jp":     canon.get("jp", ""),
+            "dates":  canon.get("dates", ""),
+            "period": canon.get("period", ""),
+            "school": canon.get("school", ""),
+            "poems":  [],
+        }
+
     # Pass 2 — poet bio pages and poem-list pages
     poet_count = 0
     for poet_slug, data in poets_data.items():
