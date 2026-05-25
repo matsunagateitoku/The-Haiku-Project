@@ -453,7 +453,7 @@ def select_poems(poems, n=4):
 # Page builders
 # ---------------------------------------------------------------------------
 
-def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_season="", appreciation=""):
+def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_season="", appreciation="", canonical_name=""):
     poem_jp   = val(row.get("Poem") or row.get("Text", ""))
     romaji_raw= val(row.get("Romaji", ""))
     poet      = val(row.get("Poet", ""))
@@ -511,7 +511,8 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
     poet_link = ""
     if poet_slug and poet:
-        poet_link = f'<a class="ext-link" href="../poets/{poet_slug}.html">← {poet}</a>'
+        display_name = canonical_name or poet
+        poet_link = f'<a class="ext-link" href="../poets/{poet_slug}.html">← {display_name}</a>'
 
     saijiki_link = ""
     if saijiki_slug and saijiki_season:
@@ -553,7 +554,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
     </div>
     <div class="meta-cell">
       <div class="meta-label">Poet</div>
-      <div class="meta-value">{poet or "—"}<span class="meta-value-jp">{poet_jp}</span></div>
+      <div class="meta-value">{canonical_name or poet or "—"}<span class="meta-value-jp">{poet_jp}</span></div>
     </div>
     <div class="meta-cell span2 no-right">
       <div class="meta-label">Date of composition</div>
@@ -573,7 +574,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
 </div>"""
 
-    title = f"{poem_jp[:20]} — {poet}" if poem_jp else poet
+    title = f"{poem_jp[:20]} — {canonical_name or poet}" if poem_jp else (canonical_name or poet)
     return html_page(title, POEM_CSS, body, home_href="../../index.html")
 
 
@@ -1194,10 +1195,12 @@ def main():
         # Write poem page — pass saijiki_entry and season for link generation
         poem_slug    = poem_filename[:-5]  # strip .html
         appreciation = load_appreciation(args.appreciations, poem_slug)
+        canon_name = canonical_poets.get(poet_slug, {}).get("name", "")
         html = build_poem_page(row, poem_filename, poet_slug,
                                saijiki_slug=saijiki_entry,
                                saijiki_season=season,
-                               appreciation=appreciation)
+                               appreciation=appreciation,
+                               canonical_name=canon_name)
         with open(os.path.join(poems_dir, poem_filename), "w", encoding="utf-8") as f:
             f.write(html)
         poem_count += 1
