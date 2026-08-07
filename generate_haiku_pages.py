@@ -179,7 +179,8 @@ SAIJIKI_LIST_CSS = """
 .poem-entry:hover .poem-entry-jp { color: #1a1a1a; }
 .poem-entry-jp { font-family: "Noto Serif JP", serif; font-size: 15px; font-weight: 300; letter-spacing: 0.1em; color: #444; margin-bottom: 0.25rem; }
 .poem-entry-romaji { font-family: "IM Fell English", Georgia, serif; font-size: 13px; font-style: italic; color: #888; margin-bottom: 0.25rem; }
-.poem-entry-translation { font-size: 14px; font-weight: 300; color: #666; line-height: 1.4; }
+.poem-entry-translation { font-size: 14px; font-weight: 300; color: #666; line-height: 1.5; }
+.poem-entry-translation span { display: block; }
 .poem-entry-poet { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #aaa; margin-top: 0.4rem; }
 .back-link { display: inline-block; margin-top: 2rem; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 2px; }
 .back-link:hover { color: #1a1a1a; }
@@ -830,10 +831,17 @@ def build_saijiki_poems_list(kigo_slug, meta, all_poems):
 
     entries = ""
     for p in all_poems:
+        trans_lines = "\n".join(
+            f'        <span>{l.strip()}</span>'
+            for l in p["translation"].replace("\\n", "\n").splitlines()
+            if l.strip()
+        )
         entries += f'''    <a class="poem-entry" href="../../poems/{p["filename"]}">
       <div class="poem-entry-jp">{p["jp"]}</div>
       <div class="poem-entry-romaji">{p["romaji"]}</div>
-      <div class="poem-entry-translation">{p["translation"]}</div>
+      <div class="poem-entry-translation">
+{trans_lines}
+      </div>
       <div class="poem-entry-poet">{p["poet"]}</div>
     </a>
 '''
