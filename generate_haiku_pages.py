@@ -317,6 +317,17 @@ def kigo_parts(kigo_raw):
     return short or raw, en_clean or raw, jp
 
 
+def kigo_leading_kanji(kigo_raw):
+    """Extract the season-word term itself (leading CJK run) from a poem's
+    free-text Kigo field, e.g. '麦の秋 mugi no aki, wheat's autumn...' -> '麦の秋'.
+    Used to match a poem against the Saijiki registry by Kigo_JP."""
+    raw = val(kigo_raw)
+    if not raw:
+        return ""
+    m = re.match(r"[一-鿿぀-ヿー]+", raw.strip())
+    return m.group(0) if m else ""
+
+
 def build_section(label, text, cls="prose-section"):
     if not text:
         return ""
@@ -776,6 +787,15 @@ def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
     if all_poem_count > len(exemplars):
         see_all = f'  <a class="see-all" href="{kigo_slug}-poems.html">All {all_poem_count} poems with this season word →</a>'
 
+    exemplars_html = ""
+    if exemplars:
+        exemplars_html = f'''  <div class="section-divider">
+    <span class="section-label">Exemplar poems</span>
+    <div class="section-rule"></div>
+  </div>
+
+{poems_html}'''
+
     body = f'''<div class="saijiki-page">
 
   <div class="page-label">
@@ -795,12 +815,7 @@ def build_saijiki_entry(kigo_slug, meta, essay_text, exemplars, all_poem_count):
   </div>
 
 {essay_html}
-  <div class="section-divider">
-    <span class="section-label">Exemplar poems</span>
-    <div class="section-rule"></div>
-  </div>
-
-{poems_html}
+{exemplars_html}
 {see_all}
 
 </div>'''
@@ -1159,6 +1174,20 @@ def main():
         except Exception as e:
             print(f"  Skipping sheet '{sheet}': {e}")
 
+    # Saijiki registry — loaded up front so poem pages (Pass 1) can link to
+    # their season-word page. See the fuller comment above Pass 3 below for
+    # how a poem is matched to a term (by its Kigo field's leading kanji).
+    saijiki_slug_by_jp = {}
+    try:
+        df_s = pd.read_excel(args.xlsx, sheet_name="Saijiki")
+        for _, row in df_s.iterrows():
+            slug    = val(row.get("Kigo_Slug", ""))
+            kigo_jp = val(row.get("Kigo_JP", ""))
+            if slug and kigo_jp:
+                saijiki_slug_by_jp[kigo_jp] = slug
+    except Exception:
+        pass
+
     # Pass 1 — write poem pages, accumulate per-poet data
     slugs_used      = {}
     poets_data      = {}
@@ -1176,7 +1205,7 @@ def main():
         dates      = val(row.get("Dates", ""))
         season     = val(row.get("Season", ""))
         kigo_raw   = val(row.get("Kigo", ""))
-        saijiki_entry = val(row.get("Saijiki_Entry", ""))
+        saijiki_entry = saijiki_slug_by_jp.get(kigo_leading_kanji(kigo_raw), "")
 
         if not poem_jp and not romaji_raw:
             continue
@@ -1283,56 +1312,70 @@ def main():
         f.write(poets_index_html)
 
     # Pass 3 — saijiki pages
+    #
+    # Pipeline, in order:
+    #   1. Check the Saijiki sheet — this is the master list of kigo terms
+    #      (one row per term: slug, kanji, romaji, English gloss, season,
+    #      category). It drives which pages exist at all.
+    #   2. For each term, get the essay text from essays/{slug}.txt.
+    #   3. Get the example (exemplar) poems for that term from AI_Haiku —
+    #      poems whose Kigo field names this term AND carry a "Saijiki
+    #      priority" value, ranked by that value.
+    #   4. Get all the other matching poems from AI_Haiku — every poem
+    #      whose Kigo field names this term, priority or not — for the
+    #      "all N poems" list page.
+    #
+    # A poem is matched to a term by comparing the leading kanji run of its
+    # free-text Kigo column against the term's Kigo_JP — there is no manual
+    # per-poem tagging step.
+
+    # 1. Saijiki sheet
     saijiki_meta = {}
+    slug_by_jp = {}
     try:
         df_s = pd.read_excel(args.xlsx, sheet_name="Saijiki")
         for _, row in df_s.iterrows():
-            slug = val(row.get("Kigo_Slug", ""))
-            if not slug:
+            slug    = val(row.get("Kigo_Slug", ""))
+            kigo_jp = val(row.get("Kigo_JP", ""))
+            if not slug or not kigo_jp:
                 continue
             saijiki_meta[slug] = {
-                "kigo_en":     val(row.get("Kigo_EN", slug.replace("-", " ").title())),
-                "kigo_jp":     val(row.get("Kigo_JP", "")),
+                "kigo_en":     val(row.get("Kigo_EN", "")) or slug.replace("-", " ").title(),
+                "kigo_jp":     kigo_jp,
                 "kigo_romaji": val(row.get("Kigo_Romaji", "")),
                 "season":      val(row.get("Season", "")),
                 "category":    val(row.get("Category", "")),
             }
-    except Exception:
-        pass
+            slug_by_jp[kigo_jp] = slug
+        print(f"  Saijiki sheet: {len(saijiki_meta)} kigo terms")
+    except Exception as e:
+        print(f"  Skipping Saijiki sheet: {e}")
 
+    # 3 & 4. Match every poem row to a term by its Kigo field's leading kanji
     saijiki_poems = {}
     for sheet, row in all_rows:
-        entry_slug = val(row.get("Saijiki_Entry", ""))
+        entry_slug = slug_by_jp.get(kigo_leading_kanji(row.get("Kigo", "")))
         if not entry_slug:
             continue
+
         try:
-            order = int(float(row.get("Saijiki_Order", 999) or 999))
+            priority = float(row.get("Saijiki priority", "") or "")
+            if priority != priority:  # NaN
+                priority = None
         except (ValueError, TypeError):
-            order = 999
+            priority = None
 
         poem_jp    = val(row.get("Poem") or row.get("Text", ""))
         romaji_raw = val(row.get("Romaji", ""))
         trans_raw  = val(row.get("My translation", ""))
         poet       = val(row.get("Poet", ""))
         poet_jp    = val(row.get("俳人", ""))
-        season     = val(row.get("Season", ""))
-        kigo_raw   = val(row.get("Kigo", ""))
 
         base = slugify(romaji_raw if romaji_raw else poem_jp)
         poem_filename = f"{sheet.lower()}-{base}.html"
 
-        if entry_slug not in saijiki_meta:
-            kigo_short, kigo_en_auto, kigo_jp_auto = kigo_parts(kigo_raw)
-            saijiki_meta[entry_slug] = {
-                "kigo_en":     kigo_short or entry_slug.replace("-", " ").title(),
-                "kigo_jp":     kigo_jp_auto,
-                "kigo_romaji": entry_slug,
-                "season":      season,
-                "category":    "",
-            }
-
         saijiki_poems.setdefault(entry_slug, []).append({
-            "order":       order,
+            "priority":    priority,
             "jp":          poem_jp,
             "romaji":      romaji_inline(romaji_raw),
             "translation": trans_raw,
@@ -1342,22 +1385,31 @@ def main():
         })
 
     saijiki_count = 0
-    for kigo_slug, poems in saijiki_poems.items():
-        meta = saijiki_meta.get(kigo_slug, {})
-        season = meta.get("season", "unknown").lower()
+    saijiki_built = {}  # only terms that actually got a page — index/season pages link only to these
+    for kigo_slug, meta in saijiki_meta.items():
+        poems = saijiki_poems.get(kigo_slug, [])
 
+        # 2. essay text
+        essay_text = load_essay(args.essays, kigo_slug)
+
+        if not essay_text and not poems:
+            continue  # nothing to show for this term yet
+
+        season = (meta.get("season") or "unknown").lower()
         season_dir = os.path.join(args.out, "saijiki", season)
         os.makedirs(season_dir, exist_ok=True)
 
-        poems_sorted = sorted(poems, key=lambda p: p["order"])
-        exemplars = [p for p in poems_sorted if p["order"] < 900]
-        if not exemplars:
-            exemplars = poems_sorted[:4]
+        # 3. exemplars = prioritized matches, ranked; falls back to the
+        #    first few matches if no priority has been set yet
+        prioritized = sorted((p for p in poems if p["priority"] is not None),
+                              key=lambda p: p["priority"])
+        exemplars = prioritized[:4] if prioritized else poems[:4]
 
-        essay_text = load_essay(args.essays, kigo_slug)
+        # 4. all matches, prioritized ones first, for the full list page
+        poems_sorted = prioritized + [p for p in poems if p["priority"] is None]
 
         entry_html = build_saijiki_entry(
-            kigo_slug, meta, essay_text, exemplars, len(poems_sorted)
+            kigo_slug, meta, essay_text, exemplars, len(poems)
         )
         with open(os.path.join(season_dir, f"{kigo_slug}.html"), "w", encoding="utf-8") as f:
             f.write(entry_html)
@@ -1366,16 +1418,17 @@ def main():
         with open(os.path.join(season_dir, f"{kigo_slug}-poems.html"), "w", encoding="utf-8") as f:
             f.write(list_html)
 
-        saijiki_meta[kigo_slug]["poem_count"] = len(poems_sorted)
+        meta["poem_count"] = len(poems)
+        saijiki_built[kigo_slug] = meta
         saijiki_count += 1
 
     if saijiki_count:
-        index_html = build_saijiki_index(saijiki_meta)
+        index_html = build_saijiki_index(saijiki_built)
         with open(os.path.join(args.out, "saijiki-index.html"), "w", encoding="utf-8") as f:
             f.write(index_html)
 
         by_season = {}
-        for slug, meta in saijiki_meta.items():
+        for slug, meta in saijiki_built.items():
             s = meta.get("season", "")
             if s:
                 by_season.setdefault(s, []).append((slug, meta))
@@ -1388,7 +1441,7 @@ def main():
 
         print(f"  Saijiki: {saijiki_count} entries ({saijiki_count * 2} pages) + index")
     else:
-        print(f"  Saijiki: no entries found (add Saijiki_Entry column to spreadsheet)")
+        print(f"  Saijiki: no entries found (need a 'Saijiki' sheet with a Kigo_JP that matches poems' Kigo field, and/or essays/{{slug}}.txt files)")
 
     # Write master index
     index_html = build_index(poem_count, poet_count, saijiki_count)
