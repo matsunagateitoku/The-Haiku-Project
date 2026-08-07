@@ -464,7 +464,7 @@ haruchikashi,春近し,haruchikashi,spring is near,Winter,Season,462
 setsubun,節分,setsubun,last day of winter,Winter,Season,463
 fuyunosora,冬の空,fuyunosora,winter sky,Winter,Celestial,464
 fuyunotsuki,冬の月,fuyunotsuki,winter moon,Winter,Celestial,465
-kogarashi,木枯し,kogarashi,early winter gale,Winter,Celestial,466
+kogarashi-jw1,木枯し,kogarashi,early winter gale,Winter,Celestial,466
 kitakaze,北風,kitakaze,north wind,Winter,Celestial,467
 shigure,時雨,shigure,winter shower,Winter,Celestial,468
 hatsushigure,初時雨,hatsushigure,first icy shower,Winter,Celestial,469
@@ -642,3 +642,7 @@ nanakusa,七種,nanakusa,seven grasses,New Year,Plants,640
 hotokenoza,仏の座,hotokenoza,buddha's seat,New Year,Plants,641
 nazuna,なずな,nazuna,shepherd's purse,New Year,Plants,642
 wakana,若菜,wakana,young herbs,,,643
+harusame,春雨,harusame,spring rain,Spring,Celestial,
+rakka,落花,rakka,falling blossoms,Spring,Plants,
+akikaze,秋風,akikaze,autumn wind,Autumn,Celestial,
+kogarashi,木枯らし,kogarashi,winter wind,Winter,Celestial,
