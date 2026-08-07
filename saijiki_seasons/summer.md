@@ -625,6 +625,1101 @@ Variations: kingyo-uri (goldfish pedlar), kingyo dama (goldfish bowl), kingyo su
    Shidari o no / nishiki zo ugoku / kingyo kana  —  Kawahigashi Hekigodo
    The drooping / tail’s brocade moves — / goldfish.
 
+### 初鰹 Hatsugatsuo — First Bonito
+
+The bonito is a hard-boned fish of the mackerel family. Schools of bonito ride on a black current and approach the south eastern shores of Japan around the time when the trees are filled with the green leaves of summer. Then, fishing begins, and the first batches that are caught are called the first bonito. They were immediately sent from Odawara and Kamakura to Edo, where, being highly prized, they were vied for. Bonito grow to more than 50 cm in length, have few scales and firm, red flesh. They are eaten raw, or dried and shaved into flakes and used on vegetables or as soup stock.
+
+**Poems:**
+
+1. 目には青葉山郭公初鰹 -- 素堂
+   *Me ni wa aoba / yama hototogisu / hatsugatsuo -- Sodo*
+   > Green leaves to see,
+   > the mountain little cuckoo,
+   > and first bonito.
+   > This ku was made in Kamakura, famous for bonito; it was also the seat of the first shogunate. The senses of sight, sound and taste are amply satisfied.
+
+2. 鎌倉を生きて出でけん　初鰹 -- 芭蕉
+   *Kamakura wo / ikite ideken / hatsugatsuo -- Basho*
+   > They must have
+   > left Kamakura alive,
+   > the first bonito.
+
+3. くれなゐは　花にかぎらじ　初鰹 -- 蕉太
+   *Kurenai wa / hana ni kagiraji / hatsugatsuo -- Ryota*
+   > Scarlet is
+   > not limited to flowers —
+   > the first bonito.
+
+4. 初鰹　聞きおよんだる　ばかりなり -- 岡野知十
+   *Hatsugatsuo / kiki oyondaru / bakari nari -- Okano Chiju*
+   > The first bonito —
+   > so far I've just
+   > heard it.
+
+### 夏の虫 Natsu no mushi — Summer Insects [Summer / Dobutsu]
+
+The general name for the various insects of summer. In old poetry this term was used to mean light-drawn insects mainly; in haiku this is also true, but other insects of daytime are also included.
+
+**Poems:**
+
+1. 夏虫の　碁にこがれたる　命かな -- 其角
+   *Natsu mushi no / go ni kogaretaru / inochi kana -- Kikaku*
+   > Summer insects —
+   > by "go" being scorched,
+   > their lives.
+
+2. 夏虫も　火を守る　宇治の　網代かな -- 越人
+   *Natsu mushi mo / hi wo moru Uji no / ajiro kana -- Etsujin*
+   > Summer insects, too,
+   > guard the fires — Uji's
+   > fish weirs.
+
+3. 片羽もえて　這ひ歩きけり　夏の虫 -- 関更
+   *Kata ha moete / hai aruki keri / natsu no mushi -- Ranko*
+   > A wing scorched,
+   > it crawled on —
+   > summer insect.
+
+4. 夏虫や昼は美咲く　水ぼとり -- 小杉余子
+   *Natsu mushi ya / hiru wa hishi saku / mizubotori -- Kosugi Yoshi*
+   > Summer insects —
+   > in daytime, where water
+   > chestnuts bloom.
+
+### 火取虫 Hitori mushi — Light-Drawn Insects, Moths [Summer / Dobutsu]
+
+The various little insects, including moths, that are active at night, attracted to the lights of lamps. They can be seen around street lights, fly into houses and come to one's desk. Many perish while flying around or against the lights. Poets in the old days took up this theme as "summer insects." Haijin have found this kigo full of interest and pathos.
+
+Variations: ga (moths).
+
+**Poems:**
+
+1. 筆とめて　打ち払ひけり　火取虫 -- 関更
+   *Fude tomete / uchi harai keri / hitori mushi -- Ranko*
+   > Stop writing,
+   > to wave them away —
+   > light-drawn insects.
+
+2. 行灯に　はかなき影や　火取虫 -- 青羅
+   *Andon ni / hakanaki kage ya / hitori mushi -- Seira*
+   > By the paper lamp
+   > their fleeting shadows —
+   > light-drawn insects.
+
+3. 火取虫　外に出ている　宵の人 -- 尾崎紅葉
+   *Hitori mushi / soto ni dete iru / yoi no hito -- Ozaki Koyo*
+   > Light-drawn insects —
+   > people are all out
+   > this evening.
+
+4. はためくをやめて　あゆみ入る　火取虫 -- 軽部烏豆子
+   *Hatameku wo / yamete ayumiru / hitori mushi -- Karube Utashi*
+   > They've stopped
+   > fluttering, and walk now —
+   > light-drawn insects.
+
+### 毛虫 Kemushi — Caterpillar [Summer / Dobutsu]
+
+The hairy larvae of butterflies and moths that live in summer trees and plants, feeding on stems and leaves. Covered with a hairy fuzz, they look strange; if touched, they will sting. As caterpillars are fond of fruit trees and do harm to crops, they are burnt by lighting cotton soaked in oil.
+
+Variations: kemushi yaka (to burn caterpillars).
+
+**Poems:**
+
+1. 朝風に　毛を吹かれ居る　毛虫かな -- 蕪村
+   *Asa kaze ni / ke wo fukare iru / kemushi kana -- Buson*
+   > In the morning breeze
+   > its fur being blown —
+   > caterpillar.
+
+2. 祭り見に　ぶらぶら下がる　毛虫かな -- 一茶
+   *Matsuri mi ni / burabura sagaru / kemushi kana -- Issa*
+   > To see the festival,
+   > it strolls down —
+   > caterpillar.
+
+3. 毛虫いま　駱駝の瘤のごと急ぐ -- 野見山朱鳥
+   *Kemushi ima / rakuda no kobu no / goto isogu -- Nomiyama Shuccho*
+   > The caterpillar now,
+   > with a camel's hump,
+   > hurries.
+
+4. 毛虫もいま　みどりの餌を終へ　歩みそむ -- 中村草田男
+   *Kemushi no ima / midori no ge wo oe / ayumisommu -- Nakamura Kusatao*
+   > The caterpillar too,
+   > done with a green meal,
+   > starts to walk.
+
+### 蝉 Semi — Cicada [Summer / Dobutsu]
+
+The shrill song of this insect is an inevitable part of the summer landscape. In the mountains, cicadas begin to sing around May, but after the rainy season ends in July, many kinds of cicadas can be heard — the abura zemi (oil cicada) that goes "jijiji", the minmin semi that sings its name, kuma zemi (bear cicada) that says "shaa shaa", the niinii zemi that also sings its name. Heard in the afternoon, cicada voices sound hot, but in the mornings or dusks, they can sound cool.
+
+They are mostly dark brown with transparent wings. Only the males sing; the females, being silent, are called oshi zemi (dumb cicadas). In comparison with the long period spent in the earth, the life of the cicada is very short, so that it was frequently used allegorically as a motif of impermanence by poets.
+
+Variations: hatsu-semi (first cicada), semi-shigure (a shower of cicada voices).
+
+**Poems:**
+
+1. 頓て死ぬ　けしきは見えず　蝉の声 -- 芭蕉
+   *Yagate shinu / keshiki wa miezu / semi no koe -- Basho*
+   > Soon to die,
+   > it does not seem —
+   > the cicada's voice.
+
+2. 閑さや　岩にしみ入る　蝉の声 -- 芭蕉
+   *Shizukasa ya / iwa ni shimi iru / semi no koe -- Basho*
+   > The stillness —
+   > into boulders sink
+   > cicada voices.
+
+3. 蝉鳴いて　杉にも脂の　流れけり -- 関更
+   *Semi naite / sugi ni mo yani no / nagare keri -- Ranko*
+   > Cicadas singing,
+   > even from cedars,
+   > resin flowed.
+
+4. 唖蝉も　鳴きをはりたる　さまをせり -- 加藤楸邨
+   *Oshi zemi mo / naki owari taru / sama wo seri -- Kato Shuson*
+   > A dumb cicada, too,
+   > made as though it just
+   > finished a song.
+
+### 空蝉 Utsusemi — Cicada Shell [Summer / Dobutsu]
+
+The empty, transparent shell of the cicada, cast off as it matures from the larval state to maturity. The shells can be found clinging to tree trunks or grasses, or lying on mountain paths. Since Heian times the cicada shell has been a consistent symbol of evanescence.
+
+Variations: semi no kara (cicada shell), semi no monuke (cicada's cast-off skin).
+
+**Poems:**
+
+1. 梢より　あだに落ちけり　蝉のから -- 芭蕉
+   *Kozue yori / ada ni ochikeri / semi no kara -- Basho*
+   > From tree-top
+   > in vain it fell,
+   > a cicada shell.
+
+2. わくらばに　取り付いて　蝉の　もぬけかな -- 蕪村
+   *Wakuraba ni / tori tsuite semi no / monuke kana -- Buson*
+   > Clinging to a
+   > worm-eaten leaf, a cicada's
+   > discarded shell.
+
+3. 風わずかに　石の上なる　蝉の殻 -- 高野素十
+   *Kaze wazuka ni / ishi no ue naru / semi no kara -- Takano Suju*
+   > The wind slight,
+   > on a rock,
+   > a cicada shell.
+
+4. 空蝉の　目に見るものを　おそれけり -- 平井照敏
+   *Utsusemi no / me ni miru mono wo / osore keri -- Hirai Shobin*
+   > Cicada shell —
+   > it frightened those
+   > who saw it.
+
+### 兜虫 Kabutomushi — Beetle [Summer / Dobutsu]
+
+The largest of the family of Scarabaeidae, its Japanese name is "helmet insect." On the male's black head are horns like those of a deer, with the ends dividing in two, so that it appears to be wearing a helmet. Beetles are favorites of boys, who admire their heroic forms and are fond of playing with them, making them pull little carts or engaging them in wrestling matches. As beetles feed on the resin of oak trees and are fond of honey locusts, high plains or forests are frequented in the summer holidays by children and parents who go in search of them.
+
+**Poems:**
+
+1. 炎天や　瓦をすべる　兜虫 -- 室生犀星
+   *Enten ya / kawara wo suberu / kabuto mushi -- Muro Saisei*
+   > A blazing sky —
+   > from roof tiles slips
+   > a beetle.
+
+2. ひっぱられ　糸　まっすぐや　兜虫 -- 高野素十
+   *Hipparaneru / ito massugu ya / kabuto mushi -- Takano Suju*
+   > The string being pulled,
+   > perfectly straight —
+   > a beetle.
+
+3. 縛されて　意力光る　兜虫 -- 秋元不死男
+   *Bakusaute / nenriki hikaru / kabuto mushi -- Akimoto Fujio*
+   > Harnessed,
+   > his will power gleams —
+   > the beetle.
+
+4. 夜の山の　あをさ　動かす　兜虫 -- 福田甲子雄
+   *Yo no yama no / aosa ugokasu / kabuto mushi -- Fukuda Kaneo*
+   > The night mountain's green
+   > stirs —
+   > beetles.
+
+### 蠅 Hae — Flies [Summer / Dobutsu]
+
+Of the insects active in summer, the fly is one of the most detested, being unsanitary and pestering. Among the varieties are the golden fly (kinbae), which has a gleam of gold-green, and the striped fly (shimabae), a large type. Most common is the house fly that comes to the food on the table. As flies are phenomena of summer close to our daily lives, they have been a kigo of haiku from the beginning, and continue to be a popular subject.
+
+Variations: hae no koe (voices of flies), haetorigami (fly paper), hae tataki (fly swatter).
+
+**Poems:**
+
+1. 蓋すれば　出て行く　蠅の羽音かな -- 牧童
+   *Futa sureba / dite yuku hae no / haoto kana -- Bokudo*
+   > Putting on the cover,
+   > it left —
+   > the fly's wing sounds.
+
+2. 蠅散って　且う　白しや　盆の糊 -- 蕪村
+   *Hae chitte / katsu shiroshi ya / bon no nori -- Buson*
+   > The flies scatter,
+   > for a moment white —
+   > the tray's starch.
+
+3. やれうつな　蠅は手をする　足をする -- 一茶
+   *Yare utsuna / hae wa te wo suru / ashi wo suru -- Issa*
+   > Don't swat it!
+   > The fly rubs its hands,
+   > its feet.
+   > To put the hands together and rub them is a sign of reverence and prayers. When the fly does this, we should feel pity for it. Issa shows his deep sympathy for all living things.
+
+4. 一つ追ひ　をれば　二つに　夜の蠅 -- 久保田万太郎
+   *Hitotsu oi / toreba futatsu ni / yoru no hae -- Kubota Mantaro*
+   > Chasing one,
+   > now there are two —
+   > nighttime flies.
+
+### 蚊 Ka — Mosquito [Summer / Dobutsu]
+
+One of the offensive insects of summer that stings and makes being outdoors troublesome. As Sei Shonagon wrote, "when ready to go to sleep, lying down, it announces itself in a thin voice and flies around one's face — even its wing sound is detestable, how much more, its close vicinity." It is said the females are fond of human blood, while the males feed on the juices of plants. Mosquitoes became a very popular haiku kigo.
+
+Variations: ka no koe (mosquito voice), ka bashira (mosquito pillar — a column of mosquitoes mating), hiru no ka (daytime mosquito), ka yari (mosquito punk), kaya (mosquito net).
+
+**Poems:**
+
+1. わが宿は　蚊のちいさきを　馳走也 -- 芭蕉
+   *Waga yado wa / ka no chiisaki wo / chiso nari -- Basho*
+   > My house —
+   > tiny mosquitoes
+   > are the treat.
+
+2. 蚊ばしらの　際ほのぼのと　三日の月 -- 牧童
+   *Kabashira no / kiwa honobono to / mika no tsuki -- Bokudo*
+   > A swarm of mosquitoes —
+   > at their edge, dimly,
+   > a crescent moon.
+
+3. 昼の蚊を　後にかくす　仏かな -- 一茶
+   *Hiru no ka wo / ushiro ni kakusu / hotoke kana -- Issa*
+   > A daytime mosquito,
+   > the Buddha hides it
+   > behind him.
+
+4. 叩かれて　昼の蚊を吐く　木魚かな -- 夏目漱石
+   *Takakarete / hiru no ka wo haku / mokugyo kana -- Natsume Soseki*
+   > When struck, out came
+   > a daytime mosquito —
+   > sutra drum.
+
+### 蟻 Ari — Ants [Summer / Dobutsu]
+
+The sight of ants busily coming and going in rows through gardens or paths is indeed a part of summer. These are working ants, active in warm weather, carrying supplies for the winter for their well-organized society headed by the queen ant. When ants become mature, they have wings; in this state they are winged ants (ha-ari). After mating, the wings drop off and the males die gradually, while the females return underground to lay eggs.
+
+Variations: yama ari (mountain ants), ari no michi (road of ants), ari no to (ant hill), ari no retsu (row of ants).
+
+**Poems:**
+
+1. 蟻の道　雲の峰より　つづきけん -- 蕉
+   *Ari no michi / kumo no mine yori / tsuzukiken -- Joso (attr.)*
+   > A road of ants —
+   > from a cloud peak,
+   > continuing.
+
+2. 塵取にすこしかかりて　蟻の道 -- 大橋桜坡子
+   *Chiritori ni / sukoshi kakarite / ari no michi -- Ohashi Ohashi*
+   > On the dust-pan
+   > a part of it lies —
+   > the road of ants.
+
+3. 二階まで　蟻　のぼりきて　午後ふかし -- 加藤秋邨
+   *Nikai made / ari nobori kite / gogo fukashi -- Kato Shuuson*
+   > To the second floor,
+   > ants have climbed —
+   > late afternoon.
+
+4. 蟻の列　しづかに蝶を　うかべたる -- 篠原梵
+   *Ari no retsu / shizuka ni cho wo / ukabetaru -- Shinohara Bon*
+   > The row of ants —
+   > quietly, a butterfly
+   > afloat.
+
+### 蛞蝓 Namekuji — Slug [Summer / Dobutsu]
+
+A mollusc like a snail, without a shell, found along ditches, waterways and sinks. Its grey-brown body, about 6 cm, is covered with mucous membranes. It crawls by stretching and shrinking the stomach area, and leaves a silver slime behind it. Being fond of damp places, slugs can be seen during the rainy season or on rainy days. They feed on cabbages, fruit and leaves.
+
+**Poems:**
+
+1. なめくぢり　這ひて光るや　古具足 -- 嵐雪
+   *Namekujiri / haite hikaru ya / furu gusoku -- Ransetsu*
+   > The slug
+   > crawling, its old
+   > armour shines.
+
+2. 何事を　壁に書きてや　蛞蝓 -- 春波
+   *Nanigoto wo / kabe ni kakite ya / namekujiri -- Shunpa*
+   > It's written
+   > something on the wall —
+   > the slug.
+
+3. なめくぢの　左曲りと　右曲り -- 高野素十
+   *Namekuji no / hidari magari to / migi magari -- Takano Suju*
+   > The slug's
+   > left turn and
+   > right turn.
+
+4. なめくぢり　身を絞りつつ　起き返り -- 野見山朱鳥
+   *Namekujiri / mi wo shibori tsutsu / okikaeri -- Nomiyama Shuccho*
+   > The slug,
+   > wringing its body,
+   > gets up.
+
+### 蝸牛 Katatsumuri — Snail [Summer / Dobutsu]
+
+The snail reveals itself most frequently from around May to July, crawling slowly along the leaves of grasses, on tree branches or on stone fences. It carries a spiral shell on its back, in which it takes shelter in times of danger. Like the slug, it leaves a sticky, silver slime in its traces as it crawls slowly and deliberately, but unlike it, the snail is rather fondled by children, who call it dendenmushi or dedemushi. It moves its horns apart as it crawls. Looking on its silver slime as written letters is the working of the mind of "kai." Also called katatsaburi.
+
+**Poems:**
+
+1. かたつぶり　角ふりわけよ　須磨明石 -- 芭蕉
+   *Katatsuburi / tsuno furiwake yo / Suma Akashi -- Basho*
+   > Oh, snail,
+   > wave your horns apart,
+   > Suma, Akashi.
+   > Suma and Akashi are two townships west of Kobe City. In the Genji Monogatari, chapter on Suma, it says, "Akashi bay is at a distance to which one can crawl," meaning very near. The word relates the snail to Suma and Akashi.
+
+2. 今朝見れば　夜の歩や　かたつぶり -- 太祇
+   *Kesa mireba / yoru no ayumi ya / katatsubari -- Taigi*
+   > In the morning see
+   > its walk of last night —
+   > the snail.
+
+3. 点滴に　うたれて籠る　蝸牛 -- 蕪村
+   *Tenteki ni / utarete komoru / katatsumuri -- Buson*
+   > Hit by a drop
+   > of water, the snail withdraws
+   > from the world.
+
+4. かたつむり　老いて眠りを　大切に -- 長谷川双魚
+   *Katatsumuri / oite nemuri wo / taisetsu ni -- Hasegawa Sogyo*
+   > The snail,
+   > growing old, takes a
+   > lot of sleep.
+
+### 余花 Yoka — Remnants of Flowers [Summer / Shokubutsu]
+
+These include two groups: the flowers that remain in bloom after their seasonal time, and those that bloom after spring has ended, especially cherry flowers which open among early summer's young leaves.
+
+Variations: wakaba no hana (flowers among young leaves), aoba no hana (flowers among green leaves), natsuzakura (summer cherry flowers).
+
+**Poems:**
+
+1. なつかしや　若葉に残る　花の蕊 -- 蝶夢
+   *Natsukashi ya / wakaba ni nokoru / hana no shibe -- Chomu*
+   > How endearing!
+   > Among young leaves, remnants of
+   > flower pistils.
+
+2. 余花に逢ふ　再び逢ひし　人のごと -- 高浜虚子
+   *Yoka ni au / futatabi aishi / hito no goto -- Takahama Kyoshi*
+   > To meet remnants of
+   > flowers: like meeting
+   > someone again.
+
+3. 一電車　早きばかりに　余花暮れず -- 中村汀女
+   *Hito densha / hayoki bakari ni / yoka kurezu -- Nakamura Teijo*
+   > One tram sooner,
+   > it wouldn't have dusked on
+   > the remnants of flowers.
+
+4. 傘の内　随きくる鹿や　余花の雨 -- 橋本鶏二
+   *Kasa no uchi / tsuki kuru shika ya / yoka no ame -- Hashimoto Keiji*
+   > Under the umbrella
+   > a deer comes trailing —
+   > rain on flower remnants.
+
+### 牡丹 Botan — Peony [Summer / Shokubutsu]
+
+This plant was brought to Japan about a thousand years ago from China, where it was known as the "king of the hundred flowers." As the Tang poet Po Chui wrote, "the flowers open, and fall, in twenty days," another name is the twenty-days flower. He compared it to the face of a beautiful woman.
+
+The peony bush grows to a height of a meter or more; the large flowers can have a diameter of about 20 cm, and come in red-purple, white, pink, red, black-purple, and yellow, with a deep perfume. As they are so luxuriant, they earned the name fiki-gusa (grass of prosperity). Like the chrysanthemum and herbaceous peony (shakuyaku), the peony has long been a favorite subject of poets as well as painters. Places famous for peonies are Hase-dera temple in Nara, Taima-dera temple in Iwashiro, Sukagawa in Fukushima, to name a few.
+
+Variations: shiro or haku botan (white peony).
+
+**Poems:**
+
+1. 古庭に　蟻　来たりたる　牡丹哉 -- 嵐雪
+   *Furu niwa ni / ari kitaritaru / botan kana -- Ransetsu*
+   > To an old garden
+   > the ants have come —
+   > peonies in bloom.
+
+2. 牡丹散りて　うちかさなりぬ　二三片 -- 蕪村
+   *Botan chirite / uchi kasanarinu / ni san ben -- Buson*
+   > A peony scatters —
+   > one on another, two,
+   > three petals.
+
+3. 飛ぶ蝶を　喰はんとしたる　牡丹哉 -- 抱一
+   *Tobu cho wo / kuwan to shitaru / botan kana -- Hoitsu*
+   > A flitting butterfly
+   > it's about to swallow —
+   > the peony.
+
+4. 白牡丹　崩れんとして　二日見る -- 成美
+   *Shiro botan / kuzuren to shite / futsuka miru -- Seibi*
+   > A white peony,
+   > about to crumble,
+   > for two days.
+
+### 薔薇 Bara — Rose [Summer / Shokubutsu]
+
+The roses that came to Japan from China were called sobi (the Chinese reading of these kanji), and this name was used in the poetry of the 9th century. They were first cultivated for the imperial palace and nobility, and it was not till Meiji times that they finally came to be widely cultivated by the populace. One strongly fragrant, rich flower blooms at the top of a branch covered with thorns. Although there are countless varieties, single and double, and those that bloom in spring and autumn, roses were fixed as a theme of early summer. In haiku, ibara, the wild field rose has been considered more important.
+
+**Poems:**
+
+1. 針ありと　蝶に知らせん　花薔薇 -- 乙由
+   *Hari ari to / cho ni shirasen / hana sobi -- Otsuyu*
+   > There are thorns;
+   > Butterflies should be warned,
+   > rose flowers.
+
+2. 夕風や　白薔薇の花　皆動く -- 正岡子規
+   *Yu kaze ya / shiro bara no hana / mina ugoku -- Masaoka Shiki*
+   > An evening breeze —
+   > the white roses
+   > all sway.
+
+3. 見るうちに　薔薇たわたわと　散り積る -- 高浜虚子
+   *Miru uchi ni / bara tawatawa to / chiri tsumoru -- Takahama Kyoshi*
+   > While gazing,
+   > the rose crumbled
+   > into a pile.
+
+4. ばら展の　ばら競ひつつ　萎えてゆく -- 山口波津女
+   *Bara ten no / bara kisoi tsutsu / naete yuku -- Yamaguchi Hatsujo*
+   > The roses
+   > of a rose exhibit vie,
+   > as they wither.
+
+### 石楠花 Shakunage — Rhododendron [Summer / Shokubutsu]
+
+An evergreen bush of the azalea family, native to the Himalayas, the rhododendron grows in fairly high mountains and valleys of Japan, to the height of three meters. The leaves are long, oval, with a leather-like texture, the front sides are smooth, the undersides have a brownish fuzz. In early summer five to eight-petaled flowers resembling the azalea, bloom in clusters at the tips of the boughs. The many varieties, pink, red, pale yellow and white, are greatly admired and planted in gardens.
+
+Muroji temple in Nara, Kurokami mountain in Nikko, and Mt. Koya in Wakayama are a few places famous for rhododendrons.
+
+**Poems:**
+
+1. 石楠花に　碁の音響く　山深し -- 高浜虚子
+   *Shakunage ni / go no oto hibiku / yama fukashi -- Takahama Kyoshi*
+   > Among rhododendrons,
+   > the echoes of "go" —
+   > the mountain is deep.
+
+2. 石楠花に　躍りゆく瀬や　室生川 -- 水原秋桜子
+   *Shakunage ni / odori yuku se ya / Murogawa -- Mizuhara Shuoshi*
+   > By rhododendrons
+   > dancing rapids flow —
+   > Muro river.
+
+3. 石楠花を　隠さう雲の　急にして -- 阿波野青畝
+   *Shakunage wo / kakuso kumo no / kyu ni shite -- Awano Seiho*
+   > Rhododendrons
+   > will be hidden! The clouds,
+   > so swift.
+
+4. 石楠花の　夕明りして　われ立てり -- 高浜年尾
+   *Shakunage no / yu akari shite / ware tateri -- Takahama Toshio*
+   > In rhododendrons'
+   > evening glow
+   > I stood.
+
+### 花橘 Hana tachibana — Citrus Flower [Summer / Shokubutsu]
+
+This is the fragrant, small 5-petaled white flower of the only wild variety of citrus that grows in warm areas near the seacoasts of Kyushu, Shikoku, Wakayama and central Japan. It blooms in June, the flowers more favoured than the inedible fruit. It is said that this evergreen tree was brought from the world of Eternity in ancient times, by Tajima Mori, and was known as tokijiku no konomi (the timeless perfumed fruit). In the 9th century it was planted in Kyoto's Shishinden palace grounds to represent the imperial guards of the right, while the cherry tree was set to represent those of the left. Considered to be a symbol of long life and eternity, old poets often referred to it as the home of the little cuckoo.
+
+**Poems:**
+
+1. 駿河路や　花橘も　茶の匂ひ -- 芭蕉
+   *Suruga-ji ya / Hana tachibana mo / cha no nioi -- Basho*
+   > The road through Suruga —
+   > even the citrus flowers
+   > have the scent of tea.
+   > Suruga is the old name for Shizuoka prefecture, famous for both citrus flowers and tea bushes, which flourish around the same time.
+
+2. 橘や　下に落ちたる　鳥の糞 -- 桃隣
+   *Tachibana ya / shita ni ochitaru / tori no fun -- Torin*
+   > Citrus flowers —
+   > under them has fallen
+   > bird dung.
+
+3. 世に薫る　花橘やちる跡も -- 羽女
+   *Yo ni kaoru / hana tachibana ya / chiru ato mo -- Ukijo*
+   > A citrus flower
+   > perfumes the world,
+   > even after scattering.
+
+4. 橘の　花や　したがふ　葉三枚 -- 星野立子
+   *Tachibana no / hana ya shitagai / ha san mai -- Hoshino Tatsuko*
+   > A citrus
+   > flower — and three leaves
+   > that seem to follow it.
+
+### 紫陽花 Ajisai — Hydrangea [Summer / Shokubutsu]
+
+The hydrangea flower is made up of many small, four-petaled blossoms in a round, ball-like cluster, hence the names temaribana (hand-ball flower) and yohira no hana (four-petaled flower). Once in bloom, it changes colour many times, so it is also called shichihenge (seven changes). The bush grows to the height of 1½ meters, with thick, roundish leaves. As the flowers open during the rainy season when relatively few other flowers are in bloom, their collective presence is attractive.
+
+Variations: azusai, hama azusai (beach hydrangea), yama ajisai (mountain hydrangea).
+
+**Poems:**
+
+1. あぢさゐの　花や手鞠の　染めかへし -- 北枝
+   *Ajisai no / hana ya temari no / some kaeshi -- Hokushi*
+   > Hydrangea
+   > flowers — like hand-balls
+   > re-dyed.
+
+2. 紫陽花や　寄れば　蚊の鳴く　花の裏 -- 暁台
+   *Ajisai ya / yoreba ka no naku / hana no ura -- Gyodai*
+   > Hydrangeas —
+   > if you get close, mosquitoes hum
+   > behind the flowers.
+
+3. 紫陽花の　末　一色と　なりにけり -- 一茶
+   *Ajisai no / sue iashoku to / nari ni keri -- Issa*
+   > The end of
+   > hydrangeas — all became
+   > one colour.
+
+4. 紫陽花や　白よりいでし　浅みどり -- 渡辺水巴
+   *Ajisai ya / shiro yori ideshi / asa midori -- Watanabe Suika*
+   > Hydrangeas —
+   > from white came
+   > pale green.
+
+### 青梅 Ao ume — Green Plums [Summer / Shokubutsu]
+
+As the rainy season begins in May or June, the firm, green fruit of the plum trees start to grow among their thickening foliage. At first they are difficult to discern, but as they get bigger, they enhance the beauty of the trees. They are picked before ripening, and pickled, made into wine or boiled with sugar as they are strongly acid. The sourness is not only appetizing, but also medicinal.
+
+Variations: ume no mi, mi-ume (plum fruit), ni-ume (boiled plums), ko-ume (little plums), ume-uri (selling plums).
+
+**Poems:**
+
+1. うれしさは　葉がくれ　梅の　ひとつかな -- 杜国
+   *Ureshisa wa / hagakure ume no / hitotsu kana -- Tokoku*
+   > The joy —
+   > to find a plum
+   > hidden in leaves!
+
+2. 青梅に　眉　あつめたる　美人哉 -- 蕪村
+   *Ao ume ni / mayei atsume taru / bijin kana -- Buson*
+   > At the green plum
+   > her eyebrows gathered,
+   > a beautiful woman.
+
+3. 青梅や　酸い顔もせず　男の童 -- 蕭山
+   *Ao ume ya / sui gao mo sezu / o no warawa -- Shoran*
+   > Green plums —
+   > the little boy doesn't make
+   > a sour face.
+
+4. 青梅に　手をかけて寝る　蛙かな -- 一茶
+   *Ao ume ni / te wo kakete neru / kawazu kana -- Issa*
+   > On a green plum
+   > its hand placed,
+   > the frog asleep.
+
+### 夏木立 Natsu kodachi — Summer Grove [Summer / Shokubutsu]
+
+A number of trees standing in a group, their branches and foliage intermingling with summer's luxuriant growth. It is joyful and refreshing to walk through them and feel nature's unique display of this season. Natsu-ki (summer tree) is used when one tree is meant. "Kodachi" is used for summer and winter groves, but not for those of spring and autumn.
+
+**Poems:**
+
+1. 先づ頼む　椎の木もあり　夏木立 -- 芭蕉
+   *Mazu tanomu / shii no ki mo ari / natsu kodachi -- Basho*
+   > First, a pasania
+   > tree to rely on,
+   > summer grove.
+   > A ku of 1690, made on settling briefly in a hut called Genjuan (Abide in Transience Hut), after a long journey. The pasania is a solid evergreen that can grow to 20 meters in height.
+
+2. 甘き香は　何の花ぞも　夏木立 -- 太祇
+   *Amaki ka wa / nan no hana zo mo / natsu kodachi -- Taigi*
+   > The sweet scent —
+   > what flower could it be?
+   > Summer grove.
+
+3. 塔ばかり　見えて東寺は　夏木立 -- 一茶
+   *To bakari / miete Toji wa / natsu kodachi -- Issa*
+   > Only a pagoda
+   > can be seen, the East Temple,
+   > a summer grove.
+
+4. 谷坊を呼ぶ峰坊や　夏木立 -- 菅野師竹
+   *Tani bo wo / yobu mine bo ya / natsu kodachi -- Sugano Shichikee*
+   > A valley monk
+   > being called by a peaks monk;
+   > summer grove.
+
+### 茂 Shigeri — Luxuriant Growth [Summer / Shokubutsu]
+
+The thick growth of leaves on trees, so refreshing to see in early summer, and pleasantly shady in mid-summer. This kigo is the state after wakaba (young leaves) and aoba (green leaves). Birds and insects enhance the life of nature at this season, and little sunlight, rain or moonlight can leak through. The luxuriant growth of grasses is a separate kigo.
+
+**Poems:**
+
+1. 嵐山　薮の茂りや　風の筋 -- 芭蕉
+   *Arashiyama / yabu no shigeri ya / kaze no suji -- Basho*
+   > Arashi mountain —
+   > through the luxuriance of groves
+   > a line of the wind.
+
+2. 光り合ふ　二つの山の　茂りかな -- 去来
+   *Hikari au / futatsu no yama no / shigeri kana -- Kyorai*
+   > Reflecting their lustre:
+   > the luxuriant growth of
+   > two mountains.
+
+3. 山深く　しげりに入りぬ　夕がらす -- 紫暁
+   *Yama fukaku / shigeri ni irimu / yu garasu -- Shigyo*
+   > Deep into a mountain's
+   > luxuriant growth,
+   > a dusk crow.
+
+4. 灯ともせば　雨音　わたる　茂りかな -- 角川源義
+   *Hi tomoseba / amaoto wataru / shigeri kana -- Kadokawa Genyoshi*
+   > A light put on,
+   > the sound of rain across
+   > luxuriant growth.
+
+### 木下闇 Ko no shita yami — Under-Trees Darkness [Summer / Shokubutsu]
+
+The shady darkness in daytime under thickly growing summer trees. It comes as a great relief as one enters a grove from the hot sunlight. As a kigo this psychological feeling may be said to be stronger than the physical. In old poetry it was referred to as ko no kure (the dusk of trees); but from Heian times the present expression, kono shita yami, came to be used and has continued through renga and haikai to the present. It is sometimes abbreviated as koshita yami or shita yami. The dark shades under trees are a refreshing and beautiful part of the summer mountains.
+
+**Poems:**
+
+1. 須磨寺や　吹かぬ笛聞く　木下闇 -- 芭蕉
+   *Suma dera ya / fukanu fue kiku / Koshita yami -- Basho*
+   > Suma temple —
+   > an unblown flute heard,
+   > under-trees darkness.
+   > Suma temple has among its treasures a flute called Aoba (Green Leaf) that belonged to Taira Atsumori (1169–84). He was beheaded in the battle of Ichi no Tani by Kumagaya Naozane, an episode reproduced in Kabuki and Noh drama. Basho felt as though he heard the flute in the wind through the lonely, deep grove.
+
+2. 霧雨に　木の下闇の　紙帳かな -- 嵐雪
+   *Kirisame ni / ko no shita yami no / shicho kana -- Ransetsu*
+   > In misty rain
+   > the under-trees darkness
+   > mosquito net.
+
+3. 下闇に　乾かぬ　関伽の　しづくかな -- 蕉太
+   *Shita yami ni / kawakanu aka no / shizuku kana -- Ryota*
+   > In under-trees darkness
+   > lustral water doesn't dry,
+   > water drops.
+
+4. 木の闇を　音なくて出づ　揚羽蝶 -- 山口誓子
+   *Ko no yami wo / oto nakute izu / agebacho -- Yamaguchi Seishi*
+   > Out of the trees'
+   > darkness, silently,
+   > a swallow-tail butterfly.
+
+### 若葉・青葉 Wakaba, Aoba — Young Leaves / Green Leaves [Summer / Shokubutsu]
+
+Wakaba means the fresh, watery new leaves of various trees that make the landscape of early summer so refreshing and beautiful. The names of trees can be used, as in persimmon young leaves, oak young leaves, camphor young leaves. In 16th century renga it became a theme of summer and made distinct from kusa wakaba (young leaves of grasses), a topic of spring.
+
+Aoba are the deeper green leaves after the wakaba stage, when they are lighter in colour, and became a kigo in the early twentieth century. The expression aoba-wakaba, which was said in older haiku, refers to both light and dark green leaves.
+
+Variations: mura wakaba (clusters of young leaves), wakaba kaze (wind in young leaves), wakaba ame (rain on young leaves), aoba wakaba (light and dark green leaves), aoba yama (mountain of green leaves).
+
+**Poems:**
+
+1. あらたうと　青葉若葉の　日の光 -- 芭蕉
+   *Aratoute / aoba wakaba no / hi no hikari -- Basho*
+   > How lofty!
+   > Dark and light green leaves
+   > in the sun's lustre.
+   > Written at Nikko at Toshogu shrine, the mausoleum of the Tokugawa Shogun Ieyasu and family. The name Nikko is in the last line as hi no hikari.
+
+2. 不二ひとつ　うづみ残して　わかばかな -- 蕪村
+   *Fuji hitotsu / uzumi nokoshite / wakaba kana -- Buson*
+   > Only Mt. Fuji
+   > left uncovered —
+   > young leaves.
+
+3. 里の灯を　ふくみて　雨の若葉かな -- 蕉太
+   *Sato no hi wo / fukumite ame no / wakaba kana -- Ryota*
+   > The village lamps
+   > shine in them,
+   > young leaves in the rain.
+
+### 若楓 Waka kaede — Young Maple Leaves [Summer / Shokubutsu]
+
+The new leaves of the maple tree that turn scarlet in autumn. In early summer those leaves are a watery light green, dazzling in sunlight, and attractive with their refreshing beauty. In Tsurezure-gusa, Yoshida Kenko said, "the fourth month's young maple leaves surpass all the flowers, and even its own autumn leaves, and are very auspicious." Haijin have favoured this kigo since Edo times so there are many fine compositions on it.
+
+**Poems:**
+
+1. 三井寺や　日は午にせまる　若楓 -- 蕪村
+   *Miidera ya / hi wa go ni semaru / waka kaede -- Buson*
+   > Mii temple —
+   > the sun presses on to noon,
+   > young maple leaves.
+
+2. 若楓　縁の障子を　外しけり -- 佐藤紅緑
+   *Waka kaede / en no shoji wo / hazushi keri -- Sato Koroku*
+   > Young maple leaves —
+   > the veranda's paper doors,
+   > removed.
+
+3. 若楓　影さす硯　あらひけり -- 水原秋桜子
+   *Waka kaede / kage sasu suzuri / arai keri -- Mizuhara Shuoshi*
+   > Young maple leaves —
+   > the inkstone they reflect in
+   > was washed.
+
+4. 若楓　枝を平らに　うち重ね -- 富安風生
+   *Waka kaede / eda wo taira ni / uchi kasane -- Tomiyasu Fusei*
+   > Young maple leaves —
+   > their level boughs,
+   > one over the other.
+
+### 常緑木落葉 Tokiwagi ochiba — Evergreens' Fallen Leaves [Summer / Shokubutsu]
+
+When summer is growing luxuriant with new leaves, evergreen trees begin to shed. Those with broad leaves like the camphor, pasania, holly and oak drop old leaves as the new ones grow. Those with thin, needle-like leaves like the pine, cypress, black pine and fir, mostly shed when the new leaves have finished growing. Some old leaves turn yellow-brown, or red, like the camphor's, while others remain green, as the pine's. Variations are made with the names of the different trees.
+
+**Poems:**
+
+1. 清滝や　波に散り込む　青松葉 -- 芭蕉
+   *Kiyotaki ya / nami ni chiri komu / ao matsuba -- Basho*
+   > Kiyotaki —
+   > into its waves scatter
+   > green pine needles.
+   > Kiyotaki river is the upper stream of Arashiyama in Kyoto, and runs into Oi river.
+
+2. 山蛙　常緑木落葉　時らず -- 臼田亜浪
+   *Yama kawazu / tokiwagi ochiba / toki shirazu -- Usuda Aro*
+   > Mountain frog —
+   > evergreens' leaves fall
+   > at any moment.
+
+3. 旧道は　杉の落葉の　箱根かな -- 木下一静
+   *Kyudo wa / sugi no ochiba no / Hakone kana -- Kinoshita Issei*
+   > The old road,
+   > with fallen cedar leaves,
+   > Hakone.
+
+4. 夏落葉　深く沈みて　露天風呂 -- 桂信子
+   *Natsu ochiba / fukaku shizumite / rotenburo -- Katsura Nobuko*
+   > Summer fallen leaves
+   > sinking deeply,
+   > outdoor hot spring.
+
+### 卯の花 Unohana — Deutzia Flowers [Summer / Shokubutsu]
+
+The five-petaled, white flowers of the deutzia shrub, which bloom in clusters at the tips of the thickly growing branches. It grows wild, but was often planted as a fence. With the little cuckoo, deutzia flowers were considered to be two representations of early summer. There have been many poems comparing their whiteness to snow, moonbeams, white waves. Its old name was natsu yuki gusa (summer-snow grass).
+
+**Poems:**
+
+1. 卯の花をかざしに　関の晴着かな -- 曽良
+   *Uno hana wo / kazashi ni seki no / haregi kana -- Sora*
+   > Deutzia flowers
+   > in the hair, our fine dress
+   > at the barrier.
+   > A ku of 1689, on a journey to the northern provinces with Basho, at Shirakawa barrier. Old poets wrote of this custom and of the deutzia at this barrier. The writers, being poor pilgrims, could only wear deutzia boughs as hair ornaments.
+
+2. うの花に　芦毛の馬の　夜明かな -- 許六
+   *Uno hana ni / ashige no uma no / yo ake kana -- Kyoroku*
+   > Among deutzia flowers,
+   > on a chestnut horse
+   > dawn comes.
+   > He started his journey before the sun rose. As the light of daybreak broadened, the deutzia along the road increasingly added their whiteness.
+
+3. 卯の花の中に崩れし　庵かな -- 樗良
+   *Uno hana no / naka ni kuzure shi / iori kana -- Chora*
+   > Among deutzia
+   > flowers, a tumbled-down
+   > hut.
+   > The remains of a broken down hut where deutzia bloom in confusion makes the writer wonder who might have lived there before.
+
+4. 卯の花の　満ちたり　月は廿日頃 -- 月居
+   *Uno hana no / michitari tsuki wa / hatsuka goro -- Gekkyo*
+   > Deutzia flowers
+   > all in bloom — the moon,
+   > about the 20th day
+
+### 茨の花 Ibara no hana — Field Rose [Summer / Shokubutsu]
+
+The wild field rose that blooms on a thorny bush. In early summer, small white or pale pink flowers with many stamen bloom between the leaves. Ubara and umara were old names for thorned plants, but later came to mean the field rose. Other names are nobara, mubara. Haijin were fond of its natural rusticity, and entrusted thoughts of their home village to this flower, calling it hana ibara in praise.
+
+**Poems:**
+
+1. 花と針の　心問ひたき　茨かな -- 千代女
+   *Hana to hari no / kokoro toitaki / ibara kana -- Chiyojo*
+   > Would like to ask,
+   > why thorns with these flowers?
+   > field roses.
+
+2. 茨さくや　茶碗の欠けも　散りまじり -- 素れ
+   *Ibara saku ya / chawan no kake mo / chiri majiri -- Somaru*
+   > Field roses bloom —
+   > chips of a tea cup
+   > also scattered.
+
+3. 花茨　灯かげに　針の　かくれけり -- 蕪山
+   *Hana ibara / hikage ni / hari no / kakuru ken -- Shazan*
+   > Field rose flowers —
+   > by lamplight the thorns
+   > were hidden.
+
+4. 野いばらの　あをむと見しや　花つぼみ -- 飯田蛇笏
+   *No ibara no / aomu to mishi ya / hana tsubomi -- Iida Dakotsu*
+   > As the field rose
+   > bush turned green,
+   > buds appeared.
+
+### 若竹 Waketake — Young Bamboo [Summer / Shokubutsu]
+
+The new bamboo that sprout from the shoots of springtime. Casting off the outer sheaths, they stretch up quickly and in two or three months, reach the height of the parents. Their slender trunks and stems of watery green, and new leaves of a soft hue adorn the groves with refreshing coolness.
+
+Variations: kotoshi dake (this year's bamboo), take no wakaba (young leaves of bamboo).
+
+**Poems:**
+
+1. 若竹や　竹より出でて　青き事 -- 北枝
+   *Wakatake ya / take yori idete / aoki koto -- Hokushi*
+   > Young bamboo —
+   > coming out from bamboo,
+   > so green!
+
+2. 若竹や　煙のいづる　庫裏の窓 -- 曲翠
+   *Wake take ya / kemuri no izuru / kuri no mado -- Kyokusui*
+   > Young bamboo —
+   > the smoke from the temple
+   > kitchen window.
+
+3. 若竹や　鞭のごとくに　五六本 -- 川端茅舎
+   *Wakatake ya / muchi no gotoku ni / go-roppon -- Kawabata Bosha*
+   > Young bamboo —
+   > like whips, five or
+   > six of them.
+
+4. 禅堂の　ぐるりの闇の　今年竹 -- 中川宋淵
+   *Zendo no / gururi no yami no / kotoshi dake -- Nakagawa Soen*
+   > The darkness
+   > around a Zen hall —
+   > this year's bamboo.
+
+### 罌粟の花 Keshi no hana — Poppy Flowers [Summer / Shokubutsu]
+
+The common field poppy, which originated in the area of the Mediterranean, and entered Japan through China in ancient days. Around May a fragile, four-petaled flower opens at the top of a strong stem which can be as high as a meter. The flowers are white, orange, shades of red and purple. When the petals scatter after a day, the seed capsule remains (called keshi bozu, the poppy's bald head). There are also double varieties.
+
+Variations: oni geshi (demon poppy), azami geshi (thistle poppy), hina geshi (little poppy).
+
+**Poems:**
+
+1. 白芥子や　時雨の花の　咲きつらん -- 芭蕉
+   *Shira geshi ya / shigure no hana no / saki tsuran -- Basho*
+   > White poppies —
+   > as though flowers of joy rain
+   > have bloomed.
+
+2. あるとなきと　二本さしけり　けしの花 -- 智月
+   *Aru to naki to / nihon sashi keri / keshi no hana -- Chigetsu*
+   > One with petals,
+   > one without — two were arranged,
+   > poppy flowers.
+
+3. 僧となる　子のうつくしや　けしの花 -- 一茶
+   *So to naru / ko no utsukushi ya / keshi no hana -- Issa*
+   > The child who's
+   > to be a monk, beautiful!
+   > Poppy flowers.
+
+4. 白芥子や　どこに火を焚く　藁灰どり -- 山内時雨
+   *Shira geshi ya / doko ni hi wo taku / wara bokori -- Yamauchi Shigure*
+   > White poppies —
+   > where is the bonfire?
+   > Straw ash.
+
+### 杜若 Kakitsubata — Flower De Luce [Summer / Shokubutsu]
+
+This is Iris laevigata, which resembles ayame (Iris sibirica, blue flag) but its leaves are wider, with thick veins running lengthwise from the center. The three outer petals of the flower de luce have a thin sliver of white, while those of the blue flag have a yellow meshwork. This plant grows naturally in watery soil but is also planted in gardens; it blooms from early summer. As the flower has the form of a swallow in flight, the kanji 燕子花 (swallow-child flower) are also used. Deep purple, red-purple, pale red and white are the colours; the first is most common. In ancient days it was used to dye cloth. Mikawa swamp (Aichi prefecture) is famous for them.
+
+**Poems:**
+
+1. 杜若　べたりと　鳶のたれてける -- 蕪村
+   *Kakitsubate / betari to tobi no / tarete keru -- Buson*
+   > Flower de luce —
+   > "plop", a kite dropped
+   > his dung.
+
+2. 野の池や　葉ばかり伸びし　杜若 -- 泉鏡花
+   *No no ike ya / ha bakari nobishi / kakitsubata -- Izumi Kyoka*
+   > A field pond —
+   > only the leaves have grown,
+   > flower de luce.
+
+3. 戸を開けて　又寝る雨の　杜若 -- 石島雉子郎
+   *To wo akete / mata neru ame no / kakitsubata -- Shijima Kijiro*
+   > Open the door,
+   > go back to bed — Rain on
+   > flowers de luce.
+
+4. 杜若　までの　寂しさ消えにけり -- 永田耕衣
+   *Kakitsubata / made no sabishisa / kie ni keri -- Nagata Koi*
+   > The loneliness
+   > on the way to flowers de luce
+   > vanished.
+
+### あやめ Ayame — Blue Flag [Summer / Shokubutsu]
+
+A perennial of the iris family, also called hana-ayame. It grows on dry soil, unlike the sweet flag (hana shobu) and kakitsubata (flower de luce) which have similar flowers, but grow in damp grounds. In early summer the flower stem starts to stretch up. On top of it, two or three flowers open in turn. They come in purple, white and yellow. At the base of the calyx is a yellow mesh that distinguishes it from hana shobu and kakitsubata.
+
+**Poems:**
+
+1. ことぶきや　亀のひたいの　花あやめ -- 樗良
+   *Kotobuki ya / kame no hitai no / hana ayame -- Chora*
+   > Auspicious!
+   > By the turtle's forehead,
+   > a blue flag.
+
+2. 富士は雲に　沈みあやめは　濃紫 -- 渡辺水巴
+   *Fuji wa kumo ni / shizumi ayame wa / ko murasaki -- Watanabe Suike*
+   > Mt. Fuji sunk in
+   > clouds, the blue flags —
+   > dark purple.
+
+3. 野あやめの　離れては濃く　群れて淡し -- 水原秋桜子
+   *No ayame no / hanarete wa koka / murete awashi -- Mizuhara Shuoshi*
+   > Field blue flags —
+   > when apart, dark,
+   > in groups, faint.
+
+4. 一人立ち　一人かがめる　あやめかな -- 野村泊月
+   *Hitori tachi / hitori kagameru / ayame kana -- Nomure Hakugetsu*
+   > One person stands,
+   > another bends over
+   > the blue flag.
+
+### 菖蒲 Shobu — Acorus [Summer / Shokubutsu]
+
+A perennial grass of the taro family that grows naturally in ponds, lakes, rivers. Its green lustrous sword-like leaves grow thickly and have a strong perfume. They were used to line the eaves of houses, and put into baths on the festival of the fifth month, fifth day, as strong scents were believed to drive away evil spirits. This grass forms ears made of tiny yellow-green flowers. It was also called ayame-gusa and frequently confused with hana-shobu (sweet flag).
+
+**Poems:**
+
+1. あやめ草　足にむすばん　草靴の緒 -- 芭蕉
+   *Ayama gusa / ashi ni musuban / waraji no o -- Basho*
+   > Acorus grass,
+   > I'll tie on my feet,
+   > as sandal straps.
+   > He received two pairs of straw sandals on leaving on a walking tour of the northern provinces; acorus will help give him a safe journey.
+
+2. 玉水の　菖蒲を走る　匂ひかな -- 蕉太
+   *Tama mizu no / shobu wo hashiru / nioi kana -- Ryota*
+   > Pure water drops
+   > rush through the acorus —
+   > the perfume.
+
+3. 湯上りの　尻にべったり　菖蒲かな -- 一茶
+   *Yu agari no / shiri ni bettari / shobu kana -- Issa*
+   > On the rump
+   > just out of the bath,
+   > an acorus leaf.
+
+4. 夜蛙の　声となりゆく　菖蒲かな -- 水原秋桜子
+   *Yo gaeru no / koe to nari yuku / shobu kana -- Mizuhara Shuoshi*
+   > A night
+   > frog voices begin,
+   > among acorus.
+
+### 葵 Aoi — Hollyhock [Summer / Shokubutsu]
+
+Plants with the name hollyhock are generally divided into two groups. The aoi written of in the old poems of the imperial court is the futa-ba aoi or aoi gusa, a wild variety with beautiful, glossy leaves. It was considered a sacred grass and was used for the gala in the festival of the Kamo shrine. This festival came to be called Aoi Festival. In Edo times the pair of leaves of aoi gusa became the family crest of the Tokugawa shogunate. On haiku, if the Aoi festival is mentioned, this grass is meant.
+
+In the second group are hana or tachi aoi, prized for the large flowers, zeni aoi with small flowers resembling coins, and others which generally grow tall and have flowers of various colours.
+
+**Poems:**
+
+1. 鴨の子を盥に飼ふや　銭葵 -- 正岡子規
+   *Kamo no ko wo / tarai ni kau ya / zeni aoi -- Masaoka Shiki*
+   > Ducklings
+   > being raised in a tub —
+   > coin hollyhocks.
+
+2. 立葵　咲き終りたる　高さかな -- 高野素十
+   *Tachi aoi / saki owaritaru / takasa kana -- Takano Suju*
+   > Standing hollyhocks
+   > all come to bloom,
+   > how tall!
+
+3. 蝶低し　葵の花の低ければ -- 富安風生
+   *Cho hikushi / aoi no hana no / hikukereba -- Tomiyasu Fusei*
+   > The butterfly low,
+   > as the hollyhock flowers
+   > are low.
+
+4. 三方に　蝶のわかれし　立葵 -- 中村汀女
+   *Sanbo ni / cho no wakare shi / tachi aoi -- Nakamura Teijo*
+   > In three directions
+   > the butterflies parted,
+   > standing hollyhocks.
+
+### 向日葵 Himawari — Sunflower [Summer / Shokubutsu]
+
+An annual of the chrysanthemum family that originated in tropical regions of North America and Mexico, the sunflower is an epitome of the summertime, resembling a flaming sun. It seems to have entered Japan some time in the Edo period. The strong, straight trunk stem and heart-shaped leaves have short fur. Reaching up to two or three meters in height, in mid-summer a large flower opens at the top, as big as 20–30 cm in diameter. While in the bud stage, leaves and stems follow the sun.
+
+Variations: Nichirin so (sun-wheel grass), hi guruma (sun-wheel).
+
+**Poems:**
+
+1. 向日葵は　月光に堪へぬ　花をなる -- 朝生堀成人
+   *Himawari wa / gekko ni taemu / hana wo naru -- Asogi Kajiro*
+   > The sunflower —
+   > now a flower that
+   > can't bear the moonlight.
+
+2. 向日葵の　影引きずりて　日が疲る -- 佐野まもる
+   *Himawari no / kage hikizurite / hi ga tsukaru -- Sano Mamoru*
+   > Dragging the
+   > sunflower's shadow along,
+   > the sun, exhausted.
+
+3. 向日葵に　剣の如き　レールかな -- 松本たかし
+   *Himawari ni / tsurugi no gotoki / reru kana -- Matsumoto Takashi*
+   > By sunflowers,
+   > the rail is
+   > like a sword.
+
+4. 向日葵の　大声で立つ　枯れても尚 -- 秋元不死男
+   *Himawari no / ogoe de tatsu / karete nao -- Akimoto Fujio*
+   > The sunflower
+   > stands with a loud voice,
+   > likewise when withered.
+
+### 睡蓮 Suiren — Water Lily [Summer / Shokubutsu]
+
+A perennial water grass smaller than the lotus. It grows in swamps and ponds with bulb and roots buried in mud. The green leaves that look like horse hooves float on the water. In summer flowers of about five to seven cm in diameter open in daytime and close at the end of the day. They have a neat and orderly look; white is the common colour, but there are also pink and yellow. An old name is hitsuji gusa (sheep grass), as they were seen to close around the hour of the sheep (2 pm).
+
+**Poems:**
+
+1. 睡蓮は　みな花閉つ　宵の星 -- 青木月斗
+   *Suiren wa / mina hana tojitsu / yoi no hoshi -- Aoki Getto*
+   > The water lilies
+   > have all closed up,
+   > evening stars.
+
+2. 睡蓮の　隙間の水は　雨の文 -- 富安風生
+   *Suiren no / sukima no mizu wa / ame no aye -- Tomiyasu Fusei*
+   > Water lilies —
+   > on the water between them,
+   > rain patterns.
+
+3. 睡蓮の　こそり　しりぞく　風のあり -- 鈴鹿野風呂
+   *Suiren no / kosori shirizoku / kaze no ari -- Suzuka Nofuro*
+   > The water lilies
+   > slide backwards
+   > at the wind.
+
+4. 睡蓮や　鯉の分けゆく　花二つ -- 松本たかし
+   *Suiren ya / koi no wake yuku / hana futatsu -- Matsumoto Takashi*
+   > Water lilies —
+   > a carp makes way
+   > between two flowers.
 ### 滝 Taki
 
 Water that streams down from high cliffs and boulders; this is a summer kigo of this century, so designated because it is cooling to look at waterfalls. Such torrents have always been considered to be awesome, mysterious forms of nature, and hence related to gods. Practices of purification are still carried out by standing under the falls. Kegen, Yoro and Nachi waterfalls are famous. Also called bakufu (waterfall like a sheet of cloth).
