@@ -187,7 +187,7 @@ aota,青田,Aota,green ricefields,Summer,Landscape,185
 izumi,泉,Izumi,spring,Summer,Landscape,186
 shimizu,清水,Shimizu,pure water,Summer,Landscape,187
 taki,滝,Taki,waterfall,Summer,Landscape,188
-satsuki-fuji,五月富士,Satsuki Fuji,fifth month Mt. Fuji,Summer,Landscape,189
+satsuki-fuji,五月富士,Satsuki Fuji,fifth month mt. fuji,Summer,Landscape,189
 ueta,植田,Ueta,planted ricefields,Summer,Landscape,190
 koromogae,更衣,Koromogae,change of garments,Summer,Life,191
 usumono,羅,Usumono,silk kimono,Summer,Life,192
@@ -211,7 +211,7 @@ natsu-yase,夏痩,Natsu yase,summer thinness,Summer,Life,209
 tango,端午,Tango,,Summer,Life,210
 koinobori,鯉幟,Koinobori,carp banners,Summer,Life,211
 matsuri,祭,Matsuri,festivals,Summer,Observance,212
-gione,祗園会,gione,gion Festival,Summer,Life,213
+gione,祗園会,gione,gion festival,Summer,Life,213
 nagoshi,夏越,Nagoshi,summer purification,Summer,Life,214
 mine-iri,峯入,Mine iri,entering the peak,Summer,Observance,215
 busshoe,仏生会,Busshoe,buddha's birthday,Summer,Observance,216
@@ -318,7 +318,7 @@ susamaji,冷まじ,susamaji,chilling,Autumn,Season,316
 shubun,秋分,shubun,,Autumn,Season,317
 akinosora,秋の空,akinosora,autumn sky,Autumn,Season,318
 iwashigumo,鰯雲,iwashigumo,sardine clouds,Autumn,Celestial,319
-ama-no-gawa,天の川,ama no gawa,milky Way,Autumn,Celestial,320
+ama-no-gawa,天の川,ama no gawa,milky way,Autumn,Celestial,320
 hoshizukiyo,星月夜,hoshizukiyo,stars-for-moon night,Autumn,Celestial,321
 tsuki,月,tsuki,moon,Autumn,Celestial,322
 meigetsu,名月,meigetsu,harvest moon,Autumn,Celestial,323
@@ -395,7 +395,7 @@ korogi,蟋蟀,korogi,cricket,Autumn,Animals,393
 minomushi,蓑虫,minomushi,bagworm,Autumn,Animals,394
 sanma,秋刀魚,sanma,mackerel pike,Autumn,Animals,395
 haze,鯊,haze,goby,Autumn,Animals,396
-mukuge,木槿,mukuge,rose of Sharon,Autumn,Plants,397
+mukuge,木槿,mukuge,rose of sharon,Autumn,Plants,397
 momo,桃,momo,peach,Autumn,Plants,398
 kaki,柿,kaki,persimmon,Autumn,Plants,399
 kuri,栗,kuri,chestnut,Autumn,Plants,400
@@ -438,9 +438,9 @@ ringo,林檎,ringo,apples,Autumn,Plants,436
 yuzu,柚子,yuzu,citron,Autumn,Plants,437
 yarehasu,敗荷,yarehasu,torn lotus leaves,Autumn,Plants,438
 fuyu,冬,fuyu,winter,Winter,Season,439
-kannazuki,神無月,kannazuki,godless Month,Winter,Season,440
-shimotsuki,霜月,shimotsuki,frost Month,Winter,Season,441
-shiwasu,師走,shiwasu,twelfth Month,Winter,Season,442
+kannazuki,神無月,kannazuki,godless month,Winter,Season,440
+shimotsuki,霜月,shimotsuki,frost month,Winter,Season,441
+shiwasu,師走,shiwasu,twelfth month,Winter,Season,442
 ritto,立冬,ritto,,Winter,Season,443
 fuyuzare,冬ざれ,fuyuzare,winter withers,Winter,Season,444
 koharu,小春,koharu,touch of spring,Winter,Season,445
@@ -513,8 +513,8 @@ mamemaki,豆撒,mamemaki,throwing beans,Winter,Life,511
 kaminotabi,神の旅,kaminotabi,gods' journey,Winter,Life,512
 joyanokane,除夜の鐘,joyanokane,year-end bell,Winter,Life,513
 bashoki,芭蕉忌,bashoki,basho's death anniversary,Winter,Life,514
-issaki,一茶忌,issaki,anniversary of Issa's death,Winter,Life,515
-busonki,蕪村忌,busonki,anniversary of Buson's death,Winter,Life,516
+issaki,一茶忌,issaki,anniversary of issa's death,Winter,Life,515
+busonki,蕪村忌,busonki,anniversary of buson's death,Winter,Life,516
 yamiziru,闇汁,yamiziru,stew in the dark,Winter,Life,517
 ikishiroshi,息白し,ikishiroshi,breath is white,Winter,Life,518
 nameshi,菜飯,nameshi,greens' rice,Winter,Life,519
@@ -572,7 +572,7 @@ shinnen,新年,shinnen,new year,New Year,Season,570
 mutsuki,睦月,mutsuki,,New Year,Season,571
 hatsuharu,初春,hatsuharu,start of the year,New Year,Season,572
 shogatsu,正月,shogatsu,first month,New Year,Season,573
-ganjitsu,元日,ganjitsu,new Year's Day,New Year,Season,574
+ganjitsu,元日,ganjitsu,new year's day,New Year,Season,574
 futsuka,二日,futsuka,second day,New Year,Season,575
 mikka,三日,mikka,third day,New Year,Season,576
 sanganichi,三ケ日,sanganichi,first three days of the year,New Year,Season,577
@@ -587,7 +587,7 @@ hatsukochi,初東風,hatsukochi,first east wind,New Year,Celestial,585
 hatsunagi,初凪,hatsunagi,first lull,New Year,Celestial,586
 osagari,御降,osagari,new year's precipitation,New Year,Celestial,587
 hatsugasumi,初霞,hatsugasumi,first mist,New Year,Celestial,588
-hatsufuji,初富士,hatsufuji,first Mt. Fuji,New Year,Landscape,589
+hatsufuji,初富士,hatsufuji,first mt. fuji,New Year,Landscape,589
 wakanano,若菜野,wakanano,young-herbs field,New Year,Landscape,590
 kisohajime,着衣始,kisohajime,to dress in new garments,New Year,Life,591
 harugi,春着,harugi,new year's dress,New Year,Life,592

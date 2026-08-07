@@ -268,7 +268,7 @@ def sorted_by_category(entries):
 
 
 def sorted_alpha(entries):
-    return sorted(entries, key=lambda x: x[1].get("kigo_en", ""))
+    return sorted(entries, key=lambda x: (x[1].get("kigo_en") or "").lower())
 
 ALT_TRANSLATION_COLS = [
     "Ueda Haiku", "Keene World", "Keene Dawn", "Blyth Haiku", "Blyth History",
@@ -898,7 +898,7 @@ def _kigo_grid_html(entries):
     for slug, meta in entries:
         count = meta.get("poem_count", 0)
         grid += f'''      <a class="kigo-entry" href="{slug}.html">
-        <div class="kigo-entry-en">{meta.get("kigo_en", slug.replace("-", " ").title())}</div>
+        <div class="kigo-entry-en">{meta.get("kigo_en", slug.replace("-", " "))}</div>
         <div class="kigo-entry-jp">{meta.get("kigo_jp", "")}</div>
         <div class="kigo-entry-count">{count} poem{"s" if count != 1 else ""}</div>
       </a>
@@ -1418,7 +1418,7 @@ def main():
             except (ValueError, TypeError):
                 seq = 999999
             saijiki_meta[slug] = {
-                "kigo_en":     val(row.get("Kigo_EN", "")) or slug.replace("-", " ").title(),
+                "kigo_en":     val(row.get("Kigo_EN", "")) or slug.replace("-", " "),
                 "kigo_jp":     kigo_jp,
                 "kigo_romaji": val(row.get("Kigo_Romaji", "")),
                 "season":      val(row.get("Season", "")),
