@@ -190,9 +190,17 @@ SAIJIKI_INDEX_CSS = """
 .saijiki-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
 .page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
 .page-label-line { flex: 1; height: 1px; background: #999; }
-.index-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 3rem; }
+.index-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 1.5rem; }
+.sort-toggle { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 3rem; display: flex; align-items: center; gap: 0.6rem; }
+.sort-toggle a { color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 1px; }
+.sort-toggle a:hover { color: #1a1a1a; }
+.sort-toggle .sort-active { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+.sort-toggle .sort-sep { color: #ccc; }
 .season-group { margin-bottom: 3rem; }
 .season-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #999; }
+.category-group { margin-bottom: 1.75rem; }
+.category-group:last-child { margin-bottom: 0; }
+.category-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #aaa; margin-bottom: 0.6rem; }
 .kigo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #ccc8c0; border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; }
 .kigo-entry { background: #ede8df; padding: 0.75rem 1rem; text-decoration: none; display: block; color: inherit; }
 .kigo-entry:hover { background: #e6e0d6; }
@@ -242,6 +250,25 @@ NAV_CSS = """
 """
 
 SEASON_ORDER = ["Spring", "Summer", "Autumn", "Winter", "New Year"]
+CATEGORY_ORDER = ["Season", "Celestial", "Landscape", "Life", "Animals", "Plants", "Observance"]
+
+def sorted_by_category(entries):
+    """Group (slug, meta) entries by Category, in CATEGORY_ORDER, each
+    group internally in Saijiki-sheet order (meta['seq']); unrecognized or
+    blank categories go last, grouped under 'Other'."""
+    by_cat = {}
+    for slug, meta in entries:
+        cat = meta.get("category") or "Other"
+        by_cat.setdefault(cat, []).append((slug, meta))
+    order = [c for c in CATEGORY_ORDER if c in by_cat]
+    order += [c for c in by_cat if c not in order]
+    for cat in order:
+        by_cat[cat].sort(key=lambda x: x[1].get("seq", 999999))
+    return [(cat, by_cat[cat]) for cat in order]
+
+
+def sorted_alpha(entries):
+    return sorted(entries, key=lambda x: x[1].get("kigo_en", ""))
 
 ALT_TRANSLATION_COLS = [
     "Ueda Haiku", "Keene World", "Keene Dawn", "Blyth Haiku", "Blyth History",
@@ -866,10 +893,9 @@ def build_saijiki_poems_list(kigo_slug, meta, all_poems):
     return html_page(f"All poems — {kigo_en}", SAIJIKI_LIST_CSS, body, home_href="../../../index.html")
 
 
-def build_saijiki_season_index(season, entries):
-    entries_sorted = sorted(entries, key=lambda x: x[1].get("kigo_en", ""))
+def _kigo_grid_html(entries):
     grid = ""
-    for slug, meta in entries_sorted:
+    for slug, meta in entries:
         count = meta.get("poem_count", 0)
         grid += f'''      <a class="kigo-entry" href="{slug}.html">
         <div class="kigo-entry-en">{meta.get("kigo_en", slug.replace("-", " ").title())}</div>
@@ -877,6 +903,27 @@ def build_saijiki_season_index(season, entries):
         <div class="kigo-entry-count">{count} poem{"s" if count != 1 else ""}</div>
       </a>
 '''
+    return grid
+
+
+def build_saijiki_season_index(season, entries, sort="category"):
+    if sort == "alpha":
+        body_html = f'  <div class="kigo-grid">\n{_kigo_grid_html(sorted_alpha(entries))}  </div>\n'
+        toggle = ('<a href="index.html">By category</a>'
+                  '<span class="sort-sep">·</span><span class="sort-active">Alphabetical</span>')
+    else:
+        groups_html = ""
+        for cat, cat_entries in sorted_by_category(entries):
+            groups_html += f'''  <div class="category-group">
+    <div class="category-heading">{cat}</div>
+    <div class="kigo-grid">
+{_kigo_grid_html(cat_entries)}    </div>
+  </div>
+'''
+        body_html = groups_html
+        toggle = ('<span class="sort-active">By category</span>'
+                  '<span class="sort-sep">·</span><a href="index-alpha.html">Alphabetical</a>')
+
     body = f'''<div class="saijiki-page">
 
   <div class="page-label">
@@ -885,10 +932,9 @@ def build_saijiki_season_index(season, entries):
   </div>
 
   <div class="index-title">{season} Season Words</div>
+  <div class="sort-toggle">Sort: {toggle}</div>
 
-  <div class="kigo-grid">
-{grid}  </div>
-
+{body_html}
   <div class="ext-links">
     <a class="ext-link" href="../../saijiki-index.html">← All season words</a>
   </div>
@@ -897,36 +943,55 @@ def build_saijiki_season_index(season, entries):
     return html_page(f"{season} — Saijiki", SAIJIKI_INDEX_CSS, body, home_href="../../../index.html")
 
 
-def build_saijiki_index(saijiki_data):
-    by_season = {}
-    for slug, meta in saijiki_data.items():
-        s = meta.get("season", "Unclassified")
-        by_season.setdefault(s, []).append((slug, meta))
-
-    groups_html = ""
-    ordered = [s for s in SEASON_ORDER if s in by_season]
-    for s in by_season:
-        if s not in ordered:
-            ordered.append(s)
-
-    for season in ordered:
-        entries = by_season.get(season, [])
-        entries.sort(key=lambda x: x[1].get("kigo_en", ""))
-        grid = ""
-        for slug, meta in entries:
-            count = meta.get("poem_count", 0)
-            grid += f'''      <a class="kigo-entry" href="saijiki/{season.lower()}/{slug}.html">
+def _master_kigo_grid_html(entries, season):
+    grid = ""
+    for slug, meta in entries:
+        count = meta.get("poem_count", 0)
+        grid += f'''      <a class="kigo-entry" href="saijiki/{season.lower()}/{slug}.html">
         <div class="kigo-entry-en">{meta.get("kigo_en", slug)}</div>
         <div class="kigo-entry-jp">{meta.get("kigo_jp", "")}</div>
         <div class="kigo-entry-count">{count} poem{"s" if count != 1 else ""}</div>
       </a>
 '''
+    return grid
+
+
+def build_saijiki_index(saijiki_data, sort="category"):
+    by_season = {}
+    for slug, meta in saijiki_data.items():
+        s = meta.get("season", "Unclassified")
+        by_season.setdefault(s, []).append((slug, meta))
+
+    ordered = [s for s in SEASON_ORDER if s in by_season]
+    for s in by_season:
+        if s not in ordered:
+            ordered.append(s)
+
+    groups_html = ""
+    for season in ordered:
+        entries = by_season.get(season, [])
+        if sort == "alpha":
+            inner_html = f'    <div class="kigo-grid">\n{_master_kigo_grid_html(sorted_alpha(entries), season)}    </div>\n'
+        else:
+            inner_html = ""
+            for cat, cat_entries in sorted_by_category(entries):
+                inner_html += f'''    <div class="category-group">
+      <div class="category-heading">{cat}</div>
+      <div class="kigo-grid">
+{_master_kigo_grid_html(cat_entries, season)}      </div>
+    </div>
+'''
         groups_html += f'''  <div class="season-group">
     <div class="season-heading">{season}</div>
-    <div class="kigo-grid">
-{grid}    </div>
-  </div>
+{inner_html}  </div>
 '''
+
+    if sort == "alpha":
+        toggle = ('<a href="saijiki-index.html">By category</a>'
+                  '<span class="sort-sep">·</span><span class="sort-active">Alphabetical</span>')
+    else:
+        toggle = ('<span class="sort-active">By category</span>'
+                  '<span class="sort-sep">·</span><a href="saijiki-index-alpha.html">Alphabetical</a>')
 
     body = f'''<div class="saijiki-page">
 
@@ -936,6 +1001,7 @@ def build_saijiki_index(saijiki_data):
   </div>
 
   <div class="index-title">Season Word Index</div>
+  <div class="sort-toggle">Sort: {toggle}</div>
 
 {groups_html}
 </div>'''
@@ -1347,12 +1413,17 @@ def main():
             kigo_jp = val(row.get("Kigo_JP", ""))
             if not slug or not kigo_jp:
                 continue
+            try:
+                seq = int(float(row.get("Seq", "") or ""))
+            except (ValueError, TypeError):
+                seq = 999999
             saijiki_meta[slug] = {
                 "kigo_en":     val(row.get("Kigo_EN", "")) or slug.replace("-", " ").title(),
                 "kigo_jp":     kigo_jp,
                 "kigo_romaji": val(row.get("Kigo_Romaji", "")),
                 "season":      val(row.get("Season", "")),
                 "category":    val(row.get("Category", "")),
+                "seq":         seq,
             }
             slug_by_jp[kigo_jp] = slug
         print(f"  Saijiki sheet: {len(saijiki_meta)} kigo terms")
@@ -1431,9 +1502,10 @@ def main():
         saijiki_count += 1
 
     if saijiki_count:
-        index_html = build_saijiki_index(saijiki_built)
         with open(os.path.join(args.out, "saijiki-index.html"), "w", encoding="utf-8") as f:
-            f.write(index_html)
+            f.write(build_saijiki_index(saijiki_built, sort="category"))
+        with open(os.path.join(args.out, "saijiki-index-alpha.html"), "w", encoding="utf-8") as f:
+            f.write(build_saijiki_index(saijiki_built, sort="alpha"))
 
         by_season = {}
         for slug, meta in saijiki_built.items():
@@ -1443,11 +1515,12 @@ def main():
         for season, entries in by_season.items():
             season_dir = os.path.join(args.out, "saijiki", season.lower())
             os.makedirs(season_dir, exist_ok=True)
-            season_index_html = build_saijiki_season_index(season, entries)
             with open(os.path.join(season_dir, "index.html"), "w", encoding="utf-8") as f:
-                f.write(season_index_html)
+                f.write(build_saijiki_season_index(season, entries, sort="category"))
+            with open(os.path.join(season_dir, "index-alpha.html"), "w", encoding="utf-8") as f:
+                f.write(build_saijiki_season_index(season, entries, sort="alpha"))
 
-        print(f"  Saijiki: {saijiki_count} entries ({saijiki_count * 2} pages) + index")
+        print(f"  Saijiki: {saijiki_count} entries ({saijiki_count * 2} pages) + category/alpha indexes")
     else:
         print(f"  Saijiki: no entries found (need a 'Saijiki' sheet with a Kigo_JP that matches poems' Kigo field, and/or essays/{{slug}}.txt files)")
 

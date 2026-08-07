@@ -27,9 +27,17 @@ a { color: inherit; }
 .saijiki-page { font-family: "Cormorant Garamond", Georgia, serif; color: #1a1a1a; max-width: 560px; margin: 0 auto; }
 .page-label { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
 .page-label-line { flex: 1; height: 1px; background: #999; }
-.index-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 3rem; }
+.index-title { font-size: 36px; font-weight: 300; color: #1a1a1a; margin-bottom: 1.5rem; }
+.sort-toggle { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 3rem; display: flex; align-items: center; gap: 0.6rem; }
+.sort-toggle a { color: #666; text-decoration: none; border-bottom: 1px solid #999; padding-bottom: 1px; }
+.sort-toggle a:hover { color: #1a1a1a; }
+.sort-toggle .sort-active { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; padding-bottom: 1px; }
+.sort-toggle .sort-sep { color: #ccc; }
 .season-group { margin-bottom: 3rem; }
 .season-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #999; }
+.category-group { margin-bottom: 1.75rem; }
+.category-group:last-child { margin-bottom: 0; }
+.category-heading { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #aaa; margin-bottom: 0.6rem; }
 .kigo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #ccc8c0; border: 1px solid #ccc8c0; border-radius: 6px; overflow: hidden; }
 .kigo-entry { background: #ede8df; padding: 0.75rem 1rem; text-decoration: none; display: block; color: inherit; }
 .kigo-entry:hover { background: #e6e0d6; }
@@ -49,18 +57,61 @@ a { color: inherit; }
   </div>
 
   <div class="index-title">Season Word Index</div>
+  <div class="sort-toggle">Sort: <span class="sort-active">By category</span><span class="sort-sep">·</span><a href="saijiki-index-alpha.html">Alphabetical</a></div>
 
   <div class="season-group">
     <div class="season-heading">Spring</div>
-    <div class="kigo-grid">
-      <a class="kigo-entry" href="saijiki/spring/hamaguri.html">
-        <div class="kigo-entry-en">Hamaguri</div>
-        <div class="kigo-entry-jp">蛤</div>
+    <div class="category-group">
+      <div class="category-heading">Season</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/haru.html">
+        <div class="kigo-entry-en">spring</div>
+        <div class="kigo-entry-jp">春</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harufukashi.html">
+        <div class="kigo-entry-en">spring is deep</div>
+        <div class="kigo-entry-jp">春深し</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/spring/tsutsuji.html">
-        <div class="kigo-entry-en">azalea</div>
-        <div class="kigo-entry-jp">躑躅</div>
+      <a class="kigo-entry" href="saijiki/spring/haruasashi.html">
+        <div class="kigo-entry-en">spring is slight</div>
+        <div class="kigo-entry-jp">春浅し</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harusamu.html">
+        <div class="kigo-entry-en">coldness of spring</div>
+        <div class="kigo-entry-jp">春寒</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/yokan.html">
+        <div class="kigo-entry-en">lingering coldness</div>
+        <div class="kigo-entry-jp">余寒</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harunohi.html">
+        <div class="kigo-entry-en">day in spring</div>
+        <div class="kigo-entry-jp">春の日</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/shungyo.html">
+        <div class="kigo-entry-en">spring dawn</div>
+        <div class="kigo-entry-jp">春暁</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harunokure.html">
+        <div class="kigo-entry-en">end of a spring day</div>
+        <div class="kigo-entry-jp">春の暮</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harunoyoru.html">
+        <div class="kigo-entry-en">nights of spring</div>
+        <div class="kigo-entry-jp">春の夜</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/uraraka.html">
+        <div class="kigo-entry-en">bright</div>
+        <div class="kigo-entry-jp">麗か</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/nodoka.html">
@@ -68,9 +119,104 @@ a { color: inherit; }
         <div class="kigo-entry-jp">長閑</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/spring/uraraka.html">
-        <div class="kigo-entry-en">bright</div>
-        <div class="kigo-entry-jp">麗か</div>
+      <a class="kigo-entry" href="saijiki/spring/kurenoharu.html">
+        <div class="kigo-entry-en">end of spring</div>
+        <div class="kigo-entry-jp">暮の春</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/haruoshimu.html">
+        <div class="kigo-entry-en">regret for spring</div>
+        <div class="kigo-entry-jp">春惜しむ</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Celestial</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/harunotsuki.html">
+        <div class="kigo-entry-en">spring moon</div>
+        <div class="kigo-entry-jp">春の月</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/oborozuki.html">
+        <div class="kigo-entry-en">hazy moon</div>
+        <div class="kigo-entry-jp">朧月</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/kochi.html">
+        <div class="kigo-entry-en">east wind</div>
+        <div class="kigo-entry-jp">東風</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harunoame.html">
+        <div class="kigo-entry-en">spring rain</div>
+        <div class="kigo-entry-jp">春の雨</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/hananoame.html">
+        <div class="kigo-entry-en">flower's rain</div>
+        <div class="kigo-entry-jp">花の雨</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/harunoyuki.html">
+        <div class="kigo-entry-en">spring snow</div>
+        <div class="kigo-entry-jp">春の雪</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/kasumi.html">
+        <div class="kigo-entry-en">haze</div>
+        <div class="kigo-entry-jp">霞</div>
+        <div class="kigo-entry-count">6 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/kagero.html">
+        <div class="kigo-entry-en">heat ripples</div>
+        <div class="kigo-entry-jp">陽炎</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/hanabie.html">
+        <div class="kigo-entry-en">flowers' chill</div>
+        <div class="kigo-entry-jp">花冷え</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Landscape</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/harunoyama.html">
+        <div class="kigo-entry-en">spring mountain</div>
+        <div class="kigo-entry-jp">春の山</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/yukidoke.html">
+        <div class="kigo-entry-en">thaw</div>
+        <div class="kigo-entry-jp">雪解</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Life</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/hanami.html">
+        <div class="kigo-entry-en">flower viewing</div>
+        <div class="kigo-entry-jp">花見</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Animals</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/kawazu.html">
+        <div class="kigo-entry-en">frog</div>
+        <div class="kigo-entry-jp">蛙</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/hibari.html">
+        <div class="kigo-entry-en">skylark</div>
+        <div class="kigo-entry-jp">雲雀</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/uso.html">
@@ -78,10 +224,40 @@ a { color: inherit; }
         <div class="kigo-entry-jp">鷽</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
+      <a class="kigo-entry" href="saijiki/spring/kaerukari.html">
+        <div class="kigo-entry-en">returning geese</div>
+        <div class="kigo-entry-jp">帰る雁</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
       <a class="kigo-entry" href="saijiki/spring/cho.html">
         <div class="kigo-entry-en">butterfly</div>
         <div class="kigo-entry-jp">蝶</div>
         <div class="kigo-entry-count">6 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/hamaguri.html">
+        <div class="kigo-entry-en">Hamaguri</div>
+        <div class="kigo-entry-jp">蛤</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/kiji.html">
+        <div class="kigo-entry-en">pheasant</div>
+        <div class="kigo-entry-jp">雉子</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/spring/uguisu.html">
+        <div class="kigo-entry-en">japanese bush warbler</div>
+        <div class="kigo-entry-jp">鶯</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Plants</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/kobai.html">
+        <div class="kigo-entry-en">red plum flowers</div>
+        <div class="kigo-entry-jp">紅梅</div>
+        <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/tsubaki.html">
         <div class="kigo-entry-en">camellia</div>
@@ -98,90 +274,15 @@ a { color: inherit; }
         <div class="kigo-entry-jp">花</div>
         <div class="kigo-entry-count">28 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/spring/harusamu.html">
-        <div class="kigo-entry-en">coldness of spring</div>
-        <div class="kigo-entry-jp">春寒</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunohi.html">
-        <div class="kigo-entry-en">day in spring</div>
-        <div class="kigo-entry-jp">春の日</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/kochi.html">
-        <div class="kigo-entry-en">east wind</div>
-        <div class="kigo-entry-jp">東風</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunokure.html">
-        <div class="kigo-entry-en">end of a spring day</div>
-        <div class="kigo-entry-jp">春の暮</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/kurenoharu.html">
-        <div class="kigo-entry-en">end of spring</div>
-        <div class="kigo-entry-jp">暮の春</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/hanami.html">
-        <div class="kigo-entry-en">flower viewing</div>
-        <div class="kigo-entry-jp">花見</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/hananoame.html">
-        <div class="kigo-entry-en">flower's rain</div>
-        <div class="kigo-entry-jp">花の雨</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/hanabie.html">
-        <div class="kigo-entry-en">flowers' chill</div>
-        <div class="kigo-entry-jp">花冷え</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/kawazu.html">
-        <div class="kigo-entry-en">frog</div>
-        <div class="kigo-entry-jp">蛙</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/kasumi.html">
-        <div class="kigo-entry-en">haze</div>
-        <div class="kigo-entry-jp">霞</div>
-        <div class="kigo-entry-count">6 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/oborozuki.html">
-        <div class="kigo-entry-en">hazy moon</div>
-        <div class="kigo-entry-jp">朧月</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/kagero.html">
-        <div class="kigo-entry-en">heat ripples</div>
-        <div class="kigo-entry-jp">陽炎</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/tsukushi.html">
-        <div class="kigo-entry-en">horsetail grass</div>
-        <div class="kigo-entry-jp">土筆</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/uguisu.html">
-        <div class="kigo-entry-en">japanese bush warbler</div>
-        <div class="kigo-entry-jp">鶯</div>
+      <a class="kigo-entry" href="saijiki/spring/tsutsuji.html">
+        <div class="kigo-entry-en">azalea</div>
+        <div class="kigo-entry-jp">躑躅</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/yamabuki.html">
         <div class="kigo-entry-en">kerria japonica</div>
         <div class="kigo-entry-jp">山吹</div>
         <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/yokan.html">
-        <div class="kigo-entry-en">lingering coldness</div>
-        <div class="kigo-entry-jp">余寒</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunoyoru.html">
-        <div class="kigo-entry-en">nights of spring</div>
-        <div class="kigo-entry-jp">春の夜</div>
-        <div class="kigo-entry-count">2 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/momonohana.html">
         <div class="kigo-entry-en">peach blossoms</div>
@@ -193,279 +294,187 @@ a { color: inherit; }
         <div class="kigo-entry-jp">梨の花</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/spring/kiji.html">
-        <div class="kigo-entry-en">pheasant</div>
-        <div class="kigo-entry-jp">雉子</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/ume.html">
-        <div class="kigo-entry-en">plum blossoms</div>
-        <div class="kigo-entry-jp">梅</div>
-        <div class="kigo-entry-count">15 poems</div>
+      <a class="kigo-entry" href="saijiki/spring/yanagi.html">
+        <div class="kigo-entry-en">weeping willow</div>
+        <div class="kigo-entry-jp">柳</div>
+        <div class="kigo-entry-count">18 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/nanohana.html">
         <div class="kigo-entry-en">rapeseed flowers</div>
         <div class="kigo-entry-jp">菜の花</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/spring/kobai.html">
-        <div class="kigo-entry-en">red plum flowers</div>
-        <div class="kigo-entry-jp">紅梅</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/haruoshimu.html">
-        <div class="kigo-entry-en">regret for spring</div>
-        <div class="kigo-entry-jp">春惜しむ</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/kaerukari.html">
-        <div class="kigo-entry-en">returning geese</div>
-        <div class="kigo-entry-jp">帰る雁</div>
+      <a class="kigo-entry" href="saijiki/spring/tsukushi.html">
+        <div class="kigo-entry-en">horsetail grass</div>
+        <div class="kigo-entry-jp">土筆</div>
         <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/hibari.html">
-        <div class="kigo-entry-en">skylark</div>
-        <div class="kigo-entry-jp">雲雀</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/haru.html">
-        <div class="kigo-entry-en">spring</div>
-        <div class="kigo-entry-jp">春</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/shungyo.html">
-        <div class="kigo-entry-en">spring dawn</div>
-        <div class="kigo-entry-jp">春暁</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harufukashi.html">
-        <div class="kigo-entry-en">spring is deep</div>
-        <div class="kigo-entry-jp">春深し</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/haruasashi.html">
-        <div class="kigo-entry-en">spring is slight</div>
-        <div class="kigo-entry-jp">春浅し</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunotsuki.html">
-        <div class="kigo-entry-en">spring moon</div>
-        <div class="kigo-entry-jp">春の月</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunoyama.html">
-        <div class="kigo-entry-en">spring mountain</div>
-        <div class="kigo-entry-jp">春の山</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunoame.html">
-        <div class="kigo-entry-en">spring rain</div>
-        <div class="kigo-entry-jp">春の雨</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/harunoyuki.html">
-        <div class="kigo-entry-en">spring snow</div>
-        <div class="kigo-entry-jp">春の雪</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/yukidoke.html">
-        <div class="kigo-entry-en">thaw</div>
-        <div class="kigo-entry-jp">雪解</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/spring/azami.html">
-        <div class="kigo-entry-en">thistle</div>
-        <div class="kigo-entry-jp">薊</div>
-        <div class="kigo-entry-count">2 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/spring/sumire.html">
         <div class="kigo-entry-en">violets</div>
         <div class="kigo-entry-jp">菫</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/spring/yanagi.html">
-        <div class="kigo-entry-en">weeping willow</div>
-        <div class="kigo-entry-jp">柳</div>
-        <div class="kigo-entry-count">18 poems</div>
+      <a class="kigo-entry" href="saijiki/spring/azami.html">
+        <div class="kigo-entry-en">thistle</div>
+        <div class="kigo-entry-jp">薊</div>
+        <div class="kigo-entry-count">2 poems</div>
       </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Other</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/spring/ume.html">
+        <div class="kigo-entry-en">plum blossoms</div>
+        <div class="kigo-entry-jp">梅</div>
+        <div class="kigo-entry-count">15 poems</div>
+      </a>
+      </div>
     </div>
   </div>
   <div class="season-group">
     <div class="season-heading">Summer</div>
-    <div class="kigo-grid">
-      <a class="kigo-entry" href="saijiki/summer/rikka.html">
-        <div class="kigo-entry-en">Rikka</div>
-        <div class="kigo-entry-jp">立夏</div>
-        <div class="kigo-entry-count">0 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/shoka.html">
-        <div class="kigo-entry-en">Shoka</div>
-        <div class="kigo-entry-jp">初夏</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/tango.html">
-        <div class="kigo-entry-en">Tango</div>
-        <div class="kigo-entry-jp">端午</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/wakuraba.html">
-        <div class="kigo-entry-en">Wakuraba</div>
-        <div class="kigo-entry-jp">病葉</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/ari.html">
-        <div class="kigo-entry-en">ants</div>
-        <div class="kigo-entry-jp">蟻</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/takamushiro.html">
-        <div class="kigo-entry-en">bamboo mat</div>
-        <div class="kigo-entry-jp">簀</div>
-        <div class="kigo-entry-count">0 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/komori.html">
-        <div class="kigo-entry-en">bat</div>
-        <div class="kigo-entry-jp">蝙蝠</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/enten.html">
-        <div class="kigo-entry-en">blazing heat</div>
-        <div class="kigo-entry-jp">炎天</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/sudare.html">
-        <div class="kigo-entry-en">blinds</div>
-        <div class="kigo-entry-jp">簾（青簾）</div>
-        <div class="kigo-entry-count">0 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/busshoe.html">
-        <div class="kigo-entry-en">buddha's birthday</div>
-        <div class="kigo-entry-jp">仏生会</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/koinobori.html">
-        <div class="kigo-entry-en">carp banners</div>
-        <div class="kigo-entry-jp">鯉幟</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/kemushi.html">
-        <div class="kigo-entry-en">caterpillar</div>
-        <div class="kigo-entry-jp">毛虫</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/koromogae.html">
-        <div class="kigo-entry-en">change of garments</div>
-        <div class="kigo-entry-jp">更衣</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/semi.html">
-        <div class="kigo-entry-en">cicada</div>
-        <div class="kigo-entry-jp">蝉</div>
-        <div class="kigo-entry-count">6 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/kumonomine.html">
-        <div class="kigo-entry-en">cloud peaks</div>
-        <div class="kigo-entry-jp">雲の峰</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/mayu.html">
-        <div class="kigo-entry-en">cocoon</div>
-        <div class="kigo-entry-jp">繭</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/suzumi.html">
-        <div class="kigo-entry-en">cooling off</div>
-        <div class="kigo-entry-jp">納涼</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/suzushisa.html">
-        <div class="kigo-entry-en">coolness</div>
-        <div class="kigo-entry-jp">涼しさ</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/ukai.html">
-        <div class="kigo-entry-en">cormorant fishing</div>
-        <div class="kigo-entry-jp">鵜飼</div>
+    <div class="category-group">
+      <div class="category-heading">Season</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/natsu.html">
+        <div class="kigo-entry-en">summer</div>
+        <div class="kigo-entry-jp">夏</div>
         <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/yukata.html">
-        <div class="kigo-entry-en">cotton kimono</div>
-        <div class="kigo-entry-jp">浴衣</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/unohana.html">
-        <div class="kigo-entry-en">deutzia flowers</div>
-        <div class="kigo-entry-jp">卯の花</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/samidare.html">
-        <div class="kigo-entry-en">early summer rain</div>
-        <div class="kigo-entry-jp">五月雨</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/mine-iri.html">
-        <div class="kigo-entry-en">entering the peak</div>
-        <div class="kigo-entry-jp">峯入</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/yudachi.html">
-        <div class="kigo-entry-en">evening downpour</div>
-        <div class="kigo-entry-jp">夕立</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/kanoko.html">
-        <div class="kigo-entry-en">fawn</div>
-        <div class="kigo-entry-jp">鹿の子</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/matsuri.html">
-        <div class="kigo-entry-en">festivals</div>
-        <div class="kigo-entry-jp">祭</div>
-        <div class="kigo-entry-count">4 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/satsuki.html">
         <div class="kigo-entry-en">fifth month</div>
         <div class="kigo-entry-jp">皐月</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/satsuki-fuji.html">
-        <div class="kigo-entry-en">fifth month Mt. Fuji</div>
-        <div class="kigo-entry-jp">五月富士</div>
-        <div class="kigo-entry-count">4 poems</div>
+      <a class="kigo-entry" href="saijiki/summer/rokugatsu.html">
+        <div class="kigo-entry-en">sixth month</div>
+        <div class="kigo-entry-jp">六月</div>
+        <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/hotaru.html">
-        <div class="kigo-entry-en">firefly</div>
-        <div class="kigo-entry-jp">蛍</div>
-        <div class="kigo-entry-count">8 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/hanabi.html">
-        <div class="kigo-entry-en">fireworks</div>
-        <div class="kigo-entry-jp">花火</div>
+      <a class="kigo-entry" href="saijiki/summer/rikka.html">
+        <div class="kigo-entry-en">Rikka</div>
+        <div class="kigo-entry-jp">立夏</div>
         <div class="kigo-entry-count">0 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/yana.html">
-        <div class="kigo-entry-en">fish weir</div>
-        <div class="kigo-entry-jp">魚簗</div>
+      <a class="kigo-entry" href="saijiki/summer/natsu-asashi.html">
+        <div class="kigo-entry-en">summer yet slight</div>
+        <div class="kigo-entry-jp">夏浅し</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/shoka.html">
+        <div class="kigo-entry-en">Shoka</div>
+        <div class="kigo-entry-jp">初夏</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/gione.html">
-        <div class="kigo-entry-en">gion Festival</div>
-        <div class="kigo-entry-jp">祗園会</div>
-        <div class="kigo-entry-count">0 poems</div>
+      <a class="kigo-entry" href="saijiki/summer/natsu-meku.html">
+        <div class="kigo-entry-en">summery</div>
+        <div class="kigo-entry-jp">夏めく</div>
+        <div class="kigo-entry-count">5 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/kingyo.html">
-        <div class="kigo-entry-en">goldfish</div>
-        <div class="kigo-entry-jp">金魚</div>
+      <a class="kigo-entry" href="saijiki/summer/mugi-no-aki.html">
+        <div class="kigo-entry-en">wheat's autumn</div>
+        <div class="kigo-entry-jp">麦の秋</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsu-no-hi.html">
+        <div class="kigo-entry-en">summer day</div>
+        <div class="kigo-entry-jp">夏の日</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/kingyodama.html">
-        <div class="kigo-entry-en">goldfish bowl</div>
-        <div class="kigo-entry-jp">金魚玉</div>
+      <a class="kigo-entry" href="saijiki/summer/natsu-no-yo.html">
+        <div class="kigo-entry-en">summer nights</div>
+        <div class="kigo-entry-jp">夏の夜</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/mijika-yo.html">
+        <div class="kigo-entry-en">short nights</div>
+        <div class="kigo-entry-jp">短夜</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/atsusa.html">
+        <div class="kigo-entry-en">heat</div>
+        <div class="kigo-entry-jp">暑さ</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/kusa-kari.html">
-        <div class="kigo-entry-en">grass-cutting</div>
-        <div class="kigo-entry-jp">草刈</div>
+      <a class="kigo-entry" href="saijiki/summer/atsushi.html">
+        <div class="kigo-entry-en">hot</div>
+        <div class="kigo-entry-jp">暑し</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/suzushisa.html">
+        <div class="kigo-entry-en">coolness</div>
+        <div class="kigo-entry-jp">涼しさ</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/yorunoaki.html">
+        <div class="kigo-entry-en">nights are autumn</div>
+        <div class="kigo-entry-jp">夜の秋</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Celestial</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/kumonomine.html">
+        <div class="kigo-entry-en">cloud peaks</div>
+        <div class="kigo-entry-jp">雲の峰</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsunotsuki.html">
+        <div class="kigo-entry-en">summer moon</div>
+        <div class="kigo-entry-jp">夏の月</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/samidare.html">
+        <div class="kigo-entry-en">early summer rain</div>
+        <div class="kigo-entry-jp">五月雨</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/yudachi.html">
+        <div class="kigo-entry-en">evening downpour</div>
+        <div class="kigo-entry-jp">夕立</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kaminari.html">
+        <div class="kigo-entry-en">thunder</div>
+        <div class="kigo-entry-jp">雷</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hizakari.html">
+        <div class="kigo-entry-en">sun's might</div>
+        <div class="kigo-entry-jp">日盛</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/enten.html">
+        <div class="kigo-entry-en">blazing heat</div>
+        <div class="kigo-entry-jp">炎天</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Landscape</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/natsu-no-yama.html">
+        <div class="kigo-entry-en">summer mountain</div>
+        <div class="kigo-entry-jp">夏の山</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsuno.html">
+        <div class="kigo-entry-en">summer fields</div>
+        <div class="kigo-entry-jp">夏野</div>
+        <div class="kigo-entry-count">6 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsu-no-kawa.html">
+        <div class="kigo-entry-en">summer river</div>
+        <div class="kigo-entry-jp">夏の川</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsu-no-umi.html">
+        <div class="kigo-entry-en">summer ocean</div>
+        <div class="kigo-entry-jp">夏の海</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/aota.html">
@@ -473,74 +482,9 @@ a { color: inherit; }
         <div class="kigo-entry-jp">青田</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/atsusa.html">
-        <div class="kigo-entry-en">heat</div>
-        <div class="kigo-entry-jp">暑さ</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/aoi.html">
-        <div class="kigo-entry-en">hollyhock</div>
-        <div class="kigo-entry-jp">葵</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/atsushi.html">
-        <div class="kigo-entry-en">hot</div>
-        <div class="kigo-entry-jp">暑し</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/ajisai.html">
-        <div class="kigo-entry-en">hydrangea</div>
-        <div class="kigo-entry-jp">紫陽花</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/mushiboshi.html">
-        <div class="kigo-entry-en">insect airing</div>
-        <div class="kigo-entry-jp">虫干</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/kawasemi.html">
-        <div class="kigo-entry-en">kingfisher</div>
-        <div class="kigo-entry-jp">翡翠</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/hototogisu.html">
-        <div class="kigo-entry-en">lesser cuckoo</div>
-        <div class="kigo-entry-jp">時鳥</div>
-        <div class="kigo-entry-count">10 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/hasu.html">
-        <div class="kigo-entry-en">lotus</div>
-        <div class="kigo-entry-jp">蓮</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/ka.html">
-        <div class="kigo-entry-en">mosquito</div>
-        <div class="kigo-entry-jp">蚊</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/shincha.html">
-        <div class="kigo-entry-en">new tea</div>
-        <div class="kigo-entry-jp">新茶</div>
-        <div class="kigo-entry-count">0 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/shincha-2.html">
-        <div class="kigo-entry-en">new tea</div>
-        <div class="kigo-entry-jp">新茶</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/yorunoaki.html">
-        <div class="kigo-entry-en">nights are autumn</div>
-        <div class="kigo-entry-jp">夜の秋</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/oi-uguisu.html">
-        <div class="kigo-entry-en">old bush warbler</div>
-        <div class="kigo-entry-jp">老鶯</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/ueta.html">
-        <div class="kigo-entry-en">planted ricefields</div>
-        <div class="kigo-entry-jp">植田</div>
+      <a class="kigo-entry" href="saijiki/summer/izumi.html">
+        <div class="kigo-entry-en">spring</div>
+        <div class="kigo-entry-jp">泉</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/shimizu.html">
@@ -548,119 +492,49 @@ a { color: inherit; }
         <div class="kigo-entry-jp">清水</div>
         <div class="kigo-entry-count">3 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/amagaeru.html">
-        <div class="kigo-entry-en">rain frog</div>
-        <div class="kigo-entry-jp">雨蛙</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/somato.html">
-        <div class="kigo-entry-en">revolving lamp</div>
-        <div class="kigo-entry-jp">走馬灯</div>
+      <a class="kigo-entry" href="saijiki/summer/taki.html">
+        <div class="kigo-entry-en">waterfall</div>
+        <div class="kigo-entry-jp">滝</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/saotome.html">
-        <div class="kigo-entry-en">rice-planting women</div>
-        <div class="kigo-entry-jp">早乙女</div>
+      <a class="kigo-entry" href="saijiki/summer/satsuki-fuji.html">
+        <div class="kigo-entry-en">fifth month Mt. Fuji</div>
+        <div class="kigo-entry-jp">五月富士</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/taue.html">
-        <div class="kigo-entry-en">rice-transplanting</div>
-        <div class="kigo-entry-jp">田植</div>
+      <a class="kigo-entry" href="saijiki/summer/ueta.html">
+        <div class="kigo-entry-en">planted ricefields</div>
+        <div class="kigo-entry-jp">植田</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/kajika.html">
-        <div class="kigo-entry-en">river frog</div>
-        <div class="kigo-entry-jp">河鹿</div>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Life</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/koromogae.html">
+        <div class="kigo-entry-en">change of garments</div>
+        <div class="kigo-entry-jp">更衣</div>
         <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/bara.html">
-        <div class="kigo-entry-en">rose</div>
-        <div class="kigo-entry-jp">薔薇</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/uchiwa.html">
-        <div class="kigo-entry-en">round fan</div>
-        <div class="kigo-entry-jp">団扇</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/korimizu.html">
-        <div class="kigo-entry-en">shaved ice</div>
-        <div class="kigo-entry-jp">氷水</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/mijika-yo.html">
-        <div class="kigo-entry-en">short nights</div>
-        <div class="kigo-entry-jp">短夜</div>
-        <div class="kigo-entry-count">2 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/usumono.html">
         <div class="kigo-entry-en">silk kimono</div>
         <div class="kigo-entry-jp">羅</div>
         <div class="kigo-entry-count">3 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/hashi-i.html">
-        <div class="kigo-entry-en">sit on veranda</div>
-        <div class="kigo-entry-jp">端居</div>
+      <a class="kigo-entry" href="saijiki/summer/yukata.html">
+        <div class="kigo-entry-en">cotton kimono</div>
+        <div class="kigo-entry-jp">浴衣</div>
         <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/rokugatsu.html">
-        <div class="kigo-entry-en">sixth month</div>
-        <div class="kigo-entry-jp">六月</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/katatsumuri.html">
-        <div class="kigo-entry-en">snail</div>
-        <div class="kigo-entry-jp">蝸牛</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/izumi.html">
-        <div class="kigo-entry-en">spring</div>
-        <div class="kigo-entry-jp">泉</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu.html">
-        <div class="kigo-entry-en">summer</div>
-        <div class="kigo-entry-jp">夏</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-no-hi.html">
-        <div class="kigo-entry-en">summer day</div>
-        <div class="kigo-entry-jp">夏の日</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsuno.html">
-        <div class="kigo-entry-en">summer fields</div>
-        <div class="kigo-entry-jp">夏野</div>
-        <div class="kigo-entry-count">6 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsukusa.html">
-        <div class="kigo-entry-en">summer grasses</div>
-        <div class="kigo-entry-jp">夏草</div>
-        <div class="kigo-entry-count">3 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/natsuboshi.html">
         <div class="kigo-entry-en">summer hats</div>
         <div class="kigo-entry-jp">夏帽子</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/natsunotsuki.html">
-        <div class="kigo-entry-en">summer moon</div>
-        <div class="kigo-entry-jp">夏の月</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-no-yama.html">
-        <div class="kigo-entry-en">summer mountain</div>
-        <div class="kigo-entry-jp">夏の山</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-no-yo.html">
-        <div class="kigo-entry-en">summer nights</div>
-        <div class="kigo-entry-jp">夏の夜</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-no-umi.html">
-        <div class="kigo-entry-en">summer ocean</div>
-        <div class="kigo-entry-jp">夏の海</div>
+      <a class="kigo-entry" href="saijiki/summer/korimizu.html">
+        <div class="kigo-entry-en">shaved ice</div>
+        <div class="kigo-entry-jp">氷水</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/natsuzashiki.html">
@@ -668,89 +542,24 @@ a { color: inherit; }
         <div class="kigo-entry-jp">夏座敷</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/nagoshi.html">
-        <div class="kigo-entry-en">summer purification</div>
-        <div class="kigo-entry-jp">夏越</div>
-        <div class="kigo-entry-count">4 poems</div>
+      <a class="kigo-entry" href="saijiki/summer/sudare.html">
+        <div class="kigo-entry-en">blinds</div>
+        <div class="kigo-entry-jp">簾（青簾）</div>
+        <div class="kigo-entry-count">0 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-no-kawa.html">
-        <div class="kigo-entry-en">summer river</div>
-        <div class="kigo-entry-jp">夏の川</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-yase.html">
-        <div class="kigo-entry-en">summer thinness</div>
-        <div class="kigo-entry-jp">夏痩</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-asashi.html">
-        <div class="kigo-entry-en">summer yet slight</div>
-        <div class="kigo-entry-jp">夏浅し</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/natsu-meku.html">
-        <div class="kigo-entry-en">summery</div>
-        <div class="kigo-entry-jp">夏めく</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/hizakari.html">
-        <div class="kigo-entry-en">sun's might</div>
-        <div class="kigo-entry-jp">日盛</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/himawari.html">
-        <div class="kigo-entry-en">sunflower</div>
-        <div class="kigo-entry-jp">向日葵</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/ayu-2.html">
-        <div class="kigo-entry-en">sweet-fish</div>
-        <div class="kigo-entry-jp">鮎</div>
-        <div class="kigo-entry-count">5 poems</div>
+      <a class="kigo-entry" href="saijiki/summer/takamushiro.html">
+        <div class="kigo-entry-en">bamboo mat</div>
+        <div class="kigo-entry-jp">簀</div>
+        <div class="kigo-entry-count">0 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/tenkafun.html">
         <div class="kigo-entry-en">talcum powder</div>
         <div class="kigo-entry-jp">天瓜粉</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/kaminari.html">
-        <div class="kigo-entry-en">thunder</div>
-        <div class="kigo-entry-jp">雷</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/hikigaeru.html">
-        <div class="kigo-entry-en">toad</div>
-        <div class="kigo-entry-jp">蟇</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/botan.html">
-        <div class="kigo-entry-en">tree peony</div>
-        <div class="kigo-entry-jp">牡丹</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/gyozui.html">
-        <div class="kigo-entry-en">tub-bath</div>
-        <div class="kigo-entry-jp">行水</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/suiren.html">
-        <div class="kigo-entry-en">water lily</div>
-        <div class="kigo-entry-jp">睡蓮</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/kuina.html">
-        <div class="kigo-entry-en">water rail</div>
-        <div class="kigo-entry-jp">水鶏</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/taki.html">
-        <div class="kigo-entry-en">waterfall</div>
-        <div class="kigo-entry-jp">滝</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/summer/mugi-no-aki.html">
-        <div class="kigo-entry-en">wheat's autumn</div>
-        <div class="kigo-entry-jp">麦の秋</div>
+      <a class="kigo-entry" href="saijiki/summer/uchiwa.html">
+        <div class="kigo-entry-en">round fan</div>
+        <div class="kigo-entry-jp">団扇</div>
         <div class="kigo-entry-count">5 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/furin.html">
@@ -758,9 +567,209 @@ a { color: inherit; }
         <div class="kigo-entry-jp">風鈴</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/summer/wakatake.html">
-        <div class="kigo-entry-en">young bamboo</div>
-        <div class="kigo-entry-jp">若竹</div>
+      <a class="kigo-entry" href="saijiki/summer/somato.html">
+        <div class="kigo-entry-en">revolving lamp</div>
+        <div class="kigo-entry-jp">走馬灯</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/mushiboshi.html">
+        <div class="kigo-entry-en">insect airing</div>
+        <div class="kigo-entry-jp">虫干</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/taue.html">
+        <div class="kigo-entry-en">rice-transplanting</div>
+        <div class="kigo-entry-jp">田植</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kusa-kari.html">
+        <div class="kigo-entry-en">grass-cutting</div>
+        <div class="kigo-entry-jp">草刈</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/yana.html">
+        <div class="kigo-entry-en">fish weir</div>
+        <div class="kigo-entry-jp">魚簗</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/suzumi.html">
+        <div class="kigo-entry-en">cooling off</div>
+        <div class="kigo-entry-jp">納涼</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hanabi.html">
+        <div class="kigo-entry-en">fireworks</div>
+        <div class="kigo-entry-jp">花火</div>
+        <div class="kigo-entry-count">0 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsu-yase.html">
+        <div class="kigo-entry-en">summer thinness</div>
+        <div class="kigo-entry-jp">夏痩</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/tango.html">
+        <div class="kigo-entry-en">Tango</div>
+        <div class="kigo-entry-jp">端午</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/koinobori.html">
+        <div class="kigo-entry-en">carp banners</div>
+        <div class="kigo-entry-jp">鯉幟</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/gione.html">
+        <div class="kigo-entry-en">gion Festival</div>
+        <div class="kigo-entry-jp">祗園会</div>
+        <div class="kigo-entry-count">0 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/nagoshi.html">
+        <div class="kigo-entry-en">summer purification</div>
+        <div class="kigo-entry-jp">夏越</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kingyodama.html">
+        <div class="kigo-entry-en">goldfish bowl</div>
+        <div class="kigo-entry-jp">金魚玉</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/shincha.html">
+        <div class="kigo-entry-en">new tea</div>
+        <div class="kigo-entry-jp">新茶</div>
+        <div class="kigo-entry-count">0 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/mayu.html">
+        <div class="kigo-entry-en">cocoon</div>
+        <div class="kigo-entry-jp">繭</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/ukai.html">
+        <div class="kigo-entry-en">cormorant fishing</div>
+        <div class="kigo-entry-jp">鵜飼</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/gyozui.html">
+        <div class="kigo-entry-en">tub-bath</div>
+        <div class="kigo-entry-jp">行水</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hashi-i.html">
+        <div class="kigo-entry-en">sit on veranda</div>
+        <div class="kigo-entry-jp">端居</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/saotome.html">
+        <div class="kigo-entry-en">rice-planting women</div>
+        <div class="kigo-entry-jp">早乙女</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Animals</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/kanoko.html">
+        <div class="kigo-entry-en">fawn</div>
+        <div class="kigo-entry-jp">鹿の子</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/komori.html">
+        <div class="kigo-entry-en">bat</div>
+        <div class="kigo-entry-jp">蝙蝠</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/amagaeru.html">
+        <div class="kigo-entry-en">rain frog</div>
+        <div class="kigo-entry-jp">雨蛙</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hikigaeru.html">
+        <div class="kigo-entry-en">toad</div>
+        <div class="kigo-entry-jp">蟇</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kajika.html">
+        <div class="kigo-entry-en">river frog</div>
+        <div class="kigo-entry-jp">河鹿</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hototogisu.html">
+        <div class="kigo-entry-en">lesser cuckoo</div>
+        <div class="kigo-entry-jp">時鳥</div>
+        <div class="kigo-entry-count">10 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/oi-uguisu.html">
+        <div class="kigo-entry-en">old bush warbler</div>
+        <div class="kigo-entry-jp">老鶯</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kawasemi.html">
+        <div class="kigo-entry-en">kingfisher</div>
+        <div class="kigo-entry-jp">翡翠</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kuina.html">
+        <div class="kigo-entry-en">water rail</div>
+        <div class="kigo-entry-jp">水鶏</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/ayu-2.html">
+        <div class="kigo-entry-en">sweet-fish</div>
+        <div class="kigo-entry-jp">鮎</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kingyo.html">
+        <div class="kigo-entry-en">goldfish</div>
+        <div class="kigo-entry-jp">金魚</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/kemushi.html">
+        <div class="kigo-entry-en">caterpillar</div>
+        <div class="kigo-entry-jp">毛虫</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hotaru.html">
+        <div class="kigo-entry-en">firefly</div>
+        <div class="kigo-entry-jp">蛍</div>
+        <div class="kigo-entry-count">8 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/semi.html">
+        <div class="kigo-entry-en">cicada</div>
+        <div class="kigo-entry-jp">蝉</div>
+        <div class="kigo-entry-count">6 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/ka.html">
+        <div class="kigo-entry-en">mosquito</div>
+        <div class="kigo-entry-jp">蚊</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/ari.html">
+        <div class="kigo-entry-en">ants</div>
+        <div class="kigo-entry-jp">蟻</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/katatsumuri.html">
+        <div class="kigo-entry-en">snail</div>
+        <div class="kigo-entry-jp">蝸牛</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Plants</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/botan.html">
+        <div class="kigo-entry-en">tree peony</div>
+        <div class="kigo-entry-jp">牡丹</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/bara.html">
+        <div class="kigo-entry-en">rose</div>
+        <div class="kigo-entry-jp">薔薇</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/ajisai.html">
+        <div class="kigo-entry-en">hydrangea</div>
+        <div class="kigo-entry-jp">紫陽花</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/summer/wakaba.html">
@@ -768,94 +777,92 @@ a { color: inherit; }
         <div class="kigo-entry-jp">若葉</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
+      <a class="kigo-entry" href="saijiki/summer/unohana.html">
+        <div class="kigo-entry-en">deutzia flowers</div>
+        <div class="kigo-entry-jp">卯の花</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/wakatake.html">
+        <div class="kigo-entry-en">young bamboo</div>
+        <div class="kigo-entry-jp">若竹</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/aoi.html">
+        <div class="kigo-entry-en">hollyhock</div>
+        <div class="kigo-entry-jp">葵</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/himawari.html">
+        <div class="kigo-entry-en">sunflower</div>
+        <div class="kigo-entry-jp">向日葵</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/suiren.html">
+        <div class="kigo-entry-en">water lily</div>
+        <div class="kigo-entry-jp">睡蓮</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/hasu.html">
+        <div class="kigo-entry-en">lotus</div>
+        <div class="kigo-entry-jp">蓮</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/natsukusa.html">
+        <div class="kigo-entry-en">summer grasses</div>
+        <div class="kigo-entry-jp">夏草</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/shincha-2.html">
+        <div class="kigo-entry-en">new tea</div>
+        <div class="kigo-entry-jp">新茶</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/wakuraba.html">
+        <div class="kigo-entry-en">Wakuraba</div>
+        <div class="kigo-entry-jp">病葉</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Observance</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/summer/matsuri.html">
+        <div class="kigo-entry-en">festivals</div>
+        <div class="kigo-entry-jp">祭</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/mine-iri.html">
+        <div class="kigo-entry-en">entering the peak</div>
+        <div class="kigo-entry-jp">峯入</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/summer/busshoe.html">
+        <div class="kigo-entry-en">buddha's birthday</div>
+        <div class="kigo-entry-jp">仏生会</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      </div>
     </div>
   </div>
   <div class="season-group">
     <div class="season-heading">Autumn</div>
-    <div class="kigo-grid">
-      <a class="kigo-entry" href="saijiki/autumn/kesanoaki.html">
-        <div class="kigo-entry-en">Kesanoaki</div>
-        <div class="kigo-entry-jp">今朝の秋</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/ringo.html">
-        <div class="kigo-entry-en">apples</div>
-        <div class="kigo-entry-jp">林檎</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/kuzunohana.html">
-        <div class="kigo-entry-en">arrow-root flower</div>
-        <div class="kigo-entry-jp">葛の花</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
+    <div class="category-group">
+      <div class="category-heading">Season</div>
+      <div class="kigo-grid">
       <a class="kigo-entry" href="saijiki/autumn/aki.html">
         <div class="kigo-entry-en">autumn</div>
         <div class="kigo-entry-jp">秋</div>
         <div class="kigo-entry-count">3 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/aki-no-kure.html">
-        <div class="kigo-entry-en">autumn dusk</div>
-        <div class="kigo-entry-jp">秋の暮</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/momiji.html">
-        <div class="kigo-entry-en">autumn leaves</div>
-        <div class="kigo-entry-jp">紅葉</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/akinoame.html">
-        <div class="kigo-entry-en">autumn rain</div>
-        <div class="kigo-entry-jp">秋の雨</div>
+      <a class="kigo-entry" href="saijiki/autumn/fumizuki.html">
+        <div class="kigo-entry-en">letters month</div>
+        <div class="kigo-entry-jp">文月</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/akinosora.html">
-        <div class="kigo-entry-en">autumn sky</div>
-        <div class="kigo-entry-jp">秋の空</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/akinokaze.html">
-        <div class="kigo-entry-en">autumn wind</div>
-        <div class="kigo-entry-jp">秋の風</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/odori.html">
-        <div class="kigo-entry-en">bon dance</div>
-        <div class="kigo-entry-jp">踊</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/kiku.html">
-        <div class="kigo-entry-en">chrysanthemum</div>
-        <div class="kigo-entry-jp">菊</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/choyo.html">
-        <div class="kigo-entry-en">chrysanthemum festival</div>
-        <div class="kigo-entry-jp">重陽</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/yuzu.html">
-        <div class="kigo-entry-en">citron</div>
-        <div class="kigo-entry-jp">柚子</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/naruko.html">
-        <div class="kigo-entry-en">clappers</div>
-        <div class="kigo-entry-jp">鳴子</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/keito.html">
-        <div class="kigo-entry-en">cockscomb</div>
-        <div class="kigo-entry-jp">鶏頭</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/korogi.html">
-        <div class="kigo-entry-en">cricket</div>
-        <div class="kigo-entry-jp">蟋蟀</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/tsuyu-2.html">
-        <div class="kigo-entry-en">dew</div>
-        <div class="kigo-entry-jp">露</div>
+      <a class="kigo-entry" href="saijiki/autumn/kesanoaki.html">
+        <div class="kigo-entry-en">Kesanoaki</div>
+        <div class="kigo-entry-jp">今朝の秋</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/autumn/hatsuaki.html">
@@ -863,84 +870,14 @@ a { color: inherit; }
         <div class="kigo-entry-jp">初秋</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/hanabi-2.html">
-        <div class="kigo-entry-en">fireworks</div>
-        <div class="kigo-entry-jp">花火</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/kiri.html">
-        <div class="kigo-entry-en">fog</div>
-        <div class="kigo-entry-jp">霧</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/haze.html">
-        <div class="kigo-entry-en">goby</div>
-        <div class="kigo-entry-jp">鯊</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/budo.html">
-        <div class="kigo-entry-en">grapes</div>
-        <div class="kigo-entry-jp">葡萄</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/kusanohana.html">
-        <div class="kigo-entry-en">grass flowers</div>
-        <div class="kigo-entry-jp">草の花</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/meigetsu.html">
-        <div class="kigo-entry-en">harvest moon</div>
-        <div class="kigo-entry-jp">名月</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/mushi.html">
-        <div class="kigo-entry-en">insects</div>
-        <div class="kigo-entry-jp">虫</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/hagi.html">
-        <div class="kigo-entry-en">lespedeza</div>
-        <div class="kigo-entry-jp">萩</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/fumizuki.html">
-        <div class="kigo-entry-en">letters month</div>
-        <div class="kigo-entry-jp">文月</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/inazuma.html">
-        <div class="kigo-entry-en">lightning</div>
-        <div class="kigo-entry-jp">稲妻</div>
+      <a class="kigo-entry" href="saijiki/autumn/aki-no-kure.html">
+        <div class="kigo-entry-en">autumn dusk</div>
+        <div class="kigo-entry-jp">秋の暮</div>
         <div class="kigo-entry-count">5 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/kirigirisu.html">
-        <div class="kigo-entry-en">long-horned grasshopper</div>
-        <div class="kigo-entry-jp">螽</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/wataridori.html">
-        <div class="kigo-entry-en">migrating birds</div>
-        <div class="kigo-entry-jp">渡り鳥</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/ama-no-gawa.html">
-        <div class="kigo-entry-en">milky Way</div>
-        <div class="kigo-entry-jp">天の川</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/susuki.html">
-        <div class="kigo-entry-en">miscanthus</div>
-        <div class="kigo-entry-jp">薄</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/tsuki.html">
-        <div class="kigo-entry-en">moon</div>
-        <div class="kigo-entry-jp">月</div>
-        <div class="kigo-entry-count">14 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/asagao.html">
-        <div class="kigo-entry-en">morning glory</div>
-        <div class="kigo-entry-jp">朝顔</div>
+      <a class="kigo-entry" href="saijiki/autumn/yonaga.html">
+        <div class="kigo-entry-en">nights are long</div>
+        <div class="kigo-entry-jp">夜長</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/autumn/asazamu.html">
@@ -953,49 +890,74 @@ a { color: inherit; }
         <div class="kigo-entry-jp">夜寒</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/yonaga.html">
-        <div class="kigo-entry-en">nights are long</div>
-        <div class="kigo-entry-jp">夜長</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/konomi.html">
-        <div class="kigo-entry-en">nuts</div>
-        <div class="kigo-entry-jp">木の実</div>
-        <div class="kigo-entry-count">3 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/kirihitoha.html">
-        <div class="kigo-entry-en">one paulownia leaf</div>
-        <div class="kigo-entry-jp">桐一葉</div>
+      <a class="kigo-entry" href="saijiki/autumn/akinosora.html">
+        <div class="kigo-entry-en">autumn sky</div>
+        <div class="kigo-entry-jp">秋の空</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/kaki.html">
-        <div class="kigo-entry-en">persimmon</div>
-        <div class="kigo-entry-jp">柿</div>
-        <div class="kigo-entry-count">1 poem</div>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Celestial</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/autumn/ama-no-gawa.html">
+        <div class="kigo-entry-en">milky Way</div>
+        <div class="kigo-entry-jp">天の川</div>
+        <div class="kigo-entry-count">4 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/kamakiri.html">
-        <div class="kigo-entry-en">praying mantis</div>
-        <div class="kigo-entry-jp">蟷螂</div>
-        <div class="kigo-entry-count">2 poems</div>
+      <a class="kigo-entry" href="saijiki/autumn/tsuki.html">
+        <div class="kigo-entry-en">moon</div>
+        <div class="kigo-entry-jp">月</div>
+        <div class="kigo-entry-count">14 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/kakashi.html">
-        <div class="kigo-entry-en">scarecrow</div>
-        <div class="kigo-entry-jp">案山子</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/autumn/mozu.html">
-        <div class="kigo-entry-en">shrike</div>
-        <div class="kigo-entry-jp">鵙</div>
-        <div class="kigo-entry-count">1 poem</div>
+      <a class="kigo-entry" href="saijiki/autumn/meigetsu.html">
+        <div class="kigo-entry-en">harvest moon</div>
+        <div class="kigo-entry-jp">名月</div>
+        <div class="kigo-entry-count">4 poems</div>
       </a>
       <a class="kigo-entry" href="saijiki/autumn/izayoi.html">
         <div class="kigo-entry-en">sixteenth night moon</div>
         <div class="kigo-entry-jp">十六夜</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/tanabata.html">
-        <div class="kigo-entry-en">star festival</div>
-        <div class="kigo-entry-jp">七夕</div>
+      <a class="kigo-entry" href="saijiki/autumn/akinokaze.html">
+        <div class="kigo-entry-en">autumn wind</div>
+        <div class="kigo-entry-jp">秋の風</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/akinoame.html">
+        <div class="kigo-entry-en">autumn rain</div>
+        <div class="kigo-entry-jp">秋の雨</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kiri.html">
+        <div class="kigo-entry-en">fog</div>
+        <div class="kigo-entry-jp">霧</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/tsuyu-2.html">
+        <div class="kigo-entry-en">dew</div>
+        <div class="kigo-entry-jp">露</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/inazuma.html">
+        <div class="kigo-entry-en">lightning</div>
+        <div class="kigo-entry-jp">稲妻</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Life</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/autumn/kakashi.html">
+        <div class="kigo-entry-en">scarecrow</div>
+        <div class="kigo-entry-jp">案山子</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/naruko.html">
+        <div class="kigo-entry-en">clappers</div>
+        <div class="kigo-entry-jp">鳴子</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/autumn/sumo.html">
@@ -1003,99 +965,177 @@ a { color: inherit; }
         <div class="kigo-entry-jp">相撲</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
-      <a class="kigo-entry" href="saijiki/autumn/nogiku.html">
-        <div class="kigo-entry-en">wild chrysanthemums</div>
-        <div class="kigo-entry-jp">野菊</div>
-        <div class="kigo-entry-count">2 poems</div>
+      <a class="kigo-entry" href="saijiki/autumn/tanabata.html">
+        <div class="kigo-entry-en">star festival</div>
+        <div class="kigo-entry-jp">七夕</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/choyo.html">
+        <div class="kigo-entry-en">chrysanthemum festival</div>
+        <div class="kigo-entry-jp">重陽</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/odori.html">
+        <div class="kigo-entry-en">bon dance</div>
+        <div class="kigo-entry-jp">踊</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/hanabi-2.html">
+        <div class="kigo-entry-en">fireworks</div>
+        <div class="kigo-entry-jp">花火</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Animals</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/autumn/wataridori.html">
+        <div class="kigo-entry-en">migrating birds</div>
+        <div class="kigo-entry-jp">渡り鳥</div>
+        <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/autumn/kari.html">
         <div class="kigo-entry-en">wild geese</div>
         <div class="kigo-entry-jp">雁</div>
         <div class="kigo-entry-count">2 poems</div>
       </a>
+      <a class="kigo-entry" href="saijiki/autumn/mozu.html">
+        <div class="kigo-entry-en">shrike</div>
+        <div class="kigo-entry-jp">鵙</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
       <a class="kigo-entry" href="saijiki/autumn/kitsutsuki.html">
         <div class="kigo-entry-en">woodpecker</div>
         <div class="kigo-entry-jp">啄木鳥</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
+      <a class="kigo-entry" href="saijiki/autumn/mushi.html">
+        <div class="kigo-entry-en">insects</div>
+        <div class="kigo-entry-jp">虫</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kirigirisu.html">
+        <div class="kigo-entry-en">long-horned grasshopper</div>
+        <div class="kigo-entry-jp">螽</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kamakiri.html">
+        <div class="kigo-entry-en">praying mantis</div>
+        <div class="kigo-entry-jp">蟷螂</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/korogi.html">
+        <div class="kigo-entry-en">cricket</div>
+        <div class="kigo-entry-jp">蟋蟀</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/haze.html">
+        <div class="kigo-entry-en">goby</div>
+        <div class="kigo-entry-jp">鯊</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Plants</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/autumn/kaki.html">
+        <div class="kigo-entry-en">persimmon</div>
+        <div class="kigo-entry-jp">柿</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/momiji.html">
+        <div class="kigo-entry-en">autumn leaves</div>
+        <div class="kigo-entry-jp">紅葉</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kirihitoha.html">
+        <div class="kigo-entry-en">one paulownia leaf</div>
+        <div class="kigo-entry-jp">桐一葉</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/konomi.html">
+        <div class="kigo-entry-en">nuts</div>
+        <div class="kigo-entry-jp">木の実</div>
+        <div class="kigo-entry-count">3 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/asagao.html">
+        <div class="kigo-entry-en">morning glory</div>
+        <div class="kigo-entry-jp">朝顔</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kiku.html">
+        <div class="kigo-entry-en">chrysanthemum</div>
+        <div class="kigo-entry-jp">菊</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/keito.html">
+        <div class="kigo-entry-en">cockscomb</div>
+        <div class="kigo-entry-jp">鶏頭</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kusanohana.html">
+        <div class="kigo-entry-en">grass flowers</div>
+        <div class="kigo-entry-jp">草の花</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/hagi.html">
+        <div class="kigo-entry-en">lespedeza</div>
+        <div class="kigo-entry-jp">萩</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/susuki.html">
+        <div class="kigo-entry-en">miscanthus</div>
+        <div class="kigo-entry-jp">薄</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/kuzunohana.html">
+        <div class="kigo-entry-en">arrow-root flower</div>
+        <div class="kigo-entry-jp">葛の花</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/nogiku.html">
+        <div class="kigo-entry-en">wild chrysanthemums</div>
+        <div class="kigo-entry-jp">野菊</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/budo.html">
+        <div class="kigo-entry-en">grapes</div>
+        <div class="kigo-entry-jp">葡萄</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/ringo.html">
+        <div class="kigo-entry-en">apples</div>
+        <div class="kigo-entry-jp">林檎</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/autumn/yuzu.html">
+        <div class="kigo-entry-en">citron</div>
+        <div class="kigo-entry-jp">柚子</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
     </div>
   </div>
   <div class="season-group">
     <div class="season-heading">Winter</div>
-    <div class="kigo-grid">
-      <a class="kigo-entry" href="saijiki/winter/busonki.html">
-        <div class="kigo-entry-en">anniversary of Buson's death</div>
-        <div class="kigo-entry-jp">蕪村忌</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/samushi.html">
-        <div class="kigo-entry-en">cold</div>
-        <div class="kigo-entry-jp">寒し</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/ochiba.html">
-        <div class="kigo-entry-en">fallen leaves</div>
-        <div class="kigo-entry-jp">落葉</div>
+    <div class="category-group">
+      <div class="category-heading">Season</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/winter/fuyu.html">
+        <div class="kigo-entry-en">winter</div>
+        <div class="kigo-entry-jp">冬</div>
         <div class="kigo-entry-count">4 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/hatsushigure.html">
-        <div class="kigo-entry-en">first icy shower</div>
-        <div class="kigo-entry-jp">初時雨</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/shimo.html">
-        <div class="kigo-entry-en">frost</div>
-        <div class="kigo-entry-jp">霜</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/shimoyo.html">
-        <div class="kigo-entry-en">frosty night</div>
-        <div class="kigo-entry-jp">霜夜</div>
-        <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/winter/kannazuki.html">
         <div class="kigo-entry-en">godless Month</div>
         <div class="kigo-entry-jp">神無月</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/winter/arare.html">
-        <div class="kigo-entry-en">hail</div>
-        <div class="kigo-entry-jp">霰</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/taka.html">
-        <div class="kigo-entry-en">hawk</div>
-        <div class="kigo-entry-jp">鷹</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/kaitsuburi.html">
-        <div class="kigo-entry-en">little grebe</div>
-        <div class="kigo-entry-jp">鳰</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/kaki-2.html">
-        <div class="kigo-entry-en">oyster</div>
-        <div class="kigo-entry-jp">牡蠣</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/chidori.html">
-        <div class="kigo-entry-en">plover</div>
-        <div class="kigo-entry-jp">千鳥</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/namako.html">
-        <div class="kigo-entry-en">sea cucumber</div>
-        <div class="kigo-entry-jp">海鼠</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/yuki.html">
-        <div class="kigo-entry-en">snow</div>
-        <div class="kigo-entry-jp">雪</div>
-        <div class="kigo-entry-count">20 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/negi.html">
-        <div class="kigo-entry-en">stone leek</div>
-        <div class="kigo-entry-jp">葱</div>
+      <a class="kigo-entry" href="saijiki/winter/shiwasu.html">
+        <div class="kigo-entry-en">twelfth Month</div>
+        <div class="kigo-entry-jp">師走</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/winter/koharu.html">
@@ -1103,36 +1143,26 @@ a { color: inherit; }
         <div class="kigo-entry-jp">小春</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/winter/konoha.html">
-        <div class="kigo-entry-en">tree leaves</div>
-        <div class="kigo-entry-jp">木の葉</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/shiwasu.html">
-        <div class="kigo-entry-en">twelfth Month</div>
-        <div class="kigo-entry-jp">師走</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/daikon.html">
-        <div class="kigo-entry-en">white radish</div>
-        <div class="kigo-entry-jp">大根</div>
-        <div class="kigo-entry-count">2 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/kamo.html">
-        <div class="kigo-entry-en">wild duck</div>
-        <div class="kigo-entry-jp">鴨</div>
-        <div class="kigo-entry-count">1 poem</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/winter/fuyu.html">
-        <div class="kigo-entry-en">winter</div>
-        <div class="kigo-entry-jp">冬</div>
-        <div class="kigo-entry-count">4 poems</div>
-      </a>
       <a class="kigo-entry" href="saijiki/winter/fuyunohi.html">
         <div class="kigo-entry-en">winter day sun</div>
         <div class="kigo-entry-jp">冬の日</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
+      <a class="kigo-entry" href="saijiki/winter/shimoyo.html">
+        <div class="kigo-entry-en">frosty night</div>
+        <div class="kigo-entry-jp">霜夜</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/samushi.html">
+        <div class="kigo-entry-en">cold</div>
+        <div class="kigo-entry-jp">寒し</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Celestial</div>
+      <div class="kigo-grid">
       <a class="kigo-entry" href="saijiki/winter/fuyunotsuki.html">
         <div class="kigo-entry-en">winter moon</div>
         <div class="kigo-entry-jp">冬の月</div>
@@ -1143,24 +1173,137 @@ a { color: inherit; }
         <div class="kigo-entry-jp">時雨</div>
         <div class="kigo-entry-count">8 poems</div>
       </a>
+      <a class="kigo-entry" href="saijiki/winter/hatsushigure.html">
+        <div class="kigo-entry-en">first icy shower</div>
+        <div class="kigo-entry-jp">初時雨</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/arare.html">
+        <div class="kigo-entry-en">hail</div>
+        <div class="kigo-entry-jp">霰</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/shimo.html">
+        <div class="kigo-entry-en">frost</div>
+        <div class="kigo-entry-jp">霜</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/yuki.html">
+        <div class="kigo-entry-en">snow</div>
+        <div class="kigo-entry-jp">雪</div>
+        <div class="kigo-entry-count">20 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Landscape</div>
+      <div class="kigo-grid">
       <a class="kigo-entry" href="saijiki/winter/kareno.html">
         <div class="kigo-entry-en">withered fields</div>
         <div class="kigo-entry-jp">枯野</div>
         <div class="kigo-entry-count">4 poems</div>
       </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Life</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/winter/busonki.html">
+        <div class="kigo-entry-en">anniversary of Buson's death</div>
+        <div class="kigo-entry-jp">蕪村忌</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Animals</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/winter/taka.html">
+        <div class="kigo-entry-en">hawk</div>
+        <div class="kigo-entry-jp">鷹</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/kamo.html">
+        <div class="kigo-entry-en">wild duck</div>
+        <div class="kigo-entry-jp">鴨</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/chidori.html">
+        <div class="kigo-entry-en">plover</div>
+        <div class="kigo-entry-jp">千鳥</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/kaitsuburi.html">
+        <div class="kigo-entry-en">little grebe</div>
+        <div class="kigo-entry-jp">鳰</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/namako.html">
+        <div class="kigo-entry-en">sea cucumber</div>
+        <div class="kigo-entry-jp">海鼠</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/kaki-2.html">
+        <div class="kigo-entry-en">oyster</div>
+        <div class="kigo-entry-jp">牡蠣</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Plants</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/winter/konoha.html">
+        <div class="kigo-entry-en">tree leaves</div>
+        <div class="kigo-entry-jp">木の葉</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/ochiba.html">
+        <div class="kigo-entry-en">fallen leaves</div>
+        <div class="kigo-entry-jp">落葉</div>
+        <div class="kigo-entry-count">4 poems</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/negi.html">
+        <div class="kigo-entry-en">stone leek</div>
+        <div class="kigo-entry-jp">葱</div>
+        <div class="kigo-entry-count">1 poem</div>
+      </a>
+      <a class="kigo-entry" href="saijiki/winter/daikon.html">
+        <div class="kigo-entry-en">white radish</div>
+        <div class="kigo-entry-jp">大根</div>
+        <div class="kigo-entry-count">2 poems</div>
+      </a>
+      </div>
     </div>
   </div>
   <div class="season-group">
     <div class="season-heading">New Year</div>
-    <div class="kigo-grid">
+    <div class="category-group">
+      <div class="category-heading">Season</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/new year/ganjitsu.html">
+        <div class="kigo-entry-en">new Year's Day</div>
+        <div class="kigo-entry-jp">元日</div>
+        <div class="kigo-entry-count">5 poems</div>
+      </a>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Celestial</div>
+      <div class="kigo-grid">
       <a class="kigo-entry" href="saijiki/new year/hatsuhi.html">
         <div class="kigo-entry-en">first sun</div>
         <div class="kigo-entry-jp">初日</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/new year/hatsushibai.html">
-        <div class="kigo-entry-en">first theater performance</div>
-        <div class="kigo-entry-jp">初芝居</div>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-heading">Life</div>
+      <div class="kigo-grid">
+      <a class="kigo-entry" href="saijiki/new year/hatsugoyomi.html">
+        <div class="kigo-entry-en">new calendar</div>
+        <div class="kigo-entry-jp">初暦</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
       <a class="kigo-entry" href="saijiki/new year/kakizome.html">
@@ -1168,26 +1311,25 @@ a { color: inherit; }
         <div class="kigo-entry-jp">書初</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
-      <a class="kigo-entry" href="saijiki/new year/ganjitsu.html">
-        <div class="kigo-entry-en">new Year's Day</div>
-        <div class="kigo-entry-jp">元日</div>
-        <div class="kigo-entry-count">5 poems</div>
-      </a>
-      <a class="kigo-entry" href="saijiki/new year/hatsugoyomi.html">
-        <div class="kigo-entry-en">new calendar</div>
-        <div class="kigo-entry-jp">初暦</div>
+      <a class="kigo-entry" href="saijiki/new year/hatsushibai.html">
+        <div class="kigo-entry-en">first theater performance</div>
+        <div class="kigo-entry-jp">初芝居</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
+      </div>
     </div>
   </div>
   <div class="season-group">
     <div class="season-heading"></div>
-    <div class="kigo-grid">
+    <div class="category-group">
+      <div class="category-heading">Other</div>
+      <div class="kigo-grid">
       <a class="kigo-entry" href="saijiki//wakana.html">
         <div class="kigo-entry-en">young herbs</div>
         <div class="kigo-entry-jp">若菜</div>
         <div class="kigo-entry-count">1 poem</div>
       </a>
+      </div>
     </div>
   </div>
 
