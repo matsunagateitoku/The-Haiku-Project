@@ -122,7 +122,7 @@ Related season words:
    > not yet watered
    > lakeside rice patty
 
-### 夏めくnatsu meku
+### 夏めく natsu meku
 
 Summery or summer-like
 
@@ -224,7 +224,7 @@ In early summer the landscape is adorned with golden ripened wheat.  While most 
    > this ox has grown old-
    > wheat's autumn
 
-### 夏の日　natsu no hi
+### 夏の日 natsu no hi
 
 Summer day or summer sun
 
