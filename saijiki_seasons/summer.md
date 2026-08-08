@@ -36,11 +36,11 @@ The poetic essence of summer is that it is the hottest of the seasons and the ti
    > flows in the wind and
    > the fifth month has come
 
-### 02. Deutzia Month
+### Deutzia Month
 
 _(stub in source -- no content drafted yet)_
 
-### 06. Start of summer
+### Start of summer
 
 Beginning of summer
 
