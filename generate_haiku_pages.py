@@ -557,7 +557,7 @@ def build_poem_page(row, poem_filename, poet_slug, saijiki_slug="", saijiki_seas
 
     saijiki_link = ""
     if saijiki_slug and saijiki_season:
-        season_dir = saijiki_season.lower()
+        season_dir = slugify(saijiki_season)
         saijiki_link = (f'<a class="ext-link" href="../saijiki/{season_dir}/{saijiki_slug}.html">'
                         f'Season word: {saijiki_slug} →</a>')
 
@@ -947,7 +947,7 @@ def _master_kigo_grid_html(entries, season):
     grid = ""
     for slug, meta in entries:
         count = meta.get("poem_count", 0)
-        grid += f'''      <a class="kigo-entry" href="saijiki/{season.lower()}/{slug}.html">
+        grid += f'''      <a class="kigo-entry" href="saijiki/{slugify(season)}/{slug}.html">
         <div class="kigo-entry-en">{meta.get("kigo_en", slug)}</div>
         <div class="kigo-entry-jp">{meta.get("kigo_jp", "")}</div>
         <div class="kigo-entry-count">{count} poem{"s" if count != 1 else ""}</div>
@@ -1474,7 +1474,7 @@ def main():
         if not essay_text and not poems:
             continue  # nothing to show for this term yet
 
-        season = (meta.get("season") or "unknown").lower()
+        season = slugify(meta.get("season") or "unknown")
         season_dir = os.path.join(args.out, "saijiki", season)
         os.makedirs(season_dir, exist_ok=True)
 
@@ -1513,7 +1513,7 @@ def main():
             if s:
                 by_season.setdefault(s, []).append((slug, meta))
         for season, entries in by_season.items():
-            season_dir = os.path.join(args.out, "saijiki", season.lower())
+            season_dir = os.path.join(args.out, "saijiki", slugify(season))
             os.makedirs(season_dir, exist_ok=True)
             with open(os.path.join(season_dir, "index.html"), "w", encoding="utf-8") as f:
                 f.write(build_saijiki_season_index(season, entries, sort="category"))
