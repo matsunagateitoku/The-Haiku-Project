@@ -1849,7 +1849,7 @@ Variations: natsu-no-taki (summer waterfall), taki-tsubo (waterfall basin), taki
 
 ### Summer Mountain
 
-夏の山  Natsu no yama  [Summer Kigo]
+夏の山  Natsu no yama  [Summer / Chiri]
 
 The mountain covered with luxuriant green trees seems to trickle with moisture. Birds can be heard, white clouds move by the peaks or foothills, pure streams murmur in the valleys. In the folds of some high mountains are snowy ravines. The interests of mountains in summer are numerous and various.
 
