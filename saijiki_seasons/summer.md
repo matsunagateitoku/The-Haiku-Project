@@ -113,7 +113,7 @@ Related season words:
 3. 夏浅き草花店や種も売る -- 中村楽天
    *natsu asaki/ kusa-bana mise ya/ tane mo uru -- Nakamura Rakuten*
    > the arboretum
-   > in shallow summerー
+   > in shallow summer-
    > seed are also for sale
 
 4. 夏浅きまだ水張らず湖畔の田 -- 三輪清舟
@@ -236,13 +236,13 @@ Variations: Summer's sun (夏日); Summer sunlight (夏日影 hi kage); Summer s
 
 1. 夏の日や広葉柏に移りそめ -- 蘭更
    *natsu no hi ya/ hiro-ba kashiwa ni/ utsuri some -- Ranko*
-   > the summer sunー
+   > the summer sun-
    > tingeing the broad leaves
    > of the oak
 
 2. 夏の日や薄苔つける木々の枝 -- 芥川龍之介
    *natsu no hi ya/ usu-goke tsukeru/ kigi no eda -- Akutagawa Ryunosuke*
-   > summer daysー
+   > summer days-
    > tree boughs covered
    > with a thin layer of moss
 
@@ -270,7 +270,7 @@ Variations: Summer midnight (夜半の夏 yowa no natsu)
 
 1. 夏の夜や崩れて明けしひやし物 -- 芭蕉
    *natsu no yo ya/ kazurete akeshi/ hiyashi mono -- Basho*
-   > a summer nightー
+   > a summer night-
    > light breaks over
    > chilled dishes
 
@@ -289,7 +289,7 @@ Variations: Summer midnight (夜半の夏 yowa no natsu)
 4. 月の輪をゆり去る舟や夜半の夏 -- 杉田久女
    *tsuki no wa wo/ yuri saru fune ya/ yowa no natsu -- Sugita Hisajo*
    > from the moon’s corona
-   > the boat drifts awayー
+   > the boat drifts away-
    > summer midnight
 
 ### Short nights
