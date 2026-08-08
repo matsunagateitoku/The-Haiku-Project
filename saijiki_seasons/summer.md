@@ -339,7 +339,7 @@ a bead of dew
 
 ### Fawn
 
-鹿の子  Kanoko  [Summer Dobutsu]
+鹿の子  Kanoko  [Summer / Dobutsu]
 
 The young of deer which mate in autumn; it is born between mid-April and June. Chestnut brown with white spots (kanoko madara), the young male has a bump on the head. Horns grow out in its second year. Fawns are gentle and shy, but generally friendly to people. It is sweet to see them following close by their mothers as though trying to gain attention.
 
@@ -365,7 +365,7 @@ Variations: shika no ko (the deer’s child), kojika (baby deer), mejika (female
 
 ### Bat
 
-蝙蝠  Komori  [Summer Dobutsu]
+蝙蝠  Komori  [Summer / Dobutsu]
 
 The bat or flitter-mouse is the only mammal that flies. Coming out of hibernation in spring, in the daytime it hangs upside down under eaves or in trees, and can be seen flying about from dusk and during the night, in search of insects. As it is fond of eating mosquitoes, old names were kakui dori (a bird that eats mosquitoes) and kawahori (a bird that wants mosquitoes). There are varieties that feed on fruit trees. The bat was not a theme in poetry, but the sight of them flying on a misty summer evening has its own special taste and interest for haiku.
 
@@ -390,7 +390,7 @@ The bat or flitter-mouse is the only mammal that flies. Coming out of hibernatio
 
 ### Rain Frog
 
-雨蛙  Amagaeru  [Summer Dobutsu]
+雨蛙  Amagaeru  [Summer / Dobutsu]
 
 This species of frog, the toad and the river frog are summer topics. The rain frog is about 4 cm long, and wakes from winter sleep in early April. It lives on tree boughs and leaves, hence is also called ada-gaeru (branch frog). Ordinarily it is green, but it has the ability to change colour to match the environment, turning brown on reaching the ground. When rain is impending or has begun to fall, it cries in a loud voice, unlike its size. Ao-gaeru (green frog), a slightly different species which also inhabits trees, is included in this kigo.
 
@@ -414,7 +414,7 @@ This species of frog, the toad and the river frog are summer topics. The rain fr
 
 ### Toad
 
-蟇  Hikigaeru  [Summer Dobutsu]
+蟇  Hikigaeru  [Summer / Dobutsu]
 
 This is the largest of the frogs, with a dark, yellow-brown back full of warts. It comes out of hibernation in February, lays eggs, goes back to sleep and crawls out again in early summer. The toad can grow to 12 cm or more; its warts emit a white, sticky, poisonous fluid. In the daytime it stays in damp shades, thick grasses, or holes in the ground. Around dusk it saunters out in its dull and deliberate way to catch small insects and earthworms, and sits without moving, as though in meditation. With its grotesque yet sagacious and mysterious appearance, the toad is a creature that has the taste of hai.
 
@@ -440,7 +440,7 @@ Variations: hiki, gama or gamogaeru.
 
 ### River Frog
 
-河鹿  Kajika  [Summer Dobutsu]
+河鹿  Kajika  [Summer / Dobutsu]
 
 A small, thin variety of frog that lives in mountain lakes and streams. It is brown, with some dark grey spots. Around the time new leaves sprout on trees, the male, sitting on a rock by a riverside, starts to sing in a pure, clear voice, “hyorohyoro hihihi.” As people of old admired the deer’s voice, they called this frog “river deer.” The word “kawazu” used in many poems of the Manyoshu seems, from the context, to be referring to this river frog, and some which say “kajika” and “kawazu” seem to mean the ordinary frog. In the Edo period, kajika was confused with a fish of the same name, miller’s thumb, an autumn kigo.
 
@@ -464,7 +464,7 @@ A small, thin variety of frog that lives in mountain lakes and streams. It is br
 
 ### Little Cuckoo
 
-時鳥  Hototogisu  [Summer Dobutsu]
+時鳥  Hototogisu  [Summer / Dobutsu]
 
 Like spring’s flowers, the autumn moon and winter snow, the little cuckoo has been considered to be the important theme characteristic of summer. It comes to Japan from the south around May and lives in the mountains till the end of autumn. Its feathers are dark grey-brown; the breast and underside are white with stripes running across. It has the peculiar habit of depositing its eggs in the nest of the bush warbler. People of old were eager to hear this bird, waited for its first song, and once heard, wished to hear it again. That song is spirited and haunting, “teppenkaketaka”, “honzonkaketaka”, or the like.
 
@@ -498,7 +498,7 @@ There are many legends about the little cuckoo from China. Some said it was the 
 
 ### Old Bush Warbler
 
-老鶯  Oi uguisu  [Summer Dobutsu]
+老鶯  Oi uguisu  [Summer / Dobutsu]
 
 While the bush warbler is a spring topic, oi-uguisu means the bush warbler singing in summer, its breeding period. At this time it returns to mountainous areas, bamboo groves and forests to make its nest. Hence, it is only in such places that it can be heard. Because uguisu has always been related to spring, the summer uguisu is called in haiku, “old” or “remaining” uguisu.
 
@@ -524,7 +524,7 @@ Variations: natsu uguisu (summer bush warbler), ro-o (old bush warbler), miyama 
 
 ### Reed Warbler
 
-葦切  Yoshikiri  [Summer Dobutsu]
+葦切  Yoshikiri  [Summer / Dobutsu]
 
 Of the family of warblers, category of sparrows, there are the Great reed warbler (oyoshikiri) and the Black-browed reed warbler (ko yoshikiri). The former is more common; it resembles the bush warbler but is slightly larger, growing to about 18 cm in body length. It is light green-brown with a yellow-white belly. It crosses to Japan from the south in May, to live in flat areas with swamps, by lakes and watery ricefields, where reeds grow, until September. Its name (reed-cutter) is because of its skill at splitting a stalk of reed to get the insects in it. Another name, gyogyoshi, is after its song, which is loud and noisy in the hot weather. The Black-browed reed warbler’s voice is finer and clearer.
 
@@ -550,7 +550,7 @@ Variations: gyogyoshi, yoshi-suzume, ashi-suzume (reed sparrows).
 
 ### Kingfisher
 
-翡翠  Kawasemi  [Summer Dobutsu]
+翡翠  Kawasemi  [Summer / Dobutsu]
 
 A beautiful bird with green feathers like nephrite, chestnut brown on the underside, and red feet. It lives in green shades by gorges and swamps. Perched on a stake or tree top with eyes fixed on the water, when it spies a fish it will fly in a straight line to catch it with its large beak. It is a resident bird and may be seen in all seasons, but its colours and agility of movements invite coolness, so that it was made a kigo of summer. Other names are hisui, amagoi dori (bird that begs for rain), mizugoi dori (bird over lower water).
 
@@ -574,7 +574,7 @@ A beautiful bird with green feathers like nephrite, chestnut brown on the unders
 
 ### Water-Rail
 
-水鶏  Kuina  [Summer Dobutsu]
+水鶏  Kuina  [Summer / Dobutsu]
 
 A small bird resembling a snipe, the water rail (also known as muddy crake) comes to Japan in spring from the south, and returns in the autumn. It is red-chestnut colour from head to breast, while the rest of the body is dark olive. It walks in the thick growth of reeds by watersides in lowlands, stops once in a while and says “hobkyokyokyo”, which sounds like knocking on a door. From the early times of imperial collections of poetry, this bird has been connected with visiting or awaiting someone, or with the realization of a short night.
 
@@ -599,7 +599,7 @@ A small bird resembling a snipe, the water rail (also known as muddy crake) come
 
 ### Sweet-Fish
 
-鮎  Ayu  [Summer Dobutsu]
+鮎  Ayu  [Summer / Dobutsu]
 
 From ancient times this fish has been prized as the king of river fish. Ayu hatch in autumn rivers and grow up in the warm gulfs of winter. In early spring they go upstream as young ayu (waka ayu). They are about 20–30 cm long in summer and have a noble appearance; their backs are olive green, bellies are white with a streak of yellow. People fishing for ayu with poles in pure streams is a summery sight. Weirs and cormorants are also used.
 
@@ -625,7 +625,7 @@ Variations: ayu no yado (sweet-fish inn), kogyo (perfumed fish), nengyo (fish th
 
 ### Goldfish
 
-金魚  Kingyo  [Summer Dobutsu]
+金魚  Kingyo  [Summer / Dobutsu]
 
 The miniature species of carp bred for ornamental purposes. They were imported from China in the 16th century to enjoy their variety of beautiful forms, and have since been cross-bred in ponds. There are now many kinds, of different shades of red, gold and silver with spreading tails or bulging eyes — such as Ranchu, Ryukin, o-naga, Demekin, to name a few. To see them swimming through green duckweed in a glass bowl enhances coolness. The goldfish pedlar with his tubs and goldfish bowls calling out his wares, used to be a regular part of the summer scene. At present they are mainly at shrines, where goldfish can be scooped from their trays with nets or ladles.
 
