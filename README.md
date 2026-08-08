@@ -1,7 +1,7 @@
 # The-Haiku-Project
 Production version of the website
 
-python generate_haiku_pages.py --xlsx AI_Haiku.xlsx --out site --bios bios --photos site/photos --essays essays --poets poets_canonical.xlsx
+python generate_haiku_pages.py --xlsx AI_Haiku.xlsx --poems-csv Haiku_official_list.csv --out site --bios bios --photos site/photos --essays essays --poets poets_canonical.xlsx
 
 TO DO:
 1. Set up system for sourcing poems (Japanese and English)

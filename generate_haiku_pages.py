@@ -1211,13 +1211,14 @@ def build_index(poem_count, poet_count, saijiki_count):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--xlsx",   default="/mnt/project/AI_Haiku.xlsx")
+    parser.add_argument("--poems-csv", default="Haiku_official_list.csv",
+                         help="Combined Edo/Modern poems CSV (has an 'Era' column instead of separate sheets)")
     parser.add_argument("--out",    default="/mnt/user-data/outputs/haiku_site")
     parser.add_argument("--bios",   default="/home/claude/bios")
     parser.add_argument("--photos", default="/home/claude/photos")
     parser.add_argument("--essays",        default="/home/claude/essays")
     parser.add_argument("--appreciations", default="appreciations")
     parser.add_argument("--poets",  default="")
-    parser.add_argument("--sheets", nargs="+", default=["Edo", "Modern"])
     args = parser.parse_args()
 
     poems_dir  = os.path.join(args.out, "poems")
@@ -1238,15 +1239,13 @@ def main():
     else:
         print("  No canonical poets file — using spreadsheet data directly")
 
-    # Read all rows
+    # Read all rows — Edo and Modern now live together in one CSV, told
+    # apart by the 'Era' column (see Haiku_official_list.csv).
     all_rows = []
-    for sheet in args.sheets:
-        try:
-            df = pd.read_excel(args.xlsx, sheet_name=sheet)
-            for _, row in df.iterrows():
-                all_rows.append((sheet, row.to_dict()))
-        except Exception as e:
-            print(f"  Skipping sheet '{sheet}': {e}")
+    df = pd.read_csv(args.poems_csv, keep_default_na=False)
+    for _, row in df.iterrows():
+        era = row.get("Era", "")
+        all_rows.append((era, row.to_dict()))
 
     # Saijiki registry — loaded up front so poem pages (Pass 1) can link to
     # their season-word page. See the fuller comment above Pass 3 below for
