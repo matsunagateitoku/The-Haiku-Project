@@ -38,7 +38,7 @@ The poetic essence of summer is that it is the hottest of the seasons and the ti
 
 ### Deutzia Month
 
-_(stub in source -- no content drafted yet)_
+卯月 (Uzuki), literally "deutzia month," is the old lunar calendar's name for the fourth month, so called because it is when unohana (卯の花), the deutzia flowers, come into bloom. It remains one of the classical month-names still used as an early-summer season word in haiku.
 
 ### Start of summer
 
