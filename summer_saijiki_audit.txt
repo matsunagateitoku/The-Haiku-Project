@@ -1,0 +1,107 @@
+Summer Saijiki Audit — site/saijiki/summer/*.html
+Updated after fixes applied.
+
+===========================================================
+FIXES APPLIED
+===========================================================
+gione, hae, hitorimushi-ga, keshinohana, rikka, shincha, sudare,
+takamushiro, tokiwagiochiba, yoshikiri — all now show their full 4
+exemplar poems. Root causes:
+
+  - 8 terms (gione, hae, hitorimushi-ga, keshinohana, sudare,
+    takamushiro, tokiwagiochiba, yoshikiri) had a wrong or
+    over-decorated kanji in the Saijiki sheet's Kigo_JP column,
+    so the poem-matching code (which matches on exact kanji) never
+    found their poems even though the poems existed and were
+    correctly tagged. Corrected Kigo_JP to match summer.md and the
+    poems' own Kigo tags:
+      gione:            祗園会 -> 祇園会
+      hae:              蝿 -> 蠅
+      hitorimushi-ga:   火取虫（蛾） -> 火取虫
+      keshinohana:      けしの花 -> 罌粟の花
+      sudare:           簾（青簾） -> 簾
+      takamushiro:      簀 -> 簟
+      tokiwagiochiba:   常磐木落葉 -> 常緑木落葉
+      yoshikiri:        葭切 -> 葦切
+
+  - rikka: its 4 poems' Kigo field led with English text ("Start of
+    summer 立夏 rikka"), and the matcher only reads the leading run
+    of kanji/kana, so it found nothing. Reformatted those 4 poem
+    rows' Kigo field to "立夏  Rikka  [Summer / Season]" so the
+    kanji leads.
+
+  - hanabi / shincha: the Saijiki sheet had two rows apiece sharing
+    the same Kigo_JP (hanabi as Summer + hanabi-2 as Autumn; shincha
+    as Life + shincha-2 as Plants). The generator's poem-matching is
+    a plain {kigo_jp: slug} dict, so the second row silently stole
+    all the first row's poems. Per your call, kept hanabi as Summer
+    and shincha as Life; deleted the hanabi-2 and shincha-2 rows and
+    their now-orphaned pages, and fixed the 8 poem pages whose
+    "Season word" backlink pointed at the deleted -2 pages.
+
+  - aoba: left as-is (0 exemplar poems) by design — every poem in
+    the collection near this term is tagged with the combined term
+    若葉・青葉 and is thematically about young leaves (wakaba), not
+    mature green leaves (aoba). You confirmed aoba and wakaba should
+    stay separate rather than share wakaba's poems, so aoba has no
+    exemplar poems until an aoba-specific poem is added to the
+    collection.
+
+===========================================================
+REMAINING: PAGES WITH NO ESSAY TEXT (18) — unchanged, still open
+No essays/{slug}.txt source file exists for any of these.
+===========================================================
+atsusa
+atsushi
+enten
+hasu
+hizakari
+hotaru
+kaminari
+kumonomine
+natsukusa
+natsunotsuki
+rokugatsu
+samidare
+satsuki
+shincha-2 (now deleted — see above; ignore, was a duplicate row)
+suzushisa
+wakuraba
+yorunoaki
+yudachi
+
+===========================================================
+REMAINING: PAGES WITH FEWER THAN 4 POEMS (28) — down from 38
+===========================================================
+aoba — 0 (see note above; not fixable without new source material)
+atsushi — 1
+hasu — 1
+hizakari — 1
+kaminari — 1
+natsunotsuki — 1
+rokugatsu — 1
+satsuki — 1
+wakaba — 1
+wakuraba — 1
+yorunoaki — 1
+kumonomine — 2
+mijika-yo — 2
+natsu-asashi — 2
+suzushisa — 2
+yudachi — 2
+amagaeru — 3
+aoi — 3
+izumi — 3
+natsu — 3
+natsukusa — 3
+samidare — 3
+shimizu — 3
+ukai — 3
+unohana — 3
+usumono — 3
+wakakaede — 3
+
+Note: these remaining low-poem-count terms haven't been individually
+diagnosed the way the zero-poem terms above were — they may simply
+have fewer than 4 poems tagged to them in AI_Haiku.xlsx (nothing
+wrong), or may have similar kanji-mismatch issues. Not yet checked.
