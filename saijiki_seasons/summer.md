@@ -337,7 +337,9 @@ a bead of dew
 
 ## The Earth
 
-### 鹿の子 Kanoko — Fawn [Summer Dobutsu]
+### Fawn
+
+鹿の子  Kanoko  [Summer Dobutsu]
 
 The young of deer which mate in autumn; it is born between mid-April and June. Chestnut brown with white spots (kanoko madara), the young male has a bump on the head. Horns grow out in its second year. Fawns are gentle and shy, but generally friendly to people. It is sweet to see them following close by their mothers as though trying to gain attention.
 
@@ -361,7 +363,9 @@ Variations: shika no ko (the deer’s child), kojika (baby deer), mejika (female
    Sono hibi ni / kusa fuko naru / kanoko kana  —  Hino Sojo
    The park each day / deeper in grasses, / fawns.
 
-### 蝙蝠 Komori — Bat [Summer Dobutsu]
+### Bat
+
+蝙蝠  Komori  [Summer Dobutsu]
 
 The bat or flitter-mouse is the only mammal that flies. Coming out of hibernation in spring, in the daytime it hangs upside down under eaves or in trees, and can be seen flying about from dusk and during the night, in search of insects. As it is fond of eating mosquitoes, old names were kakui dori (a bird that eats mosquitoes) and kawahori (a bird that wants mosquitoes). There are varieties that feed on fruit trees. The bat was not a theme in poetry, but the sight of them flying on a misty summer evening has its own special taste and interest for haiku.
 
@@ -384,7 +388,9 @@ The bat or flitter-mouse is the only mammal that flies. Coming out of hibernatio
    Kin no tsuki e / toki komori / tonde kiyu  —  Hara Sekitei
    All the way to / a golden moon, the bat / flew and faded.
 
-### 雨蛙 Amagaeru — Rain Frog [Summer Dobutsu]
+### Rain Frog
+
+雨蛙  Amagaeru  [Summer Dobutsu]
 
 This species of frog, the toad and the river frog are summer topics. The rain frog is about 4 cm long, and wakes from winter sleep in early April. It lives on tree boughs and leaves, hence is also called ada-gaeru (branch frog). Ordinarily it is green, but it has the ability to change colour to match the environment, turning brown on reaching the ground. When rain is impending or has begun to fall, it cries in a loud voice, unlike its size. Ao-gaeru (green frog), a slightly different species which also inhabits trees, is included in this kigo.
 
@@ -406,7 +412,9 @@ This species of frog, the toad and the river frog are summer topics. The rain fr
    Aogaeru / onore mo penki / nuritateka  —  Akutagawa Ryunosuke
    Green frog, / have you, too, been / freshly painted?
 
-### 蟇 Hikigaeru — Toad [Summer Dobutsu]
+### Toad
+
+蟇  Hikigaeru  [Summer Dobutsu]
 
 This is the largest of the frogs, with a dark, yellow-brown back full of warts. It comes out of hibernation in February, lays eggs, goes back to sleep and crawls out again in early summer. The toad can grow to 12 cm or more; its warts emit a white, sticky, poisonous fluid. In the daytime it stays in damp shades, thick grasses, or holes in the ground. Around dusk it saunters out in its dull and deliberate way to catch small insects and earthworms, and sits without moving, as though in meditation. With its grotesque yet sagacious and mysterious appearance, the toad is a creature that has the taste of hai.
 
@@ -430,7 +438,9 @@ Variations: hiki, gama or gamogaeru.
    Hiki dono no / tsuma ya matsuran / ko nakuran  —  Issa
    Mr. Toad’s / wife must be waiting, / his child, crying.
 
-### 河鹿 Kajika — River Frog [Summer Dobutsu]
+### River Frog
+
+河鹿  Kajika  [Summer Dobutsu]
 
 A small, thin variety of frog that lives in mountain lakes and streams. It is brown, with some dark grey spots. Around the time new leaves sprout on trees, the male, sitting on a rock by a riverside, starts to sing in a pure, clear voice, “hyorohyoro hihihi.” As people of old admired the deer’s voice, they called this frog “river deer.” The word “kawazu” used in many poems of the Manyoshu seems, from the context, to be referring to this river frog, and some which say “kajika” and “kawazu” seem to mean the ordinary frog. In the Edo period, kajika was confused with a fish of the same name, miller’s thumb, an autumn kigo.
 
@@ -452,7 +462,9 @@ A small, thin variety of frog that lives in mountain lakes and streams. It is br
    Kajika naku / ware ikkon no / iwa to nari  —  Fukuda Ryotei
    A river frog cries — / and I turn into / a boulder.
 
-### 時鳥 Hototogisu — Little Cuckoo [Summer Dobutsu]
+### Little Cuckoo
+
+時鳥  Hototogisu  [Summer Dobutsu]
 
 Like spring’s flowers, the autumn moon and winter snow, the little cuckoo has been considered to be the important theme characteristic of summer. It comes to Japan from the south around May and lives in the mountains till the end of autumn. Its feathers are dark grey-brown; the breast and underside are white with stripes running across. It has the peculiar habit of depositing its eggs in the nest of the bush warbler. People of old were eager to hear this bird, waited for its first song, and once heard, wished to hear it again. That song is spirited and haunting, “teppenkaketaka”, “honzonkaketaka”, or the like.
 
@@ -484,7 +496,9 @@ There are many legends about the little cuckoo from China. Some said it was the 
    *Hototogisu / matanu kata yori / hatsune kari  —  Kakei*
    > Little cuckoo — / from an unexpected direction, / the first song.
 
-### 老鶯 Oi uguisu — Old Bush Warbler [Summer Dobutsu]
+### Old Bush Warbler
+
+老鶯  Oi uguisu  [Summer Dobutsu]
 
 While the bush warbler is a spring topic, oi-uguisu means the bush warbler singing in summer, its breeding period. At this time it returns to mountainous areas, bamboo groves and forests to make its nest. Hence, it is only in such places that it can be heard. Because uguisu has always been related to spring, the summer uguisu is called in haiku, “old” or “remaining” uguisu.
 
@@ -508,7 +522,9 @@ Variations: natsu uguisu (summer bush warbler), ro-o (old bush warbler), miyama 
    Ro-o ya / deyu no amari ga / tani ni otsu  —  Akimoto Fujio
    Old warbler — / the excess of the hot spring / falls into valley.
 
-### 葦切 Yoshikiri — Reed Warbler [Summer Dobutsu]
+### Reed Warbler
+
+葦切  Yoshikiri  [Summer Dobutsu]
 
 Of the family of warblers, category of sparrows, there are the Great reed warbler (oyoshikiri) and the Black-browed reed warbler (ko yoshikiri). The former is more common; it resembles the bush warbler but is slightly larger, growing to about 18 cm in body length. It is light green-brown with a yellow-white belly. It crosses to Japan from the south in May, to live in flat areas with swamps, by lakes and watery ricefields, where reeds grow, until September. Its name (reed-cutter) is because of its skill at splitting a stalk of reed to get the insects in it. Another name, gyogyoshi, is after its song, which is loud and noisy in the hot weather. The Black-browed reed warbler’s voice is finer and clearer.
 
@@ -532,7 +548,9 @@ Variations: gyogyoshi, yoshi-suzume, ashi-suzume (reed sparrows).
    Yoshikiri no / ochi no eisei / asa gumori  —  Mizuhara Shuoshi
    A reed warbler’s / distant, shrill voice — / morning cloudiness.
 
-### 翡翠 Kawasemi — Kingfisher [Summer Dobutsu]
+### Kingfisher
+
+翡翠  Kawasemi  [Summer Dobutsu]
 
 A beautiful bird with green feathers like nephrite, chestnut brown on the underside, and red feet. It lives in green shades by gorges and swamps. Perched on a stake or tree top with eyes fixed on the water, when it spies a fish it will fly in a straight line to catch it with its large beak. It is a resident bird and may be seen in all seasons, but its colours and agility of movements invite coolness, so that it was made a kigo of summer. Other names are hisui, amagoi dori (bird that begs for rain), mizugoi dori (bird over lower water).
 
@@ -554,7 +572,9 @@ A beautiful bird with green feathers like nephrite, chestnut brown on the unders
    Hisui tobu / sono shigo byo no / tenchi kana  —  Kato Shuuson
    A kingfisher flies — / those four, five seconds / of a world.
 
-### 水鶏 Kuina — Water-Rail [Summer Dobutsu]
+### Water-Rail
+
+水鶏  Kuina  [Summer Dobutsu]
 
 A small bird resembling a snipe, the water rail (also known as muddy crake) comes to Japan in spring from the south, and returns in the autumn. It is red-chestnut colour from head to breast, while the rest of the body is dark olive. It walks in the thick growth of reeds by watersides in lowlands, stops once in a while and says “hobkyokyokyo”, which sounds like knocking on a door. From the early times of imperial collections of poetry, this bird has been connected with visiting or awaiting someone, or with the realization of a short night.
 
@@ -577,7 +597,9 @@ A small bird resembling a snipe, the water rail (also known as muddy crake) come
    Kuina naite / hoshi uku kusa no / hayama kana  —  Chosui
    A water-rail calls, / and stars float — / grassy hill.
 
-### 鮎 Ayu — Sweet-Fish [Summer Dobutsu]
+### Sweet-Fish
+
+鮎  Ayu  [Summer Dobutsu]
 
 From ancient times this fish has been prized as the king of river fish. Ayu hatch in autumn rivers and grow up in the warm gulfs of winter. In early spring they go upstream as young ayu (waka ayu). They are about 20–30 cm long in summer and have a noble appearance; their backs are olive green, bellies are white with a streak of yellow. People fishing for ayu with poles in pure streams is a summery sight. Weirs and cormorants are also used.
 
@@ -601,7 +623,9 @@ Variations: ayu no yado (sweet-fish inn), kogyo (perfumed fish), nengyo (fish th
    Joryu wa / magarite miezu / ayu no kawa  —  Yamaguchi Hatsujo
    Upstream, with the bend, not in sight — / ayu river.
 
-### 金魚 Kingyo — Goldfish [Summer Dobutsu]
+### Goldfish
+
+金魚  Kingyo  [Summer Dobutsu]
 
 The miniature species of carp bred for ornamental purposes. They were imported from China in the 16th century to enjoy their variety of beautiful forms, and have since been cross-bred in ponds. There are now many kinds, of different shades of red, gold and silver with spreading tails or bulging eyes — such as Ranchu, Ryukin, o-naga, Demekin, to name a few. To see them swimming through green duckweed in a glass bowl enhances coolness. The goldfish pedlar with his tubs and goldfish bowls calling out his wares, used to be a regular part of the summer scene. At present they are mainly at shrines, where goldfish can be scooped from their trays with nets or ladles.
 
@@ -625,7 +649,9 @@ Variations: kingyo-uri (goldfish pedlar), kingyo dama (goldfish bowl), kingyo su
    Shidari o no / nishiki zo ugoku / kingyo kana  —  Kawahigashi Hekigodo
    The drooping / tail’s brocade moves — / goldfish.
 
-### 初鰹 Hatsugatsuo — First Bonito
+### First Bonito
+
+初鰹  Hatsugatsuo
 
 The bonito is a hard-boned fish of the mackerel family. Schools of bonito ride on a black current and approach the south eastern shores of Japan around the time when the trees are filled with the green leaves of summer. Then, fishing begins, and the first batches that are caught are called the first bonito. They were immediately sent from Odawara and Kamakura to Edo, where, being highly prized, they were vied for. Bonito grow to more than 50 cm in length, have few scales and firm, red flesh. They are eaten raw, or dried and shaved into flakes and used on vegetables or as soup stock.
 
@@ -656,7 +682,9 @@ The bonito is a hard-boned fish of the mackerel family. Schools of bonito ride o
    > so far I've just
    > heard it.
 
-### 夏の虫 Natsu no mushi — Summer Insects [Summer / Dobutsu]
+### Summer Insects
+
+夏の虫  Natsu no mushi  [Summer / Dobutsu]
 
 The general name for the various insects of summer. In old poetry this term was used to mean light-drawn insects mainly; in haiku this is also true, but other insects of daytime are also included.
 
@@ -686,7 +714,9 @@ The general name for the various insects of summer. In old poetry this term was 
    > in daytime, where water
    > chestnuts bloom.
 
-### 火取虫 Hitori mushi — Light-Drawn Insects, Moths [Summer / Dobutsu]
+### Light-Drawn Insects, Moths
+
+火取虫  Hitori mushi  [Summer / Dobutsu]
 
 The various little insects, including moths, that are active at night, attracted to the lights of lamps. They can be seen around street lights, fly into houses and come to one's desk. Many perish while flying around or against the lights. Poets in the old days took up this theme as "summer insects." Haijin have found this kigo full of interest and pathos.
 
@@ -718,7 +748,9 @@ Variations: ga (moths).
    > fluttering, and walk now —
    > light-drawn insects.
 
-### 毛虫 Kemushi — Caterpillar [Summer / Dobutsu]
+### Caterpillar
+
+毛虫  Kemushi  [Summer / Dobutsu]
 
 The hairy larvae of butterflies and moths that live in summer trees and plants, feeding on stems and leaves. Covered with a hairy fuzz, they look strange; if touched, they will sting. As caterpillars are fond of fruit trees and do harm to crops, they are burnt by lighting cotton soaked in oil.
 
@@ -750,7 +782,9 @@ Variations: kemushi yaka (to burn caterpillars).
    > done with a green meal,
    > starts to walk.
 
-### 蝉 Semi — Cicada [Summer / Dobutsu]
+### Cicada
+
+蝉  Semi  [Summer / Dobutsu]
 
 The shrill song of this insect is an inevitable part of the summer landscape. In the mountains, cicadas begin to sing around May, but after the rainy season ends in July, many kinds of cicadas can be heard — the abura zemi (oil cicada) that goes "jijiji", the minmin semi that sings its name, kuma zemi (bear cicada) that says "shaa shaa", the niinii zemi that also sings its name. Heard in the afternoon, cicada voices sound hot, but in the mornings or dusks, they can sound cool.
 
@@ -784,7 +818,9 @@ Variations: hatsu-semi (first cicada), semi-shigure (a shower of cicada voices).
    > made as though it just
    > finished a song.
 
-### 空蝉 Utsusemi — Cicada Shell [Summer / Dobutsu]
+### Cicada Shell
+
+空蝉  Utsusemi  [Summer / Dobutsu]
 
 The empty, transparent shell of the cicada, cast off as it matures from the larval state to maturity. The shells can be found clinging to tree trunks or grasses, or lying on mountain paths. Since Heian times the cicada shell has been a consistent symbol of evanescence.
 
@@ -816,7 +852,9 @@ Variations: semi no kara (cicada shell), semi no monuke (cicada's cast-off skin)
    > it frightened those
    > who saw it.
 
-### 兜虫 Kabutomushi — Beetle [Summer / Dobutsu]
+### Beetle
+
+兜虫  Kabutomushi  [Summer / Dobutsu]
 
 The largest of the family of Scarabaeidae, its Japanese name is "helmet insect." On the male's black head are horns like those of a deer, with the ends dividing in two, so that it appears to be wearing a helmet. Beetles are favorites of boys, who admire their heroic forms and are fond of playing with them, making them pull little carts or engaging them in wrestling matches. As beetles feed on the resin of oak trees and are fond of honey locusts, high plains or forests are frequented in the summer holidays by children and parents who go in search of them.
 
@@ -846,7 +884,9 @@ The largest of the family of Scarabaeidae, its Japanese name is "helmet insect."
    > stirs —
    > beetles.
 
-### 蠅 Hae — Flies [Summer / Dobutsu]
+### Flies
+
+蠅  Hae  [Summer / Dobutsu]
 
 Of the insects active in summer, the fly is one of the most detested, being unsanitary and pestering. Among the varieties are the golden fly (kinbae), which has a gleam of gold-green, and the striped fly (shimabae), a large type. Most common is the house fly that comes to the food on the table. As flies are phenomena of summer close to our daily lives, they have been a kigo of haiku from the beginning, and continue to be a popular subject.
 
@@ -879,7 +919,9 @@ Variations: hae no koe (voices of flies), haetorigami (fly paper), hae tataki (f
    > now there are two —
    > nighttime flies.
 
-### 蚊 Ka — Mosquito [Summer / Dobutsu]
+### Mosquito
+
+蚊  Ka  [Summer / Dobutsu]
 
 One of the offensive insects of summer that stings and makes being outdoors troublesome. As Sei Shonagon wrote, "when ready to go to sleep, lying down, it announces itself in a thin voice and flies around one's face — even its wing sound is detestable, how much more, its close vicinity." It is said the females are fond of human blood, while the males feed on the juices of plants. Mosquitoes became a very popular haiku kigo.
 
@@ -911,7 +953,9 @@ Variations: ka no koe (mosquito voice), ka bashira (mosquito pillar — a column
    > a daytime mosquito —
    > sutra drum.
 
-### 蟻 Ari — Ants [Summer / Dobutsu]
+### Ants
+
+蟻  Ari  [Summer / Dobutsu]
 
 The sight of ants busily coming and going in rows through gardens or paths is indeed a part of summer. These are working ants, active in warm weather, carrying supplies for the winter for their well-organized society headed by the queen ant. When ants become mature, they have wings; in this state they are winged ants (ha-ari). After mating, the wings drop off and the males die gradually, while the females return underground to lay eggs.
 
@@ -943,7 +987,9 @@ Variations: yama ari (mountain ants), ari no michi (road of ants), ari no to (an
    > quietly, a butterfly
    > afloat.
 
-### 蛞蝓 Namekuji — Slug [Summer / Dobutsu]
+### Slug
+
+蛞蝓  Namekuji  [Summer / Dobutsu]
 
 A mollusc like a snail, without a shell, found along ditches, waterways and sinks. Its grey-brown body, about 6 cm, is covered with mucous membranes. It crawls by stretching and shrinking the stomach area, and leaves a silver slime behind it. Being fond of damp places, slugs can be seen during the rainy season or on rainy days. They feed on cabbages, fruit and leaves.
 
@@ -973,7 +1019,9 @@ A mollusc like a snail, without a shell, found along ditches, waterways and sink
    > wringing its body,
    > gets up.
 
-### 蝸牛 Katatsumuri — Snail [Summer / Dobutsu]
+### Snail
+
+蝸牛  Katatsumuri  [Summer / Dobutsu]
 
 The snail reveals itself most frequently from around May to July, crawling slowly along the leaves of grasses, on tree branches or on stone fences. It carries a spiral shell on its back, in which it takes shelter in times of danger. Like the slug, it leaves a sticky, silver slime in its traces as it crawls slowly and deliberately, but unlike it, the snail is rather fondled by children, who call it dendenmushi or dedemushi. It moves its horns apart as it crawls. Looking on its silver slime as written letters is the working of the mind of "kai." Also called katatsaburi.
 
@@ -1004,7 +1052,9 @@ The snail reveals itself most frequently from around May to July, crawling slowl
    > growing old, takes a
    > lot of sleep.
 
-### 余花 Yoka — Remnants of Flowers [Summer / Shokubutsu]
+### Remnants of Flowers
+
+余花  Yoka  [Summer / Shokubutsu]
 
 These include two groups: the flowers that remain in bloom after their seasonal time, and those that bloom after spring has ended, especially cherry flowers which open among early summer's young leaves.
 
@@ -1036,7 +1086,9 @@ Variations: wakaba no hana (flowers among young leaves), aoba no hana (flowers a
    > a deer comes trailing —
    > rain on flower remnants.
 
-### 牡丹 Botan — Peony [Summer / Shokubutsu]
+### Peony
+
+牡丹  Botan  [Summer / Shokubutsu]
 
 This plant was brought to Japan about a thousand years ago from China, where it was known as the "king of the hundred flowers." As the Tang poet Po Chui wrote, "the flowers open, and fall, in twenty days," another name is the twenty-days flower. He compared it to the face of a beautiful woman.
 
@@ -1070,7 +1122,9 @@ Variations: shiro or haku botan (white peony).
    > about to crumble,
    > for two days.
 
-### 薔薇 Bara — Rose [Summer / Shokubutsu]
+### Rose
+
+薔薇  Bara  [Summer / Shokubutsu]
 
 The roses that came to Japan from China were called sobi (the Chinese reading of these kanji), and this name was used in the poetry of the 9th century. They were first cultivated for the imperial palace and nobility, and it was not till Meiji times that they finally came to be widely cultivated by the populace. One strongly fragrant, rich flower blooms at the top of a branch covered with thorns. Although there are countless varieties, single and double, and those that bloom in spring and autumn, roses were fixed as a theme of early summer. In haiku, ibara, the wild field rose has been considered more important.
 
@@ -1100,7 +1154,9 @@ The roses that came to Japan from China were called sobi (the Chinese reading of
    > of a rose exhibit vie,
    > as they wither.
 
-### 石楠花 Shakunage — Rhododendron [Summer / Shokubutsu]
+### Rhododendron
+
+石楠花  Shakunage  [Summer / Shokubutsu]
 
 An evergreen bush of the azalea family, native to the Himalayas, the rhododendron grows in fairly high mountains and valleys of Japan, to the height of three meters. The leaves are long, oval, with a leather-like texture, the front sides are smooth, the undersides have a brownish fuzz. In early summer five to eight-petaled flowers resembling the azalea, bloom in clusters at the tips of the boughs. The many varieties, pink, red, pale yellow and white, are greatly admired and planted in gardens.
 
@@ -1132,7 +1188,9 @@ Muroji temple in Nara, Kurokami mountain in Nikko, and Mt. Koya in Wakayama are 
    > evening glow
    > I stood.
 
-### 花橘 Hana tachibana — Citrus Flower [Summer / Shokubutsu]
+### Citrus Flower
+
+花橘  Hana tachibana  [Summer / Shokubutsu]
 
 This is the fragrant, small 5-petaled white flower of the only wild variety of citrus that grows in warm areas near the seacoasts of Kyushu, Shikoku, Wakayama and central Japan. It blooms in June, the flowers more favoured than the inedible fruit. It is said that this evergreen tree was brought from the world of Eternity in ancient times, by Tajima Mori, and was known as tokijiku no konomi (the timeless perfumed fruit). In the 9th century it was planted in Kyoto's Shishinden palace grounds to represent the imperial guards of the right, while the cherry tree was set to represent those of the left. Considered to be a symbol of long life and eternity, old poets often referred to it as the home of the little cuckoo.
 
@@ -1163,7 +1221,9 @@ This is the fragrant, small 5-petaled white flower of the only wild variety of c
    > flower — and three leaves
    > that seem to follow it.
 
-### 紫陽花 Ajisai — Hydrangea [Summer / Shokubutsu]
+### Hydrangea
+
+紫陽花  Ajisai  [Summer / Shokubutsu]
 
 The hydrangea flower is made up of many small, four-petaled blossoms in a round, ball-like cluster, hence the names temaribana (hand-ball flower) and yohira no hana (four-petaled flower). Once in bloom, it changes colour many times, so it is also called shichihenge (seven changes). The bush grows to the height of 1½ meters, with thick, roundish leaves. As the flowers open during the rainy season when relatively few other flowers are in bloom, their collective presence is attractive.
 
@@ -1195,7 +1255,9 @@ Variations: azusai, hama azusai (beach hydrangea), yama ajisai (mountain hydrang
    > from white came
    > pale green.
 
-### 青梅 Ao ume — Green Plums [Summer / Shokubutsu]
+### Green Plums
+
+青梅  Ao ume  [Summer / Shokubutsu]
 
 As the rainy season begins in May or June, the firm, green fruit of the plum trees start to grow among their thickening foliage. At first they are difficult to discern, but as they get bigger, they enhance the beauty of the trees. They are picked before ripening, and pickled, made into wine or boiled with sugar as they are strongly acid. The sourness is not only appetizing, but also medicinal.
 
@@ -1227,7 +1289,9 @@ Variations: ume no mi, mi-ume (plum fruit), ni-ume (boiled plums), ko-ume (littl
    > its hand placed,
    > the frog asleep.
 
-### 夏木立 Natsu kodachi — Summer Grove [Summer / Shokubutsu]
+### Summer Grove
+
+夏木立  Natsu kodachi  [Summer / Shokubutsu]
 
 A number of trees standing in a group, their branches and foliage intermingling with summer's luxuriant growth. It is joyful and refreshing to walk through them and feel nature's unique display of this season. Natsu-ki (summer tree) is used when one tree is meant. "Kodachi" is used for summer and winter groves, but not for those of spring and autumn.
 
@@ -1258,7 +1322,9 @@ A number of trees standing in a group, their branches and foliage intermingling 
    > being called by a peaks monk;
    > summer grove.
 
-### 茂 Shigeri — Luxuriant Growth [Summer / Shokubutsu]
+### Luxuriant Growth
+
+茂  Shigeri  [Summer / Shokubutsu]
 
 The thick growth of leaves on trees, so refreshing to see in early summer, and pleasantly shady in mid-summer. This kigo is the state after wakaba (young leaves) and aoba (green leaves). Birds and insects enhance the life of nature at this season, and little sunlight, rain or moonlight can leak through. The luxuriant growth of grasses is a separate kigo.
 
@@ -1288,7 +1354,9 @@ The thick growth of leaves on trees, so refreshing to see in early summer, and p
    > the sound of rain across
    > luxuriant growth.
 
-### 木下闇 Ko no shita yami — Under-Trees Darkness [Summer / Shokubutsu]
+### Under-Trees Darkness
+
+木下闇  Ko no shita yami  [Summer / Shokubutsu]
 
 The shady darkness in daytime under thickly growing summer trees. It comes as a great relief as one enters a grove from the hot sunlight. As a kigo this psychological feeling may be said to be stronger than the physical. In old poetry it was referred to as ko no kure (the dusk of trees); but from Heian times the present expression, kono shita yami, came to be used and has continued through renga and haikai to the present. It is sometimes abbreviated as koshita yami or shita yami. The dark shades under trees are a refreshing and beautiful part of the summer mountains.
 
@@ -1319,7 +1387,9 @@ The shady darkness in daytime under thickly growing summer trees. It comes as a 
    > darkness, silently,
    > a swallow-tail butterfly.
 
-### 若葉・青葉 Wakaba, Aoba — Young Leaves / Green Leaves [Summer / Shokubutsu]
+### Young Leaves / Green Leaves
+
+若葉・青葉  Wakaba, Aoba  [Summer / Shokubutsu]
 
 Wakaba means the fresh, watery new leaves of various trees that make the landscape of early summer so refreshing and beautiful. The names of trees can be used, as in persimmon young leaves, oak young leaves, camphor young leaves. In 16th century renga it became a theme of summer and made distinct from kusa wakaba (young leaves of grasses), a topic of spring.
 
@@ -1348,7 +1418,9 @@ Variations: mura wakaba (clusters of young leaves), wakaba kaze (wind in young l
    > shine in them,
    > young leaves in the rain.
 
-### 若楓 Waka kaede — Young Maple Leaves [Summer / Shokubutsu]
+### Young Maple Leaves
+
+若楓  Waka kaede  [Summer / Shokubutsu]
 
 The new leaves of the maple tree that turn scarlet in autumn. In early summer those leaves are a watery light green, dazzling in sunlight, and attractive with their refreshing beauty. In Tsurezure-gusa, Yoshida Kenko said, "the fourth month's young maple leaves surpass all the flowers, and even its own autumn leaves, and are very auspicious." Haijin have favoured this kigo since Edo times so there are many fine compositions on it.
 
@@ -1378,7 +1450,9 @@ The new leaves of the maple tree that turn scarlet in autumn. In early summer th
    > their level boughs,
    > one over the other.
 
-### 常緑木落葉 Tokiwagi ochiba — Evergreens' Fallen Leaves [Summer / Shokubutsu]
+### Evergreens' Fallen Leaves
+
+常緑木落葉  Tokiwagi ochiba  [Summer / Shokubutsu]
 
 When summer is growing luxuriant with new leaves, evergreen trees begin to shed. Those with broad leaves like the camphor, pasania, holly and oak drop old leaves as the new ones grow. Those with thin, needle-like leaves like the pine, cypress, black pine and fir, mostly shed when the new leaves have finished growing. Some old leaves turn yellow-brown, or red, like the camphor's, while others remain green, as the pine's. Variations are made with the names of the different trees.
 
@@ -1409,7 +1483,9 @@ When summer is growing luxuriant with new leaves, evergreen trees begin to shed.
    > sinking deeply,
    > outdoor hot spring.
 
-### 卯の花 Unohana — Deutzia Flowers [Summer / Shokubutsu]
+### Deutzia Flowers
+
+卯の花  Unohana  [Summer / Shokubutsu]
 
 The five-petaled, white flowers of the deutzia shrub, which bloom in clusters at the tips of the thickly growing branches. It grows wild, but was often planted as a fence. With the little cuckoo, deutzia flowers were considered to be two representations of early summer. There have been many poems comparing their whiteness to snow, moonbeams, white waves. Its old name was natsu yuki gusa (summer-snow grass).
 
@@ -1442,7 +1518,9 @@ The five-petaled, white flowers of the deutzia shrub, which bloom in clusters at
    > all in bloom — the moon,
    > about the 20th day
 
-### 茨の花 Ibara no hana — Field Rose [Summer / Shokubutsu]
+### Field Rose
+
+茨の花  Ibara no hana  [Summer / Shokubutsu]
 
 The wild field rose that blooms on a thorny bush. In early summer, small white or pale pink flowers with many stamen bloom between the leaves. Ubara and umara were old names for thorned plants, but later came to mean the field rose. Other names are nobara, mubara. Haijin were fond of its natural rusticity, and entrusted thoughts of their home village to this flower, calling it hana ibara in praise.
 
@@ -1472,7 +1550,9 @@ The wild field rose that blooms on a thorny bush. In early summer, small white o
    > bush turned green,
    > buds appeared.
 
-### 若竹 Waketake — Young Bamboo [Summer / Shokubutsu]
+### Young Bamboo
+
+若竹  Waketake  [Summer / Shokubutsu]
 
 The new bamboo that sprout from the shoots of springtime. Casting off the outer sheaths, they stretch up quickly and in two or three months, reach the height of the parents. Their slender trunks and stems of watery green, and new leaves of a soft hue adorn the groves with refreshing coolness.
 
@@ -1504,7 +1584,9 @@ Variations: kotoshi dake (this year's bamboo), take no wakaba (young leaves of b
    > around a Zen hall —
    > this year's bamboo.
 
-### 罌粟の花 Keshi no hana — Poppy Flowers [Summer / Shokubutsu]
+### Poppy Flowers
+
+罌粟の花  Keshi no hana  [Summer / Shokubutsu]
 
 The common field poppy, which originated in the area of the Mediterranean, and entered Japan through China in ancient days. Around May a fragile, four-petaled flower opens at the top of a strong stem which can be as high as a meter. The flowers are white, orange, shades of red and purple. When the petals scatter after a day, the seed capsule remains (called keshi bozu, the poppy's bald head). There are also double varieties.
 
@@ -1536,7 +1618,9 @@ Variations: oni geshi (demon poppy), azami geshi (thistle poppy), hina geshi (li
    > where is the bonfire?
    > Straw ash.
 
-### 杜若 Kakitsubata — Flower De Luce [Summer / Shokubutsu]
+### Flower De Luce
+
+杜若  Kakitsubata  [Summer / Shokubutsu]
 
 This is Iris laevigata, which resembles ayame (Iris sibirica, blue flag) but its leaves are wider, with thick veins running lengthwise from the center. The three outer petals of the flower de luce have a thin sliver of white, while those of the blue flag have a yellow meshwork. This plant grows naturally in watery soil but is also planted in gardens; it blooms from early summer. As the flower has the form of a swallow in flight, the kanji 燕子花 (swallow-child flower) are also used. Deep purple, red-purple, pale red and white are the colours; the first is most common. In ancient days it was used to dye cloth. Mikawa swamp (Aichi prefecture) is famous for them.
 
@@ -1566,7 +1650,9 @@ This is Iris laevigata, which resembles ayame (Iris sibirica, blue flag) but its
    > on the way to flowers de luce
    > vanished.
 
-### あやめ Ayame — Blue Flag [Summer / Shokubutsu]
+### Blue Flag
+
+あやめ  Ayame  [Summer / Shokubutsu]
 
 A perennial of the iris family, also called hana-ayame. It grows on dry soil, unlike the sweet flag (hana shobu) and kakitsubata (flower de luce) which have similar flowers, but grow in damp grounds. In early summer the flower stem starts to stretch up. On top of it, two or three flowers open in turn. They come in purple, white and yellow. At the base of the calyx is a yellow mesh that distinguishes it from hana shobu and kakitsubata.
 
@@ -1596,7 +1682,9 @@ A perennial of the iris family, also called hana-ayame. It grows on dry soil, un
    > another bends over
    > the blue flag.
 
-### 菖蒲 Shobu — Acorus [Summer / Shokubutsu]
+### Acorus
+
+菖蒲  Shobu  [Summer / Shokubutsu]
 
 A perennial grass of the taro family that grows naturally in ponds, lakes, rivers. Its green lustrous sword-like leaves grow thickly and have a strong perfume. They were used to line the eaves of houses, and put into baths on the festival of the fifth month, fifth day, as strong scents were believed to drive away evil spirits. This grass forms ears made of tiny yellow-green flowers. It was also called ayame-gusa and frequently confused with hana-shobu (sweet flag).
 
@@ -1627,7 +1715,9 @@ A perennial grass of the taro family that grows naturally in ponds, lakes, river
    > frog voices begin,
    > among acorus.
 
-### 葵 Aoi — Hollyhock [Summer / Shokubutsu]
+### Hollyhock
+
+葵  Aoi  [Summer / Shokubutsu]
 
 Plants with the name hollyhock are generally divided into two groups. The aoi written of in the old poems of the imperial court is the futa-ba aoi or aoi gusa, a wild variety with beautiful, glossy leaves. It was considered a sacred grass and was used for the gala in the festival of the Kamo shrine. This festival came to be called Aoi Festival. In Edo times the pair of leaves of aoi gusa became the family crest of the Tokugawa shogunate. On haiku, if the Aoi festival is mentioned, this grass is meant.
 
@@ -1659,7 +1749,9 @@ In the second group are hana or tachi aoi, prized for the large flowers, zeni ao
    > the butterflies parted,
    > standing hollyhocks.
 
-### 向日葵 Himawari — Sunflower [Summer / Shokubutsu]
+### Sunflower
+
+向日葵  Himawari  [Summer / Shokubutsu]
 
 An annual of the chrysanthemum family that originated in tropical regions of North America and Mexico, the sunflower is an epitome of the summertime, resembling a flaming sun. It seems to have entered Japan some time in the Edo period. The strong, straight trunk stem and heart-shaped leaves have short fur. Reaching up to two or three meters in height, in mid-summer a large flower opens at the top, as big as 20–30 cm in diameter. While in the bud stage, leaves and stems follow the sun.
 
@@ -1691,7 +1783,9 @@ Variations: Nichirin so (sun-wheel grass), hi guruma (sun-wheel).
    > stands with a loud voice,
    > likewise when withered.
 
-### 睡蓮 Suiren — Water Lily [Summer / Shokubutsu]
+### Water Lily
+
+睡蓮  Suiren  [Summer / Shokubutsu]
 
 A perennial water grass smaller than the lotus. It grows in swamps and ponds with bulb and roots buried in mud. The green leaves that look like horse hooves float on the water. In summer flowers of about five to seven cm in diameter open in daytime and close at the end of the day. They have a neat and orderly look; white is the common colour, but there are also pink and yellow. An old name is hitsuji gusa (sheep grass), as they were seen to close around the hour of the sheep (2 pm).
 
@@ -1753,7 +1847,9 @@ Variations: natsu-no-taki (summer waterfall), taki-tsubo (waterfall basin), taki
    like smoke —
    the waterfall falls.
 
-### 夏の山 Natsu no yama — Summer Mountain [Summer Kigo]
+### Summer Mountain
+
+夏の山  Natsu no yama  [Summer Kigo]
 
 The mountain covered with luxuriant green trees seems to trickle with moisture. Birds can be heard, white clouds move by the peaks or foothills, pure streams murmur in the valleys. In the folds of some high mountains are snowy ravines. The interests of mountains in summer are numerous and various.
 
