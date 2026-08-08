@@ -347,19 +347,19 @@ Variations: shika no ko (the deer’s child), kojika (baby deer), mejika (female
 
 **Poems:**
 
-1. 人声に -- 子を引きかくす -- 女鹿かな -- 一茶
+1. 人声に子を引きかくす女鹿かな -- 一茶
    Hito goe ni / ko wo hiki kakusu / mejika kana  —  Issa
    At people’s voices / mother deer draws fawn to her / and hides it.
 
-2. 鹿の子の -- 人慕ひ来て -- ためらへり -- 永田青嵐
+2. 鹿の子の人慕ひ来てためらへり -- 永田青嵐
    Shika no ko no / hito shitai kite / tamerae ri  —  Nagata Seiran
    A fawn / came following a man, / and hesitated.
 
-3. 芽楓の -- 雨をさむがる -- 鹿の子かな -- 吉田冬葉
+3. 芽楓の雨をさむがる鹿の子かな -- 吉田冬葉
    Me kaede no / ame wo samugaru / kanoko kana  —  Yoshida Toyo
    A budding maple’s / rain makes the fawn / shiver.
 
-4. 苑日々に -- 草深うなる -- 鹿の子かな -- 日野草城
+4. 苑日々に草深うなる鹿の子かな -- 日野草城
    Sono hibi ni / kusa fuko naru / kanoko kana  —  Hino Sojo
    The park each day / deeper in grasses, / fawns.
 
@@ -371,20 +371,20 @@ The bat or flitter-mouse is the only mammal that flies. Coming out of hibernatio
 
 **Poems:**
 
-1. かはぼりや -- むかひの女房 -- こちを見る -- 蕪村
+1. かはぼりやむかひの女房こちを見る -- 蕪村
    Kawahori ya / mukai no nyobo / kochi wo miru  —  Buson
    Bats — / the wife across the street / looks this way.
    They may both have been watching the bats on this warm evening and by chance, their eyes met in a charming moment.
 
-2. かはぼりや -- 月のほとりを -- 立ちさらず -- 暁台
+2. かはぼりや月のほとりを立ちさらず -- 暁台
    Kawahori ya / tsuki no hotori wo / tachi sarazu  —  Gyodai
    Bats — / they don’t leave the vicinity / of the moon.
 
-3. 我が宿に -- 一夜たのむぞ -- 蚊喰鳥 -- 一茶
+3. 我が宿に一夜たのむぞ蚊喰鳥 -- 一茶
    Waga yado ni / hitoyo tanomu zo / kakuidori  —  Issa
    To my house, / please come a night! / Bird that eats mosquitoes.
 
-4. 金の月へ -- 遠き蝙蝠 -- とんで消ゆ -- 原石鼎
+4. 金の月へ遠き蝙蝠とんで消ゆ -- 原石鼎
    Kin no tsuki e / toki komori / tonde kiyu  —  Hara Sekitei
    All the way to / a golden moon, the bat / flew and faded.
 
@@ -396,19 +396,19 @@ This species of frog, the toad and the river frog are summer topics. The rain fr
 
 **Poems:**
 
-1. 雨蛙 -- 芭蕉にのりて -- そよぎけり -- 其角
+1. 雨蛙芭蕉にのりてそよぎけり -- 其角
    Amagaeru / basho ni norite / soyogi keri  —  Kikaku
    A rain frog / got onto a plantain leaf, / and swayed.
 
-2. 麦藁の -- 家してやらん -- 雨蛙 -- 智月
+2. 麦藁の家してやらん雨蛙 -- 智月
    Mugewara no / ie shite yaran / amagaeru  —  Chigetsu
    Let me make you / a wheat-straw house, / oh rain frog.
 
-3. 鳴きて知りぬ -- 石蕗の若葉の -- 雨蛙 -- 素丸
+3. 鳴きて知りぬ石蕗の若葉の雨蛙 -- 素丸
    Nakite shirinu / tsuwano wakaba no / amagaeru  —  Somaru
    Crying, it was known — / the rain frog on / young silver-leaf.
 
-4. 青蛙 -- おのれもペンキ -- ぬりたてか -- 芥川龍之介
+4. 青蛙おのれもペンキぬりたてか -- 芥川龍之介
    Aogaeru / onore mo penki / nuritateka  —  Akutagawa Ryunosuke
    Green frog, / have you, too, been / freshly painted?
 
@@ -422,19 +422,19 @@ Variations: hiki, gama or gamogaeru.
 
 **Poems:**
 
-1. 這いでよ -- 飼屋が下の -- 蟾の響 -- 芭蕉
+1. 這いでよ飼屋が下の蟾の響 -- 芭蕉
    Hai ideyo / kaiya ga shita no / hiki no koe  —  Basho
    Come on out! / From under the coop / a toad’s voice.
 
-2. 思ふこと -- だまってるか -- 蟇 -- 曲翠
+2. 思ふことだまってるか蟇 -- 曲翠
    Omou koto / damatte iru ka / hikigaeru  —  Kyokusui
    Will you not say / what you’re thinking? / Oh, toad.
 
-3. 月の句を -- 吐いてへらさん -- 蟾の腹 -- 蕪村
+3. 月の句を吐いてへらさん蟾の腹 -- 蕪村
    Tsuki no ku wo / haite herasan / hiki no hara  —  Buson
    If he’d spit out / a ku on the moon, the toad’s belly / might shrink.
 
-4. 蟾どのの -- 妻や待つらん -- 子鳴らん -- 一茶
+4. 蟾どのの妻や待つらん子鳴らん -- 一茶
    Hiki dono no / tsuma ya matsuran / ko nakuran  —  Issa
    Mr. Toad’s / wife must be waiting, / his child, crying.
 
@@ -446,19 +446,19 @@ A small, thin variety of frog that lives in mountain lakes and streams. It is br
 
 **Poems:**
 
-1. 河鹿 -- 鳴いて -- 石ころ多き -- 小川かな -- 正岡子規
+1. 河鹿鳴いて石ころ多き小川かな -- 正岡子規
    Kajika naite / ishikoro oki / ogawa kana  —  Masaoka Shiki
    River frogs sing — / a many-pebbled / little brook.
 
-2. 眦を -- 波にしづめし -- 河鹿かな -- 阿波野青畝
+2. 眦を波にしづめし河鹿かな -- 阿波野青畝
    Manajiri wo / nami ni shizumeshi / kajika kana  —  Awano Seiho
    The tail of its eye / sunk under a wave, / river frog.
 
-3. 河鹿の声の -- 水を流るる -- 昼餉かな -- 臼田亜浪
+3. 河鹿の声の水を流るる昼餉かな -- 臼田亜浪
    Kajika no koe no / mizu wo nagaruru / hiruge kana  —  Usuda Aro
    Where river frog / voices flow over the water, / eat lunch.
 
-4. 河鹿鳴く -- 我一塊の岩となり -- 福田蓼汀
+4. 河鹿鳴く我一塊の岩となり -- 福田蓼汀
    Kajika naku / ware ikkon no / iwa to nari  —  Fukuda Ryotei
    A river frog cries — / and I turn into / a boulder.
 
@@ -472,27 +472,27 @@ There are many legends about the little cuckoo from China. Some said it was the 
 
 **Poems:**
 
-1. はつ声を -- 聞かまほしきに -- 時鳥
+1. はつ声を聞かまほしきに -- 時鳥
    *Hatsu koe wo / kikama hoshiki ni / hototogisu*
    > Wishing to hear / your first song, / little cuckoo —
 
-2. 夜深く -- 目をも -- さましつるかな
+2. 夜深く目をも -- さましつるかな
    *Yo fukaku me wo mo / samashitsuru kana*
    > How late I’ve stayed / up till, tonight!  —  Poet unknown, Tai waka collection
 
-3. ほととぎす -- 大竹藪を -- 漏る月夜 -- 芭蕉
+3. ほととぎす大竹藪を漏る月夜 -- 芭蕉
    *Hototogisu / o takeyabu wo / moru tsukiyo  —  Basho*
    > Little cuckoo — / through a large bamboo grove, / the moonnight.
 
-4. ほととぎす -- 鳴いて行方や -- 島一つ -- 芭蕉
+4. ほととぎす鳴いて行方や島一つ -- 芭蕉
    *Hototogisu / naite yukue ya / shima hitotsu  —  Basho*
    > Little cuckoo — / in the direction it faces, / an island.
 
-5. ほととぎす -- 鳴くや五月の -- 雨の中 -- 其角
+5. ほととぎす鳴くや五月の雨の中 -- 其角
    *Hototogisu / naku ya gogatsu no / ame no naka  —  Kikaku*
    > The little cuckoo / cries — in the fifth month / rain.
 
-6. ほととぎす -- またぬ方より -- 初音かり -- 荷兮
+6. ほととぎすまたぬ方より初音かり -- 荷兮
    *Hototogisu / matanu kata yori / hatsune kari  —  Kakei*
    > Little cuckoo — / from an unexpected direction, / the first song.
 
@@ -506,19 +506,19 @@ Variations: natsu uguisu (summer bush warbler), ro-o (old bush warbler), miyama 
 
 **Poems:**
 
-1. 鶯や -- 竹の子藪に -- 老を鳴く -- 芭蕉
+1. 鶯や竹の子藪に老を鳴く -- 芭蕉
    Uguisu ya / take no ko yabu ni / oi wo naku  —  Basho
    The bush warbler — / in a grove of bamboo shoots, / sings of old age.
 
-2. 老鶯や -- 青嶺 -- 折々 -- 雲の上 -- 徳永冬子
+2. 老鶯や青嶺折々雲の上 -- 徳永冬子
    Ro-o ya / seirei oriori / kumo no ue  —  Tokunaga Santeshi
    An old warbler — / green peaks sometimes appear / above the clouds.
 
-3. 老鶯や -- 珠のごとくに -- 一湖あり -- 富安風生
+3. 老鶯や珠のごとくに一湖あり -- 富安風生
    Ro-o ya / tama no gotoku ni / ikke ari  —  Tomiyasu Fusei
    An old warbler — / and a lake there, / like a jewel.
 
-4. 老鶯や -- 出湯のあまりが -- 谷に落つ -- 秋元不死男
+4. 老鶯や出湯のあまりが谷に落つ -- 秋元不死男
    Ro-o ya / deyu no amari ga / tani ni otsu  —  Akimoto Fujio
    Old warbler — / the excess of the hot spring / falls into valley.
 
@@ -532,19 +532,19 @@ Variations: gyogyoshi, yoshi-suzume, ashi-suzume (reed sparrows).
 
 **Poems:**
 
-1. 能なしの -- 寝むたし我を -- ぎやうぎやうし -- 芭蕉
+1. 能なしの寝むたし我をぎやうぎやうし -- 芭蕉
    No nashi no / nemutashi ware wo / gyogyoshi  —  Basho
    To sleepy me, / with no abilities, it sings — / reed warbler.
 
-2. 芦原の -- 中に家あり -- 行々子 -- 正岡子規
+2. 芦原の中に家あり行々子 -- 正岡子規
    Ashihara no / naka ni ie ari / gyogyoshi  —  Masaoka Shiki
    In the middle / of a reed plain, a house — / reed warblers.
 
-3. 信濃川は -- 分流多し -- 行々子 -- 大谷句仏
+3. 信濃川は分流多し行々子 -- 大谷句仏
    Shinanogawa wa / bunryu oshi / gyogyoshi  —  Otani Kubutsu
    Shinano river / has many tributaries — / reed warblers.
 
-4. 葦切のをちの鋭声 -- 朝曇り -- 水原秋桜子
+4. 葦切のをちの鋭声朝曇り -- 水原秋桜子
    Yoshikiri no / ochi no eisei / asa gumori  —  Mizuhara Shuoshi
    A reed warbler’s / distant, shrill voice — / morning cloudiness.
 
@@ -556,19 +556,19 @@ A beautiful bird with green feathers like nephrite, chestnut brown on the unders
 
 **Poems:**
 
-1. かはせみや -- 絵の具を流す -- おのが影 -- 馬光
+1. かはせみや絵の具を流すおのが影 -- 馬光
    Kawasemi ya / enogu wo nagasu / onoga kage  —  Bako
    The kingfisher — / making watercolours flow, / his reflection.
 
-2. かはせみや -- 羽をよそほふ -- 水鏡 -- 露川
+2. かはせみや羽をよそほふ水鏡 -- 露川
    Kawasemi ya / hane wo yosohou / mizu kagami  —  Rosen
    The kingfisher — / it dresses its feathers / in a water mirror.
 
-3. 翡翠や -- ぬれ羽にうつる -- 夕日影 -- 桃李
+3. 翡翠やぬれ羽にうつる夕日影 -- 桃李
    Kawasemi ya / nureba ni utsuru / yu hikage  —  Tori
    Kingfisher — / on its wet feathers / the dusk sunlight.
 
-4. 翡翠 -- とぶ -- その四五秒の -- 天地かな -- 加藤秋邨
+4. 翡翠とぶその四五秒の天地かな -- 加藤秋邨
    Hisui tobu / sono shigo byo no / tenchi kana  —  Kato Shuuson
    A kingfisher flies — / those four, five seconds / of a world.
 
@@ -580,20 +580,20 @@ A small bird resembling a snipe, the water rail (also known as muddy crake) come
 
 **Poems:**
 
-1. 水鶏啼くと -- 人へいへばや -- 佐屋泊り -- 芭蕉
+1. 水鶏啼くと人へいへばや佐屋泊り -- 芭蕉
    Kuina naku to / hito no ie baya / Saya domari  —  Basho
    “A water-rail sings,” / as someone said, / stop at Saya.
    Although he hadn’t planned to stop at Saya, because a disciple invited him, saying he could hear a water-rail, he did. Saya is in Amagun, Aichi prefecture.
 
-2. 馬洗ふ -- 川すそ闇き -- 水鶏かな -- 北枝
+2. 馬洗ふ川すそ闇き水鶏かな -- 北枝
    Uma arau / kawa suso kuraki / kuina kana  —  Hokushi
    Washing the horse / at a dark river-mouth, / a water-rail.
 
-3. 聞くうちに -- すゑまぼろしの -- 水鶏かな -- 青羅
+3. 聞くうちにすゑまぼろしの水鶏かな -- 青羅
    Kiku uchi ni / sue maboroshi no / kuina kana  —  Seira
    While listening, / it ended like a phantom — / the water-rail.
 
-4. 水鶏啼いて -- 星うく草の -- はやまかな -- 澄翠
+4. 水鶏啼いて星うく草のはやまかな -- 澄翠
    Kuina naite / hoshi uku kusa no / hayama kana  —  Chosui
    A water-rail calls, / and stars float — / grassy hill.
 
@@ -607,19 +607,19 @@ Variations: ayu no yado (sweet-fish inn), kogyo (perfumed fish), nengyo (fish th
 
 **Poems:**
 
-1. 釣竿に -- 鮎のあはれや -- 水はなれ -- 北枝
+1. 釣竿に鮎のあはれや水はなれ -- 北枝
    Tsuri zao ni / ayu no aware ya / mizu banare  —  Hokushi
    On the pole, / the ayu pathetic — / leaving the water.
 
-2. 山の色 -- 釣りあげし鮎に -- 動くかな -- 原石鼎
+2. 山の色釣りあげし鮎に動くかな -- 原石鼎
    Yama no iro / tsuri ageshi ayu ni / ugoku kana  —  Hara Sekitei
    The mountain’s colour / on the hooked ayu / moves.
 
-3. 鮎釣の腰を真白に -- 水たぎつ -- 木津柳芽
+3. 鮎釣の腰を真白に水たぎつ -- 木津柳芽
    Ayutsuri no / koshi wo mashiro ni / mizu tagitsu  —  Kizu Ryuga
    On the ayu fisherman’s / hips, pure white / water foams.
 
-4. 上流は曲りて見えず -- 鮎の川 -- 山口波津女
+4. 上流は曲りて見えず鮎の川 -- 山口波津女
    Joryu wa / magarite miezu / ayu no kawa  —  Yamaguchi Hatsujo
    Upstream, with the bend, not in sight — / ayu river.
 
@@ -633,19 +633,19 @@ Variations: kingyo-uri (goldfish pedlar), kingyo dama (goldfish bowl), kingyo su
 
 **Poems:**
 
-1. 底を行く -- 金魚に動く -- 真砂かな -- 岡本松浜
+1. 底を行く金魚に動く真砂かな -- 岡本松浜
    Soko wo yuku / kingyo ni ugoku / masago kana  —  Okamoto Shohin
    Going along the bottom, / the goldfish stirs / the white sand.
 
-2. 生涯の -- 今の心や -- 金魚見る -- 高浜虚子
+2. 生涯の今の心や金魚見る -- 高浜虚子
    Shogai no / ima no kokoro ya / kingyo miru  —  Takahama Kyoshi
    Of a lifetime, / the heart of now; / look at goldfish.
 
-3. 女たち -- おしゃべり -- 金魚 -- 浮き沈み -- 山口青邨
+3. 女たちおしゃべり金魚浮き沈み -- 山口青邨
    Onna tachi / oshaberi kingyo / uki shizumi  —  Yamaguchi Seison
    The ladies / prattle, goldfish / float and sink.
 
-4. しだり尾の -- 錦ぞ動く -- 金魚かな -- 河東碧梧桐
+4. しだり尾の錦ぞ動く金魚かな -- 河東碧梧桐
    Shidari o no / nishiki zo ugoku / kingyo kana  —  Kawahigashi Hekigodo
    The drooping / tail’s brocade moves — / goldfish.
 
@@ -1857,19 +1857,19 @@ Variations: natsu ne (summer peaks), ao ne (green peaks), patsuki yama (gizon mu
 
 **Poems:**
 
-1. くつさめの -- あとしづかなり -- 夏の山 -- 野水
+1. くつさめのあとしづかなり夏の山 -- 野水
    Kutsusame no / ato shizuka nari / natsu no yama  —  Yasui
    A sneeze — / then all is quiet; / summer mountain
 
-2. 夏山や -- 一足づつに -- 海見ゆる -- 一茶
+2. 夏山や一足づつに海見ゆる -- 一茶
    Natsu yama ya / hito ashi zutsu ni / umi miyuru  —  Issa
    Summer mountain — / with each step / the ocean in view
 
-3. 夏山の -- 大木 -- 倒す -- 谺かな -- 内藤鳴雪
+3. 夏山の大木倒す谺かな -- 内藤鳴雪
    Natsu yama no / taiboku taosu / kodama kana  —  Nato Meisetsu
    Summer mountain — / a huge tree being felled, / the echoes.
 
-4. 夏山の -- 樵 -- たのもしく -- 思はずや -- 飯田蛇笏
+4. 夏山の樵たのもしく思はずや -- 飯田蛇笏
    Natsu yama no / kikori tanomoshiku / omowazu ya  —  Iida Dakotsu
    A summer mountain’s / lumberjack — lucky, / don’t you think?
 
@@ -1890,19 +1890,19 @@ Variations: ao-no (green fields), natsu-no nohara (summer fields and plains).
    > summer fields.
    > A ku of 1682. As the country horse walks slowly in the hot weather, the writer imagines they must appear like a picture.
 
-2. 青野ゆき -- 馬は片眼に -- 人を見る
+2. 青野ゆき馬は片眼に人を見る
    *Ao no yuki / uma wa kata me ni / hito wo miru -- 山口誓子  Yamaguchi Seishi*
    > Going the green field,
    > the horse with one eye
    > looks at you.
 
-3. 汽車一刻 -- 青野より乗り -- 青野に降る
+3. 汽車一刻青野より乗り青野に降る
    *Kisha ikkoku / ao no yori nori / ao no ni oriru -- 川島彷徨子  Kawashima Hokoshi*
    > Short train ride —
    > I got on in green fields,
    > off to green fields.
 
-4. 朝霞の小松はなれし -- 夏野かな
+4. 朝霞の小松はなれし夏野かな
    *Asa moya no / komatsu hanareshi / natsu no kana -- 久保より江  Kubo Yorie*
    > The morning haze
    > has left the little pines,
@@ -1918,25 +1918,25 @@ Variations: natsu kawara (summer river bed), satsuki-kawa (fifth month river).
 
 **Poems:**
 
-1. 月の頃は寝に -- 行く夏の川辺かな
+1. 月の頃は寝に行く夏の川辺かな
    *Tsuki no koro wa / ne ni yuku natsu no / kawabe kana -- 杉風  Sanpu*
    > When there's a moon,
    > I go to sleep by a summer
    > riverside.
 
-2. 夏川の音に宿かる -- 木曽路かな
+2. 夏川の音に宿かる木曽路かな
    *Natsu gawa no / oto ni yadokaru / Kisoji kana -- 重五  Jugo*
    > Where a summer river
    > murmurs, take an inn.
    > Kiso road.
 
-3. 夏川を越すうれしさよ -- 手に草履
+3. 夏川を越すうれしさよ手に草履
    *Natsu gawa wo / kosu ureshisa yo / te ni zori -- 蕪村  Buson*
    > How joyful to cross
    > a summer river!
    > Sandals in hand.
 
-4. 夏川の美しき村 -- 又訪はん
+4. 夏川の美しき村又訪はん
    *Natsu gawa no / utsukushiki mura / mata towan -- 高野素十  Takano Suju*
    > A village with
    > a beautiful summer river —
@@ -1952,20 +1952,20 @@ Variations: natsu no nami (summer waves), natsu no hama (summer beach).
 
 **Poems:**
 
-1. 島々や -- 千々に砕けて -- 夏の海
+1. 島々や千々に砕けて夏の海
    *Shimajima ya / chijini kudakete / natsu no umi -- 芭蕉  Basho*
    > Island after island —
    > into a myriad, crumbled,
    > the summer ocean.
    > A ku about Matsushima, a series of numberless small islands, which Basho described as amazing, and a wondrous work of heaven's creation. Pine trees grow on each little island.
 
-2. 夏海や -- 碁盤の石のかいつぶり
+2. 夏海や碁盤の石のかいつぶり
    *Natsu umi ya / goban no ishi no / kaitsubari -- 野坡  Yaba*
    > The summer ocean —
    > like 'go' stones on a board,
    > the grebes.
 
-3. 刻々と -- 真珠は育つ -- 夏の海
+3. 刻々と真珠は育つ夏の海
    *Kokokuhuto / shinju wa sodatsu / natsu no umi -- 松尾いわほ  Matsuo Iwaho*
    > Each moment
    > the pearls grow —
@@ -1987,24 +1987,24 @@ Variations: aota nami (green-ricefield waves), aota kaze (green-ricefield wind),
 
 **Poems:**
 
-1. 松風を中に -- 青田のそよぎかな
+1. 松風を中に青田のそよぎかな
    *Matsu kaze wo / naka ni aota no / soyogi kana -- 大草  Joso*
    > The wind of pine trees in them,
    > green ricefields rustle.
 
-2. 山々を低く覚ゆる -- 青田かな
+2. 山々を低く覚ゆる青田かな
    *Yama yama wo / hikuku oboyuru / aota kana -- 蕪村  Buson*
    > All the mountains
    > seem lower, by
    > green ricefields.
 
-3. 傘さしてふかれに出でし -- 青田かな
+3. 傘さしてふかれに出でし青田かな
    *Kasa sashite / fukare ni ideshi / aota kana -- 白雄  Shirao*
    > With a parasol,
    > I went out to be blown —
    > green ricefields.
 
-4. 夕風の鷺吹き飛ばす -- 青田かな
+4. 夕風の鷺吹き飛ばす青田かな
    *Yukage no / sagi fukitobasu / aota kana -- 正岡子規  Masaoka Shiki*
    > The dusk wind
    > sends herons flying,
@@ -2018,25 +2018,25 @@ Pure water that wells out of the earth in fields, from gaps in the ground, or in
 
 **Poems:**
 
-1. 掬ぶより -- はや歯に -- ひびく -- 泉かな
+1. 掬ぶよりはや歯にひびく泉かな
    *Musubu yori / haya ha ni hibiku / izumi kana -- 芭蕉  Basho*
    > Just by scooping,
    > a sting to the teeth —
    > the spring.
 
-2. 緑わく -- 夏山陰の -- 泉かな
+2. 緑わく夏山陰の泉かな
    *Midori waku / natsu yama kage no / izumi kana -- 蕉太  Ryota*
    > Green wells up —
    > the spring of a summer
    > mountain shade.
 
-3. 広き葉のかさなり映る -- 泉かな
+3. 広き葉のかさなり映る泉かな
    *Hiroki ha no / kasanari utsuru / izumi kana -- 吉岡禅寺洞  Yoshioka Zenjido*
    > Broad leaves
    > reflect in layers —
    > a spring.
 
-4. 啄木鳥に -- 泉の水輪 -- 絶ゆるなし
+4. 啄木鳥に泉の水輪絶ゆるなし
    *Kitsutsuki ni / izumi no mizuwa / tayuru nashi -- 水原秋桜子  Mizuhara Shuoshi*
    > With a woodpecker,
    > the water-rings of the spring
@@ -2056,19 +2056,19 @@ Pure water is named according to the different places they well out from, such a
 
 **Poems:**
 
-1. さざれ蟹 -- 足這いのぼる -- 清水かな
+1. さざれ蟹足這いのぼる清水かな
    *Sazare gani / ashi hai noboru / shimizu kana -- 芭蕉  Basho*
    > A little crab
    > crawls up my foot —
    > pure water.
 
-2. 源は氷か雪か -- 苔清水
+2. 源は氷か雪か苔清水
    *Minamoto wa / kori ka yuki ka / koke shimizu -- 太無  Taimu*
    > Is its source
    > ice, or snow?
    > Moss pure water.
 
-3. 其底に木葉 -- 散ふる -- 清水かな
+3. 其底に木葉散ふる清水かな
    *Sono soko ni / konoha toshifuru / shimizu kana -- 正岡子規  Masaoka Shiki*
    > At the bottom,
    > tree leaves spend the years —
@@ -2086,25 +2086,25 @@ Variations: natsu Fuji (summer Fuji), yukige Fuji (Fuji with melting snow).
 
 **Poems:**
 
-1. 出て見せつ -- 隠れつ -- 雲の -- 皐月不二
+1. 出て見せつ隠れつ雲の皐月不二
    *Dete mesetsu / kakuretsu kumo no / Satsuki Fuji -- 鳥酔  Chosui*
    > It shows itself,
    > then hides — Fifth month Fuji
    > in clouds.
 
-2. 五月富士 -- 水車は高き -- 水玉を
+2. 五月富士水車は高き水玉を
    *Satsuki Fuji / suisha wa takaki / mizudama wo -- 内田暮情  Uchida Bojo*
    > Fifth month Fuji —
    > the water-wheel throws up
    > its sprays.
 
-3. 展望の -- 一舟一鷹 -- 五月富士
+3. 展望の一舟一鷹五月富士
    *Tenbo no / isshu ichien / satsuki Fuji -- 富安風生  Tomiyasu Fusee*
    > From the look-out,
    > one boat, one black kite —
    > Fifth month Fuji.
 
-4. 立つ鷺に -- あらわれてをり -- 五月富士
+4. 立つ鷺にあらわれてをり五月富士
    *Tatsu sagi ni / arawarete ori / Satsuki Fuji -- 深川正一郎  Fukagawa Shoichiro*
    > By a standing heron
    > appeared —
@@ -2118,25 +2118,25 @@ The ricefields that have just been planted with the young shoots (sanae) of the 
 
 **Poems:**
 
-1. 胴亀や -- 昨日 -- 植ゑたる -- 田の濁り
+1. 胴亀や昨日植ゑたる田の濁り
    *Dogame ya / kino uetaru / ta no nigori -- 許六  Kyoroku*
    > A salt-marsh turtle —
    > the muddiness of a paddy
    > planted yesterday.
 
-2. 我かものに -- 植田の -- 蛙 -- 鳴つのる
+2. 我かものに植田の蛙鳴つのる
    *Waga mono ni / ueta no kawazu / naki tsunoru -- 暁台  Gyodai*
    > As if their own
    > planted ricefields, frogs'
    > loud songs.
 
-3. 植ゑつけし -- 夜は三日月の -- 門田かな
+3. 植ゑつけし夜は三日月の門田かな
    *Uetsukeshi / yo wa mikazuki no / kakota kana -- 青羅  Seira*
    > The night they were planted,
    > a crescent moon —
    > gate ricefields.
 
-4. 大雨に -- 濁りかへせし -- 植田哉
+4. 大雨に濁りかへせし植田哉
    *Oame ni / nigori kaeseshi / ueta kana -- 青木月斗  Aoki Getto*
    > With a downpour
    > their muddiness returned,
@@ -2152,26 +2152,26 @@ To change from winter to summer clothing. Of course this is done today according
 
 **Poems:**
 
-1. ひとつ脱でうしろに負いぬ -- 更衣
+1. ひとつ脱でうしろに負いぬ更衣
    *Hitetsu nuide / ushiro ni oi nu / koromogae -- 芭蕉  Basho*
    > Took off a layer,
    > flung it on my back —
    > change of garment.
    > During a journey, not having a summer garment, he merely took off a layer of the clothes he was wearing.
 
-2. 更衣 -- 野路の人はつかに白し
+2. 更衣野路の人はつかに白し
    *Koromogae / noji no hito wazu / kani shireshi -- 蕪村  Buson*
    > Change of garments —
    > on field paths people
    > look whiter.
 
-3. 更衣 -- 爪はするどき -- 山の鳥
+3. 更衣爪はするどき山の鳥
    *Koromogae / tsume wa surudoki / yama no tori -- 大峯あきら  Omine Akira*
    > Change of garments —
    > their claws are sharp,
    > the mountain bird.
 
-4. 人にやや -- おくれて -- 衣更へにけり
+4. 人にややおくれて衣更へにけり
    *Hito ni yaya / okurete koromo / kae ni keri -- 高橋淡路女  Takahashi Awajijo*
    > Somewhat later
    > than others, I changed
@@ -2187,19 +2187,19 @@ Variations: sukiya (transparent silk), keira (light, thin silk), chijimi (crinkl
 
 **Poems:**
 
-1. 羅に -- 遮る蓮の -- にほひかな
+1. 羅に遮る蓮のにほひかな
    *Usumono ni / saegiru hasu no / nioi kana -- 蕪村  Buson*
    > By a thin silk
    > kimono screened, the
    > scent of lotus.
 
-2. 羅をゆるやかに着て -- 崩れざる
+2. 羅をゆるやかに着て崩れざる
    *Usumono wo / yuruyaka ni kite / kuzurezaru -- 松本たかし  Matsumoto Takashi*
    > A thin silk
    > kimono worn casually,
    > her propriety.
 
-3. 羅に汗さへ見せぬ -- 女かな
+3. 羅に汗さへ見せぬ女かな
    *Usumono ni / ase sao misenu / onna kana -- 高浜年尾  Takahama Toshio*
    > In thin silk
    > no sign of sweat
@@ -2221,25 +2221,25 @@ Variations: ai yukata (deep blue yukata), furu yukata (old yukata).
 
 **Poems:**
 
-1. 爽かな -- 汗へ上着る -- 浴衣かな
+1. 爽かな汗へ上着る浴衣かな
    *Sawayakana / ase no ue kiru / yukata kana -- 野村喜舟  Nomura Kishuu*
    > On fresh sweat,
    > put on
    > a yukata.
 
-2. 月影のふところにさす -- 浴衣かな
+2. 月影のふところにさす浴衣かな
    *Tsukikage no / futokoro ni sasu / yukata kana -- 田中王城  Tanaka Ojo*
    > Moonlight
    > falls on the chest —
    > yukata.
 
-3. 雑巾となるまではわが -- 浴衣
+3. 雑巾となるまではわが浴衣
    *Zokin to naru made wa waga / furu yukata -- 加藤秋邨  Kato Shuuson*
    > Till it's reduced
    > to a floor rag, my
    > old yukata.
 
-4. 浴衣 -- あたらしく -- 夜の川 -- 漕ぎくだる
+4. 浴衣あたらしく夜の川漕ぎくだる
    *Yukata atarashiku / yoru no kawa / kogi kudaru -- 大野林火  Ono Rinka*
    > New yukatas —
    > going down
@@ -2253,25 +2253,25 @@ Variations: ai yukata (deep blue yukata), furu yukata (old yukata).
    *This includes the various kinds of hats used as protection from the strong summer sun — panama hats, straw hats, cloth caps, mountain caps and so on. They come in different materials, styles and brims. As part of the summery scenery with cumulonimbus clouds and the blue sea, they were made a kigo in 1896 with Masaoka Shiki's ku: 夏帽をかぶつて来たり探訪者 / Natsubo wo / kabutte kitari / tanbosha / "A summer hat on, along came a reporter."*
    > Variations: natsubo, mugiwarabo (wheat-straw hat), kankambo (sha straw hat), tosanbo (mountain cap).
 
-2. 夏帽や -- 今年銀座に -- 柳無し
+2. 夏帽や今年銀座に柳無し
    *Natsuba ya / kotoshi Ginza ni / yanagi nashi -- 島田青峰  Shimada Seiho*
    > Summer hats —
    > this year on the Ginza,
    > no willows.
 
-3. 夏帽の日を照り返す -- 渚かな
+3. 夏帽の日を照り返す渚かな
    *Natsubo no / hi wo teri kaesu / nagisa kana -- 水原秋桜子  Mizuhara Shuoshi*
    > Summer hats —
    > on a strand that
    > reflects the sun.
 
-4. 麦藁帽 -- たたよふ海の -- 紺のなか
+4. 麦藁帽たたよふ海の紺のなか
    *Mugiwarabo / tadayou umi no / kon no naka -- 角川源義  Kadokawa Genyoshi*
    > A wheat straw hat
    > floats, on the ocean's
    > deep blue.
 
-5. カンカン帽 -- ゆゑに目に立つ -- 頬骨なる
+5. カンカン帽ゆゑに目に立つ頬骨なる
    *Kankambo / yue ni me ni tatsu / hobone naru -- 篠原梵  Shinohara Bon*
    > A hard straw hat —
    > and so, prominent,
@@ -2287,25 +2287,25 @@ Variations: kori mise (ice shop or stall).
 
 **Poems:**
 
-1. 匙なめて -- 童たのしも -- 夏氷
+1. 匙なめて童たのしも夏氷
    *Saji namete / warabe tanoshi mo / natsu gori -- 山口誓子  Yamaguchi Seishi*
    > Licking their spoons,
    > happy children!
    > summer ice.
 
-2. 日焼顔 -- 見合ひてうまし -- 氷水
+2. 日焼顔見合ひてうまし氷水
    *Hiyakegao / miaite umashi / kori mizu -- 水原秋桜子  Mizuhara Shuoshi*
    > Sunburnt faces
    > across the table, delicious!
    > shaved ice.
 
-3. 水捨る -- 音の夜深し -- 氷店
+3. 水捨る音の夜深し氷店
    *Mizu suteru / oto no yo fukashi / kori mise -- 増田龍雨  Masuda Ryuu*
    > The sound of water
    > being thrown out, late at night —
    > ice shop.
 
-4. 氷店より見てゐたる -- 人通り
+4. 氷店より見てゐたる人通り
    *Kori mise / yori mite itaru / hito dori -- 上野泰  Ueno Yasushi*
    > From the ice shop,
    > I watch the people
@@ -2319,25 +2319,25 @@ Variations: kori mise (ice shop or stall).
 
 **Poems:**
 
-1. 山を庭に -- 動き入るるや -- 夏座敷
+1. 山を庭に動き入るるや夏座敷
    *Yama mo niwa ni / ugoki iruruya / natsu zashiki -- 芭蕉  Basho*
    > Even the mountain
    > seems to move into the garden —
    > summer parlour.
 
-2. 行く雲を寝ておゐて見るや -- 夏座敷
+2. 行く雲を寝ておゐて見るや夏座敷
    *Yuku kumo wo / niteite miru ya / natsu zashiki -- 野坡  Yaba*
    > Lie down, and
    > watch the clouds roll by —
    > summer parlour.
 
-3. 松陰や -- 寝茣蓙一つの -- 夏座敷
+3. 松陰や寝茣蓙一つの夏座敷
    *Matsu kage ya / negoza hitotsu no / natsu zashiki -- 一茶  Issa*
    > The shade of pine trees —
    > one rush mat to sleep on,
    > summer parlour.
 
-4. 船のぞく -- 望遠鏡おく -- 夏座敷
+4. 船のぞく望遠鏡おく夏座敷
    *Fune nozoku / tomigane oku / natsu zashiki -- 山口青邨  Yamaguchi Seison*
    > To look at boats
    > a telescope placed —
@@ -2351,25 +2351,25 @@ A mat made of thinly split bamboo or rattan, used as flooring in the heat of sum
 
 **Poems:**
 
-1. 水紋を織得て清し -- 簟
+1. 水紋を織得て清し簟
    *Suimon wo / oriete kiyoshi / takamushiro -- 舎羅  Shara*
    > Water patterns
    > woven into it, a pure
    > bamboo mat.
 
-2. 細脛に夕風さはる -- たかむしろ
+2. 細脛に夕風さはるたかむしろ
    *Hoso hagi ni / yu kaze sawaru / takamushiro -- 蕪村  Buson*
    > On the thin legs
    > a dusk breeze —
    > bamboo mat.
 
-3. 松風や -- 池の月見る -- たかむしろ
+3. 松風や池の月見るたかむしろ
    *Matsu kaze ya / ike no tsuki miru / takamushiro -- 酒葉露人  Sakaba Aijin*
    > A pine-tree wind —
    > look at the pond's moon,
    > from a bamboo mat.
 
-4. 転寝の目に横雲や -- 簟
+4. 転寝の目に横雲や簟
    *Utatane no / me ni yokogumo ya / takamushiro -- 赤木格堂  Akagi Kakudo*
    > In the dozing
    > eyes, a bank of clouds —
@@ -2385,26 +2385,26 @@ Variations: ao-sudare (green blinds), tama-sudare (beautiful blinds), yoshi-suda
 
 **Poems:**
 
-1. 二つ吊し -- 簾の透間 -- 花柘榴
+1. 二つ吊し簾の透間花柘榴
    *Futatsu tsuri shi / sudare no sukima / hana zakuro -- 高浜虚子  Takahama Kyoshi*
    > Two blinds hung up,
    > and from between them,
    > pomegranate flowers.
 
-2. 簾おろし -- 天の橋立 -- うすくなる
+2. 簾おろし天の橋立うすくなる
    *Sudare oroshi / Ama no Hashidate / usuku naru -- 山口青邨  Yamaguchi Seison*
    > The blinds rolled down,
    > Ama no Hashidate
    > became faint.
    > Ama no Hashidate: one of the 3 most scenic landscapes of Japan, in Tango north of Kyoto. It is a thin strip of land covered with pine trees, that projects into the bay.
 
-3. 世の中を -- 美しと見し -- 簾かな
+3. 世の中を美しと見し簾かな
    *Yo no naka wo / utsukushito mishi / sudare kana -- 上野泰  Ueno Yasushi*
    > This world
    > looked beautiful,
    > through the blinds.
 
-4. 青簾 -- むかしむかしの -- はなしかな
+4. 青簾むかしむかしのはなしかな
    *Ao sudare / mukashi mukashi no / hanashi kana -- 久保田万太郎  Kubota Mantaro*
    > Green blinds —
    > talk of long,
@@ -2418,25 +2418,25 @@ Powder to counteract heat rash. It was dusted on children after a bath, and used
 
 **Poems:**
 
-1. 鏡にも -- 手のあと白し -- 天瓜粉
+1. 鏡にも手のあと白し天瓜粉
    *Kagami ni mo / te no ato shiroshi / tenkafun -- 岡本松浜  Okamoto Shohin*
    > On the mirror, too,
    > the hand-print white;
    > talcum powder.
 
-2. 小さき子 -- 人形にうち粉 -- 天瓜粉
+2. 小さき子人形にうち粉天瓜粉
    *Chiisaki ko / ningyo ni uchimu / tenkafun -- 青木月斗  Aoki Getto*
    > Little child,
    > she put some on her doll,
    > talcum powder.
 
-3. みめよくて -- にくらしき子や -- 天瓜粉
+3. みめよくてにくらしき子や天瓜粉
    *Mime yokute / nikurashiki ko ya / tenkafun -- 飯田蛇笏  Iida Dakotsu*
    > Nice looking,
    > but a detestable child!
    > Talcum powder.
 
-4. 天瓜粉 -- 月下の風に -- はげにけり
+4. 天瓜粉月下の風にはげにけり
    *Tenkafun / gekka no kaze ni / hage ni keri -- 高田蝶衣  Takada Choi*
    > Talcum powder;
    > in the moonlight breeze,
@@ -2450,25 +2450,25 @@ A thin bamboo stalk is split at the top and bent to make a frame, while the bott
 
 **Poems:**
 
-1. 昼寝して -- 手のうごきやむ -- うちは哉
+1. 昼寝して手のうごきやむうちは哉
    *Hirune shite / te no ugoki yamu / uchiwa kana -- 杉風  Sanpu*
    > Dozing off,
    > the hand stops moving —
    > round fan.
 
-2. 後家の君 -- たそがれ顔の -- うちはかな
+2. 後家の君たそがれ顔のうちはかな
    *Goke no kimi / tasogare gao no / uchiwa kana -- 蕪村  Buson*
    > The widow —
    > her face at dusk, behind
    > a round fan.
 
-3. 月影の -- 蚊帳にひらめく -- 団扇かな
+3. 月影の蚊帳にひらめく団扇かな
    *Tsukikage no / kaya ni hirameku / uchiwa kana -- 高田蝶衣  Takeda Choi*
    > Moonlight
    > flutters in the mosquito net,
    > a round fan.
 
-4. 大猫の -- どさりと寝たる -- 団かな
+4. 大猫のどさりと寝たる団かな
    *O neko no / dosari to netaru / uchiwa kana -- 一茶  Issa*
    > The big cat,
    > with a thud, lay on it,
@@ -2484,25 +2484,25 @@ Variations: furin-uri (windbell seller).
 
 **Poems:**
 
-1. 風鈴や -- 花にはつらき風ながら
+1. 風鈴や花にはつらき風ながら
    *Furin ya / hana seiun tsuraki / kaze nagare -- 蕪村  Buson*
    > Windbells —
    > though for flowers the
    > wind was cruel.
 
-2. 風鈴に -- 何処へも行かず -- 暑しけり
+2. 風鈴に何処へも行かず暑しけり
    *Furin ni / doko e mo yukazu / kuwashi keri -- 高橋淡路女  Takahashi Awajijo*
    > By a windbell,
    > without going out,
    > I spent the day.
 
-3. 月さして -- 風鈴の影 -- 生いけり
+3. 月さして風鈴の影生いけり
    *Tsuki sashite / furin no kage / umare keri -- 清崎敏郎  Kiyosaki Toshio*
    > The moon shone,
    > a windbell's shadow
    > was born.
 
-4. 風鈴や -- 水面に残る -- 風のあと
+4. 風鈴や水面に残る風のあと
    *Furin ya / minamo ni nokoru / kaze no ato -- 水谷碧霞  Mizutani Saiko*
    > A windbell —
    > on the water surface,
@@ -2516,25 +2516,25 @@ Variations: furin-uri (windbell seller).
 
 **Poems:**
 
-1. 見る人も -- 廻り灯籠に -- 廻りけり
+1. 見る人も廻り灯籠に廻りけり
    *Miru hito mo / mawari-toro ni / mawari keri -- 其角  Kikaku*
    > The man looking at
    > revolving lamps also
    > went round.
 
-2. 走馬灯 -- はじめなければ -- 終りなし
+2. 走馬灯はじめなければ終りなし
    *Somato / hajime nakereba / owari nashi -- 岸風三楼  Nishi Fusanro*
    > Revolving lamp —
    > without a beginning
    > or end.
 
-3. 先の影 -- 後の影追ふ -- 走馬灯
+3. 先の影後の影追ふ走馬灯
    *Saki no kage / ato no kage ou / somato -- 近藤一鴻  Kondo Ikko*
    > The shadow in front
    > chases the shadow behind,
    > revolving lamp.
 
-4. 影を売るごと -- 走馬灯売る男
+4. 影を売るごと走馬灯売る男
    *Kage wo uru / goto somato / uru otoko -- 有馬朗人  Arima Rojin*
    > Like selling shadows,
    > the man who sells
@@ -2550,25 +2550,25 @@ Variations: mushi harui (shaking off insects), doyo boshi (hot-days airing), bak
 
 **Poems:**
 
-1. 山を見る -- 二階なりけり -- 土用ぼし
+1. 山を見る二階なりけり土用ぼし
    *Yama wo miru / nikai nari keri / doyo boshi -- 涼菟  Ryoto*
    > On the second floor,
    > where you can see mountains —
    > hot day's airing.
 
-2. 虫干に -- 猫も干されて -- 居たりけり
+2. 虫干に猫も干されて居たりけり
    *Mushiboshi ni / neko mo hosarete / itari keri -- 一茶  Issa*
    > For insect airing
    > the cat, too,
    > being aired.
 
-3. 虫干や -- 蔵の虫入に -- 松の風
+3. 虫干や蔵の虫入に松の風
    *Mushi boshi ya / kura no deiri ni / matsu no kaze -- 松根東洋城  Matsune Toyojo*
    > Insect airing —
    > going in and out the storehouse,
    > a pine-tree wind.
 
-4. 幕張て -- 能の衣裳や -- 土用干
+4. 幕張て能の衣裳や土用干
    *Maku shatte / no no isho ya / doyo boshi -- 安藤橡面坊  Ando Tochumenbo*
    > A curtain put up,
    > Noh garments —
@@ -2584,25 +2584,25 @@ Variations: taue uta (rice-planting song), taue-gasa (rice-planting hats).
 
 **Poems:**
 
-1. 風流の -- 初やおくの -- 田植うた
+1. 風流の初やおくの田植うた
    *Furyu no / hajime ya oku no / taue uta -- 芭蕉  Basho*
    > The source of sweet simplicity —
    > a north province's
    > rice-plant song.
 
-2. 遠里や -- 二筋三すぢ -- 田うゑ笠
+2. 遠里や二筋三すぢ田うゑ笠
    *To zato ya / futasuji misuji / taue gasa -- 蕉太  Ryota*
    > A remote village —
    > two, three lines of
    > rice-plant hats.
 
-3. 蕗の葉に -- いわしを配る -- 田植かな
+3. 蕗の葉にいわしを配る田植かな
    *Fuki no ha ni / iwashi wo kubaru / taue kana -- 一茶  Issa*
    > In butterbur leaves,
    > sardines passed around —
    > rice-planting.
 
-4. 田を植ゑし -- しづかな音へ -- 出でにけり
+4. 田を植ゑししづかな音へ出でにけり
    *Ta wo ueshi / shizukana oto e / ide ni keri -- 中村草田男  Nakamura Kusatao*
    > To the quiet
    > sounds of planting rice,
@@ -2618,25 +2618,25 @@ Variations: hoshi gusa (drying grasses, or hay), kusa kari me (grass-cutting mai
 
 **Poems:**
 
-1. 草刈女 -- 霞がのびきて -- つつみけり
+1. 草刈女霞がのびきてつつみけり
    *Kusa kari me / moya ga nobikite / tsutsumi keri -- 西山白雲  Nishiyama Hakuun*
    > Grass cutter —
    > the haze reached and
    > enclosed her.
 
-2. 草刈や -- 日出でぬ間を -- 刈り急ぐ
+2. 草刈や日出でぬ間を刈り急ぐ
    *Kusa kari ya / hi idenu aida wo / kari isagu -- 五島雉子郎  Goto Kujiro*
    > Grass-cutting —
    > hurry, before the sun
    > comes out!
 
-3. 草刈るや -- 萩に沈める -- 紺法被
+3. 草刈るや萩に沈める紺法被
    *Kusa karu ya / hagi ni shizumeru / kon happi -- 杉田久女  Sugita Hisajo*
    > Cutting grass —
    > into bush clover sinks
    > a blue work-coat.
 
-4. 草刈女 -- さゆらぐ笠は -- 鎌返り
+4. 草刈女さゆらぐ笠は鎌返り
    *Kusa kari me / sa yuragu kasa wa / kama togeri -- 林翔  Hayashi Sho*
    > Grass-cutter —
    > her swaying hat,
@@ -2652,25 +2652,25 @@ Variations: yana utsu (to set up a weir), yana-mori (weir guardian).
 
 **Poems:**
 
-1. 鰻簗 -- 木曽の夜汽車の -- 照らし過ぐ
+1. 鰻簗木曽の夜汽車の照らし過ぐ
    *Unagi-yana / Kiso no yagisha no / terashi sugu -- 大野林火  Ono Rinka*
    > Eel weir;
    > Kiso's night train
    > lights it and goes.
 
-2. 簗守の -- 影あらふなり -- 簗しぶき
+2. 簗守の影あらふなり簗しぶき
    *Yana-mori no / kage arau nari / yana shibuki -- 堀口星眠  Horiguchi Seimin*
    > The weir guardian's
    > shadow they wash,
    > weir sprays.
 
-3. 大簗の -- とどろきに住む -- 山家かな
+3. 大簗のとどろきに住む山家かな
    *O yana no / todoroki ni sumu / sanka kana -- 橋本鶏二  Hashimoto Keiji*
    > By a giant weir's
    > thundering, to dwell,
    > mountain house.
 
-4. 簗にゐて -- あめつち水の -- 音となる
+4. 簗にゐてあめつち水の音となる
    *Yana ni ite / ametsuchi mizu no / oto to naru -- 佐野良太  Sano Ryota*
    > At a fish weir
    > heaven and earth are just
@@ -2686,25 +2686,25 @@ Variations: asa suzumi (morning cooling), hiru suzumi (afternoon cooling), yu su
 
 **Poems:**
 
-1. 皿鉢も -- ほのかに闇の -- 宵涼み
+1. 皿鉢もほのかに闇の宵涼み
    *Sara hachi mo / honoka ni yami no / yoi suzumi -- 芭蕉  Basho*
    > Plates and bowls
    > faint, feel cool on
    > a dark evening.
 
-2. 夕涼み -- あぶなき石に -- のぼりけり
+2. 夕涼みあぶなき石にのぼりけり
    *Yu suzumi / abunaki ishi ni / nobori keri -- 野坡  Yaba*
    > Seeking dusk coolness,
    > a dangerous rock
    > was climbed.
 
-3. つつ立て -- 帆になる袖や -- 涼みぶね
+3. つつ立て帆になる袖や涼みぶね
    *Tsutsu tatete / ho ni naru sode ya / suzumi-bune -- 大草  Joso*
    > Stand up suddenly,
    > the sleeves turn into sails!
    > Boat for cooling.
 
-4. 雪洞を -- 吹き消す風や -- 涼み台
+4. 雪洞を吹き消す風や涼み台
    *Bonbori wo / fuki-kesu kaze ya / suzumi-dai -- 赤木格堂  Akagi Kakudo*
    > The hand-lantern,
    > blown out by a breeze —
@@ -2720,26 +2720,26 @@ Variations: age hanabi (putting-up fireworks), to hanabi (distant fireworks), te
 
 **Poems:**
 
-1. 花火尽て -- 美人は酒に -- 身投げけむ
+1. 花火尽て美人は酒に身投げけむ
    *Hanabi tsukite / bijin wa sake ni / minagekemu -- 几董  Kito*
    > The fireworks done,
    > the beautiful lady,
    > sunk in drinking.
    > While watching the display of fireworks, the beautiful lady had sat by his side, pouring rice wine for him, but when the display ended, she disappeared. Worried, on looking around the boat, he discovered she was herself drinking now.
 
-2. 川面や -- 花火のあとの -- 楫の音
+2. 川面や花火のあとの楫の音
    *Kawa omo ya / hanabi no ato no / kaji no oto -- 白雄  Shirao*
    > On the river —
    > after the fireworks,
    > rudder sounds.
 
-3. 星一つ -- 残して落つる -- 花火かな
+3. 星一つ残して落つる花火かな
    *Hoshi hitotsu / nokoshite otsuru / hanabi kana -- 抱一  Hoitsu*
    > One star
    > was left, after
    > the fireworks fell.
 
-4. 遠花火 -- 音して何もなかりけり
+4. 遠花火音して何もなかりけり
    *To hanabi / otoshite nani mo / nakari keri -- 河東碧梧桐  Kawahigashi Hekigodo*
    > Distant fireworks —
    > only sounds,
@@ -2753,25 +2753,25 @@ As the summer months in Japan bring high humidity and temperatures, many people 
 
 **Poems:**
 
-1. 夏痩の -- わが骨探る -- 寝覚かな
+1. 夏痩のわが骨探る寝覚かな
    *Natsu yase no / waga hone saguru / nezame kana -- 蕉太  Ryota*
    > The summer thin
    > pries his bones,
    > awakening.
 
-2. 夏痩や -- 西日さし込む -- 竹格子
+2. 夏痩や西日さし込む竹格子
    *Natsu yase ya / nishibi sashikomu / take koshi -- 大江丸  Oemaru*
    > Summer thinness —
    > the western sun comes through
    > a bamboo lattice.
 
-3. 夏まけと -- かくしがたなく -- やつれけり
+3. 夏まけとかくしがたなくやつれけり
    *Natsu make to / kakushigata naku / yatsure keri -- 松本たかし  Matsumoto Takashi*
    > Lost to summer,
    > no hiding it —
    > so haggard.
 
-4. 夏痩や -- 頬も色どらず -- 束ね髪
+4. 夏痩や頬も色どらず束ね髪
    *Natsu yase ya / ho mo irodorazu / tabane gami -- 杉田久女  Sugita Hisajo*
    > Summer thinness —
    > cheeks without colour,
@@ -2787,25 +2787,25 @@ Variations: ayame no sekku (annual observance of blue flags), ayame no hi (blue-
 
 **Poems:**
 
-1. 四辻や -- 匂ひ吹きみつ -- あやめの日
+1. 四辻や匂ひ吹きみつあやめの日
    *Yotsu tsuji ya / nioi fukimitsu / ayame no hi -- 蘭更  Ranko*
    > A crossroad —
    > the wind brings their fragrance,
    > blue flags day.
 
-2. 旅の空 -- 矢車鳴りて -- 端午なり
+2. 旅の空矢車鳴りて端午なり
    *Tabi no sora / yaguruma narite / tango nari -- 及川貞  Oikawa Tei*
    > While traveling, the sky
    > resounds with arrow-wheels —
    > it's tango.
 
-3. 雨がちに -- 端午ちかづく -- 父子かな
+3. 雨がちに端午ちかづく父子かな
    *Ame gachi ni / tango chikazuku / oyako kana -- 石田波郷  Ishida Hakyo*
    > Rain seems imminent
    > as tango approaches;
    > father and son.
 
-4. 端午なほ -- 深山ざくらは -- 雲に咲く
+4. 端午なほ深山ざくらは雲に咲く
    *Tango nao / miyama zakura wa / kumo ni saku -- 中村月三  Nakamura Gessan*
    > Tango, and still
    > some deep mountain cherry flowers
@@ -2821,25 +2821,25 @@ Variations: gogatsu koi (fifth month carp), fuki-nagashi (streamers of different
 
 **Poems:**
 
-1. 風吹けば -- 来るや隣の -- 鯉幟
+1. 風吹けば来るや隣の鯉幟
    *Kaze fukeba / kuru ya tonari no / koi nobori -- 高浜虚子  Takahama Kyoshi*
    > When the wind blows,
    > they come! the neighbor's
    > carp banners.
 
-2. 鯉幟 -- 風に折れ又 -- 風に伸ぶ
+2. 鯉幟風に折れ又風に伸ぶ
    *Koi nobori / kaze ni ore mata / kaze ni nobu -- 山口誓子  Yamaguchi Seishi*
    > Carp banners —
    > they fold, then stretch
    > in the wind.
 
-3. 町変り -- 人も変りし -- 鯉のぼり
+3. 町変り人も変りし鯉のぼり
    *Machi kawari / hito mo kawari shi / koi nobori -- 百合山羽公  Yuriyama Uko*
    > The town has changed,
    > people, too, changed —
    > carp banners.
 
-4. 鯉幟 -- 下ろすときだけ -- 庭狭し
+4. 鯉幟下ろすときだけ庭狭し
    *Koi nobori / orosu toki dake / niwa semashi -- 後藤比奈夫  Goto Hinao*
    > Carp banners —
    > when brought down,
@@ -2855,25 +2855,25 @@ Variations: natsu-matsuri (summer festival), kami-matsuri (the gods' festival), 
 
 **Poems:**
 
-1. 鱠にも -- 響くまつりの -- 太鼓かな
+1. 鱠にも響くまつりの太鼓かな
    *Namasu ni mo / hibiku matsuri no / taiko kana -- 樗良  Chora*
    > Even to the salad
    > vibrates the festival
    > big drum.
 
-2. 神田川 -- 祭の中を -- ながれけり
+2. 神田川祭の中をながれけり
    *Kanda-gawa / matsuri no naka wo / nagare keri -- 久保田万太郎  Kubota Mantaro*
    > Kanda river —
    > through the center of the festival,
    > it flowed.
 
-3. 祭囃子 -- 目高の水に -- 流れくる
+3. 祭囃子目高の水に流れくる
    *Matsuri-bayashi / medaka no mizu ni / nagare kuru -- 増田龍雨  Masuda Ryuu*
    > Festival music
    > comes flowing to
    > killifish' water.
 
-4. さかづきに -- 映る祭の -- 燈ものみほす
+4. さかづきに映る祭の燈ものみほす
    *Sakazuki ni / utsuru matsuri no / hi mo nomi hosu -- 篠原梵  Shinohara Bon*
    > The festival lamp
    > reflected in the wine cup,
@@ -2889,25 +2889,25 @@ Variations: Gion bayashi (Gion festival music), hoko-matsuri (halberd festival),
 
 **Poems:**
 
-1. 鉾処にに -- 夕風そよぐ -- 囃子かな
+1. 鉾処にに夕風そよぐ囃子かな
    *Hoko shosho ni / yu kaze soyogu / hayashi kana -- 太祇  Taiqi*
    > Halberds here and there,
    > sway in the dusk breeze —
    > festival music.
 
-2. 祇園会や -- 京は日傘の -- 下を行く
+2. 祇園会や京は日傘の下を行く
    *Gion e ya / kyo wa higasa no / shita wo yuku -- 蕉太  Ryota*
    > Gion festival —
    > in the capital they go
    > under parasols.
 
-3. 祇園会や -- 錦の上に -- 京の月
+3. 祇園会や錦の上に京の月
    *Gion e ya / nishiki no ue ni / kyo no tsuki -- 正岡子規  Masaoka Shiki*
    > Gion festival —
    > above the brocade,
    > the capital's moon.
 
-4. 祇園会や -- 古き錦に -- 汗の玉
+4. 祇園会や古き錦に汗の玉
    *Gion e ya / furuki nishiki ni / ase no tama -- 松瀬青々  Matsuse Seisei*
    > Gion festival —
    > on old brocade,
@@ -2923,25 +2923,25 @@ Variations: natsu barae (summer purification), misogi (ablution), katashiro (pap
 
 **Poems:**
 
-1. 吹く風の -- 中を魚 -- 飛ぶ -- 御祓かな
+1. 吹く風の中を魚飛ぶ御祓かな
    *Fuku kaze no / naka wo uo tobu / misogi kana -- 芭蕉  Basho*
    > In the breeze
    > fish are jumping,
    > purification.
 
-2. 一番に -- 乙鳥のくぐる -- ちのわ哉
+2. 一番に乙鳥のくぐるちのわ哉
    *Ichiban ni / tsubame no kuguru / chinowa kana -- 一茶  Issa*
    > First of all,
    > a swallow went through,
    > lalong wreath.
 
-3. 青茅輪 -- あざやかに野の -- 匂いして
+3. 青茅輪あざやかに野の匂いして
    *Ao chino wa / azayakani no no / nioi shite -- 平畑静塔  Hirahata Seito*
    > Green lalong wreath —
    > vivid with the fragrance
    > of fields.
 
-4. 形代や -- 今こそ掌より -- 川波へ
+4. 形代や今こそ掌より川波へ
    *Kata shiro ya / ima koso te yori / kawanami e -- 松根東洋城  Matsune Toyojo*
    > Paper-doll image —
    > just now left the hand,
@@ -2955,25 +2955,25 @@ A round, glass bowl in which goldfish are kept. It used to be hung by the eaves 
 
 **Poems:**
 
-1. 金魚玉 -- 天神祭 -- 映りそむ
+1. 金魚玉天神祭映りそむ
    *Kingyo dama / Tenjin matsuri / utsuri somu -- 後藤夜半  Goto Yaban*
    > Goldfish bowl;
    > the Tenjin festival
    > begins to reflect.
 
-2. 金魚玉 -- 夜の軽雷に -- 汗ばめり
+2. 金魚玉夜の軽雷に汗ばめり
    *Kingyo dama / yo no keirai ni / ase bameri -- 大野林火  Ono Rinka*
    > Goldfish bowl —
    > with night's light thunder,
    > some sweat beads.
 
-3. 金魚玉 -- かがやき昼寝 -- 人さめず
+3. 金魚玉かがやき昼寝人さめず
    *Kingyo dame / kagayaki hirune / bito samezu -- 清原枚童  Kiyohara Kaido*
    > The goldfish bowl
    > shines — the napper
    > doesn't wake up.
 
-4. 金魚玉 -- 眺めてメロン -- 食ふことも
+4. 金魚玉眺めてメロン食ふことも
    *Kingyo dama / nagamete meron / ku koto mo -- 加藤かけい  Kato Kakei*
    > A goldfish bowl
    > to look at, a melon
@@ -2987,26 +2987,26 @@ Tea made from the new leaves of the tea plant, picked from late spring into earl
 
 **Poems:**
 
-1. 僧達の -- 袂を染むる -- 新茶かな
+1. 僧達の袂を染むる新茶かな
    *So tachi no / tameto wo somuru / shincha kana -- 支考  Shiko*
    > The monks
    > get their sleeves dyed again,
    > new tea.
    > A monk's garment of black was referred to as being dyed with Chinese ink.
 
-2. 新茶の香 -- 真昼の眠気 -- 転じたり
+2. 新茶の香真昼の眠気転じたり
    *Shincha no ka / ma hiru no nemuke / tenji tari -- 一茶  Issa*
    > The scent of new tea —
    > noon-time sleepiness
    > has gone away.
 
-3. 彼一語 -- 我一語 -- 新茶 -- 淹れながら
+3. 彼一語我一語新茶淹れながら
    *Kare ichigo / ware ichigo / shincha / ire nagara -- 高浜虚子  Takahama Kyoshi*
    > He — a word,
    > I — a word, while making
    > new tea.
 
-4. わが碗に -- をさめしづく -- 新茶くむ
+4. わが碗にをさめしづく新茶くむ
    *Waga wan ni / osameshi shizuku / shincha kumu -- 皆吉爽雨  Minayashi Sou*
    > Into my teacup
    > the drops settle,
@@ -3020,25 +3020,25 @@ In haiku, when just "mayu" is said, it means the cocoon of the spring silkworm. 
 
 **Poems:**
 
-1. 道ばたに -- 繭干す -- かぜの -- あつさかな
+1. 道ばたに繭干すかぜのあつさかな
    *Michibata ni / mayu hosu kaze no / atsusa kana -- 許六  Kyoroku*
    > By a roadside
    > cocoons dry, the wind
    > is hot.
 
-2. 一筋の -- 糸引出すや -- 繭躍る
+2. 一筋の糸引出すや繭躍る
    *Hito suji no / ito hikidasu ya / mayu odoru -- 澤木欣一  Sawaki Kinichi*
    > A single line
    > of thread being drawn —
    > the cocoon dances.
 
-3. 母がもぐ -- 白繭黄繭 -- 露の中
+3. 母がもぐ白繭黄繭露の中
    *Haha ga mogu / shiro mayu ki mayu / tsuyu no naka -- 石原八束  Ishibara Yatsuka*
    > Mother picks
    > white, yellow cocoons,
    > in the dew.
 
-4. 悉く -- 繭となりたる -- 静けさよ
+4. 悉く繭となりたる静けさよ
    *Kotogotoku / mayu to naritaru / shizukesa yo -- 高野素十  Takano Suju*
    > Each and every one
    > turned into cocoons,
@@ -3054,25 +3054,25 @@ Variations: u kawa (cormorant river), ubune (cormorant boat), ukaibi (cormorant-
 
 **Poems:**
 
-1. おもしろうて -- やがて悲しき -- 鵜舟かな
+1. おもしろうてやがて悲しき鵜舟かな
    *Omoshiroute / yagate kanashiki / ubune kana -- 芭蕉  Basho*
    > Fascinating,
    > and then, sorrowful,
    > cormorant boats.
 
-2. 鵜のつらに -- 篝こぼれて -- 憐れなり
+2. 鵜のつらに篝こぼれて憐れなり
    *U no tsura ni / kagari koborete / aware nari -- 荷兮  Kakei*
    > On a cormorant's face
    > a torch flame spills,
    > pathetic.
 
-3. つかれ鵜の -- 腮に月の -- しづくかな
+3. つかれ鵜の腮に月のしづくかな
    *Tsukare u no / agito ni tsuki no / shizuku kana -- 大江丸  Oemaru*
    > On a tired cormorant's
    > chin, moonlit
    > waterdrops.
 
-4. 疲れ鵜の -- 細きうなじを -- 並べけり
+4. 疲れ鵜の細きうなじを並べけり
    *Tsukare u no / hosoki unaji wo / narabekeri -- 長谷川素逝  Hasegawa Sosei*
    > Tired cormorants —
    > their thin napes
@@ -3086,25 +3086,25 @@ A simple way of washing off the day's sweat on a summer evening. A tub is easily
 
 **Poems:**
 
-1. 行水の -- 女にほれる -- 烏かな
+1. 行水の女にほれる烏かな
    *Gyozui no / onna ni horeru / karasu kana -- 高浜虚子  Takahama Kyoshi*
    > The tub-bathing
    > lady, he's fallen for —
    > Mr. Crow.
 
-2. 行水や -- 月に吹かるる -- あばら骨
+2. 行水や月に吹かるるあばら骨
    *Gyozui ya / tsuki ni fukaruru / abara bone -- 臼田亜浪  Usuda Rio*
    > Tub-bath —
    > in moonlight being blown,
    > the ribs.
 
-3. 行水や -- 暮れしゆく -- 松の深みどり
+3. 行水や暮れしゆく松の深みどり
    *Gyozui ya / kure yuku matsu no / fuka midori -- 金尾梅の門  Kaneo Umenokado*
    > Tub-bath —
    > as dusk falls, the pine's
    > deep green.
 
-4. 行水や -- 児がつかみをる -- 瓜の蔓
+4. 行水や児がつかみをる瓜の蔓
    *Gyozui ya / ko ga tsukami oru / uri no tsuru -- 大森桐明  Omori Domei*
    > Tub-bath —
    > the child is clutching
@@ -3118,25 +3118,25 @@ To sit out on the veranda and try to catch a cool breeze on a summer evening. In
 
 **Poems:**
 
-1. 蚊やりして -- 師の坊を待つ -- 端居かな
+1. 蚊やりして師の坊を待つ端居かな
    *Kayari shite / shino bo wo matsu / hashi-i kana -- 太鳥  Tairo*
    > With mosquito punk,
    > I wait for a monk,
    > sitting on the veranda.
 
-2. ひとりづつ -- 座を外しくる -- 端居かな
+2. ひとりづつ座を外しくる端居かな
    *Hitori zutsu / za wo hazushi kuru / hashi-i kana -- 苑子  Enshi*
    > One by one
    > they leave their seats, come
    > to sit on the veranda.
 
-3. 端居より -- こぼれてをり -- 芝に坐し
+3. 端居よりこぼれてをり芝に坐し
    *Hashi-i yori / i koborete ori / shiba ni zashi -- 後藤夜半  Goto Yahan*
    > From the veranda,
    > they spilled down,
    > sat on the turf.
 
-4. 端居して -- 明日逢ふ人を -- 思ひをり
+4. 端居して明日逢ふ人を思ひをり
    *Hashi-i shite / asu au hito wo / omoi ori -- 星野立子  Hoshino Tatsuko*
    > Sitting on the veranda,
    > I think of the person
@@ -3150,25 +3150,25 @@ The ladies of all ages who took the rice seedlings from their beds and transplan
 
 **Poems:**
 
-1. さをとめや -- 汚れぬ顔は -- 朝ばかり
+1. さをとめや汚れぬ顔は朝ばかり
    *Saotome ya / yogorenu kao wa / asa bakari -- 其角  Kikaku*
    > Rice-planting girls —
    > unsoiled faces, only
    > in the morning.
 
-2. 早乙女の -- 祭りのやうに -- 揃ひ出る
+2. 早乙女の祭りのやうに揃ひ出る
    *Saotome no / matsuri no yo ni / soroi deru -- 涼菟  Ryoto*
    > Rice-planting girls —
    > like a festival parade,
    > come out in a row.
 
-3. 早乙女の -- 下りたつ -- あの田この田かな
+3. 早乙女の下りたつあの田この田かな
    *Saotome no / oritatsu ano ta / kono ta kana -- 太祇  Taigi*
    > Rice-planting girls
    > step down, stand in that
    > field and this.
 
-4. 早乙女や -- 泥手にはさむ -- 額髪
+4. 早乙女や泥手にはさむ額髪
    *Saotome ya / doro te ni hasamu / hitaigami -- 村上鬼城  Murakami Kijo*
    > Rice-planting girl —
    > between muddy fingers,
@@ -3184,25 +3184,25 @@ This means climbing the mountains of Yoshino in Nara Prefecture, and particularl
 
 **Poems:**
 
-1. 貝吹いて -- 雪踏み分けよ -- 花の跡
+1. 貝吹いて雪踏み分けよ花の跡
    *Kai fuite / yuki fumi wake yo / hana no ato -- 青羅  Seira*
    > Blow the conch shell,
    > make way through snow!
    > After the flowers.
 
-2. 峯入やおもへば深き -- 芳野山
+2. 峯入やおもへば深き芳野山
    *Mine iri ya / omoeba fukaki / Yoshino yama -- 白雄  Shirao*
    > Entering the peak —
    > when you think of it, Yoshino
    > mountain is deep.
 
-3. 峯入や -- 鳥さへ知らぬ -- 花を今日
+3. 峯入や鳥さへ知らぬ花を今日
    *Mine iri ya / tori sae shiranu / hana wo kyo -- 梅舎  Baisha*
    > Entering the peak —
    > today, flowers even birds
    > don't know of.
 
-4. 峯入の -- 老いてそのこる -- 美男眉
+4. 峯入の老いてそのこる美男眉
    *Mine iri no / oite mo nokoru / biman mayyu -- 及川貞  Oikawa Tei*
    > He enters the peak —
    > aging, but still
@@ -3218,25 +3218,25 @@ Variations: Hana-matsuri (festival of flowers), hana mido (flowery pavilion), Ka
 
 **Poems:**
 
-1. 灌仏の -- 皺手合はする -- 数珠の音
+1. 灌仏の皺手合はする数珠の音
    *Kanbutsu no / shiwa te awasuru / juzu no oto -- 芭蕉  Basho*
    > Bathed the Buddha —
    > wrinkled hands together,
    > rub the rosary.
 
-2. 山寺や -- 五色にあまる -- 花み堂
+2. 山寺や五色にあまる花み堂
    *Yamadera ya / goshiki ni amaru / hana mido -- 蕉太  Ryota*
    > Mountain temple —
    > more than five colours,
    > the flowery pavilion.
 
-3. 灌仏の -- 御指の先や -- 暮の月
+3. 灌仏の御指の先や暮の月
    *Kanbutsu no / oyubi no saki ya / kure no tsuki -- 一茶  Issa*
    > At the bathed
    > Buddha's august finger-tip,
    > the dusk moon.
 
-4. 大空の -- 下あるき来て -- 花御堂
+4. 大空の下あるき来て花御堂
    *Ozora no / shita aruki kite / hana mido -- 吉岡禅寺洞  Yoshioka Zenjido*
    > Walked under
    > the great sky — to the
